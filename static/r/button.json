@@ -1,0 +1,25 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "button",
+	"title": "Button",
+	"type": "registry:ui",
+	"description": "Kura Button component source.",
+	"devDependencies": [
+		"tailwind-variants@^3.2.2"
+	],
+	"registryDependencies": [
+		"./utils.json"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\" module>\n  import { cn, type WithElementRef } from '$UTILS$.js';\n  import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';\n  import { type VariantProps, tv } from 'tailwind-variants';\n\n  export const buttonVariants = tv({\n    base: \"focus-visible:border-zinc-300 focus-visible:ring-zinc-300/30 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-full border border-transparent bg-clip-padding font-mono text-xs font-semibold tracking-widest uppercase shadow-none focus-visible:ring-2 active:not-aria-[haspopup]:translate-y-px aria-invalid:ring-2 [&_svg:not([class*='size-'])]:size-3.5 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-all duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n    variants: {\n      variant: {\n        default: 'bg-[#b9d765] text-[#101207] hover:bg-[#d0e891]',\n        outline:\n          'border-zinc-800 bg-background text-zinc-50 hover:border-zinc-700 hover:bg-zinc-900 aria-expanded:border-zinc-700 aria-expanded:bg-zinc-900',\n        secondary:\n          'border-zinc-800 bg-zinc-50 text-background hover:bg-zinc-200 aria-expanded:bg-zinc-200',\n        ghost:\n          'bg-transparent text-zinc-300 hover:bg-zinc-100 hover:text-background dark:hover:bg-zinc-100 aria-expanded:bg-zinc-100 aria-expanded:text-background',\n        destructive:\n          'border-destructive/40 bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/50 focus-visible:ring-destructive/25 dark:bg-destructive/20 dark:hover:bg-destructive/30',\n        link: 'rounded-none px-0 text-[#d0e891] underline underline-offset-4 hover:text-zinc-50'\n      },\n      size: {\n        default:\n          'h-9 gap-1.5 px-5 has-data-[icon=inline-end]:pr-4 has-data-[icon=inline-start]:pl-4',\n        xs: \"h-7 gap-1 px-3 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 [&_svg:not([class*='size-'])]:size-3\",\n        sm: 'h-8 gap-1 px-4 has-data-[icon=inline-end]:pr-3 has-data-[icon=inline-start]:pl-3',\n        lg: 'h-10 gap-1.5 px-7 has-data-[icon=inline-end]:pr-5 has-data-[icon=inline-start]:pl-5',\n        icon: 'size-9',\n        'icon-xs': \"size-7 [&_svg:not([class*='size-'])]:size-3\",\n        'icon-sm': 'size-8',\n        'icon-lg': 'size-10'\n      }\n    },\n    defaultVariants: {\n      variant: 'default',\n      size: 'default'\n    }\n  });\n\n  export type ButtonVariant = VariantProps<typeof buttonVariants>['variant'];\n  export type ButtonSize = VariantProps<typeof buttonVariants>['size'];\n\n  export type ButtonProps = WithElementRef<HTMLButtonAttributes> &\n    WithElementRef<HTMLAnchorAttributes> & {\n      variant?: ButtonVariant;\n      size?: ButtonSize;\n    };\n</script>\n\n<script lang=\"ts\">\n  let {\n    class: className,\n    variant = 'default',\n    size = 'default',\n    ref = $bindable(null),\n    href = undefined,\n    type = 'button',\n    disabled,\n    children,\n    ...restProps\n  }: ButtonProps = $props();\n</script>\n\n{#if href}\n  <a\n    bind:this={ref}\n    data-slot=\"button\"\n    class={cn(buttonVariants({ variant, size }), className)}\n    href={disabled ? undefined : href}\n    aria-disabled={disabled}\n    role={disabled ? 'link' : undefined}\n    tabindex={disabled ? -1 : undefined}\n    {...restProps}\n  >\n    {@render children?.()}\n  </a>\n{:else}\n  <button\n    bind:this={ref}\n    data-slot=\"button\"\n    class={cn(buttonVariants({ variant, size }), className)}\n    {type}\n    {disabled}\n    {...restProps}\n  >\n    {@render children?.()}\n  </button>\n{/if}\n",
+			"type": "registry:file",
+			"target": "button/button.svelte"
+		},
+		{
+			"content": "import Root, {\n  type ButtonProps,\n  type ButtonSize,\n  type ButtonVariant,\n  buttonVariants\n} from './button.svelte';\n\nexport {\n  Root,\n  type ButtonProps as Props,\n  //\n  Root as Button,\n  buttonVariants,\n  type ButtonProps,\n  type ButtonSize,\n  type ButtonVariant\n};\n",
+			"type": "registry:file",
+			"target": "button/index.ts"
+		}
+	]
+}

@@ -1,0 +1,36 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "collapsible",
+	"title": "Collapsible",
+	"type": "registry:ui",
+	"description": "Kura Collapsible component source.",
+	"devDependencies": [
+		"bits-ui@^2.18.1",
+		"@internationalized/date@^3.12.2"
+	],
+	"registryDependencies": [
+		"./utils.json"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n  import { Collapsible as CollapsiblePrimitive } from 'bits-ui';\n  import { cn } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: CollapsiblePrimitive.ContentProps = $props();\n</script>\n\n<CollapsiblePrimitive.Content\n  bind:ref\n  data-slot=\"collapsible-content\"\n  class={cn('bg-background px-3 py-3 text-sm text-zinc-300', className)}\n  {...restProps}\n/>\n",
+			"type": "registry:file",
+			"target": "collapsible/collapsible-content.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import { Collapsible as CollapsiblePrimitive } from 'bits-ui';\n  import { cn } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: CollapsiblePrimitive.TriggerProps = $props();\n</script>\n\n<CollapsiblePrimitive.Trigger\n  bind:ref\n  data-slot=\"collapsible-trigger\"\n  class={cn(\n    'flex w-full items-center justify-between border-b border-zinc-900 px-3 py-2 font-mono text-xs font-semibold tracking-[0.14em] text-zinc-300 uppercase transition-colors hover:bg-zinc-950 hover:text-white focus-visible:ring-2 focus-visible:ring-zinc-300 focus-visible:outline-none',\n    className\n  )}\n  {...restProps}\n/>\n",
+			"type": "registry:file",
+			"target": "collapsible/collapsible-trigger.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import { Collapsible as CollapsiblePrimitive } from 'bits-ui';\n  import { cn } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    open = $bindable(false),\n    class: className,\n    ...restProps\n  }: CollapsiblePrimitive.RootProps = $props();\n</script>\n\n<CollapsiblePrimitive.Root\n  bind:ref\n  bind:open\n  data-slot=\"collapsible\"\n  class={cn('border border-zinc-800 bg-background text-zinc-100', className)}\n  {...restProps}\n/>\n",
+			"type": "registry:file",
+			"target": "collapsible/collapsible.svelte"
+		},
+		{
+			"content": "import Root from './collapsible.svelte';\nimport Trigger from './collapsible-trigger.svelte';\nimport Content from './collapsible-content.svelte';\n\nexport {\n  Root,\n  Content,\n  Trigger,\n  //\n  Root as Collapsible,\n  Content as CollapsibleContent,\n  Trigger as CollapsibleTrigger\n};\n",
+			"type": "registry:file",
+			"target": "collapsible/index.ts"
+		}
+	]
+}

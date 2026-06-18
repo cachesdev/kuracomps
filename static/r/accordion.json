@@ -1,0 +1,42 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "accordion",
+	"title": "Accordion",
+	"type": "registry:ui",
+	"description": "Kura Accordion component source.",
+	"devDependencies": [
+		"bits-ui@^2.18.1",
+		"@internationalized/date@^3.12.2",
+		"phosphor-svelte@^3.1.0"
+	],
+	"registryDependencies": [
+		"./utils.json"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n  import { Accordion as AccordionPrimitive } from 'bits-ui';\n  import { cn, type WithoutChild } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithoutChild<AccordionPrimitive.ContentProps> = $props();\n</script>\n\n<AccordionPrimitive.Content\n  bind:ref\n  data-slot=\"accordion-content\"\n  class=\"data-open:animate-accordion-down data-closed:animate-accordion-up overflow-hidden text-sm text-zinc-400\"\n  {...restProps}\n>\n  <div\n    class={cn(\n      'px-4 pt-0 pb-4 leading-6 [&_a]:text-[#d0e891] [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-zinc-50 [&_p:not(:last-child)]:mb-4',\n      className\n    )}\n  >\n    {@render children?.()}\n  </div>\n</AccordionPrimitive.Content>\n",
+			"type": "registry:file",
+			"target": "accordion/accordion-content.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import { Accordion as AccordionPrimitive } from 'bits-ui';\n  import { cn } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: AccordionPrimitive.ItemProps = $props();\n</script>\n\n<AccordionPrimitive.Item\n  bind:ref\n  data-slot=\"accordion-item\"\n  class={cn('border-zinc-900 not-last:border-b', className)}\n  {...restProps}\n/>\n",
+			"type": "registry:file",
+			"target": "accordion/accordion-item.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import { Accordion as AccordionPrimitive } from 'bits-ui';\n  import { cn, type WithoutChild } from '$UTILS$.js';\n  import CaretDownIcon from 'phosphor-svelte/lib/CaretDown';\n  import CaretUpIcon from 'phosphor-svelte/lib/CaretUp';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    level = 3,\n    children,\n    ...restProps\n  }: WithoutChild<AccordionPrimitive.TriggerProps> & {\n    level?: AccordionPrimitive.HeaderProps['level'];\n  } = $props();\n</script>\n\n<AccordionPrimitive.Header {level} class=\"flex\">\n  <AccordionPrimitive.Trigger\n    data-slot=\"accordion-trigger\"\n    bind:ref\n    class={cn(\n      'focus-visible:ring-zinc-300/30 focus-visible:border-zinc-300 **:data-[slot=accordion-trigger-icon]:text-zinc-500 gap-6 rounded-none px-4 py-3 text-left font-mono text-xs font-semibold tracking-widest text-zinc-100 uppercase hover:bg-zinc-950 hover:text-white focus-visible:ring-2 **:data-[slot=accordion-trigger-icon]:ml-auto **:data-[slot=accordion-trigger-icon]:size-3.5 group/accordion-trigger relative flex flex-1 items-start justify-between border border-transparent transition-all outline-none disabled:pointer-events-none disabled:opacity-50',\n      className\n    )}\n    {...restProps}\n  >\n    {@render children?.()}\n    <CaretDownIcon\n      data-slot=\"accordion-trigger-icon\"\n      class=\"cn-accordion-trigger-icon pointer-events-none shrink-0 group-aria-expanded/accordion-trigger:hidden\"\n    />\n    <CaretUpIcon\n      data-slot=\"accordion-trigger-icon\"\n      class=\"cn-accordion-trigger-icon pointer-events-none hidden shrink-0 group-aria-expanded/accordion-trigger:inline\"\n    />\n  </AccordionPrimitive.Trigger>\n</AccordionPrimitive.Header>\n",
+			"type": "registry:file",
+			"target": "accordion/accordion-trigger.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import { Accordion as AccordionPrimitive } from 'bits-ui';\n  import { cn } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    value = $bindable(),\n    class: className,\n    ...restProps\n  }: AccordionPrimitive.RootProps = $props();\n</script>\n\n<AccordionPrimitive.Root\n  bind:ref\n  bind:value={value as never}\n  data-slot=\"accordion\"\n  class={cn('cn-accordion flex w-full flex-col border border-zinc-900 bg-background', className)}\n  {...restProps}\n/>\n",
+			"type": "registry:file",
+			"target": "accordion/accordion.svelte"
+		},
+		{
+			"content": "import Root from './accordion.svelte';\nimport Content from './accordion-content.svelte';\nimport Item from './accordion-item.svelte';\nimport Trigger from './accordion-trigger.svelte';\n\nexport {\n  Root,\n  Content,\n  Item,\n  Trigger,\n  //\n  Root as Accordion,\n  Content as AccordionContent,\n  Item as AccordionItem,\n  Trigger as AccordionTrigger\n};\n",
+			"type": "registry:file",
+			"target": "accordion/index.ts"
+		}
+	]
+}

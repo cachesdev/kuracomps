@@ -1,0 +1,27 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "kbd",
+	"title": "Kbd",
+	"type": "registry:ui",
+	"description": "Kura Kbd component source.",
+	"registryDependencies": [
+		"utils"
+	],
+	"files": [
+		{
+			"content": "import Root from './kbd.svelte';\nimport Group from './kbd-group.svelte';\n\nexport {\n  Root,\n  Group,\n  //\n  Root as Kbd,\n  Group as KbdGroup\n};\n",
+			"type": "registry:file",
+			"target": "kbd/index.ts"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import { cn, type WithElementRef } from '$UTILS$.js';\n  import type { HTMLAttributes } from 'svelte/elements';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLElement>> = $props();\n</script>\n\n<kbd\n  bind:this={ref}\n  data-slot=\"kbd-group\"\n  class={cn('gap-1 inline-flex items-center text-zinc-500', className)}\n  {...restProps}\n>\n  {@render children?.()}\n</kbd>\n",
+			"type": "registry:file",
+			"target": "kbd/kbd-group.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import { cn, type WithElementRef } from '$UTILS$.js';\n  import type { HTMLAttributes } from 'svelte/elements';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLElement>> = $props();\n</script>\n\n<kbd\n  bind:this={ref}\n  data-slot=\"kbd\"\n  class={cn(\n    \"border border-zinc-800 bg-zinc-950 text-zinc-300 in-data-[slot=tooltip-content]:bg-background/20 in-data-[slot=tooltip-content]:text-background dark:in-data-[slot=tooltip-content]:bg-background/10 in-data-[slot=input-group]:bg-background h-5.5 w-fit min-w-5.5 gap-1 rounded-none px-1.5 font-mono text-[0.625rem] font-semibold tracking-widest uppercase [&_svg:not([class*='size-'])]:size-3 pointer-events-none inline-flex items-center justify-center select-none\",\n    className\n  )}\n  {...restProps}\n>\n  {@render children?.()}\n</kbd>\n",
+			"type": "registry:file",
+			"target": "kbd/kbd.svelte"
+		}
+	]
+}

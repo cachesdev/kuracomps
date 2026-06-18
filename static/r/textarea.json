@@ -1,0 +1,22 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "textarea",
+	"title": "Textarea",
+	"type": "registry:ui",
+	"description": "Kura Textarea component source.",
+	"registryDependencies": [
+		"./utils.json"
+	],
+	"files": [
+		{
+			"content": "import Root from './textarea.svelte';\n\nexport {\n  Root,\n  //\n  Root as Textarea\n};\n",
+			"type": "registry:file",
+			"target": "textarea/index.ts"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import { cn, type WithElementRef, type WithoutChildren } from '$UTILS$.js';\n  import type { HTMLTextareaAttributes } from 'svelte/elements';\n\n  let {\n    ref = $bindable(null),\n    value = $bindable(),\n    class: className,\n    'data-slot': dataSlot = 'textarea',\n    ...restProps\n  }: WithoutChildren<WithElementRef<HTMLTextareaAttributes>> = $props();\n</script>\n\n<textarea\n  bind:this={ref}\n  data-slot={dataSlot}\n  class={cn(\n    'border-zinc-800 bg-zinc-900 text-zinc-50 placeholder:text-zinc-500 focus-visible:border-zinc-300 focus-visible:ring-2 focus-visible:ring-zinc-300/25 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 resize-none rounded-none border px-3 py-2.5 text-base transition-[color,border-color,box-shadow] md:text-sm flex field-sizing-content min-h-20 w-full outline-none disabled:cursor-not-allowed disabled:opacity-50',\n    className\n  )}\n  bind:value\n  {...restProps}></textarea>\n",
+			"type": "registry:file",
+			"target": "textarea/textarea.svelte"
+		}
+	]
+}

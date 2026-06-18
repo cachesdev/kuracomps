@@ -1,0 +1,63 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "form",
+	"title": "Form",
+	"type": "registry:ui",
+	"description": "Kura Form component source.",
+	"devDependencies": [
+		"formsnap@^2.0.1",
+		"sveltekit-superforms@^2.30.1"
+	],
+	"registryDependencies": [
+		"button",
+		"label",
+		"utils"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n  import { Button, type ButtonProps } from '$UI$/button/index.js';\n  import { cn } from '$UTILS$.js';\n\n  let { ref = $bindable(null), class: className, ...restProps }: ButtonProps = $props();\n</script>\n\n<Button bind:ref type=\"submit\" class={cn('w-full', className)} {...restProps} />\n",
+			"type": "registry:file",
+			"target": "form/form-button.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import * as FormPrimitive from 'formsnap';\n  import { cn, type WithoutChild } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: WithoutChild<FormPrimitive.DescriptionProps> = $props();\n</script>\n\n<FormPrimitive.Description\n  bind:ref\n  data-slot=\"form-description\"\n  class={cn('text-sm leading-normal text-zinc-500', className)}\n  {...restProps}\n/>\n",
+			"type": "registry:file",
+			"target": "form/form-description.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\" generics=\"T extends Record<string, unknown>, U extends FormPathLeaves<T>\">\n  import * as FormPrimitive from 'formsnap';\n  import type { FormPathLeaves } from 'sveltekit-superforms';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef, type WithoutChildren } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    form,\n    name,\n    children: childrenProp,\n    ...restProps\n  }: WithoutChildren<WithElementRef<HTMLAttributes<HTMLDivElement>>> &\n    FormPrimitive.ElementFieldProps<T, U> = $props();\n</script>\n\n<FormPrimitive.ElementField {form} {name}>\n  {#snippet children({ constraints, errors, tainted, value })}\n    <div\n      bind:this={ref}\n      data-slot=\"form-element-field\"\n      class={cn('space-y-2 text-zinc-200', className)}\n      {...restProps}\n    >\n      {@render childrenProp?.({ constraints, errors, tainted, value: value as T[U] })}\n    </div>\n  {/snippet}\n</FormPrimitive.ElementField>\n",
+			"type": "registry:file",
+			"target": "form/form-element-field.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import * as FormPrimitive from 'formsnap';\n  import { cn, type WithoutChild } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    errorClasses,\n    children: childrenProp,\n    ...restProps\n  }: WithoutChild<FormPrimitive.FieldErrorsProps> & {\n    errorClasses?: string | undefined | null;\n  } = $props();\n</script>\n\n<FormPrimitive.FieldErrors\n  bind:ref\n  data-slot=\"form-field-errors\"\n  class={cn('font-mono text-xs font-semibold tracking-wide text-destructive uppercase', className)}\n  {...restProps}\n>\n  {#snippet children({ errors, errorProps })}\n    {#if childrenProp}\n      {@render childrenProp({ errors, errorProps })}\n    {:else}\n      {#each errors as error (error)}\n        <div {...errorProps} class={cn(errorClasses)}>{error}</div>\n      {/each}\n    {/if}\n  {/snippet}\n</FormPrimitive.FieldErrors>\n",
+			"type": "registry:file",
+			"target": "form/form-field-errors.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\" generics=\"T extends Record<string, unknown>, U extends FormPath<T>\">\n  import * as FormPrimitive from 'formsnap';\n  import type { FormPath } from 'sveltekit-superforms';\n  import { cn, type WithElementRef, type WithoutChildren } from '$UTILS$.js';\n  import type { HTMLAttributes } from 'svelte/elements';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    form,\n    name,\n    children: childrenProp,\n    ...restProps\n  }: FormPrimitive.FieldProps<T, U> &\n    WithoutChildren<WithElementRef<HTMLAttributes<HTMLDivElement>>> = $props();\n</script>\n\n<FormPrimitive.Field {form} {name}>\n  {#snippet children({ constraints, errors, tainted, value })}\n    <div\n      bind:this={ref}\n      data-slot=\"form-item\"\n      class={cn('space-y-2 text-zinc-200', className)}\n      {...restProps}\n    >\n      {@render childrenProp?.({ constraints, errors, tainted, value: value as T[U] })}\n    </div>\n  {/snippet}\n</FormPrimitive.Field>\n",
+			"type": "registry:file",
+			"target": "form/form-field.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\" generics=\"T extends Record<string, unknown>, U extends FormPath<T>\">\n  import * as FormPrimitive from 'formsnap';\n  import type { FormPath } from 'sveltekit-superforms';\n  import { cn, type WithoutChild } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    form,\n    name,\n    ...restProps\n  }: WithoutChild<FormPrimitive.FieldsetProps<T, U>> = $props();\n</script>\n\n<FormPrimitive.Fieldset\n  bind:ref\n  {form}\n  {name}\n  class={cn('space-y-2 text-zinc-200', className)}\n  {...restProps}\n/>\n",
+			"type": "registry:file",
+			"target": "form/form-fieldset.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import * as FormPrimitive from 'formsnap';\n  import { Label } from '$UI$/label/index.js';\n  import { cn, type WithoutChild } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    children,\n    class: className,\n    ...restProps\n  }: WithoutChild<FormPrimitive.LabelProps> = $props();\n</script>\n\n<FormPrimitive.Label {...restProps} bind:ref>\n  {#snippet child({ props })}\n    <Label\n      {...props}\n      data-slot=\"form-label\"\n      class={cn('text-zinc-100 data-[fs-error]:text-destructive', className)}\n    >\n      {@render children?.()}\n    </Label>\n  {/snippet}\n</FormPrimitive.Label>\n",
+			"type": "registry:file",
+			"target": "form/form-label.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import * as FormPrimitive from 'formsnap';\n  import { cn, type WithoutChild } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: WithoutChild<FormPrimitive.LegendProps> = $props();\n</script>\n\n<FormPrimitive.Legend\n  bind:ref\n  data-slot=\"form-legend\"\n  class={cn(\n    'font-mono text-xs leading-none font-semibold tracking-widest text-zinc-100 uppercase data-[fs-error]:text-destructive',\n    className\n  )}\n  {...restProps}\n/>\n",
+			"type": "registry:file",
+			"target": "form/form-legend.svelte"
+		},
+		{
+			"content": "import * as FormPrimitive from 'formsnap';\nimport Description from './form-description.svelte';\nimport Label from './form-label.svelte';\nimport FieldErrors from './form-field-errors.svelte';\nimport Field from './form-field.svelte';\nimport Fieldset from './form-fieldset.svelte';\nimport Legend from './form-legend.svelte';\nimport ElementField from './form-element-field.svelte';\nimport Button from './form-button.svelte';\n\nconst Control = FormPrimitive.Control;\n\nexport {\n  Field,\n  Control,\n  Label,\n  Button,\n  FieldErrors,\n  Description,\n  Fieldset,\n  Legend,\n  ElementField,\n  //\n  Field as FormField,\n  Control as FormControl,\n  Description as FormDescription,\n  Label as FormLabel,\n  FieldErrors as FormFieldErrors,\n  Fieldset as FormFieldset,\n  Legend as FormLegend,\n  ElementField as FormElementField,\n  Button as FormButton\n};\n",
+			"type": "registry:file",
+			"target": "form/index.ts"
+		}
+	]
+}

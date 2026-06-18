@@ -1,0 +1,40 @@
+<script lang="ts">
+  import { Select as SelectPrimitive } from 'bits-ui';
+  import { cn, type WithoutChild } from '$lib/utils.js';
+  import CheckIcon from 'phosphor-svelte/lib/Check';
+
+  let {
+    ref = $bindable(null),
+    class: className,
+    value,
+    label,
+    children: childrenProp,
+    ...restProps
+  }: WithoutChild<SelectPrimitive.ItemProps> = $props();
+</script>
+
+<SelectPrimitive.Item
+  bind:ref
+  {value}
+  data-slot="select-item"
+  class={cn(
+    "focus:bg-[#b9d765]/18 focus:text-zinc-50 not-data-[variant=destructive]:focus:**:text-zinc-50 gap-2.5 rounded-none py-2 pr-8 pl-3 font-mono text-xs font-medium tracking-wide text-zinc-300 [&_svg:not([class*='size-'])]:size-3.5 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2 data-highlighted:bg-[#b9d765]/18 data-highlighted:text-zinc-50 relative flex w-full cursor-default items-center outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+    className
+  )}
+  {...restProps}
+>
+  {#snippet children({ selected, highlighted })}
+    <span class="absolute end-2 flex size-3.5 items-center justify-center text-[#d0e891]">
+      {#if selected}
+        <CheckIcon class="cn-select-item-indicator-icon" />
+      {/if}
+    </span>
+    <span class="flex flex-1 gap-2 shrink-0 whitespace-nowrap">
+      {#if childrenProp}
+        {@render childrenProp({ selected, highlighted })}
+      {:else}
+        {label || value}
+      {/if}
+    </span>
+  {/snippet}
+</SelectPrimitive.Item>

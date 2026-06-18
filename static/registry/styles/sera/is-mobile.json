@@ -1,0 +1,14 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "is-mobile",
+	"title": "Is Mobile",
+	"type": "registry:hook",
+	"description": "Kura Is Mobile hook.",
+	"files": [
+		{
+			"content": "import { MediaQuery } from 'svelte/reactivity';\n\nconst DEFAULT_MOBILE_BREAKPOINT = 768;\n\nexport class IsMobile extends MediaQuery {\n  constructor(breakpoint: number = DEFAULT_MOBILE_BREAKPOINT) {\n    super(`max-width: ${breakpoint - 1}px`);\n  }\n}\n",
+			"type": "registry:hook",
+			"target": "is-mobile.svelte.ts"
+		}
+	]
+}

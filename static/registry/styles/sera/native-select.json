@@ -1,0 +1,35 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "native-select",
+	"title": "Native Select",
+	"type": "registry:ui",
+	"description": "Kura Native Select component source.",
+	"devDependencies": [
+		"phosphor-svelte@^3.1.0"
+	],
+	"registryDependencies": [
+		"utils"
+	],
+	"files": [
+		{
+			"content": "import Root from './native-select.svelte';\nimport Option from './native-select-option.svelte';\nimport OptGroup from './native-select-opt-group.svelte';\n\nexport {\n  Root,\n  Option,\n  OptGroup,\n  Root as NativeSelect,\n  Option as NativeSelectOption,\n  OptGroup as NativeSelectOptGroup\n};\n",
+			"type": "registry:file",
+			"target": "native-select/index.ts"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import type { HTMLOptgroupAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLOptgroupAttributes> = $props();\n</script>\n\n<optgroup\n  bind:this={ref}\n  data-slot=\"native-select-opt-group\"\n  class={cn('bg-zinc-950 text-zinc-300', className)}\n  {...restProps}\n>\n  {@render children?.()}\n</optgroup>\n",
+			"type": "registry:file",
+			"target": "native-select/native-select-opt-group.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import type { HTMLOptionAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLOptionAttributes> = $props();\n</script>\n\n<option\n  bind:this={ref}\n  data-slot=\"native-select-option\"\n  class={cn('bg-zinc-950 text-zinc-50', className)}\n  {...restProps}\n>\n  {@render children?.()}\n</option>\n",
+			"type": "registry:file",
+			"target": "native-select/native-select-option.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import { cn, type WithElementRef } from '$UTILS$.js';\n  import type { HTMLSelectAttributes } from 'svelte/elements';\n  import CaretDownIcon from 'phosphor-svelte/lib/CaretDown';\n\n  type NativeSelectProps = Omit<WithElementRef<HTMLSelectAttributes>, 'size'> & {\n    size?: 'sm' | 'default';\n  };\n\n  let {\n    ref = $bindable(null),\n    value = $bindable(),\n    class: className,\n    size = 'default',\n    children,\n    ...restProps\n  }: NativeSelectProps = $props();\n</script>\n\n<div\n  class={cn(\n    'cn-native-select-wrapper group/native-select relative w-fit has-[select:disabled]:opacity-50',\n    className\n  )}\n  data-slot=\"native-select-wrapper\"\n  data-size={size}\n>\n  <select\n    bind:value\n    bind:this={ref}\n    data-slot=\"native-select\"\n    data-size={size}\n    class=\"border-zinc-800 bg-zinc-900 text-zinc-50 placeholder:text-zinc-500 selection:bg-[#b9d765] selection:text-[#101207] focus-visible:border-zinc-300 focus-visible:ring-2 focus-visible:ring-zinc-300/25 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 h-9 w-full min-w-0 appearance-none rounded-none border py-2 pr-8 pl-3 text-sm transition-[color,border-color,box-shadow] select-none data-[size=sm]:h-8 outline-none disabled:pointer-events-none disabled:cursor-not-allowed\"\n    {...restProps}\n  >\n    {@render children?.()}\n  </select>\n  <CaretDownIcon\n    class=\"text-zinc-500 top-1/2 right-3 size-3.5 -translate-y-1/2 pointer-events-none absolute select-none\"\n    aria-hidden\n    data-slot=\"native-select-icon\"\n  />\n</div>\n",
+			"type": "registry:file",
+			"target": "native-select/native-select.svelte"
+		}
+	]
+}

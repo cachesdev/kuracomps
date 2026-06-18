@@ -1,0 +1,27 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "checkbox",
+	"title": "Checkbox",
+	"type": "registry:ui",
+	"description": "Kura Checkbox component source.",
+	"devDependencies": [
+		"bits-ui@^2.18.1",
+		"@internationalized/date@^3.12.2",
+		"phosphor-svelte@^3.1.0"
+	],
+	"registryDependencies": [
+		"utils"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n  import { Checkbox as CheckboxPrimitive } from 'bits-ui';\n  import { cn, type WithoutChildrenOrChild } from '$UTILS$.js';\n  import CheckIcon from 'phosphor-svelte/lib/Check';\n  import MinusIcon from 'phosphor-svelte/lib/Minus';\n\n  let {\n    ref = $bindable(null),\n    checked = $bindable(false),\n    indeterminate = $bindable(false),\n    class: className,\n    ...restProps\n  }: WithoutChildrenOrChild<CheckboxPrimitive.RootProps> = $props();\n</script>\n\n<CheckboxPrimitive.Root\n  bind:ref\n  data-slot=\"checkbox\"\n  class={cn(\n    'border-zinc-700 bg-background data-checked:bg-[#b9d765] data-checked:text-[#101207] data-checked:border-[#b9d765] dark:data-checked:bg-[#b9d765] aria-invalid:aria-checked:border-[#b9d765] aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 focus-visible:border-zinc-300 focus-visible:ring-zinc-300/30 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 flex size-4.5 items-center justify-center rounded-none border transition-shadow group-has-disabled/field:opacity-50 focus-visible:ring-2 aria-invalid:ring-2 peer relative shrink-0 outline-none after:absolute after:-inset-x-3 after:-inset-y-2 disabled:cursor-not-allowed disabled:opacity-50',\n    className\n  )}\n  bind:checked\n  bind:indeterminate\n  {...restProps}\n>\n  {#snippet children({ checked, indeterminate })}\n    <div\n      data-slot=\"checkbox-indicator\"\n      class=\"[&>svg]:size-3.5 grid place-content-center text-current transition-none\"\n    >\n      {#if checked}\n        <CheckIcon />\n      {:else if indeterminate}\n        <MinusIcon />\n      {/if}\n    </div>\n  {/snippet}\n</CheckboxPrimitive.Root>\n",
+			"type": "registry:file",
+			"target": "checkbox/checkbox.svelte"
+		},
+		{
+			"content": "import Root from './checkbox.svelte';\nexport {\n  Root,\n  //\n  Root as Checkbox\n};\n",
+			"type": "registry:file",
+			"target": "checkbox/index.ts"
+		}
+	]
+}

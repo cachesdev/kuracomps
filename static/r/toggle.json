@@ -1,0 +1,27 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "toggle",
+	"title": "Toggle",
+	"type": "registry:ui",
+	"description": "Kura Toggle component source.",
+	"devDependencies": [
+		"bits-ui@^2.18.1",
+		"@internationalized/date@^3.12.2",
+		"tailwind-variants@^3.2.2"
+	],
+	"registryDependencies": [
+		"./utils.json"
+	],
+	"files": [
+		{
+			"content": "import Root from './toggle.svelte';\nexport {\n  toggleVariants,\n  type ToggleSize,\n  type ToggleVariant,\n  type ToggleVariants\n} from './toggle.svelte';\n\nexport {\n  Root,\n  //\n  Root as Toggle\n};\n",
+			"type": "registry:file",
+			"target": "toggle/index.ts"
+		},
+		{
+			"content": "<script lang=\"ts\" module>\n  import { type VariantProps, tv } from 'tailwind-variants';\n\n  export const toggleVariants = tv({\n    base: \"hover:text-zinc-50 aria-pressed:border-[#b9d765]/60 aria-pressed:bg-[#b9d765]/15 aria-pressed:text-zinc-50 focus-visible:border-zinc-300 focus-visible:ring-zinc-300/30 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive gap-1.5 rounded-full font-mono text-xs font-semibold tracking-widest uppercase transition-colors duration-200 [&_svg:not([class*='size-'])]:size-3.5 group/toggle hover:bg-zinc-900 inline-flex items-center justify-center whitespace-nowrap outline-none focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n    variants: {\n      variant: {\n        default: 'bg-transparent text-zinc-400',\n        outline:\n          'border border-zinc-800 bg-background text-zinc-300 hover:border-zinc-700 hover:bg-zinc-900'\n      },\n      size: {\n        default:\n          'h-9 min-w-9 px-5 has-data-[icon=inline-end]:pr-4 has-data-[icon=inline-start]:pl-4',\n        sm: 'h-8 min-w-8 px-4 has-data-[icon=inline-end]:pr-3 has-data-[icon=inline-start]:pl-3',\n        lg: 'h-10 min-w-10 px-7 has-data-[icon=inline-end]:pr-5 has-data-[icon=inline-start]:pl-5'\n      }\n    },\n    defaultVariants: {\n      variant: 'default',\n      size: 'default'\n    }\n  });\n\n  export type ToggleVariant = VariantProps<typeof toggleVariants>['variant'];\n  export type ToggleSize = VariantProps<typeof toggleVariants>['size'];\n  export type ToggleVariants = VariantProps<typeof toggleVariants>;\n</script>\n\n<script lang=\"ts\">\n  import { Toggle as TogglePrimitive } from 'bits-ui';\n  import { cn } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    pressed = $bindable(false),\n    class: className,\n    size = 'default',\n    variant = 'default',\n    ...restProps\n  }: TogglePrimitive.RootProps & {\n    variant?: ToggleVariant;\n    size?: ToggleSize;\n  } = $props();\n</script>\n\n<TogglePrimitive.Root\n  bind:ref\n  bind:pressed\n  data-slot=\"toggle\"\n  class={cn(toggleVariants({ variant, size }), className)}\n  {...restProps}\n/>\n",
+			"type": "registry:file",
+			"target": "toggle/toggle.svelte"
+		}
+	]
+}

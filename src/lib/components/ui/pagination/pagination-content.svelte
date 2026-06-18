@@ -1,0 +1,23 @@
+<script lang="ts">
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { cn, type WithElementRef } from '$lib/utils.js';
+
+  let {
+    ref = $bindable(null),
+    class: className,
+    children,
+    ...restProps
+  }: WithElementRef<HTMLAttributes<HTMLUListElement>> = $props();
+</script>
+
+<ul
+  bind:this={ref}
+  data-slot="pagination-content"
+  class={cn(
+    'flex items-center gap-1 rounded-full border border-zinc-800 bg-background p-1',
+    className
+  )}
+  {...restProps}
+>
+  {@render children?.()}
+</ul>

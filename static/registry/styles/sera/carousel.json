@@ -1,0 +1,54 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "carousel",
+	"title": "Carousel",
+	"type": "registry:ui",
+	"description": "Kura Carousel component source.",
+	"devDependencies": [
+		"embla-carousel-svelte@^8.6.0",
+		"bits-ui@^2.18.1",
+		"@internationalized/date@^3.12.2",
+		"phosphor-svelte@^3.1.0"
+	],
+	"registryDependencies": [
+		"button",
+		"utils"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n  import emblaCarouselSvelte from 'embla-carousel-svelte';\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { getEmblaContext } from './context.js';\n  import { cn, type WithElementRef } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n\n  const emblaCtx = getEmblaContext('<Carousel.Content/>');\n</script>\n\n<div\n  data-slot=\"carousel-content\"\n  class=\"overflow-hidden bg-background\"\n  use:emblaCarouselSvelte={{\n    options: {\n      container: '[data-embla-container]',\n      slides: '[data-embla-slide]',\n      ...emblaCtx.options,\n      axis: emblaCtx.orientation === 'horizontal' ? 'x' : 'y'\n    },\n    plugins: emblaCtx.plugins\n  }}\n  onemblaInit={emblaCtx.onInit}\n>\n  <div\n    bind:this={ref}\n    class={cn(\n      'flex',\n      emblaCtx.orientation === 'horizontal' ? '-ms-px' : '-mt-px flex-col',\n      className\n    )}\n    data-embla-container=\"\"\n    {...restProps}\n  >\n    {@render children?.()}\n  </div>\n</div>\n",
+			"type": "registry:file",
+			"target": "carousel/carousel-content.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { getEmblaContext } from './context.js';\n  import { cn, type WithElementRef } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n\n  const emblaCtx = getEmblaContext('<Carousel.Item/>');\n</script>\n\n<div\n  bind:this={ref}\n  data-slot=\"carousel-item\"\n  role=\"group\"\n  aria-roledescription=\"slide\"\n  class={cn(\n    'min-w-0 shrink-0 grow-0 basis-full border-zinc-900',\n    emblaCtx.orientation === 'horizontal' ? 'border-l ps-px' : 'border-t pt-px',\n    className\n  )}\n  data-embla-slide=\"\"\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n",
+			"type": "registry:file",
+			"target": "carousel/carousel-item.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import type { WithoutChildren } from 'bits-ui';\n  import { getEmblaContext } from './context.js';\n  import { cn } from '$UTILS$.js';\n  import { Button, type Props } from '$UI$/button/index.js';\n  import CaretRightIcon from 'phosphor-svelte/lib/CaretRight';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    variant = 'outline',\n    size = 'icon-sm',\n    ...restProps\n  }: WithoutChildren<Props> = $props();\n\n  const emblaCtx = getEmblaContext('<Carousel.Next/>');\n</script>\n\n<Button\n  data-slot=\"carousel-next\"\n  {variant}\n  {size}\n  aria-disabled={!emblaCtx.canScrollNext}\n  disabled={!emblaCtx.canScrollNext}\n  class={cn(\n    'cn-carousel-next absolute rounded-full border-zinc-800 bg-background text-zinc-300 touch-manipulation hover:border-[#d0e891] hover:bg-[#b9d765] hover:text-[#101207]',\n    emblaCtx.orientation === 'horizontal'\n      ? '-end-12 top-1/2 -translate-y-1/2'\n      : 'start-1/2 -bottom-12 -translate-x-1/2 rotate-90',\n    className\n  )}\n  onclick={emblaCtx.scrollNext}\n  onkeydown={emblaCtx.handleKeyDown}\n  bind:ref\n  {...restProps}\n>\n  <CaretRightIcon />\n  <span class=\"sr-only\">Next slide</span>\n</Button>\n",
+			"type": "registry:file",
+			"target": "carousel/carousel-next.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import type { WithoutChildren } from 'bits-ui';\n  import { getEmblaContext } from './context.js';\n  import { cn } from '$UTILS$.js';\n  import { Button, type Props } from '$UI$/button/index.js';\n  import CaretLeftIcon from 'phosphor-svelte/lib/CaretLeft';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    variant = 'outline',\n    size = 'icon-sm',\n    ...restProps\n  }: WithoutChildren<Props> = $props();\n\n  const emblaCtx = getEmblaContext('<Carousel.Previous/>');\n</script>\n\n<Button\n  data-slot=\"carousel-previous\"\n  {variant}\n  {size}\n  aria-disabled={!emblaCtx.canScrollPrev}\n  disabled={!emblaCtx.canScrollPrev}\n  class={cn(\n    'cn-carousel-previous absolute rounded-full border-zinc-800 bg-background text-zinc-300 touch-manipulation hover:border-[#d0e891] hover:bg-[#b9d765] hover:text-[#101207]',\n    emblaCtx.orientation === 'horizontal'\n      ? '-start-12 top-1/2 -translate-y-1/2'\n      : 'start-1/2 -top-12 -translate-x-1/2 rotate-90',\n    className\n  )}\n  onclick={emblaCtx.scrollPrev}\n  onkeydown={emblaCtx.handleKeyDown}\n  {...restProps}\n  bind:ref\n>\n  <CaretLeftIcon />\n  <span class=\"sr-only\">Previous slide</span>\n</Button>\n",
+			"type": "registry:file",
+			"target": "carousel/carousel-previous.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import {\n    type CarouselAPI,\n    type CarouselProps,\n    type EmblaContext,\n    setEmblaContext\n  } from './context.js';\n  import { cn, type WithElementRef } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    opts = {},\n    plugins = [],\n    setApi = () => {},\n    orientation = 'horizontal',\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<CarouselProps> = $props();\n\n  // svelte-ignore state_referenced_locally\n  let carouselState = $state<EmblaContext>({\n    api: undefined,\n    scrollPrev,\n    scrollNext,\n    orientation,\n    canScrollNext: false,\n    canScrollPrev: false,\n    handleKeyDown,\n    options: opts,\n    plugins,\n    onInit,\n    scrollSnaps: [],\n    selectedIndex: 0,\n    scrollTo\n  });\n\n  setEmblaContext(carouselState);\n\n  function scrollPrev() {\n    carouselState.api?.scrollPrev();\n  }\n\n  function scrollNext() {\n    carouselState.api?.scrollNext();\n  }\n\n  function scrollTo(index: number, jump?: boolean) {\n    carouselState.api?.scrollTo(index, jump);\n  }\n\n  function onSelect() {\n    if (!carouselState.api) return;\n    carouselState.selectedIndex = carouselState.api.selectedScrollSnap();\n    carouselState.canScrollNext = carouselState.api.canScrollNext();\n    carouselState.canScrollPrev = carouselState.api.canScrollPrev();\n  }\n\n  function handleKeyDown(e: KeyboardEvent) {\n    if (e.key === 'ArrowLeft') {\n      e.preventDefault();\n      scrollPrev();\n    } else if (e.key === 'ArrowRight') {\n      e.preventDefault();\n      scrollNext();\n    }\n  }\n\n  function onInit(event: CustomEvent<CarouselAPI>) {\n    carouselState.api = event.detail;\n    setApi(carouselState.api);\n\n    carouselState.scrollSnaps = carouselState.api.scrollSnapList();\n    carouselState.api.on('select', onSelect);\n    onSelect();\n  }\n\n  $effect(() => {\n    return () => {\n      carouselState.api?.off('select', onSelect);\n    };\n  });\n</script>\n\n<div\n  bind:this={ref}\n  data-slot=\"carousel\"\n  class={cn('relative border border-zinc-800 bg-background text-zinc-100', className)}\n  role=\"region\"\n  aria-roledescription=\"carousel\"\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n",
+			"type": "registry:file",
+			"target": "carousel/carousel.svelte"
+		},
+		{
+			"content": "import type { WithElementRef } from '$UTILS$.js';\nimport type {\n  EmblaCarouselSvelteType,\n  default as emblaCarouselSvelte\n} from 'embla-carousel-svelte';\nimport { getContext, hasContext, setContext } from 'svelte';\nimport type { HTMLAttributes } from 'svelte/elements';\n\nexport type CarouselAPI =\n  NonNullable<NonNullable<EmblaCarouselSvelteType['$$_attributes']>['on:emblaInit']> extends (\n    evt: CustomEvent<infer CarouselAPI>\n  ) => void\n    ? CarouselAPI\n    : never;\n\ntype EmblaCarouselConfig = NonNullable<Parameters<typeof emblaCarouselSvelte>[1]>;\n\nexport type CarouselOptions = EmblaCarouselConfig['options'];\nexport type CarouselPlugins = EmblaCarouselConfig['plugins'];\n\n////\n\nexport type CarouselProps = {\n  opts?: CarouselOptions;\n  plugins?: CarouselPlugins;\n  setApi?: (api: CarouselAPI | undefined) => void;\n  orientation?: 'horizontal' | 'vertical';\n} & WithElementRef<HTMLAttributes<HTMLDivElement>>;\n\nconst EMBLA_CAROUSEL_CONTEXT = Symbol('EMBLA_CAROUSEL_CONTEXT');\n\nexport type EmblaContext = {\n  api: CarouselAPI | undefined;\n  orientation: 'horizontal' | 'vertical';\n  scrollNext: () => void;\n  scrollPrev: () => void;\n  canScrollNext: boolean;\n  canScrollPrev: boolean;\n  handleKeyDown: (e: KeyboardEvent) => void;\n  options: CarouselOptions;\n  plugins: CarouselPlugins;\n  onInit: (e: CustomEvent<CarouselAPI>) => void;\n  scrollTo: (index: number, jump?: boolean) => void;\n  scrollSnaps: number[];\n  selectedIndex: number;\n};\n\nexport function setEmblaContext(config: EmblaContext): EmblaContext {\n  setContext(EMBLA_CAROUSEL_CONTEXT, config);\n  return config;\n}\n\nexport function getEmblaContext(name = 'This component') {\n  if (!hasContext(EMBLA_CAROUSEL_CONTEXT)) {\n    throw new Error(`${name} must be used within a <Carousel.Root> component`);\n  }\n  return getContext<ReturnType<typeof setEmblaContext>>(EMBLA_CAROUSEL_CONTEXT);\n}\n",
+			"type": "registry:file",
+			"target": "carousel/context.ts"
+		},
+		{
+			"content": "import Root from './carousel.svelte';\nimport Content from './carousel-content.svelte';\nimport Item from './carousel-item.svelte';\nimport Previous from './carousel-previous.svelte';\nimport Next from './carousel-next.svelte';\n\nexport {\n  Root,\n  Content,\n  Item,\n  Previous,\n  Next,\n  //\n  Root as Carousel,\n  Content as CarouselContent,\n  Item as CarouselItem,\n  Previous as CarouselPrevious,\n  Next as CarouselNext\n};\n",
+			"type": "registry:file",
+			"target": "carousel/index.ts"
+		}
+	]
+}

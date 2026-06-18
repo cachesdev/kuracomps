@@ -1,0 +1,78 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "select",
+	"title": "Select",
+	"type": "registry:ui",
+	"description": "Kura Select component source.",
+	"devDependencies": [
+		"bits-ui@^2.18.1",
+		"@internationalized/date@^3.12.2",
+		"phosphor-svelte@^3.1.0"
+	],
+	"registryDependencies": [
+		"separator",
+		"utils"
+	],
+	"files": [
+		{
+			"content": "import Root from './select.svelte';\nimport Group from './select-group.svelte';\nimport Label from './select-label.svelte';\nimport Item from './select-item.svelte';\nimport Content from './select-content.svelte';\nimport Trigger from './select-trigger.svelte';\nimport Separator from './select-separator.svelte';\nimport ScrollDownButton from './select-scroll-down-button.svelte';\nimport ScrollUpButton from './select-scroll-up-button.svelte';\nimport GroupHeading from './select-group-heading.svelte';\nimport Portal from './select-portal.svelte';\n\nexport {\n  Root,\n  Group,\n  Label,\n  Item,\n  Content,\n  Trigger,\n  Separator,\n  ScrollDownButton,\n  ScrollUpButton,\n  GroupHeading,\n  Portal,\n  //\n  Root as Select,\n  Group as SelectGroup,\n  Label as SelectLabel,\n  Item as SelectItem,\n  Content as SelectContent,\n  Trigger as SelectTrigger,\n  Separator as SelectSeparator,\n  ScrollDownButton as SelectScrollDownButton,\n  ScrollUpButton as SelectScrollUpButton,\n  GroupHeading as SelectGroupHeading,\n  Portal as SelectPortal\n};\n",
+			"type": "registry:file",
+			"target": "select/index.ts"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import { Select as SelectPrimitive } from 'bits-ui';\n  import SelectPortal from './select-portal.svelte';\n  import SelectScrollUpButton from './select-scroll-up-button.svelte';\n  import SelectScrollDownButton from './select-scroll-down-button.svelte';\n  import { cn, type WithoutChild } from '$UTILS$.js';\n  import type { ComponentProps } from 'svelte';\n  import type { WithoutChildrenOrChild } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    sideOffset = 4,\n    portalProps,\n    children,\n    preventScroll = true,\n    ...restProps\n  }: WithoutChild<SelectPrimitive.ContentProps> & {\n    portalProps?: WithoutChildrenOrChild<ComponentProps<typeof SelectPortal>>;\n  } = $props();\n</script>\n\n<SelectPortal {...portalProps}>\n  <SelectPrimitive.Content\n    bind:ref\n    {sideOffset}\n    {preventScroll}\n    data-slot=\"select-content\"\n    class={cn(\n      'border border-zinc-800 bg-zinc-950 text-zinc-50 data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 min-w-36 rounded-none shadow-none duration-100 data-[side=inline-start]:slide-in-from-right-2 data-[side=inline-end]:slide-in-from-left-2 relative isolate z-50 overflow-x-hidden overflow-y-auto',\n      className\n    )}\n    {...restProps}\n  >\n    <SelectScrollUpButton />\n    <SelectPrimitive.Viewport\n      class={cn(\n        'h-(--bits-select-anchor-height) w-full min-w-(--bits-select-anchor-width) scroll-my-1'\n      )}\n    >\n      {@render children?.()}\n    </SelectPrimitive.Viewport>\n    <SelectScrollDownButton />\n  </SelectPrimitive.Content>\n</SelectPortal>\n",
+			"type": "registry:file",
+			"target": "select/select-content.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import { Select as SelectPrimitive } from 'bits-ui';\n  import { cn } from '$UTILS$.js';\n  import type { ComponentProps } from 'svelte';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: ComponentProps<typeof SelectPrimitive.GroupHeading> = $props();\n</script>\n\n<SelectPrimitive.GroupHeading\n  bind:ref\n  data-slot=\"select-group-heading\"\n  class={cn(\n    'px-2 py-1.5 font-mono text-[0.625rem] font-semibold tracking-widest text-zinc-500 uppercase',\n    className\n  )}\n  {...restProps}\n>\n  {@render children?.()}\n</SelectPrimitive.GroupHeading>\n",
+			"type": "registry:file",
+			"target": "select/select-group-heading.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import { Select as SelectPrimitive } from 'bits-ui';\n  import { cn } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: SelectPrimitive.GroupProps = $props();\n</script>\n\n<SelectPrimitive.Group\n  bind:ref\n  data-slot=\"select-group\"\n  class={cn('scroll-my-1.5 p-1.5 text-zinc-300', className)}\n  {...restProps}\n/>\n",
+			"type": "registry:file",
+			"target": "select/select-group.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import { Select as SelectPrimitive } from 'bits-ui';\n  import { cn, type WithoutChild } from '$UTILS$.js';\n  import CheckIcon from 'phosphor-svelte/lib/Check';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    value,\n    label,\n    children: childrenProp,\n    ...restProps\n  }: WithoutChild<SelectPrimitive.ItemProps> = $props();\n</script>\n\n<SelectPrimitive.Item\n  bind:ref\n  {value}\n  data-slot=\"select-item\"\n  class={cn(\n    \"focus:bg-[#b9d765]/18 focus:text-zinc-50 not-data-[variant=destructive]:focus:**:text-zinc-50 gap-2.5 rounded-none py-2 pr-8 pl-3 font-mono text-xs font-medium tracking-wide text-zinc-300 [&_svg:not([class*='size-'])]:size-3.5 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2 data-highlighted:bg-[#b9d765]/18 data-highlighted:text-zinc-50 relative flex w-full cursor-default items-center outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n    className\n  )}\n  {...restProps}\n>\n  {#snippet children({ selected, highlighted })}\n    <span class=\"absolute end-2 flex size-3.5 items-center justify-center text-[#d0e891]\">\n      {#if selected}\n        <CheckIcon class=\"cn-select-item-indicator-icon\" />\n      {/if}\n    </span>\n    <span class=\"flex flex-1 gap-2 shrink-0 whitespace-nowrap\">\n      {#if childrenProp}\n        {@render childrenProp({ selected, highlighted })}\n      {:else}\n        {label || value}\n      {/if}\n    </span>\n  {/snippet}\n</SelectPrimitive.Item>\n",
+			"type": "registry:file",
+			"target": "select/select-item.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import { cn, type WithElementRef } from '$UTILS$.js';\n  import type { HTMLAttributes } from 'svelte/elements';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> & {} = $props();\n</script>\n\n<div\n  bind:this={ref}\n  data-slot=\"select-label\"\n  class={cn(\n    'border-b border-zinc-900 px-3 py-2 font-mono text-[0.625rem] font-semibold tracking-widest text-zinc-500 uppercase',\n    className\n  )}\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n",
+			"type": "registry:file",
+			"target": "select/select-label.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import { Select as SelectPrimitive } from 'bits-ui';\n\n  let { ...restProps }: SelectPrimitive.PortalProps = $props();\n</script>\n\n<SelectPrimitive.Portal {...restProps} />\n",
+			"type": "registry:file",
+			"target": "select/select-portal.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import { Select as SelectPrimitive } from 'bits-ui';\n  import { cn, type WithoutChildrenOrChild } from '$UTILS$.js';\n  import CaretDownIcon from 'phosphor-svelte/lib/CaretDown';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: WithoutChildrenOrChild<SelectPrimitive.ScrollDownButtonProps> = $props();\n</script>\n\n<SelectPrimitive.ScrollDownButton\n  bind:ref\n  data-slot=\"select-scroll-down-button\"\n  class={cn(\n    \"bg-zinc-950 text-zinc-500 z-10 flex cursor-default items-center justify-center border-t border-zinc-900 py-1 [&_svg:not([class*='size-'])]:size-3.5 bottom-0 w-full\",\n    className\n  )}\n  {...restProps}\n>\n  <CaretDownIcon />\n</SelectPrimitive.ScrollDownButton>\n",
+			"type": "registry:file",
+			"target": "select/select-scroll-down-button.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import { Select as SelectPrimitive } from 'bits-ui';\n  import { cn, type WithoutChildrenOrChild } from '$UTILS$.js';\n  import CaretUpIcon from 'phosphor-svelte/lib/CaretUp';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: WithoutChildrenOrChild<SelectPrimitive.ScrollUpButtonProps> = $props();\n</script>\n\n<SelectPrimitive.ScrollUpButton\n  bind:ref\n  data-slot=\"select-scroll-up-button\"\n  class={cn(\n    \"bg-zinc-950 text-zinc-500 z-10 flex cursor-default items-center justify-center border-b border-zinc-900 py-1 [&_svg:not([class*='size-'])]:size-3.5 top-0 w-full\",\n    className\n  )}\n  {...restProps}\n>\n  <CaretUpIcon />\n</SelectPrimitive.ScrollUpButton>\n",
+			"type": "registry:file",
+			"target": "select/select-scroll-up-button.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import type { Separator as SeparatorPrimitive } from 'bits-ui';\n  import { Separator } from '$UI$/separator/index.js';\n  import { cn } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: SeparatorPrimitive.RootProps = $props();\n</script>\n\n<Separator\n  bind:ref\n  data-slot=\"select-separator\"\n  class={cn('bg-zinc-800 -mx-1.5 my-1.5 h-px pointer-events-none', className)}\n  {...restProps}\n/>\n",
+			"type": "registry:file",
+			"target": "select/select-separator.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import { Select as SelectPrimitive } from 'bits-ui';\n  import { cn, type WithoutChild } from '$UTILS$.js';\n  import CaretDownIcon from 'phosphor-svelte/lib/CaretDown';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    size = 'default',\n    ...restProps\n  }: WithoutChild<SelectPrimitive.TriggerProps> & {\n    size?: 'sm' | 'default';\n  } = $props();\n</script>\n\n<SelectPrimitive.Trigger\n  bind:ref\n  data-slot=\"select-trigger\"\n  data-size={size}\n  class={cn(\n    \"border-zinc-800 bg-zinc-900 text-zinc-50 data-placeholder:text-zinc-500 focus-visible:border-zinc-300 focus-visible:ring-2 focus-visible:ring-zinc-300/25 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 gap-1.5 rounded-none border px-3 py-2 text-sm transition-[color,border-color,box-shadow] data-[size=default]:h-9 data-[size=sm]:h-8 *:data-[slot=select-value]:flex *:data-[slot=select-value]:gap-1.5 [&_svg:not([class*='size-'])]:size-3.5 flex w-fit items-center justify-between whitespace-nowrap outline-none disabled:cursor-not-allowed disabled:opacity-50 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n    className\n  )}\n  {...restProps}\n>\n  {@render children?.()}\n  <CaretDownIcon class=\"text-zinc-500 size-3.5 pointer-events-none\" />\n</SelectPrimitive.Trigger>\n",
+			"type": "registry:file",
+			"target": "select/select-trigger.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n  import { Select as SelectPrimitive } from 'bits-ui';\n\n  let {\n    open = $bindable(false),\n    value = $bindable(),\n    ...restProps\n  }: SelectPrimitive.RootProps = $props();\n</script>\n\n<SelectPrimitive.Root bind:open bind:value={value as never} {...restProps} />\n",
+			"type": "registry:file",
+			"target": "select/select.svelte"
+		}
+	]
+}

@@ -57,7 +57,7 @@
             <pre
               class="no-scrollbar min-w-0 overflow-x-auto rounded-lg border border-border bg-card px-4 py-3.5 outline-none"><code
                 >&#123;
-  "registry": "https://kura.jfdc.dev/registry",
+  "registry": "https://kura.gfdc.dev/registry",
   "style": "sera"
 &#125;</code
               ></pre>
@@ -67,7 +67,7 @@
             <figcaption>add a component</figcaption>
             <pre
               class="no-scrollbar min-w-0 overflow-x-auto rounded-lg border border-border bg-card px-4 py-3.5 outline-none"><code
-                >pnpm dlx shadcn-svelte@latest add https://kura.jfdc.dev/r/button.json</code
+                >pnpm dlx shadcn-svelte@latest add https://kura.gfdc.dev/r/button.json</code
               ></pre>
           </figure>
         </div>

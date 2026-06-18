@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "pnpm docs:content && vite dev",
     "build": "pnpm docs:content && vite build",
+    "start": "node build",
     "docs:content": "velite",
     "registry:sync": "node scripts/sync-registry.mjs && prettier --write registry.json registry.sera.json",
     "registry:build:url": "shadcn-svelte registry build registry.json --output static/r",

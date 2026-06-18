@@ -133,7 +133,7 @@ async function writeRegistry(filename, { standalone }) {
   const registry = {
     $schema: 'https://shadcn-svelte.com/schema/registry.json',
     name: standalone ? 'kura' : 'kura/sera',
-    homepage: 'https://kura.jfdc.dev',
+    homepage: 'https://kura.gfdc.dev',
     aliases,
     items: await buildItems({ standalone })
   };

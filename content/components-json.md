@@ -9,7 +9,7 @@ For Kura, the important fields are:
 
 ```json
 {
-  "registry": "https://kura.jfdc.dev/registry",
+  "registry": "https://kura.gfdc.dev/registry",
   "style": "sera",
   "iconLibrary": "phosphor",
   "aliases": {

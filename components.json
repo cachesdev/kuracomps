@@ -12,7 +12,7 @@
     "lib": "$lib"
   },
   "typescript": true,
-  "registry": "https://kura.jfdc.dev/registry",
+  "registry": "https://kura.gfdc.dev/registry",
   "style": "sera",
   "iconLibrary": "phosphor",
   "menuColor": "default",

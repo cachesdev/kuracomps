@@ -20,7 +20,7 @@ pnpm registry:build
 This writes standalone URL install files to `static/r`:
 
 ```sh
-pnpm dlx shadcn-svelte@latest add https://kura.jfdc.dev/r/button.json
+pnpm dlx shadcn-svelte@latest add https://kura.gfdc.dev/r/button.json
 ```
 
 Component files declare their registry dependencies, so `button` and other UI items pull `utils` automatically when needed.
@@ -29,7 +29,7 @@ It also writes shadcn-style registry files to `static/registry/styles/sera`, so 
 
 ```json
 {
-  "registry": "https://kura.jfdc.dev/registry",
+  "registry": "https://kura.gfdc.dev/registry",
   "style": "sera"
 }
 ```

@@ -1,7 +1,7 @@
 {
   "$schema": "https://shadcn-svelte.com/schema/registry.json",
   "name": "kura/sera",
-  "homepage": "https://kura.jfdc.dev",
+  "homepage": "https://kura.gfdc.dev",
   "aliases": {
     "ui": "$lib/components/ui",
     "hooks": "$lib/hooks",

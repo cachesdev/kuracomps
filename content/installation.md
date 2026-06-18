@@ -24,7 +24,7 @@ In your project, set the registry and style:
     "lib": "$lib"
   },
   "typescript": true,
-  "registry": "https://kura.jfdc.dev/registry",
+  "registry": "https://kura.gfdc.dev/registry",
   "style": "sera",
   "iconLibrary": "phosphor"
 }
@@ -43,7 +43,7 @@ pnpm dlx shadcn-svelte@latest add sidebar
 For one-off installs, use the `/r` files directly:
 
 ```bash
-pnpm dlx shadcn-svelte@latest add https://kura.jfdc.dev/r/button.json
+pnpm dlx shadcn-svelte@latest add https://kura.gfdc.dev/r/button.json
 ```
 
 Kura publishes direct URL files under `/r` and style registry files under `/registry/styles/sera`.

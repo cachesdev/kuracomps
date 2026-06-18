@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: 'Kura',
-  url: 'https://kura.jfdc.dev',
+  url: 'https://kura.gfdc.dev',
   description: 'A shadcn-svelte registry for the Kura component warehouse.',
   links: {
-    github: 'https://github.com/jfdc/kuracomps'
+    github: 'https://github.com/cachesdev/kuracomps'
   }
 };

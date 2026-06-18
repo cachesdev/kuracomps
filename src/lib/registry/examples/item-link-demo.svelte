@@ -20,7 +20,7 @@
   </Item.Root>
   <Item.Root variant="outline">
     {#snippet child({ props })}
-      <a href="https://kura.jfdc.dev/docs" target="_blank" rel="noopener noreferrer" {...props}>
+      <a href="https://kura.gfdc.dev/docs" target="_blank" rel="noopener noreferrer" {...props}>
         <Item.Content>
           <Item.Title>External resource</Item.Title>
           <Item.Description>Opens in a new tab with security attributes.</Item.Description>

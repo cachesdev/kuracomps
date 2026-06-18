@@ -11,7 +11,7 @@ Point your project at the Kura registry:
 
 ```json title="components.json"
 {
-  "registry": "https://kura.jfdc.dev/registry",
+  "registry": "https://kura.gfdc.dev/registry",
   "style": "sera"
 }
 ```
@@ -28,7 +28,7 @@ pnpm dlx shadcn-svelte@latest add command
 Every registry item is also available as a standalone URL:
 
 ```bash
-pnpm dlx shadcn-svelte@latest add https://kura.jfdc.dev/r/button.json
+pnpm dlx shadcn-svelte@latest add https://kura.gfdc.dev/r/button.json
 ```
 
 The registry files declare their own dependencies, so components pull shared helpers like `utils` automatically.

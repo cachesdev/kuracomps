@@ -1,4 +1,4 @@
-packages: ["."]
+packages: ['.']
 BuiltDependencies:
   - '@tailwindcss/oxide'
   - esbuild

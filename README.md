@@ -1,6 +1,6 @@
 # Kura Components
 
-Kura is a shadcn-svelte registry and documentation site for the component system from the portfolio app.
+Kura is a shadcn-svelte registry and documentation site for the component system.
 
 ## Development
 
@@ -39,5 +39,3 @@ Then install by name:
 ```sh
 pnpm dlx shadcn-svelte@latest add button
 ```
-
-The registry intentionally does not include the portfolio app's Paraglide, MCP, auth, or database setup.

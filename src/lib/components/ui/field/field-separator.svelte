@@ -26,7 +26,7 @@
   <Separator class="absolute inset-0 top-1/2" />
   {#if children}
     <span
-      class="bg-background px-2 font-mono text-[0.625rem] font-semibold tracking-widest text-zinc-500 uppercase relative mx-auto block w-fit"
+      class="bg-background px-2 text-xs font-medium text-muted-foreground/50 relative mx-auto block w-fit"
       data-slot="field-separator-content"
     >
       {@render children()}

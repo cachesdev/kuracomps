@@ -23,13 +23,13 @@
 <ScrollAreaPrimitive.Root
   bind:ref
   data-slot="scroll-area"
-  class={cn('relative [--scrollbar-track:#09090b]', className)}
+  class={cn('relative [--scrollbar-track:var(--background)]', className)}
   {...restProps}
 >
   <ScrollAreaPrimitive.Viewport
     bind:ref={viewportRef}
     data-slot="scroll-area-viewport"
-    class="cn-scroll-area-viewport size-full rounded-[inherit] outline-none transition-[color,box-shadow] focus-visible:ring-2 focus-visible:ring-zinc-300/60 focus-visible:outline-1"
+    class="cn-scroll-area-viewport size-full rounded-[inherit] outline-none transition-[color,box-shadow] focus-visible:ring-1 focus-visible:ring-ring/60 focus-visible:outline-1"
   >
     {@render children?.()}
   </ScrollAreaPrimitive.Viewport>

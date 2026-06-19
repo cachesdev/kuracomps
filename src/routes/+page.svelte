@@ -12,12 +12,12 @@
 </svelte:head>
 
 <main id="main-content" class="min-h-dvh bg-background text-foreground">
-  <section class="terminal-grid">
+  <section class="bg-grid">
     <div class="container grid min-h-168 content-start gap-16 py-5 md:min-h-136">
       <nav class="flex items-center justify-between gap-4" aria-label="Primary">
         <a
           href={resolve('/')}
-          class="terminal-focus font-mono text-sm font-semibold tracking-widest uppercase"
+          class="focus-ring font-mono text-sm font-semibold tracking-widest uppercase"
         >
           kura
         </a>
@@ -25,25 +25,25 @@
           class="hidden items-center gap-6 font-mono text-xs font-semibold tracking-widest uppercase md:flex"
         >
           <a
-            class="terminal-focus text-muted-foreground transition-colors hover:text-foreground"
+            class="focus-ring text-muted-foreground transition-colors hover:text-foreground"
             href={resolve('/')}
           >
             Home
           </a>
           <a
-            class="terminal-focus text-muted-foreground transition-colors hover:text-foreground"
+            class="focus-ring text-muted-foreground transition-colors hover:text-foreground"
             href={resolve('/docs')}
           >
             Docs
           </a>
           <a
-            class="terminal-focus text-muted-foreground transition-colors hover:text-foreground"
+            class="focus-ring text-muted-foreground transition-colors hover:text-foreground"
             href={resolve('/docs/components')}
           >
             Components
           </a>
           <a
-            class="terminal-focus text-muted-foreground transition-colors hover:text-foreground"
+            class="focus-ring text-muted-foreground transition-colors hover:text-foreground"
             href={resolve('/docs/installation')}
           >
             Install

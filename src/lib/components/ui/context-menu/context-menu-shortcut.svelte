@@ -14,7 +14,7 @@
   bind:this={ref}
   data-slot="context-menu-shortcut"
   class={cn(
-    'ml-auto font-mono text-[11px] uppercase tracking-[0.12em] text-zinc-500 group-focus/context-menu-item:text-[#d0e891]',
+    'ml-auto  text-[11px]   text-muted-foreground/50 group-focus/context-menu-item:text-link',
     className
   )}
   {...restProps}

@@ -19,7 +19,7 @@
     data-slot="accordion-trigger"
     bind:ref
     class={cn(
-      'focus-visible:ring-zinc-300/30 focus-visible:border-zinc-300 **:data-[slot=accordion-trigger-icon]:text-zinc-500 gap-6 rounded-none px-4 py-3 text-left font-mono text-xs font-semibold tracking-widest text-zinc-100 uppercase hover:bg-zinc-950 hover:text-white focus-visible:ring-2 **:data-[slot=accordion-trigger-icon]:ml-auto **:data-[slot=accordion-trigger-icon]:size-3.5 group/accordion-trigger relative flex flex-1 items-start justify-between border border-transparent transition-all outline-none disabled:pointer-events-none disabled:opacity-50',
+      'focus-visible:ring-ring/50 focus-visible:border-ring **:data-[slot=accordion-trigger-icon]:text-muted-foreground/50 gap-6 rounded-none px-4 py-3 text-left  text-xs font-medium  text-foreground  hover:bg-muted hover:text-foreground focus-visible:ring-1 **:data-[slot=accordion-trigger-icon]:ml-auto **:data-[slot=accordion-trigger-icon]:size-3.5 group/accordion-trigger relative flex flex-1 items-start justify-between border border-transparent transition-all outline-none disabled:pointer-events-none disabled:opacity-50',
       className
     )}
     {...restProps}

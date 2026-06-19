@@ -50,7 +50,7 @@ get along, so we shut typescript up by casting `value` to `never`.
   {weekdayFormat}
   {disableDaysOutsideMonth}
   class={cn(
-    'group/calendar border border-zinc-800 bg-background p-3 text-zinc-100 [--cell-radius:0] [--cell-size:--spacing(8)] in-data-[slot=card-content]:bg-transparent in-data-[slot=popover-content]:bg-transparent',
+    'group/calendar border border-border bg-background p-2 text-foreground [--cell-size:--spacing(7)] in-data-[slot=card-content]:bg-transparent in-data-[slot=popover-content]:bg-transparent',
     className
   )}
   {locale}
@@ -81,7 +81,7 @@ get along, so we shut typescript up by casting `value` to `never`.
           </Calendar.Header>
           <Calendar.Grid>
             <Calendar.GridHead>
-              <Calendar.GridRow class="select-none border-b border-zinc-900">
+              <Calendar.GridRow class="select-none border-b border-border">
                 {#each weekdays as weekday, i (i)}
                   <Calendar.HeadCell>
                     {weekday.slice(0, 2)}

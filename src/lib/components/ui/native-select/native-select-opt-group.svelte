@@ -13,7 +13,7 @@
 <optgroup
   bind:this={ref}
   data-slot="native-select-opt-group"
-  class={cn('bg-zinc-950 text-zinc-300', className)}
+  class={cn('bg-muted text-muted-foreground', className)}
   {...restProps}
 >
   {@render children?.()}

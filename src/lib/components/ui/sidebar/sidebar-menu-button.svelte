@@ -2,11 +2,11 @@
   import { tv, type VariantProps } from 'tailwind-variants';
 
   export const sidebarMenuButtonVariants = tv({
-    base: 'flex w-full items-center gap-2 overflow-hidden border border-transparent px-3 py-2 text-left font-mono text-xs uppercase tracking-[0.04em] text-zinc-400 outline-hidden transition-[width,height,padding,background-color,border-color,color] hover:border-[#b9d765]/50 hover:bg-[#18181b] hover:text-zinc-50 active:border-[#b9d765]/50 active:bg-[#18181b] active:text-zinc-50 data-active:border-[#b9d765]/50 data-active:bg-[#18181b] data-active:text-[#d0e891] data-open:hover:border-[#b9d765]/50 data-open:hover:bg-[#18181b] data-open:hover:text-zinc-50 focus-visible:ring-2 focus-visible:ring-zinc-300/60 data-active:font-medium group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! peer/menu-button group/menu-button disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0 [&>span:last-child]:truncate',
+    base: 'flex w-full items-center gap-2 overflow-hidden border border-transparent px-3 py-2 text-left  text-xs   text-muted-foreground outline-hidden transition-[width,height,padding,background-color,border-color,color] hover:border-primary/50 hover:bg-muted hover:text-foreground active:border-primary/50 active:bg-muted active:text-foreground data-active:border-primary/50 data-active:bg-muted data-active:text-link data-open:hover:border-primary/50 data-open:hover:bg-muted data-open:hover:text-foreground focus-visible:ring-1 focus-visible:ring-ring/60 data-active:font-medium group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! peer/menu-button group/menu-button disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0 [&>span:last-child]:truncate',
     variants: {
       variant: {
         default: '',
-        outline: 'border-[#222225] bg-[#09090b] shadow-none hover:border-[#b9d765]/50'
+        outline: 'border-border bg-popover  hover:border-primary/50'
       },
       size: {
         default: 'h-9',

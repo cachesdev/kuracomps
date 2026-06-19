@@ -106,7 +106,7 @@
   <div
     bind:this={ref}
     class={cn(
-      'grid min-w-[9rem] items-start gap-1.5 border border-zinc-800 bg-zinc-950 px-2.5 py-1.5 font-mono text-xs text-zinc-100 shadow-none',
+      'grid min-w-[9rem] items-start gap-1.5 border border-border bg-muted px-2.5 py-1.5  text-xs text-foreground ',
       className
     )}
     {...restProps}
@@ -126,7 +126,7 @@
         {@const indicatorColor = color || item.config?.color || item.color}
         <div
           class={cn(
-            'flex w-full flex-wrap items-stretch gap-2 [&>svg]:size-2.5 [&>svg]:text-zinc-500',
+            'flex w-full flex-wrap items-stretch gap-2 [&>svg]:size-2.5 [&>svg]:text-muted-foreground/50',
             indicator === 'dot' && 'items-center'
           )}
         >
@@ -162,12 +162,12 @@
                 {#if nestLabel}
                   {@render TooltipLabel()}
                 {/if}
-                <span class="text-zinc-500">
+                <span class="text-muted-foreground/50">
                   {itemConfig?.label || item.label}
                 </span>
               </div>
               {#if item.value !== undefined}
-                <span class="font-mono font-semibold text-zinc-100 tabular-nums">
+                <span class=" font-medium text-foreground tabular-nums">
                   {item.value.toLocaleString()}
                 </span>
               {/if}

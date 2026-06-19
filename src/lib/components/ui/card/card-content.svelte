@@ -13,7 +13,7 @@
 <div
   bind:this={ref}
   data-slot="card-content"
-  class={cn('px-8 text-zinc-300 group-data-[size=sm]/card:px-5', className)}
+  class={cn('px-4 text-card-foreground group-data-[size=sm]/card:px-3', className)}
   {...restProps}
 >
   {@render children?.()}

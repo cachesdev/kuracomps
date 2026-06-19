@@ -14,6 +14,6 @@
   bind:ref
   bind:open
   data-slot="collapsible"
-  class={cn('border border-zinc-800 bg-background text-zinc-100', className)}
+  class={cn('border border-border bg-background text-foreground', className)}
   {...restProps}
 />

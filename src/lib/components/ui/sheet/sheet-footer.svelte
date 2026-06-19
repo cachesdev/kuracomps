@@ -13,7 +13,7 @@
 <div
   bind:this={ref}
   data-slot="sheet-footer"
-  class={cn('mt-auto flex flex-col gap-2 border-t border-[#222225] p-8', className)}
+  class={cn('mt-auto flex flex-col gap-2 p-4', className)}
   {...restProps}
 >
   {@render children?.()}

@@ -13,7 +13,7 @@
   bind:ref
   data-slot="alert-dialog-description"
   class={cn(
-    'mt-0.5 text-sm leading-relaxed text-zinc-400 text-balance md:text-pretty *:[a]:text-[#d0e891] *:[a]:underline *:[a]:underline-offset-3 *:[a]:hover:text-zinc-50',
+    'text-muted-foreground text-xs/relaxed text-balance md:text-pretty *:[a]:text-link *:[a]:underline *:[a]:underline-offset-3 *:[a]:hover:text-foreground',
     className
   )}
   {...restProps}

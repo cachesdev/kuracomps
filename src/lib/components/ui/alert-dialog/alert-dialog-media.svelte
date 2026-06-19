@@ -14,7 +14,7 @@
   bind:this={ref}
   data-slot="alert-dialog-media"
   class={cn(
-    "mb-2 inline-flex size-16 items-center justify-center border border-[#222225] bg-[#18181b] text-[#d0e891] sm:group-data-[size=default]/alert-dialog-content:row-span-2 *:[svg:not([class*='size-'])]:size-8",
+    'bg-muted mb-2 inline-flex size-10 items-center justify-center text-link sm:group-data-[size=default]/alert-dialog-content:row-span-2 *:[svg:not([class*="size-"])]:size-6',
     className
   )}
   {...restProps}

@@ -12,9 +12,6 @@
 <CommandPrimitive.Empty
   bind:ref
   data-slot="command-empty"
-  class={cn(
-    'py-6 text-center font-mono text-xs uppercase tracking-[0.08em] text-zinc-500',
-    className
-  )}
+  class={cn('py-6 text-center  text-xs   text-muted-foreground/50', className)}
   {...restProps}
 />

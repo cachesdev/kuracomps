@@ -13,7 +13,7 @@
   bind:ref
   data-slot="tooltip-trigger"
   class={cn(
-    'outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring/30',
+    'outline-none transition-colors focus-visible:ring-1 focus-visible:ring-ring/50',
     className
   )}
   {...restProps}

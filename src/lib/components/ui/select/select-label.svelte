@@ -14,7 +14,7 @@
   bind:this={ref}
   data-slot="select-label"
   class={cn(
-    'border-b border-zinc-900 px-3 py-2 font-mono text-[0.625rem] font-semibold tracking-widest text-zinc-500 uppercase',
+    'border-b border-border px-3 py-2  text-xs font-medium  text-muted-foreground/50 ',
     className
   )}
   {...restProps}

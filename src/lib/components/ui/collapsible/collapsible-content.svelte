@@ -12,6 +12,6 @@
 <CollapsiblePrimitive.Content
   bind:ref
   data-slot="collapsible-content"
-  class={cn('bg-background px-3 py-3 text-sm text-zinc-300', className)}
+  class={cn('bg-background px-3 py-3 text-sm text-muted-foreground', className)}
   {...restProps}
 />

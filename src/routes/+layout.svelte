@@ -14,7 +14,7 @@
 </svelte:head>
 <a
   href="#main-content"
-  class="terminal-focus fixed top-3 left-3 z-70 -translate-y-16 border border-border bg-card px-3 py-2 font-mono text-xs font-semibold tracking-widest text-foreground uppercase transition-transform focus-visible:translate-y-0"
+  class="focus-ring fixed top-3 left-3 z-70 -translate-y-16 border border-border bg-card px-3 py-2 font-mono text-xs font-semibold tracking-widest text-foreground uppercase transition-transform focus-visible:translate-y-0"
 >
   Skip to content
 </a>

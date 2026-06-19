@@ -17,9 +17,9 @@
 
   const mergedProps = $derived({
     class: cn(
-      'absolute top-1.5 right-1 flex aspect-square w-5 items-center justify-center border border-transparent p-0 text-zinc-500 outline-hidden transition-colors hover:border-[#b9d765]/50 hover:bg-[#18181b] hover:text-[#d0e891] focus-visible:ring-2 focus-visible:ring-zinc-300/60 peer-hover/menu-button:text-[#d0e891] peer-data-[size=default]/menu-button:top-2 peer-data-[size=lg]/menu-button:top-2.5 peer-data-[size=sm]/menu-button:top-1 group-data-[collapsible=icon]:hidden after:absolute after:-inset-2 md:after:hidden [&>svg]:size-3.5 [&>svg]:shrink-0',
+      'absolute top-1.5 right-1 flex aspect-square w-5 items-center justify-center border border-transparent p-0 text-muted-foreground/50 outline-hidden transition-colors hover:border-primary/50 hover:bg-muted hover:text-link focus-visible:ring-1 focus-visible:ring-ring/60 peer-hover/menu-button:text-link peer-data-[size=default]/menu-button:top-2 peer-data-[size=lg]/menu-button:top-2.5 peer-data-[size=sm]/menu-button:top-1 group-data-[collapsible=icon]:hidden after:absolute after:-inset-2 md:after:hidden [&>svg]:size-3.5 [&>svg]:shrink-0',
       showOnHover &&
-        'peer-data-active/menu-button:text-[#d0e891] group-focus-within/menu-item:opacity-100 group-hover/menu-item:opacity-100 data-open:opacity-100 md:opacity-0',
+        'peer-data-active/menu-button:text-link group-focus-within/menu-item:opacity-100 group-hover/menu-item:opacity-100 data-open:opacity-100 md:opacity-0',
       className
     ),
     'data-slot': 'sidebar-menu-action',

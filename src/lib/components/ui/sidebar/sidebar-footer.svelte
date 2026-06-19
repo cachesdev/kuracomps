@@ -14,7 +14,7 @@
   bind:this={ref}
   data-slot="sidebar-footer"
   data-sidebar="footer"
-  class={cn('flex flex-col gap-2 border-t border-[#222225] p-2', className)}
+  class={cn('flex flex-col gap-2 border-t border-border p-2', className)}
   {...restProps}
 >
   {@render children?.()}

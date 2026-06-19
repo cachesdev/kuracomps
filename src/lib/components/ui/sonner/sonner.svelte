@@ -15,22 +15,22 @@
 <Sonner
   theme={mode.current}
   class="toaster group"
-  style="--normal-bg: #09090b; --normal-text: #fafafa; --normal-border: #222225; --success-bg: #09090b; --success-text: #fafafa; --success-border: #222225; --error-bg: #09090b; --error-text: #f85149; --error-border: rgba(209,36,47,0.6); --warning-bg: #09090b; --warning-text: #d1aa24; --warning-border: #222225; --info-bg: #09090b; --info-text: #d0e891; --info-border: #222225;"
+  style="--normal-bg: var(--popover); --normal-text: var(--popover-foreground); --normal-border: var(--border); --success-bg: var(--popover); --success-text: var(--popover-foreground); --success-border: var(--border); --error-bg: var(--popover); --error-text: var(--destructive); --error-border: var(--destructive); --warning-bg: var(--popover); --warning-text: var(--warning); --warning-border: var(--border); --info-bg: var(--popover); --info-text: var(--link); --info-border: var(--border);"
   {...restProps}
 >
   {#snippet loadingIcon()}
-    <SpinnerIcon class="size-4 animate-spin text-[#d0e891]" />
+    <SpinnerIcon class="size-4 animate-spin text-link" />
   {/snippet}
   {#snippet successIcon()}
-    <CheckCircleIcon class="size-4 text-[#28c840]" />
+    <CheckCircleIcon class="size-4 text-success" />
   {/snippet}
   {#snippet errorIcon()}
-    <XCircleIcon class="size-4 text-[#f85149]" />
+    <XCircleIcon class="size-4 text-destructive" />
   {/snippet}
   {#snippet infoIcon()}
-    <InfoIcon class="size-4 text-[#d0e891]" />
+    <InfoIcon class="size-4 text-link" />
   {/snippet}
   {#snippet warningIcon()}
-    <WarningIcon class="size-4 text-[#d1aa24]" />
+    <WarningIcon class="size-4 text-warning" />
   {/snippet}
 </Sonner>

@@ -12,7 +12,7 @@
 <RangeCalendarPrimitive.Header
   bind:ref
   class={cn(
-    'flex h-(--cell-size) w-full items-center justify-center gap-1.5 border-b border-zinc-900 text-sm font-medium',
+    'flex h-(--cell-size) w-full items-center justify-center gap-1.5 border-b border-border text-sm font-medium',
     className
   )}
   {...restProps}

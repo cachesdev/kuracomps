@@ -2,12 +2,12 @@
   import { type VariantProps, tv } from 'tailwind-variants';
 
   export const toggleVariants = tv({
-    base: "hover:text-zinc-50 aria-pressed:border-[#b9d765]/60 aria-pressed:bg-[#b9d765]/15 aria-pressed:text-zinc-50 focus-visible:border-zinc-300 focus-visible:ring-zinc-300/30 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive gap-1.5 rounded-full font-mono text-xs font-semibold tracking-widest uppercase transition-colors duration-200 [&_svg:not([class*='size-'])]:size-3.5 group/toggle hover:bg-zinc-900 inline-flex items-center justify-center whitespace-nowrap outline-none focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+    base: "hover:text-foreground aria-pressed:border-primary/60 aria-pressed:bg-primary/15 aria-pressed:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive gap-1.5 rounded-none  text-xs font-medium   transition-colors duration-200 [&_svg:not([class*='size-'])]:size-3.5 group/toggle hover:bg-muted inline-flex items-center justify-center whitespace-nowrap outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
     variants: {
       variant: {
-        default: 'bg-transparent text-zinc-400',
+        default: 'bg-transparent text-muted-foreground',
         outline:
-          'border border-zinc-800 bg-background text-zinc-300 hover:border-zinc-700 hover:bg-zinc-900'
+          'border border-border bg-background text-muted-foreground hover:border-border hover:bg-muted'
       },
       size: {
         default:

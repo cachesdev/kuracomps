@@ -2,11 +2,11 @@
   import { tv, type VariantProps } from 'tailwind-variants';
 
   export const emptyMediaVariants = tv({
-    base: 'mb-2 flex shrink-0 items-center justify-center text-zinc-400 [&_svg]:pointer-events-none [&_svg]:shrink-0',
+    base: 'mb-2 flex shrink-0 items-center justify-center text-muted-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0',
     variants: {
       variant: {
         default: 'bg-transparent',
-        icon: "flex size-10 shrink-0 items-center justify-center border border-zinc-800 bg-zinc-950 text-[#d0e891] [&_svg:not([class*='size-'])]:size-5"
+        icon: "flex size-10 shrink-0 items-center justify-center border border-border bg-muted text-link [&_svg:not([class*='size-'])]:size-5"
       }
     },
     defaultVariants: {

@@ -21,7 +21,7 @@
     <div class="container flex h-(--header-height) items-center gap-4">
       <a
         href={resolve('/docs')}
-        class="terminal-focus font-mono text-sm font-semibold tracking-widest uppercase"
+        class="focus-ring font-mono text-sm font-semibold tracking-widest uppercase"
       >
         kura
       </a>
@@ -34,7 +34,7 @@
               target={item.external ? '_blank' : undefined}
               rel={item.external ? 'noreferrer' : undefined}
               class={[
-                'terminal-focus px-3 py-2 font-mono text-xs font-semibold tracking-widest uppercase transition-colors hover:text-foreground',
+                'focus-ring px-3 py-2 font-mono text-xs font-semibold tracking-widest uppercase transition-colors hover:text-foreground',
                 isActive(item.href) ? 'text-foreground' : 'text-muted-foreground'
               ]}
               aria-current={isActive(item.href) ? 'page' : undefined}
@@ -61,14 +61,14 @@
       <nav class="grid gap-8" aria-label="Documentation">
         {#each sidebarNavItems as section (section.title)}
           <section class="grid gap-3">
-            <h2 class="terminal-label">{section.title}</h2>
+            <h2 class="eyebrow">{section.title}</h2>
             <div class="grid gap-1">
               {#each section.items as item (item.title)}
                 {#if item.href}
                   <a
                     href={item.href}
                     class={[
-                      'terminal-focus border-l px-3 py-1.5 text-sm leading-6 transition-colors hover:border-primary/70 hover:text-foreground',
+                      'focus-ring border-l px-3 py-1.5 text-sm leading-6 transition-colors hover:border-primary/70 hover:text-foreground',
                       isActive(item.href)
                         ? 'border-primary text-foreground'
                         : 'border-transparent text-muted-foreground'

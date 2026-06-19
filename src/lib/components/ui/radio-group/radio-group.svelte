@@ -14,6 +14,6 @@
   bind:ref
   bind:value
   data-slot="radio-group"
-  class={cn('grid w-full gap-3 text-zinc-300', className)}
+  class={cn('grid w-full gap-3 text-muted-foreground', className)}
   {...restProps}
 />

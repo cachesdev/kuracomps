@@ -3,15 +3,23 @@
 ## 1. Visual Theme & Atmosphere
 
 A dark, framed-grid interface for component-heavy product work. The atmosphere is
-precise, dense enough to feel operational, and restrained enough to avoid terminal
-cosplay. Think black-box lab bench: off-black panels, thin structural lines, plain
-component-focused copy, and one muted signal accent.
+precise, dense, and restrained — off-black panels, thin structural lines, plain
+component-focused copy, and one muted signal accent. Think black-box lab bench, not
+decorative dashboard.
 
-- **Density:** Daily App Balanced, 6/10. Information is compact, but sections keep
-  enough air for scanning.
+- **Density:** Operational, 8/10. Information is compact, sections stay tight, and
+  components use the minimum padding that reads as intentional. Air comes from layout
+  grid gaps, not from generous component padding.
 - **Variance:** Offset Asymmetric, 7/10. Heroes and major sections use uneven columns,
   wide empty cells, and offset visual blocks.
 - **Motion:** Fluid CSS, 5/10. Motion is deliberate, short, and tied to state.
+
+> **Style lineage:** Adapted from the Lyra style (shadcn-svelte registry) with
+> kuracomps-specific deviations: pill buttons via `<PillButton>`, citron soft accent
+> bar on alerts, Signal Citron wash for table selection, `.hairline-frame` inset
+> light on surfaces, and `bg-black/10` lighter overlays. Typography is Lyra-derived
+> (sans, normal-case, `text-xs font-medium` for component labels); mono uppercase
+> survives only as decorative `.eyebrow` labels.
 
 ## 2. Color Palette & Roles
 
@@ -41,32 +49,49 @@ or pure black.
   (`0.95` to `1.05`), and balanced wrapping.
 - **Body:** Geist Variable. Body copy uses relaxed leading (`1.65` to `1.8`) and max
   width near `65ch`.
-- **Mono:** system monospace stack. Use for form labels, code, keyboard shortcuts,
-  technical metadata, and real metric numbers.
-- **Labels:** mono, uppercase, `0.625rem` to `0.75rem`, positive tracking
-  (`0.08em` to `0.14em`). A label must name the actual UI affordance or field. Do not
-  use decorative slash labels like "// system" or vague headers like "audit-ready".
-- **Banned:** Inter, generic serif fonts, generic title case, oversized all-caps
-  paragraphs, and proportional metric numbers.
+- **Mono:** system monospace stack. Use for code, keyboard shortcuts, technical
+  metadata, and real metric numbers. Component labels (buttons, badges, card titles,
+  menu items, tab triggers) use the sans body font, not mono.
+- **Eyebrows:** the `.eyebrow` utility class applies mono, uppercase, `text-xs`,
+  `font-semibold`, `tracking-widest`, `text-muted-foreground`. Use for decorative
+  section eyebrows, dashboard metric labels, and signal-map captions — not for
+  component affordance labels. An eyebrow must name the section or metric, not the UI
+  affordance. Do not use decorative slash labels like "// system" or vague headers
+  like "audit-ready".
+- **Banned:** Inter, generic serif fonts, oversized all-caps paragraphs, and
+  proportional metric numbers.
 
 ## 4. Component Stylings
 
-- **Buttons:** Rounded pills are reserved for clear actions. Primary buttons use Signal
-  Citron fill with dark text. Outline buttons stay dark with a thin border. Active
-  feedback uses a 1px downward translate. No neon outer glow.
+- **Buttons:** Sharp corners (`rounded-none`) across all variants. Primary uses Signal
+  Citron fill with dark text. Outline stays dark with a thin border. Active feedback
+  uses a 1px downward translate. Focus rings are `ring-1 ring-ring/50` (light, not
+  heavy). No neon outer glow. Pills are an opt-in affordance via `<PillButton>`,
+  restricted to `default` and `outline` action variants, used for destination CTAs
+  (onboarding, hero, modal confirm, empty-state). Do not use pills in toolbars, button
+  groups, tables, or inline in text.
 - **Cards and panels:** Use cards only for real hierarchy. Default surface is Panel
-  Charcoal with a 1px Structural Border and subtle inset light. Prefer grid cells,
-  top rules, and dividers over floating card stacks.
-- **Badges:** Treat badges as compact mono labels. Avoid marketing-style pills for
-  large groups; use restrained borders and small fills.
+  Charcoal with the `.hairline-frame` utility (1px `ring-foreground/10` ring + inset
+  top-edge light). No drop shadow on cards. Prefer grid cells, top rules, and dividers
+  over floating card stacks. All framed surfaces (cards, dialogs, popovers, menus,
+  sheets, tooltips) share the same `.hairline-frame` treatment.
+- **Badges:** Compact `h-5` labels with `text-xs font-medium` (sans, normal-case).
+  Default badge uses a restrained citron tint (`bg-primary/15 border-primary/45`), not
+  a solid citron fill. Avoid marketing-style pills for large groups.
 - **Inputs and forms:** Label above input, helper text below when useful, inline error
   text below the field with `role="alert"`. Focus ring uses Signal Citron at low
-  opacity. No floating labels.
-- **Menus and overlays:** All overlay content shares Panel Charcoal, Structural Border,
-  `z-50`, and short transform/opacity entrance. Reuse the same selected/focus color
-  across command, dropdown, context menu, menubar, tabs, and calendars.
+  opacity (`ring-1 ring-ring/50`). No floating labels.
+- **Menus and overlays:** All overlay content shares Panel Charcoal, `.hairline-frame`
+  hairline, `z-50`, and short transform/opacity entrance. Modal overlays use
+  `bg-black/10 backdrop-blur-xs` (lighter dim — lets the grid show through, preserves
+  workspace context). Reuse the same selected/focus color across command, dropdown,
+  context menu, menubar, tabs, and calendars.
+- **Alerts:** Lyra-density framed boxes (`px-2.5 py-2 gap-0.5`) with a preserved left
+  accent bar (`after:bg-link` for default, `after:bg-destructive` for destructive).
+  The accent bar distinguishes alerts from cards at a glance.
 - **Tables and data:** Use mono numbers with tabular rhythm. Hover rows use Raised
-  Zinc. Selected rows use Signal Citron wash, not full neon fills.
+  Zinc (`hover:bg-accent`). Selected rows use Signal Citron wash
+  (`bg-primary-wash` at `0.16` alpha), not full neon fills.
 - **Loaders:** Prefer skeletons that match the final layout shape. Spinners are allowed
   only as tiny inline status indicators.
 - **Empty states:** Compose icon/media, short title, explanation, and one action.

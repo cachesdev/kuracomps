@@ -9,4 +9,4 @@
   }: RangeCalendarPrimitive.GridHeadProps = $props();
 </script>
 
-<RangeCalendarPrimitive.GridHead bind:ref class={cn('bg-zinc-950/70', className)} {...restProps} />
+<RangeCalendarPrimitive.GridHead bind:ref class={cn('bg-muted/70', className)} {...restProps} />

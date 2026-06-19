@@ -19,7 +19,7 @@
   role="group"
   aria-roledescription="slide"
   class={cn(
-    'min-w-0 shrink-0 grow-0 basis-full border-zinc-900',
+    'min-w-0 shrink-0 grow-0 basis-full border-border',
     emblaCtx.orientation === 'horizontal' ? 'border-l ps-px' : 'border-t pt-px',
     className
   )}

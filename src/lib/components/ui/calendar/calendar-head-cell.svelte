@@ -11,9 +11,6 @@
 
 <CalendarPrimitive.HeadCell
   bind:ref
-  class={cn(
-    'w-(--cell-size) py-1 font-mono text-[0.7rem] font-semibold tracking-[0.14em] text-zinc-500 uppercase',
-    className
-  )}
+  class={cn('w-(--cell-size) py-1 text-xs font-medium text-muted-foreground', className)}
   {...restProps}
 />

@@ -85,7 +85,7 @@
 <div
   bind:this={ref}
   data-slot="carousel"
-  class={cn('relative border border-zinc-800 bg-background text-zinc-100', className)}
+  class={cn('relative border border-border bg-background text-foreground', className)}
   role="region"
   aria-roledescription="carousel"
   {...restProps}

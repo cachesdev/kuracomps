@@ -4,9 +4,11 @@ import Root, {
   type ButtonVariant,
   buttonVariants
 } from './button.svelte';
+import PillButton from './pill-button.svelte';
 
 export {
   Root,
+  PillButton,
   type ButtonProps as Props,
   //
   Root as Button,

@@ -17,7 +17,7 @@
   bind:this={paneGroup}
   data-slot="resizable-pane-group"
   class={cn(
-    'cn-resizable-panel-group flex h-full w-full border border-zinc-800 bg-background text-zinc-100 data-[direction=vertical]:flex-col',
+    'cn-resizable-panel-group flex h-full w-full border border-border bg-background text-foreground data-[direction=vertical]:flex-col',
     className
   )}
   {...restProps}

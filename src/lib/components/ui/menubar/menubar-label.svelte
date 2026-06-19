@@ -19,7 +19,7 @@
   data-slot="menubar-label"
   data-inset={inset}
   class={cn(
-    'px-3.5 py-2 font-mono text-xs font-semibold uppercase tracking-[0.08em] text-zinc-500 data-inset:pl-9.5',
+    'px-3.5 py-2  text-xs font-medium   text-muted-foreground/50 data-inset:pl-9.5',
     className
   )}
   {...restProps}

@@ -16,7 +16,7 @@
   data-slot="breadcrumb-separator"
   role="presentation"
   aria-hidden="true"
-  class={cn('text-zinc-700 [&>svg]:size-3.5', className)}
+  class={cn('text-muted-foreground/50 [&>svg]:size-3.5', className)}
   {...restProps}
 >
   {#if children}

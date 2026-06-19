@@ -14,7 +14,7 @@
   bind:this={ref}
   data-slot="pagination-content"
   class={cn(
-    'flex items-center gap-1 rounded-full border border-zinc-800 bg-background p-1',
+    'flex items-center gap-1 rounded-none border border-border bg-background p-1',
     className
   )}
   {...restProps}

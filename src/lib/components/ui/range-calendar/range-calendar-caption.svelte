@@ -42,7 +42,7 @@
 
 {#snippet MonthSelect()}
   <RangeCalendarMonthSelect
-    class="font-mono text-xs font-semibold tracking-[0.14em] uppercase"
+    class="text-sm font-medium"
     {months}
     {monthFormat}
     value={month.month}
@@ -56,12 +56,7 @@
 {/snippet}
 
 {#snippet YearSelect()}
-  <RangeCalendarYearSelect
-    class="font-mono text-xs font-semibold tracking-[0.14em] uppercase"
-    {years}
-    {yearFormat}
-    value={month.year}
-  />
+  <RangeCalendarYearSelect class="text-sm font-medium" {years} {yearFormat} value={month.year} />
 {/snippet}
 
 {#if captionLayout === 'dropdown'}
@@ -70,19 +65,13 @@
 {:else if captionLayout === 'dropdown-months'}
   {@render MonthSelect()}
   {#if placeholder}
-    <span class="font-mono text-xs font-semibold tracking-[0.14em] text-zinc-100 uppercase"
-      >{formatYear(placeholder)}</span
-    >
+    <span class="text-sm font-medium text-foreground">{formatYear(placeholder)}</span>
   {/if}
 {:else if captionLayout === 'dropdown-years'}
   {#if placeholder}
-    <span class="font-mono text-xs font-semibold tracking-[0.14em] text-zinc-100 uppercase"
-      >{formatMonth(placeholder)}</span
-    >
+    <span class="text-sm font-medium text-foreground">{formatMonth(placeholder)}</span>
   {/if}
   {@render YearSelect()}
 {:else}
-  <span class="font-mono text-xs font-semibold tracking-[0.14em] text-zinc-100 uppercase"
-    >{formatMonth(month)} {formatYear(month)}</span
-  >
+  <span class="text-sm font-medium text-foreground">{formatMonth(month)} {formatYear(month)}</span>
 {/if}

@@ -11,6 +11,6 @@
 
 <RangeCalendarPrimitive.GridRow
   bind:ref
-  class={cn('flex divide-x divide-zinc-900', className)}
+  class={cn('flex divide-x divide-border', className)}
   {...restProps}
 />

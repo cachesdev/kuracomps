@@ -14,7 +14,7 @@
   bind:this={ref}
   data-slot="sidebar-inset"
   class={cn(
-    'relative flex w-full flex-1 flex-col bg-background md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:rounded-none md:peer-data-[variant=inset]:border md:peer-data-[variant=inset]:border-[#222225] md:peer-data-[variant=inset]:shadow-none md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2',
+    'relative flex w-full flex-1 flex-col bg-background md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:rounded-none md:peer-data-[variant=inset]:border md:peer-data-[variant=inset]:border-border md:peer-data-[variant=inset]: md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2',
     className
   )}
   {...restProps}

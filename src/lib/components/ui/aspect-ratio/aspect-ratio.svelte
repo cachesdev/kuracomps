@@ -12,6 +12,6 @@
 <AspectRatioPrimitive.Root
   bind:ref
   data-slot="aspect-ratio"
-  class={cn('overflow-hidden border border-zinc-800 bg-background text-zinc-100', className)}
+  class={cn('overflow-hidden border border-border bg-background text-foreground', className)}
   {...restProps}
 />

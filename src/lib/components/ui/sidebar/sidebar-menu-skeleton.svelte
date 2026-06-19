@@ -25,10 +25,10 @@
   {...restProps}
 >
   {#if showIcon}
-    <Skeleton class="size-3.5 rounded-none bg-[#27272a]" data-sidebar="menu-skeleton-icon" />
+    <Skeleton class="size-3.5 rounded-none bg-muted" data-sidebar="menu-skeleton-icon" />
   {/if}
   <Skeleton
-    class="h-3 max-w-(--skeleton-width) flex-1 rounded-none bg-[#27272a]"
+    class="h-3 max-w-(--skeleton-width) flex-1 rounded-none bg-muted"
     data-sidebar="menu-skeleton-text"
     style="--skeleton-width: {width};"
   />

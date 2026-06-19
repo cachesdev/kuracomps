@@ -27,7 +27,7 @@
     {side}
     {sideOffset}
     class={cn(
-      'data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 z-50 min-w-36 origin-(--bits-menubar-content-transform-origin) overflow-hidden border border-[#222225] bg-[#09090b] p-1 text-zinc-50 shadow-none duration-100',
+      'data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 z-50 min-w-36 origin-(--bits-menubar-content-transform-origin) overflow-hidden bg-popover p-1 text-xs text-popover-foreground ring-1 ring-foreground/10 shadow-md  duration-100',
       className
     )}
     {...restProps}

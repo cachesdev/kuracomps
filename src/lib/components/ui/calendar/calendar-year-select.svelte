@@ -13,7 +13,7 @@
 
 <span
   class={cn(
-    'relative flex border border-zinc-800 bg-zinc-950 text-zinc-100 has-focus:border-zinc-300 has-focus:ring-2 has-focus:ring-zinc-300/30',
+    'relative flex border border-border bg-muted text-foreground has-focus:border-ring has-focus:ring-1 has-focus:ring-ring/50',
     className
   )}
 >
@@ -36,7 +36,7 @@
         {/each}
       </select>
       <span
-        class="flex h-(--cell-size) items-center gap-1 ps-2 pe-1 text-sm font-medium text-zinc-100 select-none [&>svg]:size-3.5 [&>svg]:text-zinc-500"
+        class="flex h-(--cell-size) items-center gap-1 ps-2 pe-1 text-sm font-medium text-foreground select-none [&>svg]:size-3.5 [&>svg]:text-muted-foreground"
         aria-hidden="true"
       >
         {yearItems.find((item) => item.value === value)?.label || selectedYearItem.label}

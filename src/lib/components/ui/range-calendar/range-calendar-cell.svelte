@@ -12,7 +12,7 @@
 <RangeCalendarPrimitive.Cell
   bind:ref
   class={cn(
-    'relative size-(--cell-size) border-r border-b border-zinc-900 p-0 text-center text-sm focus-within:z-20 data-[range-middle]:rounded-e-(--cell-radius) [&:has([data-range-middle])]:bg-[#b9d765]/20 [&:has([data-selected])]:bg-[#b9d765]/15 [&:first-child[data-selected]_[data-bits-day]]:rounded-s-(--cell-radius) [&:has([data-range-end])]:rounded-e-(--cell-radius) [&:has([data-range-middle])]:rounded-none first:[&:has([data-range-middle])]:rounded-s-(--cell-radius) last:[&:has([data-range-middle])]:rounded-e-(--cell-radius) [&:has([data-range-start])]:rounded-s-(--cell-radius) [&:last-child[data-selected]_[data-bits-day]]:rounded-e-(--cell-radius)',
+    'relative size-(--cell-size) border-r border-b border-border p-0 text-center text-xs focus-within:z-20 data-[range-middle]:rounded-e-none [&:has([data-range-middle])]:bg-primary/20 [&:has([data-selected])]:bg-primary/15 [&:first-child[data-selected]_[data-bits-day]]:rounded-s-none [&:has([data-range-end])]:rounded-e-none [&:has([data-range-middle])]:rounded-none first:[&:has([data-range-middle])]:rounded-s-none last:[&:has([data-range-middle])]:rounded-e-none [&:has([data-range-start])]:rounded-s-none [&:last-child[data-selected]_[data-bits-day]]:rounded-e-none',
     className
   )}
   {...restProps}

@@ -13,7 +13,7 @@
   bind:ref
   data-slot="context-menu-trigger"
   class={cn(
-    'cn-context-menu-trigger select-none outline-none focus-visible:ring-2 focus-visible:ring-ring/30',
+    'cn-context-menu-trigger select-none outline-none focus-visible:ring-1 focus-visible:ring-ring/50',
     className
   )}
   {...restProps}

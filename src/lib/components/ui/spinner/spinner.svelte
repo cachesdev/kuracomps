@@ -21,6 +21,6 @@
   color={color === null ? undefined : color}
   stroke={stroke === null ? undefined : stroke}
   aria-label={ariaLabel}
-  class={cn('size-4 animate-spin text-[#d0e891]', className)}
+  class={cn('size-4 animate-spin text-link', className)}
   {...restProps}
 />

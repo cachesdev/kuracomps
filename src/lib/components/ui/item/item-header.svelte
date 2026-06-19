@@ -13,7 +13,7 @@
 <div
   bind:this={ref}
   data-slot="item-header"
-  class={cn('flex basis-full items-center justify-between gap-2 text-zinc-100', className)}
+  class={cn('flex basis-full items-center justify-between gap-2 text-foreground', className)}
   {...restProps}
 >
   {@render children?.()}

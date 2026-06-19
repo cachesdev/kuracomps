@@ -11,9 +11,6 @@
 
 <RangeCalendarPrimitive.Heading
   bind:ref
-  class={cn(
-    'px-(--cell-size) font-mono text-xs font-semibold tracking-[0.14em] text-zinc-100 uppercase',
-    className
-  )}
+  class={cn('px-(--cell-size) text-sm font-medium text-foreground', className)}
   {...restProps}
 />

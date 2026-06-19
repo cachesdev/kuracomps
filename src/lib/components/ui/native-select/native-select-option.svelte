@@ -13,7 +13,7 @@
 <option
   bind:this={ref}
   data-slot="native-select-option"
-  class={cn('bg-zinc-950 text-zinc-50', className)}
+  class={cn('bg-muted text-foreground', className)}
   {...restProps}
 >
   {@render children?.()}

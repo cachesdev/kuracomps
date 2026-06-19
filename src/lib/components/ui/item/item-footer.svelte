@@ -14,7 +14,7 @@
   bind:this={ref}
   data-slot="item-footer"
   class={cn(
-    'flex basis-full items-center justify-between gap-2 border-t border-zinc-900 pt-2 text-zinc-500',
+    'flex basis-full items-center justify-between gap-2 border-t border-border pt-2 text-muted-foreground/50',
     className
   )}
   {...restProps}

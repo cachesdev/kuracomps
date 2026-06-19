@@ -12,12 +12,12 @@
 
 <div
   data-slot="table-container"
-  class="relative w-full overflow-x-auto border border-zinc-800 bg-background"
+  class="relative w-full overflow-x-auto border border-border bg-background"
 >
   <table
     bind:this={ref}
     data-slot="table"
-    class={cn('w-full caption-bottom border-collapse text-sm text-zinc-300', className)}
+    class={cn('w-full caption-bottom border-collapse text-xs text-muted-foreground', className)}
     {...restProps}
   >
     {@render children?.()}

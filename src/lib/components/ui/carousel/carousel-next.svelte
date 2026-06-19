@@ -23,7 +23,7 @@
   aria-disabled={!emblaCtx.canScrollNext}
   disabled={!emblaCtx.canScrollNext}
   class={cn(
-    'cn-carousel-next absolute rounded-full border-zinc-800 bg-background text-zinc-300 touch-manipulation hover:border-[#d0e891] hover:bg-[#b9d765] hover:text-[#101207]',
+    'cn-carousel-next absolute rounded-none border-border bg-background text-muted-foreground touch-manipulation hover:border-link hover:bg-primary hover:text-primary-foreground',
     emblaCtx.orientation === 'horizontal'
       ? '-end-12 top-1/2 -translate-y-1/2'
       : 'start-1/2 -bottom-12 -translate-x-1/2 rotate-90',

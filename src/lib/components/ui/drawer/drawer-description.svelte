@@ -12,6 +12,6 @@
 <DrawerPrimitive.Description
   bind:ref
   data-slot="drawer-description"
-  class={cn('mt-0.5 text-sm leading-relaxed text-zinc-400', className)}
+  class={cn('text-muted-foreground text-xs/relaxed', className)}
   {...restProps}
 />

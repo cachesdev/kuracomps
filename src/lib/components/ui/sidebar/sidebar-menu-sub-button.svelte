@@ -19,7 +19,7 @@
 
   const mergedProps = $derived({
     class: cn(
-      'flex h-7 min-w-0 -translate-x-px items-center gap-2 overflow-hidden border border-transparent px-3 font-mono text-zinc-400 outline-hidden hover:border-[#b9d765]/50 hover:bg-[#18181b] hover:text-zinc-50 active:border-[#b9d765]/50 active:bg-[#18181b] active:text-zinc-50 data-active:border-[#b9d765]/50 data-active:bg-[#18181b] data-active:text-[#d0e891] focus-visible:ring-2 focus-visible:ring-zinc-300/60 data-[size=md]:text-xs data-[size=sm]:text-[11px] data-[size=md]:uppercase data-[size=sm]:uppercase data-[size=md]:tracking-[0.04em] data-[size=sm]:tracking-[0.04em] group-data-[collapsible=icon]:hidden disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate [&>svg]:size-3.5 [&>svg]:shrink-0 [&>svg]:text-[#d0e891]',
+      'flex h-7 min-w-0 -translate-x-px items-center gap-2 overflow-hidden border border-transparent px-3  text-muted-foreground outline-hidden hover:border-primary/50 hover:bg-muted hover:text-foreground active:border-primary/50 active:bg-muted active:text-foreground data-active:border-primary/50 data-active:bg-muted data-active:text-link focus-visible:ring-1 focus-visible:ring-ring/60 data-[size=md]:text-xs data-[size=sm]:text-[11px] data-[size=md]: data-[size=sm]: data-[size=md]: data-[size=sm]: group-data-[collapsible=icon]:hidden disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate [&>svg]:size-3.5 [&>svg]:shrink-0 [&>svg]:text-link',
       className
     ),
     'data-slot': 'sidebar-menu-sub-button',

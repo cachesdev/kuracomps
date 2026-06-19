@@ -14,6 +14,6 @@
   bind:ref
   data-slot="item-separator"
   orientation="horizontal"
-  class={cn('my-1 bg-zinc-900', className)}
+  class={cn('my-1 bg-muted', className)}
   {...restProps}
 />

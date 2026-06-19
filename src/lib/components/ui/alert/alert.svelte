@@ -2,12 +2,12 @@
   import { type VariantProps, tv } from 'tailwind-variants';
 
   export const alertVariants = tv({
-    base: "relative grid w-full gap-1 border border-[#222225] bg-[#09090b] px-4 py-3 text-left text-sm shadow-none after:absolute after:-inset-y-px after:-left-px after:w-0.5 has-data-[slot=alert-action]:relative has-data-[slot=alert-action]:pr-18 has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2.5 *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4 group/alert",
+    base: "relative grid w-full gap-0.5 bg-card px-2.5 py-2 text-left text-xs/relaxed text-card-foreground after:absolute after:-inset-y-px after:-left-px after:w-0.5 has-data-[slot=alert-action]:relative has-data-[slot=alert-action]:pr-18 has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2 *:[svg]:row-span-2 *:[svg]:translate-y-0 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4 hairline-frame group/alert",
     variants: {
       variant: {
-        default: 'text-zinc-50 after:bg-[#d0e891]',
+        default: 'after:bg-link',
         destructive:
-          'border-[#d1242f]/60 text-[#f85149] *:data-[slot=alert-description]:text-[#f85149]/90 after:bg-[#f85149] *:[svg]:text-current'
+          'text-destructive *:data-[slot=alert-description]:text-destructive/90 after:bg-destructive *:[svg]:text-current'
       }
     },
     defaultVariants: {

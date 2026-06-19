@@ -15,7 +15,7 @@
   data-slot="sidebar-group"
   data-sidebar="group"
   class={cn(
-    'relative flex w-full min-w-0 flex-col border-b border-[#222225] p-2 last:border-b-0',
+    'relative flex w-full min-w-0 flex-col border-b border-border p-2 last:border-b-0',
     className
   )}
   {...restProps}

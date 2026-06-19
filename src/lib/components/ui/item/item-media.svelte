@@ -2,13 +2,13 @@
   import { tv, type VariantProps } from 'tailwind-variants';
 
   export const itemMediaVariants = tv({
-    base: 'flex shrink-0 items-center justify-center gap-2 text-zinc-400 group-has-data-[slot=item-description]/item:translate-y-0.5 group-has-data-[slot=item-description]/item:self-start [&_svg]:pointer-events-none',
+    base: 'flex shrink-0 items-center justify-center gap-2 text-muted-foreground group-has-data-[slot=item-description]/item:translate-y-0.5 group-has-data-[slot=item-description]/item:self-start [&_svg]:pointer-events-none',
     variants: {
       variant: {
         default: 'bg-transparent',
-        icon: "text-[#d0e891] [&_svg:not([class*='size-'])]:size-4",
+        icon: "text-link [&_svg:not([class*='size-'])]:size-4",
         image:
-          'size-10 overflow-hidden rounded-none border border-zinc-800 bg-zinc-950 group-data-[size=sm]/item:size-8 group-data-[size=xs]/item:size-6 group-data-[size=xs]/item:rounded-none [&_img]:size-full [&_img]:object-cover'
+          'size-10 overflow-hidden rounded-none border border-border bg-muted group-data-[size=sm]/item:size-8 group-data-[size=xs]/item:size-6 group-data-[size=xs]/item:rounded-none [&_img]:size-full [&_img]:object-cover'
       }
     },
     defaultVariants: {

@@ -84,20 +84,9 @@
   --sidebar-accent-foreground: #fafafa;
   --sidebar-border: #262a30;
   --sidebar-ring: #b9d765;
-  --terminal: #101216;
-  --terminal-foreground: #fafafa;
-  --terminal-muted: #a3a7ae;
-  --terminal-grid: #24282e;
-  --terminal-grid-soft: rgb(255 255 255 / 0.045);
-  --terminal-line: #2a2f36;
-  --terminal-accent: #b9d765;
-  --terminal-accent-soft: #d0e891;
-  --terminal-accent-deep: #708936;
-  --terminal-accent-wash: rgb(185 215 101 / 0.16);
-  --terminal-violet: var(--terminal-accent);
-  --terminal-violet-soft: var(--terminal-accent-soft);
-  --terminal-violet-deep: var(--terminal-accent-deep);
-  --terminal-glow: var(--terminal-accent);
+  --grid-line: rgb(255 255 255 / 0.045);
+  --primary-deep: #708936;
+  --primary-wash: rgb(185 215 101 / 0.16);
   --success: #38b66b;
   --warning: #d1aa24;
   --link: #d0e891;
@@ -142,18 +131,9 @@
   --color-code-number: var(--code-number);
   --color-selection: var(--selection);
   --color-selection-foreground: var(--selection-foreground);
-  --color-terminal: var(--terminal);
-  --color-terminal-foreground: var(--terminal-foreground);
-  --color-terminal-muted: var(--terminal-muted);
-  --color-terminal-grid: var(--terminal-grid);
-  --color-terminal-line: var(--terminal-line);
-  --color-terminal-accent: var(--terminal-accent);
-  --color-terminal-accent-soft: var(--terminal-accent-soft);
-  --color-terminal-accent-deep: var(--terminal-accent-deep);
-  --color-terminal-violet: var(--terminal-violet);
-  --color-terminal-violet-soft: var(--terminal-violet-soft);
-  --color-terminal-violet-deep: var(--terminal-violet-deep);
-  --color-terminal-glow: var(--terminal-glow);
+  --color-grid-line: var(--grid-line);
+  --color-primary-deep: var(--primary-deep);
+  --color-primary-wash: var(--primary-wash);
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-link: var(--link);
@@ -234,57 +214,30 @@
     display: none;
   }
 
-  .terminal-grid {
+  .bg-grid {
     background-image:
-      linear-gradient(var(--terminal-grid-soft) 1px, transparent 1px),
-      linear-gradient(90deg, var(--terminal-grid-soft) 1px, transparent 1px);
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
     background-size: 64px 64px;
     background-position: -1px -1px;
   }
 
-  .terminal-grid-sm {
-    background-image:
-      linear-gradient(var(--terminal-grid-soft) 1px, transparent 1px),
-      linear-gradient(90deg, var(--terminal-grid-soft) 1px, transparent 1px);
-    background-size: 32px 32px;
-    background-position: -1px -1px;
-  }
-
+  /* Hairline ring + inset-top-light. The unified kuracomps surface treatment
+     for cards, dialogs, popovers, menus, sheets, tooltips. Composes the
+     1px ring-foreground/10 hairline with the top-edge lift that distinguishes
+     Panel Charcoal from the Off-Black Canvas. */
   .hairline-frame {
-    @apply border border-border bg-card text-card-foreground shadow-none;
-    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.035);
-  }
-
-  .hairline-frame-muted {
-    @apply border border-border bg-muted/60 text-card-foreground shadow-none;
-    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.025);
-  }
-
-  .terminal-surface {
-    @apply border border-border bg-terminal text-terminal-foreground shadow-none;
     box-shadow:
-      inset 0 0 0 1px rgb(255 255 255 / 0.04),
-      0 18px 48px rgb(0 0 0 / 0.22);
+      0 0 0 1px color-mix(in oklab, var(--color-foreground) 10%, transparent),
+      inset 0 1px 0 rgb(255 255 255 / 0.035);
   }
 
-  .terminal-label {
+  .eyebrow {
     @apply font-mono text-xs font-semibold tracking-widest text-muted-foreground uppercase;
   }
 
-  .terminal-link {
-    @apply text-link underline-offset-2 transition-colors hover:text-foreground hover:underline;
-  }
-
-  .terminal-violet-bar {
-    background:
-      linear-gradient(
-        90deg,
-        transparent 0 16%,
-        var(--terminal-accent) 34%,
-        var(--terminal-accent-soft) 62%,
-        transparent 100%
-      ),
-      var(--terminal);
+  .focus-ring {
+    @apply outline-none focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50;
   }
 
   .signal-map {
@@ -322,16 +275,8 @@
     mix-blend-mode: overlay;
   }
 
-  .inset-hairline {
-    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.08);
-  }
-
-  .terminal-active {
-    @apply border-primary/55 bg-primary/12 text-foreground;
-  }
-
-  .terminal-focus {
-    @apply outline-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/25;
+  .focus-ring {
+    @apply outline-none focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50;
   }
 
   .noise-overlay {

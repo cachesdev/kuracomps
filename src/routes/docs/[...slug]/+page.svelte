@@ -107,11 +107,11 @@
   >
     {#if doc.toc.length}
       <nav class="grid gap-2 border-l border-border pl-4" aria-label="On this page">
-        <h2 class="terminal-label">On this page</h2>
+        <h2 class="eyebrow">On this page</h2>
         {#each doc.toc as item (item.url)}
           <a
             href={item.url}
-            class="terminal-focus py-1 text-sm leading-5 text-muted-foreground transition-colors hover:text-foreground"
+            class="focus-ring py-1 text-sm leading-5 text-muted-foreground transition-colors hover:text-foreground"
           >
             {item.title}
           </a>

@@ -1,17 +1,17 @@
 <script lang="ts" module>
   import { tv, type VariantProps } from 'tailwind-variants';
   export const inputGroupAddonVariants = tv({
-    base: "text-zinc-500 **:data-[slot=kbd]:bg-background h-auto gap-2 py-2 font-mono text-xs font-semibold tracking-widest uppercase group-data-[disabled=true]/input-group:opacity-50 **:data-[slot=kbd]:rounded-none **:data-[slot=kbd]:px-1.5 [&>svg:not([class*='size-'])]:size-3.5 flex cursor-text items-center justify-center select-none",
+    base: "text-muted-foreground/50 **:data-[slot=kbd]:bg-background h-auto gap-2 py-2  text-xs font-medium   group-data-[disabled=true]/input-group:opacity-50 **:data-[slot=kbd]:rounded-none **:data-[slot=kbd]:px-1.5 [&>svg:not([class*='size-'])]:size-3.5 flex cursor-text items-center justify-center select-none",
     variants: {
       align: {
         'inline-start':
-          'cn-input-group-addon-align-inline-start order-first border-r border-zinc-800 px-3',
+          'cn-input-group-addon-align-inline-start order-first border-r border-border px-3',
         'inline-end':
-          'cn-input-group-addon-align-inline-end order-last border-l border-zinc-800 px-3',
+          'cn-input-group-addon-align-inline-end order-last border-l border-border px-3',
         'block-start':
-          'border-b border-zinc-800 px-3 pt-3 group-has-[>input]/input-group:pt-3.5 [.border-b]:pb-3.5 order-first w-full justify-start',
+          'border-b border-border px-3 pt-3 group-has-[>input]/input-group:pt-3.5 [.border-b]:pb-3.5 order-first w-full justify-start',
         'block-end':
-          'border-t border-zinc-800 px-3 pb-3 group-has-[>input]/input-group:pb-3.5 [.border-t]:pt-3.5 order-last w-full justify-start'
+          'border-t border-border px-3 pb-3 group-has-[>input]/input-group:pb-3.5 [.border-t]:pt-3.5 order-last w-full justify-start'
       }
     },
     defaultVariants: {

@@ -31,13 +31,13 @@
   data-chart={chartId}
   data-slot="chart"
   class={cn(
-    'flex aspect-video justify-center overflow-visible border border-zinc-800 bg-background p-3 font-mono text-xs text-zinc-400',
+    'flex aspect-video justify-center overflow-visible border border-border bg-background p-3  text-xs text-muted-foreground',
     // Overrides
     //
     // Stroke around dots/marks when hovering
     '[&_.lc-highlight-point]:stroke-transparent',
     // override the default stroke color of lines
-    '[&_.lc-line]:stroke-zinc-700',
+    '[&_.lc-line]:stroke-primary-deep',
 
     // by default, layerchart shows a line intersecting the point when hovering, this hides that
     '[&_.lc-highlight-line]:stroke-0',
@@ -55,8 +55,8 @@
     // a grid line there and rule ends up overlapping the marks because it is rendered after
     // the marks
     '[&_.lc-rule-x-line:not(.lc-grid-x-rule)]:stroke-0 [&_.lc-rule-y-line:not(.lc-grid-y-rule)]:stroke-0',
-    '[&_.lc-grid-x-radial-line]:stroke-zinc-800 [&_.lc-grid-x-radial-circle]:stroke-zinc-800',
-    '[&_.lc-grid-y-radial-line]:stroke-zinc-800 [&_.lc-grid-y-radial-circle]:stroke-zinc-800',
+    '[&_.lc-grid-x-radial-line]:stroke-border [&_.lc-grid-x-radial-circle]:stroke-border',
+    '[&_.lc-grid-y-radial-line]:stroke-border [&_.lc-grid-y-radial-circle]:stroke-border',
 
     // Legend adjustments
     '[&_.lc-legend-swatch-button]:items-center [&_.lc-legend-swatch-button]:gap-1.5',
@@ -64,10 +64,10 @@
     '[&_.lc-legend-swatch]:size-2.5 [&_.lc-legend-swatch]:rounded-[2px]',
 
     // Labels
-    '[&_.lc-labels-text:not([fill])]:fill-zinc-100 [&_text]:stroke-transparent',
+    '[&_.lc-labels-text:not([fill])]:fill-foreground [&_text]:stroke-transparent',
 
     // Tick labels on th x/y axes
-    '[&_.lc-axis-tick-label]:fill-zinc-500 [&_.lc-axis-tick-label]:font-mono [&_.lc-axis-tick-label]:font-medium',
+    '[&_.lc-axis-tick-label]:fill-muted-foreground [&_.lc-axis-tick-label]: [&_.lc-axis-tick-label]:font-medium',
     '[&_.lc-tooltip-rects-g]:fill-transparent',
     '[&_.lc-layout-svg-g]:fill-transparent',
     '[&_.lc-root-container]:w-full',

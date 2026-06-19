@@ -15,7 +15,10 @@
   data-slot="breadcrumb-ellipsis"
   role="presentation"
   aria-hidden="true"
-  class={cn('flex size-5 items-center justify-center text-zinc-500 [&>svg]:size-4', className)}
+  class={cn(
+    'flex size-5 items-center justify-center text-muted-foreground/50 [&>svg]:size-4',
+    className
+  )}
   {...restProps}
 >
   <DotsThreeIcon />

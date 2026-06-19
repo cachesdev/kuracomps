@@ -13,7 +13,10 @@
 <div
   bind:this={ref}
   data-slot="field-content"
-  class={cn('gap-1 text-zinc-300 group/field-content flex flex-1 flex-col leading-snug', className)}
+  class={cn(
+    'gap-1 text-muted-foreground group/field-content flex flex-1 flex-col leading-snug',
+    className
+  )}
   {...restProps}
 >
   {@render children?.()}

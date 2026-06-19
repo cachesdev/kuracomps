@@ -12,19 +12,19 @@
 <CalendarPrimitive.Day
   bind:ref
   class={cn(
-    'flex size-(--cell-size) flex-col items-center justify-center gap-1 rounded-(--cell-radius) border border-transparent p-0 font-mono text-xs leading-none font-medium whitespace-nowrap text-zinc-300 select-none',
-    '[&:last-child[data-selected=true]_button]:rounded-r-(--cell-radius)',
-    'not-data-selected:hover:border-zinc-700 not-data-selected:hover:bg-zinc-950 not-data-selected:hover:text-white',
-    '[&[data-today]:not([data-selected])]:border-[#d0e891]/60 [&[data-today]:not([data-selected])]:bg-zinc-950 [&[data-today]:not([data-selected])]:text-[#d0e891] [&[data-today][data-disabled]]:text-zinc-500',
-    'data-[selected]:border-[#b9d765] data-[selected]:bg-[#b9d765] data-[selected]:text-[#101207] data-[selected]:hover:text-[#101207]',
+    'flex size-(--cell-size) flex-col items-center justify-center gap-1 rounded-none border border-transparent p-0 text-xs font-medium leading-none whitespace-nowrap text-muted-foreground select-none',
+    '[&:last-child[data-selected=true]_button]:rounded-r-none',
+    'not-data-selected:hover:border-border not-data-selected:hover:bg-muted not-data-selected:hover:text-foreground',
+    '[&[data-today]:not([data-selected])]:border-link/60 [&[data-today]:not([data-selected])]:bg-muted [&[data-today]:not([data-selected])]:text-link [&[data-today][data-disabled]]:text-muted-foreground',
+    'data-[selected]:border-primary data-[selected]:bg-primary data-[selected]:text-primary-foreground data-[selected]:hover:text-primary-foreground',
     // Outside months
-    '[&[data-outside-month]:not([data-selected])]:text-zinc-700 [&[data-outside-month]:not([data-selected])]:hover:text-zinc-400',
+    '[&[data-outside-month]:not([data-selected])]:text-muted-foreground/50 [&[data-outside-month]:not([data-selected])]:hover:text-muted-foreground',
     // Disabled
-    'data-[disabled]:pointer-events-none data-[disabled]:text-zinc-600 data-[disabled]:opacity-50',
+    'data-[disabled]:pointer-events-none data-[disabled]:text-muted-foreground/50 data-[disabled]:opacity-50',
     // Unavailable
-    'data-[unavailable]:text-zinc-600 data-[unavailable]:line-through',
+    'data-[unavailable]:text-muted-foreground/50 data-[unavailable]:line-through',
     // focus
-    'focus:relative focus:border-zinc-300 focus:ring-2 focus:ring-zinc-300/30',
+    'focus:relative focus:border-ring focus:ring-1 focus:ring-ring/50',
     // inner spans
     '[&>span]:text-xs [&>span]:opacity-70',
     className

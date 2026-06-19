@@ -13,7 +13,7 @@
 <kbd
   bind:this={ref}
   data-slot="kbd-group"
-  class={cn('gap-1 inline-flex items-center text-zinc-500', className)}
+  class={cn('gap-1 inline-flex items-center text-muted-foreground/50', className)}
   {...restProps}
 >
   {@render children?.()}

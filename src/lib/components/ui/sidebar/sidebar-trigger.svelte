@@ -24,7 +24,7 @@
   variant="ghost"
   size="icon-sm"
   class={cn(
-    'cn-sidebar-trigger rounded-full border border-[#27272a] bg-[#09090b] text-zinc-300 hover:bg-zinc-50 hover:text-zinc-950',
+    'cn-sidebar-trigger rounded-none border border-border bg-popover text-muted-foreground hover:bg-muted hover:text-foreground',
     className
   )}
   type="button"

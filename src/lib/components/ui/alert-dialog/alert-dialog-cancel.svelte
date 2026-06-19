@@ -22,10 +22,6 @@
 <AlertDialogPrimitive.Cancel
   bind:ref
   data-slot="alert-dialog-cancel"
-  class={cn(
-    buttonVariants({ variant, size }),
-    'cn-alert-dialog-cancel rounded-full border-[#27272a]',
-    className
-  )}
+  class={cn(buttonVariants({ variant, size }), className)}
   {...restProps}
 />

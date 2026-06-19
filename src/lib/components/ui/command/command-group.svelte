@@ -18,7 +18,7 @@
   bind:ref
   data-slot="command-group"
   class={cn(
-    'overflow-hidden p-1.5 text-zinc-50 **:[[cmdk-group-heading]]:px-3 **:[[cmdk-group-heading]]:py-2 **:[[cmdk-group-heading]]:font-mono **:[[cmdk-group-heading]]:text-xs **:[[cmdk-group-heading]]:font-semibold **:[[cmdk-group-heading]]:uppercase **:[[cmdk-group-heading]]:tracking-[0.08em] **:[[cmdk-group-heading]]:text-zinc-500',
+    'overflow-hidden p-1.5 text-foreground **:[[cmdk-group-heading]]:px-3 **:[[cmdk-group-heading]]:py-2 **:[[cmdk-group-heading]]: **:[[cmdk-group-heading]]:text-xs **:[[cmdk-group-heading]]:font-medium **:[[cmdk-group-heading]]: **:[[cmdk-group-heading]]: **:[[cmdk-group-heading]]:text-muted-foreground/50',
     className
   )}
   value={value ?? heading ?? `----${useId()}`}
@@ -26,7 +26,7 @@
 >
   {#if heading}
     <CommandPrimitive.GroupHeading
-      class="px-2 py-1.5 font-mono text-xs font-medium uppercase tracking-[0.08em] text-zinc-500"
+      class="px-2 py-1.5  text-xs font-medium   text-muted-foreground/50"
     >
       {heading}
     </CommandPrimitive.GroupHeading>

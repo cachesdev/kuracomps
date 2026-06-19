@@ -13,7 +13,7 @@
   bind:ref
   data-slot="collapsible-trigger"
   class={cn(
-    'flex w-full items-center justify-between border-b border-zinc-900 px-3 py-2 font-mono text-xs font-semibold tracking-[0.14em] text-zinc-300 uppercase transition-colors hover:bg-zinc-950 hover:text-white focus-visible:ring-2 focus-visible:ring-zinc-300 focus-visible:outline-none',
+    'flex w-full items-center justify-between border-b border-border px-3 py-2  text-xs font-medium  text-muted-foreground  transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none',
     className
   )}
   {...restProps}

@@ -19,11 +19,11 @@
   data-slot="menubar-sub-trigger"
   data-inset={inset}
   class={cn(
-    "flex cursor-default items-center gap-2 border border-transparent px-3 py-2 font-mono text-xs font-medium uppercase tracking-[0.04em] text-zinc-300 outline-none select-none focus:border-[#b9d765]/50 focus:bg-[#18181b] focus:text-zinc-50 data-open:border-[#b9d765]/50 data-open:bg-[#18181b] data-open:text-zinc-50 data-inset:pl-9.5 [&_svg:not([class*='size-'])]:size-3.5",
+    "flex cursor-default items-center gap-2 border border-transparent px-3 py-2  text-xs font-medium   text-muted-foreground outline-none select-none focus:border-primary/50 focus:bg-muted focus:text-foreground data-open:border-primary/50 data-open:bg-muted data-open:text-foreground data-inset:pl-9.5 [&_svg:not([class*='size-'])]:size-3.5",
     className
   )}
   {...restProps}
 >
   {@render children?.()}
-  <CaretRightIcon class="cn-rtl-flip ml-auto size-4 text-[#d0e891]" />
+  <CaretRightIcon class="cn-rtl-flip ml-auto size-4 text-link" />
 </MenubarPrimitive.SubTrigger>

@@ -58,7 +58,8 @@
           <h1
             class="text-balance text-5xl leading-[0.95] font-semibold text-foreground sm:text-6xl lg:text-7xl"
           >
-            Kura component warehouse.
+            <span class="text-primary">Kura</span> is my component warehouse, for
+            <span class="text-primary">you.</span>
           </h1>
           <p
             class="mx-auto max-w-3xl text-balance text-base leading-8 text-muted-foreground sm:text-lg"

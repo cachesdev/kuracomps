@@ -197,7 +197,6 @@ Stack `Field` components with `Field.Group`. Add `Field.Separator` to divide the
 - Add `data-invalid` to `Field` to switch the entire block into an error state.
 - Add `aria-invalid` on the input itself for assistive technologies.
 - Render `FieldError` immediately after the control or inside `FieldContent` to keep error messages aligned with the field.
-  Copy
 
 ```svelte
 <Field.Field data-invalid>
@@ -205,6 +204,64 @@ Stack `Field` components with `Field.Group`. Add `Field.Separator` to divide the
   <Input id="email" type="email" aria-invalid />
   <Field.Error>Enter a valid email address.</Field.Error>
 </Field.Field>
+```
+
+## SvelteKit Forms
+
+`Field` components do not own form state or validation. Use native form controls with `name` attributes, then pair them with SvelteKit form actions, remote forms, or any validation library you prefer.
+
+```ts title="src/routes/settings/+page.server.ts" showLineNumbers
+import { fail } from '@sveltejs/kit';
+import type { Actions } from './$types.js';
+
+export const actions: Actions = {
+  default: async ({ request }) => {
+    const data = await request.formData();
+    const username = String(data.get('username') ?? '').trim();
+
+    if (username.length < 2) {
+      return fail(400, {
+        values: { username },
+        errors: {
+          username: [{ message: 'Username must be at least 2 characters.' }]
+        }
+      });
+    }
+
+    return { success: true };
+  }
+};
+```
+
+```svelte title="src/routes/settings/+page.svelte" showLineNumbers
+<script lang="ts">
+  import { enhance } from '$app/forms';
+  import { Button } from '$lib/components/ui/button/index.js';
+  import * as Field from '$lib/components/ui/field/index.js';
+  import { Input } from '$lib/components/ui/input/index.js';
+  import type { PageProps } from './$types.js';
+
+  let { form }: PageProps = $props();
+
+  const usernameValue = $derived(form && 'values' in form ? form.values.username : '');
+  const usernameErrors = $derived(form && 'errors' in form ? form.errors.username : []);
+  const usernameInvalid = $derived(usernameErrors.length > 0);
+</script>
+
+<form method="POST" use:enhance>
+  <Field.Field data-invalid={usernameInvalid ? 'true' : undefined}>
+    <Field.Label for="username">Username</Field.Label>
+    <Input
+      id="username"
+      name="username"
+      value={usernameValue}
+      aria-invalid={usernameInvalid ? 'true' : undefined}
+    />
+    <Field.Description>This is your public display name.</Field.Description>
+    <Field.Error errors={usernameErrors} />
+  </Field.Field>
+  <Button type="submit">Save</Button>
+</form>
 ```
 
 ## Accessibility

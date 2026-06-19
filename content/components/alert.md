@@ -3,7 +3,7 @@ title: Alert
 description: Displays a callout for user attention.
 component: true
 links:
-  source: /registry/styles/sera/alert.json
+  source: /r/alert.json
 ---
 
 <script>

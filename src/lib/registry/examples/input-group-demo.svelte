@@ -64,7 +64,7 @@
     </InputGroup.Addon>
   </InputGroup.Root>
   <InputGroup.Root>
-    <InputGroup.Input placeholder="@shadcn" />
+    <InputGroup.Input placeholder="@kura" />
     <InputGroup.Addon align="inline-end">
       <div
         class="bg-primary text-primary-foreground flex size-4 items-center justify-center rounded-full"

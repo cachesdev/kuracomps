@@ -3,7 +3,7 @@ title: Pagination
 description: Pagination with page navigation, next and previous links.
 component: true
 links:
-  source: /registry/styles/sera/pagination.json
+  source: /r/pagination.json
   doc: https://bits-ui.com/docs/components/pagination
   api: https://bits-ui.com/docs/components/pagination#api-reference
 ---

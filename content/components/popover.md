@@ -3,7 +3,7 @@ title: Popover
 description: Displays rich content in a portal, triggered by a button.
 component: true
 links:
-  source: /registry/styles/sera/popover.json
+  source: /r/popover.json
   doc: https://bits-ui.com/docs/components/popover
   api: https://bits-ui.com/docs/components/popover#api-reference
 ---

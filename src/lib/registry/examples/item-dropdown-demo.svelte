@@ -7,9 +7,9 @@
 
   const people = [
     {
-      username: 'shadcn',
-      avatar: 'https://github.com/shadcn.png',
-      email: 'shadcn@vercel.com'
+      username: 'kura',
+      avatar: 'https://github.com/cachesdev.png',
+      email: 'kura@example.com'
     },
     {
       username: 'maxleiter',

@@ -1,26 +1,60 @@
 {
-	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
-	"name": "progress",
-	"title": "Progress",
-	"type": "registry:ui",
-	"description": "Kura Progress component source.",
-	"devDependencies": [
-		"bits-ui@^2.18.1",
-		"@internationalized/date@^3.12.2"
-	],
-	"registryDependencies": [
-		"./utils.json"
-	],
-	"files": [
-		{
-			"content": "import Root from './progress.svelte';\n\nexport {\n  Root,\n  //\n  Root as Progress\n};\n",
-			"type": "registry:file",
-			"target": "progress/index.ts"
-		},
-		{
-			"content": "<script lang=\"ts\">\n  import { Progress as ProgressPrimitive } from 'bits-ui';\n  import { cn, type WithoutChildrenOrChild } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    max = 100,\n    value,\n    ...restProps\n  }: WithoutChildrenOrChild<ProgressPrimitive.RootProps> = $props();\n</script>\n\n<ProgressPrimitive.Root\n  bind:ref\n  data-slot=\"progress\"\n  class={cn(\n    'bg-zinc-800 h-px rounded-none relative flex w-full items-center overflow-x-hidden',\n    className\n  )}\n  {value}\n  {max}\n  {...restProps}\n>\n  <div\n    data-slot=\"progress-indicator\"\n    class=\"bg-[#d0e891] size-full flex-1 transition-all\"\n    style=\"transform: translateX(-{100 - (100 * (value ?? 0)) / (max ?? 1)}%)\"\n  ></div>\n</ProgressPrimitive.Root>\n",
-			"type": "registry:file",
-			"target": "progress/progress.svelte"
-		}
-	]
+  "name": "progress",
+  "title": "Progress",
+  "description": "Kura Progress component source.",
+  "type": "ui",
+  "add": "when-added",
+  "files": [
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "import Root from './progress.svelte';\n\nexport {\n  Root,\n  //\n  Root as Progress\n};\n",
+      "path": "progress/index.ts",
+      "_imports_": [
+        {
+          "import": "./progress.svelte",
+          "item": "progress",
+          "file": {
+            "type": "ui",
+            "path": "progress/progress.svelte"
+          },
+          "meta": {}
+        }
+      ],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "<script lang=\"ts\">\n  import { Progress as ProgressPrimitive } from 'bits-ui';\n  import { cn, type WithoutChildrenOrChild } from '$lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    max = 100,\n    value,\n    ...restProps\n  }: WithoutChildrenOrChild<ProgressPrimitive.RootProps> = $props();\n</script>\n\n<ProgressPrimitive.Root\n  bind:ref\n  data-slot=\"progress\"\n  class={cn(\n    'bg-zinc-800 h-px rounded-none relative flex w-full items-center overflow-x-hidden',\n    className\n  )}\n  {value}\n  {max}\n  {...restProps}\n>\n  <div\n    data-slot=\"progress-indicator\"\n    class=\"bg-[#d0e891] size-full flex-1 transition-all\"\n    style=\"transform: translateX(-{100 - (100 * (value ?? 0)) / (max ?? 1)}%)\"\n  ></div>\n</ProgressPrimitive.Root>\n",
+      "path": "progress/progress.svelte",
+      "_imports_": [
+        {
+          "import": "$lib/utils.js",
+          "item": "utils",
+          "file": {
+            "type": "lib",
+            "path": "utils.ts"
+          },
+          "meta": {}
+        }
+      ],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    }
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "dependencies": [
+    {
+      "ecosystem": "js",
+      "name": "bits-ui",
+      "version": "^2.18.1"
+    }
+  ],
+  "devDependencies": []
 }

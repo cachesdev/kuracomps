@@ -3,7 +3,7 @@ title: Table
 description: A responsive table component.
 component: true
 links:
-  source: /registry/styles/sera/table.json
+  source: /r/table.json
 ---
 
 <script>

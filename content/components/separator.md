@@ -3,7 +3,7 @@ title: Separator
 description: Visually or semantically separates content.
 component: true
 links:
-  source: /registry/styles/sera/separator.json
+  source: /r/separator.json
   doc: https://bits-ui.com/docs/components/separator
   api: https://bits-ui.com/docs/components/separator#api-reference
 ---

@@ -8,7 +8,7 @@
   <Empty.Header>
     <Empty.Media variant="default">
       <Avatar.Root class="size-12">
-        <Avatar.Image src="https://github.com/shadcn.png" class="grayscale" />
+        <Avatar.Image src="https://github.com/cachesdev.png" class="grayscale" />
         <Avatar.Fallback>LR</Avatar.Fallback>
       </Avatar.Root>
     </Empty.Media>

@@ -9,7 +9,7 @@
   <title>Kura components</title>
   <meta
     name="description"
-    content="Kura is a shadcn-svelte registry and documentation site for the Sera component style."
+    content="Kura is a jsrepo registry and documentation site for the Sera component system."
   />
 </svelte:head>
 
@@ -71,8 +71,8 @@
           <p
             class="mx-auto max-w-3xl text-balance text-base leading-8 text-muted-foreground sm:text-lg"
           >
-            A shadcn-svelte registry for dense, production-minded Sera components that you can
-            install, inspect, and make your own. Open source. Open code.
+            A jsrepo registry for dense, production-minded Sera components that you can install,
+            inspect, and make your own. Open source. Open code.
           </p>
         </div>
         <div class="flex flex-wrap justify-center gap-3">
@@ -95,19 +95,16 @@
       <p class="terminal-label">Install from the warehouse</p>
       <div class="mx-auto grid w-full max-w-4xl gap-4 md:grid-cols-2">
         <figure data-rehype-pretty-code-figure class="m-0">
-          <figcaption>components.json</figcaption>
+          <figcaption>jsrepo.config.ts</figcaption>
           <pre class="no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5 outline-none"><code
-              >&#123;
-  "registry": "https://kura.gfdc.dev/registry",
-  "style": "sera"
-&#125;</code
+              >registries: ["https://kura.gfdc.dev/r"]</code
             ></pre>
         </figure>
 
         <figure data-rehype-pretty-code-figure class="m-0">
           <figcaption>add a component</figcaption>
           <pre class="no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5 outline-none"><code
-              >pnpm dlx shadcn-svelte@latest add https://kura.gfdc.dev/r/button.json</code
+              >pnpm dlx jsrepo@latest add button</code
             ></pre>
         </figure>
       </div>

@@ -3,7 +3,7 @@ title: Scroll Area
 description: Augments native scroll functionality for custom, cross-browser styling.
 component: true
 links:
-  source: /registry/styles/sera/scroll-area.json
+  source: /r/scroll-area.json
   doc: https://bits-ui.com/docs/components/scroll-area
   api: https://bits-ui.com/docs/components/scroll-area#api-reference
 ---

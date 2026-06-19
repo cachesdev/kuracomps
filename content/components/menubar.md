@@ -3,7 +3,7 @@ title: Menubar
 description: A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.
 component: true
 links:
-  source: /registry/styles/sera/menubar.json
+  source: /r/menubar.json
   doc: https://bits-ui.com/docs/components/menubar
   api: https://bits-ui.com/docs/components/menubar#api-reference
 ---

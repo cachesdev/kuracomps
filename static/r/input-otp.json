@@ -1,42 +1,152 @@
 {
-	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
-	"name": "input-otp",
-	"title": "Input Otp",
-	"type": "registry:ui",
-	"description": "Kura Input Otp component source.",
-	"devDependencies": [
-		"phosphor-svelte@^3.1.0",
-		"bits-ui@^2.18.1",
-		"@internationalized/date@^3.12.2"
-	],
-	"registryDependencies": [
-		"./utils.json"
-	],
-	"files": [
-		{
-			"content": "import Root from './input-otp.svelte';\nimport Group from './input-otp-group.svelte';\nimport Slot from './input-otp-slot.svelte';\nimport Separator from './input-otp-separator.svelte';\n\nexport {\n  Root,\n  Group,\n  Slot,\n  Separator,\n  Root as InputOTP,\n  Group as InputOTPGroup,\n  Slot as InputOTPSlot,\n  Separator as InputOTPSeparator\n};\n",
-			"type": "registry:file",
-			"target": "input-otp/index.ts"
-		},
-		{
-			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n  bind:this={ref}\n  data-slot=\"input-otp-group\"\n  class={cn(\n    'has-aria-invalid:border-destructive dark:has-aria-invalid:border-destructive/50 gap-1 rounded-none flex items-center',\n    className\n  )}\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n",
-			"type": "registry:file",
-			"target": "input-otp/input-otp-group.svelte"
-		},
-		{
-			"content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import type { WithElementRef } from '$UTILS$.js';\n  import { cn } from '$UTILS$.js';\n  import MinusIcon from 'phosphor-svelte/lib/Minus';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n  bind:this={ref}\n  data-slot=\"input-otp-separator\"\n  role=\"separator\"\n  class={cn(\"text-zinc-600 [&_svg:not([class*='size-'])]:size-3.5 flex items-center\", className)}\n  {...restProps}\n>\n  {#if children}\n    {@render children?.()}\n  {:else}\n    <MinusIcon />\n  {/if}\n</div>\n",
-			"type": "registry:file",
-			"target": "input-otp/input-otp-separator.svelte"
-		},
-		{
-			"content": "<script lang=\"ts\">\n  import { PinInput as InputOTPPrimitive } from 'bits-ui';\n  import { cn } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    cell,\n    class: className,\n    ...restProps\n  }: InputOTPPrimitive.CellProps = $props();\n</script>\n\n<InputOTPPrimitive.Cell\n  {cell}\n  bind:ref\n  data-slot=\"input-otp-slot\"\n  class={cn(\n    'border-zinc-800 bg-zinc-900 text-zinc-50 data-[active=true]:border-zinc-300 data-[active=true]:ring-2 data-[active=true]:ring-zinc-300/25 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 size-10 rounded-none border font-mono text-sm transition-[color,border-color,box-shadow] outline-none first:rounded-none last:rounded-none relative flex items-center justify-center data-[active=true]:z-10',\n    className\n  )}\n  {...restProps}\n>\n  {cell.char}\n  {#if cell.hasFakeCaret}\n    <div\n      class=\"cn-input-otp-caret pointer-events-none absolute inset-0 flex items-center justify-center\"\n    >\n      <div class=\"animate-caret-blink bg-zinc-50 h-4 w-px duration-1000\"></div>\n    </div>\n  {/if}\n</InputOTPPrimitive.Cell>\n",
-			"type": "registry:file",
-			"target": "input-otp/input-otp-slot.svelte"
-		},
-		{
-			"content": "<script lang=\"ts\">\n  import { PinInput as InputOTPPrimitive } from 'bits-ui';\n  import { cn } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    value = $bindable(''),\n    ...restProps\n  }: InputOTPPrimitive.RootProps = $props();\n</script>\n\n<InputOTPPrimitive.Root\n  bind:ref\n  bind:value\n  data-slot=\"input-otp\"\n  spellcheck={false}\n  class={cn(\n    'cn-input-otp-input gap-2 font-mono text-zinc-50 flex items-center disabled:cursor-not-allowed has-disabled:opacity-50',\n    className\n  )}\n  {...restProps}\n/>\n",
-			"type": "registry:file",
-			"target": "input-otp/input-otp.svelte"
-		}
-	]
+  "name": "input-otp",
+  "title": "Input Otp",
+  "description": "Kura Input Otp component source.",
+  "type": "ui",
+  "add": "when-added",
+  "files": [
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "import Root from './input-otp.svelte';\nimport Group from './input-otp-group.svelte';\nimport Slot from './input-otp-slot.svelte';\nimport Separator from './input-otp-separator.svelte';\n\nexport {\n  Root,\n  Group,\n  Slot,\n  Separator,\n  Root as InputOTP,\n  Group as InputOTPGroup,\n  Slot as InputOTPSlot,\n  Separator as InputOTPSeparator\n};\n",
+      "path": "input-otp/index.ts",
+      "_imports_": [
+        {
+          "import": "./input-otp.svelte",
+          "item": "input-otp",
+          "file": {
+            "type": "ui",
+            "path": "input-otp/input-otp.svelte"
+          },
+          "meta": {}
+        },
+        {
+          "import": "./input-otp-group.svelte",
+          "item": "input-otp",
+          "file": {
+            "type": "ui",
+            "path": "input-otp/input-otp-group.svelte"
+          },
+          "meta": {}
+        },
+        {
+          "import": "./input-otp-slot.svelte",
+          "item": "input-otp",
+          "file": {
+            "type": "ui",
+            "path": "input-otp/input-otp-slot.svelte"
+          },
+          "meta": {}
+        },
+        {
+          "import": "./input-otp-separator.svelte",
+          "item": "input-otp",
+          "file": {
+            "type": "ui",
+            "path": "input-otp/input-otp-separator.svelte"
+          },
+          "meta": {}
+        }
+      ],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n  bind:this={ref}\n  data-slot=\"input-otp-group\"\n  class={cn(\n    'has-aria-invalid:border-destructive dark:has-aria-invalid:border-destructive/50 gap-1 rounded-none flex items-center',\n    className\n  )}\n  {...restProps}\n>\n  {@render children?.()}\n</div>\n",
+      "path": "input-otp/input-otp-group.svelte",
+      "_imports_": [
+        {
+          "import": "$lib/utils.js",
+          "item": "utils",
+          "file": {
+            "type": "lib",
+            "path": "utils.ts"
+          },
+          "meta": {}
+        }
+      ],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import type { WithElementRef } from '$lib/utils.js';\n  import { cn } from '$lib/utils.js';\n  import MinusIcon from 'phosphor-svelte/lib/Minus';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n  bind:this={ref}\n  data-slot=\"input-otp-separator\"\n  role=\"separator\"\n  class={cn(\"text-zinc-600 [&_svg:not([class*='size-'])]:size-3.5 flex items-center\", className)}\n  {...restProps}\n>\n  {#if children}\n    {@render children?.()}\n  {:else}\n    <MinusIcon />\n  {/if}\n</div>\n",
+      "path": "input-otp/input-otp-separator.svelte",
+      "_imports_": [
+        {
+          "import": "$lib/utils.js",
+          "item": "utils",
+          "file": {
+            "type": "lib",
+            "path": "utils.ts"
+          },
+          "meta": {}
+        }
+      ],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "<script lang=\"ts\">\n  import { PinInput as InputOTPPrimitive } from 'bits-ui';\n  import { cn } from '$lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    cell,\n    class: className,\n    ...restProps\n  }: InputOTPPrimitive.CellProps = $props();\n</script>\n\n<InputOTPPrimitive.Cell\n  {cell}\n  bind:ref\n  data-slot=\"input-otp-slot\"\n  class={cn(\n    'border-zinc-800 bg-zinc-900 text-zinc-50 data-[active=true]:border-zinc-300 data-[active=true]:ring-2 data-[active=true]:ring-zinc-300/25 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 size-10 rounded-none border font-mono text-sm transition-[color,border-color,box-shadow] outline-none first:rounded-none last:rounded-none relative flex items-center justify-center data-[active=true]:z-10',\n    className\n  )}\n  {...restProps}\n>\n  {cell.char}\n  {#if cell.hasFakeCaret}\n    <div\n      class=\"cn-input-otp-caret pointer-events-none absolute inset-0 flex items-center justify-center\"\n    >\n      <div class=\"animate-caret-blink bg-zinc-50 h-4 w-px duration-1000\"></div>\n    </div>\n  {/if}\n</InputOTPPrimitive.Cell>\n",
+      "path": "input-otp/input-otp-slot.svelte",
+      "_imports_": [
+        {
+          "import": "$lib/utils.js",
+          "item": "utils",
+          "file": {
+            "type": "lib",
+            "path": "utils.ts"
+          },
+          "meta": {}
+        }
+      ],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "<script lang=\"ts\">\n  import { PinInput as InputOTPPrimitive } from 'bits-ui';\n  import { cn } from '$lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    value = $bindable(''),\n    ...restProps\n  }: InputOTPPrimitive.RootProps = $props();\n</script>\n\n<InputOTPPrimitive.Root\n  bind:ref\n  bind:value\n  data-slot=\"input-otp\"\n  spellcheck={false}\n  class={cn(\n    'cn-input-otp-input gap-2 font-mono text-zinc-50 flex items-center disabled:cursor-not-allowed has-disabled:opacity-50',\n    className\n  )}\n  {...restProps}\n/>\n",
+      "path": "input-otp/input-otp.svelte",
+      "_imports_": [
+        {
+          "import": "$lib/utils.js",
+          "item": "utils",
+          "file": {
+            "type": "lib",
+            "path": "utils.ts"
+          },
+          "meta": {}
+        }
+      ],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    }
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "dependencies": [
+    {
+      "ecosystem": "js",
+      "name": "phosphor-svelte",
+      "version": "^3.1.0"
+    },
+    {
+      "ecosystem": "js",
+      "name": "bits-ui",
+      "version": "^2.18.1"
+    }
+  ],
+  "devDependencies": []
 }

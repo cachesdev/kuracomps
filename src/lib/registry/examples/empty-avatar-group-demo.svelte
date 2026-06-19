@@ -10,7 +10,7 @@
     <Empty.Media>
       <Avatar.Group class="grayscale">
         <Avatar.Root>
-          <Avatar.Image src="https://github.com/shadcn.png" alt="@shadcn" />
+          <Avatar.Image src="https://github.com/cachesdev.png" alt="@cachesdev" />
           <Avatar.Fallback>CN</Avatar.Fallback>
         </Avatar.Root>
         <Avatar.Root>

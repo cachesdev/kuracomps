@@ -3,7 +3,7 @@ title: Select
 description: Displays a list of options for the user to pick from—triggered by a button.
 component: true
 links:
-  source: /registry/styles/sera/select.json
+  source: /r/select.json
   doc: https://bits-ui.com/docs/components/select
   api: https://bits-ui.com/docs/components/select#api-reference
 ---

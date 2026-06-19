@@ -29,7 +29,7 @@
         class="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale"
       >
         <Avatar.Root class="hidden sm:flex">
-          <Avatar.Image src="https://github.com/shadcn.png" alt="@shadcn" />
+          <Avatar.Image src="https://github.com/cachesdev.png" alt="@cachesdev" />
           <Avatar.Fallback>CN</Avatar.Fallback>
         </Avatar.Root>
         <Avatar.Root class="hidden sm:flex">

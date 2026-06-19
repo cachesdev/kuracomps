@@ -3,7 +3,7 @@ title: Checkbox
 description: A control that allows the user to toggle between checked and not checked.
 component: true
 links:
-  source: /registry/styles/sera/checkbox.json
+  source: /r/checkbox.json
   doc: https://bits-ui.com/docs/components/checkbox
   api: https://bits-ui.com/docs/components/checkbox#api-reference
 ---

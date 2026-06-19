@@ -25,11 +25,11 @@
       <form class="grid items-start gap-4">
         <div class="grid gap-2">
           <Label for="email-{id}">Email</Label>
-          <Input type="email" id="email-{id}" value="shadcn@example.com" />
+          <Input type="email" id="email-{id}" value="kura@example.com" />
         </div>
         <div class="grid gap-2">
           <Label for="username-{id}">Username</Label>
-          <Input id="username-{id}" value="@shadcn" />
+          <Input id="username-{id}" value="@kura" />
         </div>
         <Button type="submit">Save changes</Button>
       </form>
@@ -48,11 +48,11 @@
       <form class="grid items-start gap-4 px-4">
         <div class="grid gap-2">
           <Label for="email-{id}">Email</Label>
-          <Input type="email" id="email-{id}" value="shadcn@example.com" />
+          <Input type="email" id="email-{id}" value="kura@example.com" />
         </div>
         <div class="grid gap-2">
           <Label for="username-{id}">Username</Label>
-          <Input id="username-{id}" value="@shadcn" />
+          <Input id="username-{id}" value="@kura" />
         </div>
         <Button type="submit">Save changes</Button>
       </form>

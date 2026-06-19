@@ -3,7 +3,7 @@ title: Sonner
 description: An opinionated toast component for Svelte.
 component: true
 links:
-  source: /registry/styles/sera/sonner.json
+  source: /r/sonner.json
   doc: https://svelte-sonner.vercel.app/
 ---
 

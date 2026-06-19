@@ -3,7 +3,7 @@ title: Item
 description: A versatile component that you can use to display any content.
 component: true
 links:
-  source: /registry/styles/sera/item.json
+  source: /r/item.json
 ---
 
 <script>

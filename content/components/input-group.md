@@ -3,7 +3,7 @@ title: Input Group
 description: Display additional information or actions to an input or textarea.
 component: true
 links:
-  source: /registry/styles/sera/input-group.json
+  source: /r/input-group.json
 ---
 
 <script>

@@ -2,7 +2,7 @@
 title: Badge
 description: Displays a badge or a component that looks like a badge.
 links:
-  source: /registry/styles/sera/badge.json
+  source: /r/badge.json
 ---
 
 <script>

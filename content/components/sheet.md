@@ -3,7 +3,7 @@ title: Sheet
 description: Extends the Dialog component to display content that complements the main content of the screen.
 component: true
 links:
-  source: /registry/styles/sera/sheet.json
+  source: /r/sheet.json
   doc: https://bits-ui.com/docs/components/dialog
   api: https://bits-ui.com/docs/components/dialog#api-reference
 ---

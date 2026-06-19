@@ -1,25 +1,60 @@
 {
-	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
-	"name": "badge",
-	"title": "Badge",
-	"type": "registry:ui",
-	"description": "Kura Badge component source.",
-	"devDependencies": [
-		"tailwind-variants@^3.2.2"
-	],
-	"registryDependencies": [
-		"./utils.json"
-	],
-	"files": [
-		{
-			"content": "<script lang=\"ts\" module>\n  import { type VariantProps, tv } from 'tailwind-variants';\n\n  export const badgeVariants = tv({\n    base: 'gap-1.5 rounded-full border border-zinc-800 bg-background px-2 py-0.5 font-mono text-[0.625rem] font-semibold tracking-widest uppercase text-zinc-300 transition-colors has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&>svg]:size-3! focus-visible:border-zinc-300 focus-visible:ring-zinc-300/30 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive group/badge inline-flex w-fit shrink-0 items-center justify-center overflow-hidden whitespace-nowrap focus-visible:ring-2 [&>svg]:pointer-events-none',\n    variants: {\n      variant: {\n        default: 'border-[#b9d765]/45 bg-[#b9d765]/15 text-zinc-50 [a]:hover:bg-[#b9d765]/25',\n        secondary: 'border-zinc-800 bg-zinc-900 text-zinc-300 [a]:hover:text-zinc-50',\n        destructive:\n          'border-destructive/40 bg-destructive/10 text-destructive [a]:hover:bg-destructive/15 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40',\n        outline: 'border-zinc-700 bg-transparent text-zinc-50 [a]:hover:bg-zinc-900',\n        ghost: 'border-transparent bg-transparent px-0 text-zinc-400 hover:text-zinc-50',\n        link: 'border-transparent bg-transparent px-0 text-[#d0e891] underline-offset-4 hover:text-zinc-50 hover:underline'\n      }\n    },\n    defaultVariants: {\n      variant: 'default'\n    }\n  });\n\n  export type BadgeVariant = VariantProps<typeof badgeVariants>['variant'];\n</script>\n\n<script lang=\"ts\">\n  import type { HTMLAnchorAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    href,\n    class: className,\n    variant = 'default',\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAnchorAttributes> & {\n    variant?: BadgeVariant;\n  } = $props();\n</script>\n\n<svelte:element\n  this={href ? 'a' : 'span'}\n  bind:this={ref}\n  data-slot=\"badge\"\n  {href}\n  class={cn(badgeVariants({ variant }), className)}\n  {...restProps}\n>\n  {@render children?.()}\n</svelte:element>\n",
-			"type": "registry:file",
-			"target": "badge/badge.svelte"
-		},
-		{
-			"content": "export { default as Badge } from './badge.svelte';\nexport { badgeVariants, type BadgeVariant } from './badge.svelte';\n",
-			"type": "registry:file",
-			"target": "badge/index.ts"
-		}
-	]
+  "name": "badge",
+  "title": "Badge",
+  "description": "Kura Badge component source.",
+  "type": "ui",
+  "add": "when-added",
+  "files": [
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "<script lang=\"ts\" module>\n  import { type VariantProps, tv } from 'tailwind-variants';\n\n  export const badgeVariants = tv({\n    base: 'gap-1.5 rounded-full border border-zinc-800 bg-background px-2 py-0.5 font-mono text-[0.625rem] font-semibold tracking-widest uppercase text-zinc-300 transition-colors has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&>svg]:size-3! focus-visible:border-zinc-300 focus-visible:ring-zinc-300/30 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive group/badge inline-flex w-fit shrink-0 items-center justify-center overflow-hidden whitespace-nowrap focus-visible:ring-2 [&>svg]:pointer-events-none',\n    variants: {\n      variant: {\n        default: 'border-[#b9d765]/45 bg-[#b9d765]/15 text-zinc-50 [a]:hover:bg-[#b9d765]/25',\n        secondary: 'border-zinc-800 bg-zinc-900 text-zinc-300 [a]:hover:text-zinc-50',\n        destructive:\n          'border-destructive/40 bg-destructive/10 text-destructive [a]:hover:bg-destructive/15 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40',\n        outline: 'border-zinc-700 bg-transparent text-zinc-50 [a]:hover:bg-zinc-900',\n        ghost: 'border-transparent bg-transparent px-0 text-zinc-400 hover:text-zinc-50',\n        link: 'border-transparent bg-transparent px-0 text-[#d0e891] underline-offset-4 hover:text-zinc-50 hover:underline'\n      }\n    },\n    defaultVariants: {\n      variant: 'default'\n    }\n  });\n\n  export type BadgeVariant = VariantProps<typeof badgeVariants>['variant'];\n</script>\n\n<script lang=\"ts\">\n  import type { HTMLAnchorAttributes } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    href,\n    class: className,\n    variant = 'default',\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAnchorAttributes> & {\n    variant?: BadgeVariant;\n  } = $props();\n</script>\n\n<svelte:element\n  this={href ? 'a' : 'span'}\n  bind:this={ref}\n  data-slot=\"badge\"\n  {href}\n  class={cn(badgeVariants({ variant }), className)}\n  {...restProps}\n>\n  {@render children?.()}\n</svelte:element>\n",
+      "path": "badge/badge.svelte",
+      "_imports_": [
+        {
+          "import": "$lib/utils.js",
+          "item": "utils",
+          "file": {
+            "type": "lib",
+            "path": "utils.ts"
+          },
+          "meta": {}
+        }
+      ],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "export { default as Badge } from './badge.svelte';\nexport { badgeVariants, type BadgeVariant } from './badge.svelte';\n",
+      "path": "badge/index.ts",
+      "_imports_": [
+        {
+          "import": "./badge.svelte",
+          "item": "badge",
+          "file": {
+            "type": "ui",
+            "path": "badge/badge.svelte"
+          },
+          "meta": {}
+        }
+      ],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    }
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "dependencies": [
+    {
+      "ecosystem": "js",
+      "name": "tailwind-variants",
+      "version": "^3.2.2"
+    }
+  ],
+  "devDependencies": []
 }

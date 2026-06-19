@@ -1,22 +1,54 @@
 {
-	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
-	"name": "input",
-	"title": "Input",
-	"type": "registry:ui",
-	"description": "Kura Input component source.",
-	"registryDependencies": [
-		"./utils.json"
-	],
-	"files": [
-		{
-			"content": "import Root from './input.svelte';\n\nexport {\n  Root,\n  //\n  Root as Input\n};\n",
-			"type": "registry:file",
-			"target": "input/index.ts"
-		},
-		{
-			"content": "<script lang=\"ts\">\n  import type { HTMLInputAttributes, HTMLInputTypeAttribute } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$UTILS$.js';\n\n  type InputType = Exclude<HTMLInputTypeAttribute, 'file'>;\n\n  type Props = WithElementRef<\n    Omit<HTMLInputAttributes, 'type'> &\n      ({ type: 'file'; files?: FileList } | { type?: InputType; files?: undefined })\n  >;\n\n  let {\n    ref = $bindable(null),\n    value = $bindable(),\n    type,\n    files = $bindable(),\n    class: className,\n    'data-slot': dataSlot = 'input',\n    ...restProps\n  }: Props = $props();\n</script>\n\n{#if type === 'file'}\n  <input\n    bind:this={ref}\n    data-slot={dataSlot}\n    class={cn(\n      'border-zinc-800 bg-zinc-900 text-zinc-50 placeholder:text-zinc-500 focus-visible:border-zinc-300 focus-visible:ring-2 focus-visible:ring-zinc-300/25 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 h-9 rounded-none border px-3 py-1 text-base transition-[color,border-color,box-shadow] file:h-7 file:text-sm file:font-medium md:text-sm file:text-zinc-50 w-full min-w-0 outline-none file:inline-flex file:border-0 file:bg-transparent disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50',\n      className\n    )}\n    type=\"file\"\n    bind:files\n    bind:value\n    {...restProps}\n  />\n{:else}\n  <input\n    bind:this={ref}\n    data-slot={dataSlot}\n    class={cn(\n      'border-zinc-800 bg-zinc-900 text-zinc-50 placeholder:text-zinc-500 focus-visible:border-zinc-300 focus-visible:ring-2 focus-visible:ring-zinc-300/25 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 h-9 rounded-none border px-3 py-1 text-base transition-[color,border-color,box-shadow] file:h-7 file:text-sm file:font-medium md:text-sm file:text-zinc-50 w-full min-w-0 outline-none file:inline-flex file:border-0 file:bg-transparent disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50',\n      className\n    )}\n    {type}\n    bind:value\n    {...restProps}\n  />\n{/if}\n",
-			"type": "registry:file",
-			"target": "input/input.svelte"
-		}
-	]
+  "name": "input",
+  "title": "Input",
+  "description": "Kura Input component source.",
+  "type": "ui",
+  "add": "when-added",
+  "files": [
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "import Root from './input.svelte';\n\nexport {\n  Root,\n  //\n  Root as Input\n};\n",
+      "path": "input/index.ts",
+      "_imports_": [
+        {
+          "import": "./input.svelte",
+          "item": "input",
+          "file": {
+            "type": "ui",
+            "path": "input/input.svelte"
+          },
+          "meta": {}
+        }
+      ],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "<script lang=\"ts\">\n  import type { HTMLInputAttributes, HTMLInputTypeAttribute } from 'svelte/elements';\n  import { cn, type WithElementRef } from '$lib/utils.js';\n\n  type InputType = Exclude<HTMLInputTypeAttribute, 'file'>;\n\n  type Props = WithElementRef<\n    Omit<HTMLInputAttributes, 'type'> &\n      ({ type: 'file'; files?: FileList } | { type?: InputType; files?: undefined })\n  >;\n\n  let {\n    ref = $bindable(null),\n    value = $bindable(),\n    type,\n    files = $bindable(),\n    class: className,\n    'data-slot': dataSlot = 'input',\n    ...restProps\n  }: Props = $props();\n</script>\n\n{#if type === 'file'}\n  <input\n    bind:this={ref}\n    data-slot={dataSlot}\n    class={cn(\n      'border-zinc-800 bg-zinc-900 text-zinc-50 placeholder:text-zinc-500 focus-visible:border-zinc-300 focus-visible:ring-2 focus-visible:ring-zinc-300/25 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 h-9 rounded-none border px-3 py-1 text-base transition-[color,border-color,box-shadow] file:h-7 file:text-sm file:font-medium md:text-sm file:text-zinc-50 w-full min-w-0 outline-none file:inline-flex file:border-0 file:bg-transparent disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50',\n      className\n    )}\n    type=\"file\"\n    bind:files\n    bind:value\n    {...restProps}\n  />\n{:else}\n  <input\n    bind:this={ref}\n    data-slot={dataSlot}\n    class={cn(\n      'border-zinc-800 bg-zinc-900 text-zinc-50 placeholder:text-zinc-500 focus-visible:border-zinc-300 focus-visible:ring-2 focus-visible:ring-zinc-300/25 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 h-9 rounded-none border px-3 py-1 text-base transition-[color,border-color,box-shadow] file:h-7 file:text-sm file:font-medium md:text-sm file:text-zinc-50 w-full min-w-0 outline-none file:inline-flex file:border-0 file:bg-transparent disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50',\n      className\n    )}\n    {type}\n    bind:value\n    {...restProps}\n  />\n{/if}\n",
+      "path": "input/input.svelte",
+      "_imports_": [
+        {
+          "import": "$lib/utils.js",
+          "item": "utils",
+          "file": {
+            "type": "lib",
+            "path": "utils.ts"
+          },
+          "meta": {}
+        }
+      ],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    }
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "dependencies": [],
+  "devDependencies": []
 }

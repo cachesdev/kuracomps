@@ -3,7 +3,7 @@ title: Aspect Ratio
 description: Displays content within a desired ratio.
 component: true
 links:
-  source: /registry/styles/sera/aspect-ratio.json
+  source: /r/aspect-ratio.json
   doc: https://bits-ui.com/docs/components/aspect-ratio
   api: https://bits-ui.com/docs/components/aspect-ratio#api-reference
 ---

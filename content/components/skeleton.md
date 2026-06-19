@@ -3,7 +3,7 @@ title: Skeleton
 description: Use to show a placeholder while content is loading.
 component: true
 links:
-  source: /registry/styles/sera/skeleton.json
+  source: /r/skeleton.json
 ---
 
 <script>

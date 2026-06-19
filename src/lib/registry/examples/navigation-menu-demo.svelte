@@ -89,7 +89,7 @@
             >
               {#snippet child({ props })}
                 <a {...props} href="/">
-                  <div class="mt-4 mb-2 text-lg font-medium">shadcn-svelte</div>
+                  <div class="mt-4 mb-2 text-lg font-medium">Kura</div>
                   <p class="text-muted-foreground text-sm leading-tight">
                     Beautifully designed components built with Tailwind CSS.
                   </p>

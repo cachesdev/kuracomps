@@ -3,7 +3,7 @@ title: Toggle Group
 description: A set of two-state buttons that can be toggled on or off.
 component: true
 links:
-  source: /registry/styles/sera/toggle-group.json
+  source: /r/toggle-group.json
   doc: https://bits-ui.com/docs/components/toggle-group
   api: https://bits-ui.com/docs/components/toggle-group#api-reference
 ---

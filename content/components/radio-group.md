@@ -3,7 +3,7 @@ title: Radio Group
 description: A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.
 component: true
 links:
-  source: /registry/styles/sera/radio-group.json
+  source: /r/radio-group.json
   doc: https://bits-ui.com/docs/components/radio-group
   api: https://bits-ui.com/docs/components/radio-group#api-reference
 ---

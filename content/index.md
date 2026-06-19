@@ -1,38 +1,35 @@
 ---
 title: Kura
-description: A shadcn-svelte registry for the Kura component warehouse.
+description: A jsrepo registry for the Kura component warehouse.
 ---
 
-Kura is a component registry for Svelte teams that want the Kura component system installed as source through the shadcn-svelte CLI.
+Kura is a component registry for Svelte teams that want the Kura component system installed as source through jsrepo.
 
 ## Install From The Registry
 
 Point your project at the Kura registry:
 
-```json title="components.json"
-{
-  "registry": "https://kura.gfdc.dev/registry",
-  "style": "sera"
-}
+```bash
+pnpm dlx jsrepo@latest init https://kura.gfdc.dev/r
 ```
 
 Then install components by name:
 
 ```bash
-pnpm dlx shadcn-svelte@latest add button
-pnpm dlx shadcn-svelte@latest add command
+pnpm dlx jsrepo@latest add button
+pnpm dlx jsrepo@latest add command
 ```
 
-## Direct URL Installs
+## Registry URL Installs
 
-Every registry item is also available as a standalone URL:
+You can also pass the registry URL directly:
 
 ```bash
-pnpm dlx shadcn-svelte@latest add https://kura.gfdc.dev/r/button.json
+pnpm dlx jsrepo@latest add button --registry https://kura.gfdc.dev/r
 ```
 
 The registry files declare their own dependencies, so components pull shared helpers like `utils` automatically.
 
 ## Component Docs
 
-Browse the component reference in [Components](/docs/components). These docs are transplanted from the official shadcn-svelte component docs and scoped to the components that Kura actually ships.
+Browse the component reference in [Components](/docs/components). These docs are scoped to the components that Kura ships.

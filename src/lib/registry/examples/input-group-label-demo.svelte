@@ -7,13 +7,13 @@
 
 <div class="grid w-full max-w-sm gap-4">
   <InputGroup.Root>
-    <InputGroup.Input id="email" placeholder="shadcn" />
+    <InputGroup.Input id="email" placeholder="kura" />
     <InputGroup.Addon>
       <Label.Root for="email">@</Label.Root>
     </InputGroup.Addon>
   </InputGroup.Root>
   <InputGroup.Root>
-    <InputGroup.Input id="email-2" placeholder="shadcn@vercel.com" />
+    <InputGroup.Input id="email-2" placeholder="kura@example.com" />
     <InputGroup.Addon align="block-start">
       <Label.Root for="email-2" class="text-foreground">Email</Label.Root>
       <Tooltip.Root>

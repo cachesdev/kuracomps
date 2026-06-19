@@ -15,7 +15,7 @@
   data-slot={dataSlot}
   class={cn(
     'bg-zinc-800 shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px',
-    // this is different in shadcn/ui but self-stretch breaks things for us
+    // Self-stretch breaks vertical separators in dense layouts.
     'data-[orientation=vertical]:h-full',
     className
   )}

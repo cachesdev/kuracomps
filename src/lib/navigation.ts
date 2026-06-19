@@ -46,7 +46,7 @@ export const sidebarNavItems: SidebarNavItem[] = [
 export const mainNavItems: NavItem[] = [
   { title: 'Docs', href: '/docs' },
   { title: 'Components', href: '/docs/components' },
-  { title: 'Registry', href: '/registry/styles/sera/index.json' }
+  { title: 'Registry', href: '/r/registry.json' }
 ];
 
 export function getFullNavItems(): SidebarNavItem[] {

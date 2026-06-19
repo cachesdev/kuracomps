@@ -3,7 +3,7 @@ title: Navigation Menu
 description: A collection of links for navigating websites.
 component: true
 links:
-  source: /registry/styles/sera/navigation-menu.json
+  source: /r/navigation-menu.json
   doc: https://bits-ui.com/docs/components/navigation-menu
   api: https://bits-ui.com/docs/components/navigation-menu#api-reference
 ---

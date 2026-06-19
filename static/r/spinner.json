@@ -1,25 +1,60 @@
 {
-	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
-	"name": "spinner",
-	"title": "Spinner",
-	"type": "registry:ui",
-	"description": "Kura Spinner component source.",
-	"devDependencies": [
-		"phosphor-svelte@^3.1.0"
-	],
-	"registryDependencies": [
-		"./utils.json"
-	],
-	"files": [
-		{
-			"content": "export { default as Spinner } from './spinner.svelte';\n",
-			"type": "registry:file",
-			"target": "spinner/index.ts"
-		},
-		{
-			"content": "<script lang=\"ts\">\n  import { cn } from '$UTILS$.js';\n  import SpinnerIcon from 'phosphor-svelte/lib/Spinner';\n  import type { SVGAttributes } from 'svelte/elements';\n\n  let {\n    class: className,\n    role = 'status',\n    // we add name, color, and stroke for compatibility with different icon libraries props\n    name,\n    color,\n    stroke,\n    'aria-label': ariaLabel = 'Loading',\n    ...restProps\n  }: SVGAttributes<SVGSVGElement> = $props();\n</script>\n\n<SpinnerIcon\n  {role}\n  name={name === null ? undefined : name}\n  color={color === null ? undefined : color}\n  stroke={stroke === null ? undefined : stroke}\n  aria-label={ariaLabel}\n  class={cn('size-4 animate-spin text-[#d0e891]', className)}\n  {...restProps}\n/>\n",
-			"type": "registry:file",
-			"target": "spinner/spinner.svelte"
-		}
-	]
+  "name": "spinner",
+  "title": "Spinner",
+  "description": "Kura Spinner component source.",
+  "type": "ui",
+  "add": "when-added",
+  "files": [
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "export { default as Spinner } from './spinner.svelte';\n",
+      "path": "spinner/index.ts",
+      "_imports_": [
+        {
+          "import": "./spinner.svelte",
+          "item": "spinner",
+          "file": {
+            "type": "ui",
+            "path": "spinner/spinner.svelte"
+          },
+          "meta": {}
+        }
+      ],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "<script lang=\"ts\">\n  import { cn } from '$lib/utils.js';\n  import SpinnerIcon from 'phosphor-svelte/lib/Spinner';\n  import type { SVGAttributes } from 'svelte/elements';\n\n  let {\n    class: className,\n    role = 'status',\n    // we add name, color, and stroke for compatibility with different icon libraries props\n    name,\n    color,\n    stroke,\n    'aria-label': ariaLabel = 'Loading',\n    ...restProps\n  }: SVGAttributes<SVGSVGElement> = $props();\n</script>\n\n<SpinnerIcon\n  {role}\n  name={name === null ? undefined : name}\n  color={color === null ? undefined : color}\n  stroke={stroke === null ? undefined : stroke}\n  aria-label={ariaLabel}\n  class={cn('size-4 animate-spin text-[#d0e891]', className)}\n  {...restProps}\n/>\n",
+      "path": "spinner/spinner.svelte",
+      "_imports_": [
+        {
+          "import": "$lib/utils.js",
+          "item": "utils",
+          "file": {
+            "type": "lib",
+            "path": "utils.ts"
+          },
+          "meta": {}
+        }
+      ],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    }
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "dependencies": [
+    {
+      "ecosystem": "js",
+      "name": "phosphor-svelte",
+      "version": "^3.1.0"
+    }
+  ],
+  "devDependencies": []
 }

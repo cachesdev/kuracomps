@@ -3,7 +3,7 @@ title: Field
 description: Combine labels, controls, and help text to compose accessible form fields and grouped inputs.
 component: true
 links:
-  source: /registry/styles/sera/field.json
+  source: /r/field.json
 ---
 
 <script>

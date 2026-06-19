@@ -3,7 +3,7 @@ title: Progress
 description: Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
 component: true
 links:
-  source: /registry/styles/sera/progress.json
+  source: /r/progress.json
   doc: https://bits-ui.com/docs/components/progress
   api: https://bits-ui.com/docs/components/progress#api-reference
 ---

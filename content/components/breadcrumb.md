@@ -3,7 +3,7 @@ title: Breadcrumb
 description: Displays the path to the current resource using a hierarchy of links.
 component: true
 links:
-  source: /registry/styles/sera/breadcrumb.json
+  source: /r/breadcrumb.json
 ---
 
 <script>

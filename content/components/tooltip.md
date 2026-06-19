@@ -3,7 +3,7 @@ title: Tooltip
 description: A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.
 component: true
 links:
-  source: /registry/styles/sera/tooltip.json
+  source: /r/tooltip.json
   doc: https://bits-ui.com/docs/components/tooltip
   api: https://bits-ui.com/docs/components/tooltip#api-reference
 ---

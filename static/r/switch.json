@@ -1,26 +1,60 @@
 {
-	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
-	"name": "switch",
-	"title": "Switch",
-	"type": "registry:ui",
-	"description": "Kura Switch component source.",
-	"devDependencies": [
-		"bits-ui@^2.18.1",
-		"@internationalized/date@^3.12.2"
-	],
-	"registryDependencies": [
-		"./utils.json"
-	],
-	"files": [
-		{
-			"content": "import Root from './switch.svelte';\n\nexport {\n  Root,\n  //\n  Root as Switch\n};\n",
-			"type": "registry:file",
-			"target": "switch/index.ts"
-		},
-		{
-			"content": "<script lang=\"ts\">\n  import { Switch as SwitchPrimitive } from 'bits-ui';\n  import { cn, type WithoutChildrenOrChild } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    checked = $bindable(false),\n    size = 'default',\n    ...restProps\n  }: WithoutChildrenOrChild<SwitchPrimitive.RootProps> & {\n    size?: 'sm' | 'default';\n  } = $props();\n</script>\n\n<SwitchPrimitive.Root\n  bind:ref\n  bind:checked\n  data-slot=\"switch\"\n  data-size={size}\n  class={cn(\n    'data-checked:bg-[#b9d765] data-unchecked:bg-background data-checked:border-[#b9d765] data-unchecked:border-zinc-700 focus-visible:border-zinc-300 focus-visible:ring-zinc-300/30 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 shrink-0 rounded-full border focus-visible:ring-2 aria-invalid:ring-2 data-[size=default]:h-5 data-[size=default]:w-9 data-[size=sm]:h-4 data-[size=sm]:w-7 peer group/switch relative inline-flex items-center transition-all outline-none after:absolute after:-inset-x-3 after:-inset-y-2 data-disabled:cursor-not-allowed data-disabled:opacity-50',\n    className\n  )}\n  {...restProps}\n>\n  <SwitchPrimitive.Thumb\n    data-slot=\"switch-thumb\"\n    class=\"bg-zinc-50 dark:data-unchecked:bg-zinc-50 dark:data-checked:bg-white group-data-[size=default]/switch:size-3.5 group-data-[size=sm]/switch:size-2.5 data-checked:translate-x-[calc(100%+3px)] data-unchecked:translate-x-0.5 pointer-events-none block rounded-full ring-0 transition-transform rtl:data-[state=checked]:translate-x-[calc(-100%)]\"\n  />\n</SwitchPrimitive.Root>\n",
-			"type": "registry:file",
-			"target": "switch/switch.svelte"
-		}
-	]
+  "name": "switch",
+  "title": "Switch",
+  "description": "Kura Switch component source.",
+  "type": "ui",
+  "add": "when-added",
+  "files": [
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "import Root from './switch.svelte';\n\nexport {\n  Root,\n  //\n  Root as Switch\n};\n",
+      "path": "switch/index.ts",
+      "_imports_": [
+        {
+          "import": "./switch.svelte",
+          "item": "switch",
+          "file": {
+            "type": "ui",
+            "path": "switch/switch.svelte"
+          },
+          "meta": {}
+        }
+      ],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "<script lang=\"ts\">\n  import { Switch as SwitchPrimitive } from 'bits-ui';\n  import { cn, type WithoutChildrenOrChild } from '$lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    checked = $bindable(false),\n    size = 'default',\n    ...restProps\n  }: WithoutChildrenOrChild<SwitchPrimitive.RootProps> & {\n    size?: 'sm' | 'default';\n  } = $props();\n</script>\n\n<SwitchPrimitive.Root\n  bind:ref\n  bind:checked\n  data-slot=\"switch\"\n  data-size={size}\n  class={cn(\n    'data-checked:bg-[#b9d765] data-unchecked:bg-background data-checked:border-[#b9d765] data-unchecked:border-zinc-700 focus-visible:border-zinc-300 focus-visible:ring-zinc-300/30 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 shrink-0 rounded-full border focus-visible:ring-2 aria-invalid:ring-2 data-[size=default]:h-5 data-[size=default]:w-9 data-[size=sm]:h-4 data-[size=sm]:w-7 peer group/switch relative inline-flex items-center transition-all outline-none after:absolute after:-inset-x-3 after:-inset-y-2 data-disabled:cursor-not-allowed data-disabled:opacity-50',\n    className\n  )}\n  {...restProps}\n>\n  <SwitchPrimitive.Thumb\n    data-slot=\"switch-thumb\"\n    class=\"bg-zinc-50 dark:data-unchecked:bg-zinc-50 dark:data-checked:bg-white group-data-[size=default]/switch:size-3.5 group-data-[size=sm]/switch:size-2.5 data-checked:translate-x-[calc(100%+3px)] data-unchecked:translate-x-0.5 pointer-events-none block rounded-full ring-0 transition-transform rtl:data-[state=checked]:translate-x-[calc(-100%)]\"\n  />\n</SwitchPrimitive.Root>\n",
+      "path": "switch/switch.svelte",
+      "_imports_": [
+        {
+          "import": "$lib/utils.js",
+          "item": "utils",
+          "file": {
+            "type": "lib",
+            "path": "utils.ts"
+          },
+          "meta": {}
+        }
+      ],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    }
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "dependencies": [
+    {
+      "ecosystem": "js",
+      "name": "bits-ui",
+      "version": "^2.18.1"
+    }
+  ],
+  "devDependencies": []
 }

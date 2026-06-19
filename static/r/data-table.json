@@ -1,32 +1,96 @@
 {
-	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
-	"name": "data-table",
-	"title": "Data Table",
-	"type": "registry:ui",
-	"description": "Kura Data Table component source.",
-	"devDependencies": [
-		"@tanstack/table-core@^8.21.3"
-	],
-	"files": [
-		{
-			"content": "import {\n  type RowData,\n  type TableOptions,\n  type TableOptionsResolved,\n  type TableState,\n  type Updater,\n  createTable\n} from '@tanstack/table-core';\n\n/**\n * Creates a reactive TanStack table object for Svelte.\n * @param options Table options to create the table with.\n * @returns A reactive table object.\n * @example\n * ```svelte\n * <script>\n *   const table = createSvelteTable({ ... })\n * </script>\n *\n * <table>\n *   <thead>\n *     {#each table.getHeaderGroups() as headerGroup}\n *       <tr>\n *         {#each headerGroup.headers as header}\n *           <th colspan={header.colSpan}>\n *         \t   <FlexRender content={header.column.columnDef.header} context={header.getContext()} />\n *         \t </th>\n *         {/each}\n *       </tr>\n *     {/each}\n *   </thead>\n * \t <!-- ... -->\n * </table>\n * ```\n */\nexport function createSvelteTable<TData extends RowData>(options: TableOptions<TData>) {\n  const resolvedOptions: TableOptionsResolved<TData> = mergeObjects(\n    {\n      state: {},\n      onStateChange() {},\n      renderFallbackValue: null,\n      mergeOptions: (\n        defaultOptions: TableOptions<TData>,\n        options: Partial<TableOptions<TData>>\n      ) => {\n        return mergeObjects(defaultOptions, options);\n      }\n    },\n    options\n  );\n\n  const table = createTable(resolvedOptions);\n  let state = $state<TableState>(table.initialState);\n\n  function updateOptions() {\n    table.setOptions(() => {\n      return mergeObjects(resolvedOptions, options, {\n        state: mergeObjects(state, options.state || {}),\n\n        onStateChange: (updater: Updater<TableState>) => {\n          if (updater instanceof Function) state = updater(state);\n          else state = mergeObjects(state, updater);\n\n          options.onStateChange?.(updater);\n        }\n      });\n    });\n  }\n\n  updateOptions();\n\n  $effect.pre(() => {\n    updateOptions();\n  });\n\n  return table;\n}\n\ntype MaybeThunk<T extends object> = T | (() => T | null | undefined);\ntype Intersection<T extends readonly unknown[]> = (T extends [infer H, ...infer R]\n  ? H & Intersection<R>\n  : unknown) & {};\n\n/**\n * Lazily merges several objects (or thunks) while preserving\n * getter semantics from every source.\n *\n * Proxy-based to avoid known WebKit recursion issue.\n */\n// eslint-disable-next-line @typescript-eslint/no-explicit-any\nexport function mergeObjects<Sources extends readonly MaybeThunk<any>[]>(\n  ...sources: Sources\n): Intersection<{ [K in keyof Sources]: Sources[K] }> {\n  const resolve = <T extends object>(src: MaybeThunk<T>): T | undefined =>\n    typeof src === 'function' ? (src() ?? undefined) : src;\n\n  const findSourceWithKey = (key: PropertyKey) => {\n    for (let i = sources.length - 1; i >= 0; i--) {\n      const obj = resolve(sources[i]);\n      if (obj && key in obj) return obj;\n    }\n    return undefined;\n  };\n\n  return new Proxy(Object.create(null), {\n    get(_, key) {\n      const src = findSourceWithKey(key);\n\n      return src?.[key as never];\n    },\n\n    has(_, key) {\n      return !!findSourceWithKey(key);\n    },\n\n    ownKeys(): (string | symbol)[] {\n      // eslint-disable-next-line svelte/prefer-svelte-reactivity\n      const all = new Set<string | symbol>();\n      for (const s of sources) {\n        const obj = resolve(s);\n        if (obj) {\n          for (const k of Reflect.ownKeys(obj) as (string | symbol)[]) {\n            all.add(k);\n          }\n        }\n      }\n      return [...all];\n    },\n\n    getOwnPropertyDescriptor(_, key) {\n      const src = findSourceWithKey(key);\n      if (!src) return undefined;\n      return {\n        configurable: true,\n        enumerable: true,\n        // eslint-disable-next-line @typescript-eslint/no-explicit-any\n        value: (src as any)[key],\n        writable: true\n      };\n    }\n  }) as Intersection<{ [K in keyof Sources]: Sources[K] }>;\n}\n",
-			"type": "registry:file",
-			"target": "data-table/data-table.svelte.ts"
-		},
-		{
-			"content": "<script\n  lang=\"ts\"\n  generics=\"TData, TValue, TContext extends HeaderContext<TData, TValue> | CellContext<TData, TValue>\"\n>\n  import type { CellContext, ColumnDefTemplate, HeaderContext } from '@tanstack/table-core';\n  import { RenderComponentConfig, RenderSnippetConfig } from './render-helpers.js';\n  import type { Attachment } from 'svelte/attachments';\n  type Props = {\n    /** The cell or header field of the current cell's column definition. */\n    content?: TContext extends HeaderContext<TData, TValue>\n      ? ColumnDefTemplate<HeaderContext<TData, TValue>>\n      : TContext extends CellContext<TData, TValue>\n        ? ColumnDefTemplate<CellContext<TData, TValue>>\n        : never;\n    /** The result of the `getContext()` function of the header or cell */\n    context: TContext;\n\n    /** Used to pass attachments that can't be gotten through context */\n    attach?: Attachment;\n  };\n\n  let { content, context, attach }: Props = $props();\n</script>\n\n{#if typeof content === 'string'}\n  {content}\n{:else if content instanceof Function}\n  <!-- It's unlikely that a CellContext will be passed to a Header -->\n  <!-- eslint-disable-next-line @typescript-eslint/no-explicit-any -->\n  {@const result = content(context as any)}\n  {#if result instanceof RenderComponentConfig}\n    {@const { component: Component, props } = result}\n    <Component {...props} {attach} />\n  {:else if result instanceof RenderSnippetConfig}\n    {@const { snippet, params } = result}\n    {@render snippet({ ...params, attach })}\n  {:else}\n    {result}\n  {/if}\n{/if}\n",
-			"type": "registry:file",
-			"target": "data-table/flex-render.svelte"
-		},
-		{
-			"content": "export { default as FlexRender } from './flex-render.svelte';\nexport { renderComponent, renderSnippet } from './render-helpers.js';\nexport { createSvelteTable } from './data-table.svelte.js';\n",
-			"type": "registry:file",
-			"target": "data-table/index.ts"
-		},
-		{
-			"content": "import type { Component, ComponentProps, Snippet } from 'svelte';\n\n/**\n * A helper class to make it easy to identify Svelte components in\n * `columnDef.cell` and `columnDef.header` properties.\n *\n * > NOTE: This class should only be used internally by the adapter. If you're\n * reading this and you don't know what this is for, you probably don't need it.\n *\n * @example\n * ```svelte\n * {@const result = content(context as any)}\n * {#if result instanceof RenderComponentConfig}\n *   {@const { component: Component, props } = result}\n *   <Component {...props} />\n * {/if}\n * ```\n */\nexport class RenderComponentConfig<TComponent extends Component> {\n  component: TComponent;\n  props: ComponentProps<TComponent> | Record<string, never>;\n  constructor(\n    component: TComponent,\n    props: ComponentProps<TComponent> | Record<string, never> = {}\n  ) {\n    this.component = component;\n    this.props = props;\n  }\n}\n\n/**\n * A helper class to make it easy to identify Svelte Snippets in `columnDef.cell` and `columnDef.header` properties.\n *\n * > NOTE: This class should only be used internally by the adapter. If you're\n * reading this and you don't know what this is for, you probably don't need it.\n *\n * @example\n * ```svelte\n * {@const result = content(context as any)}\n * {#if result instanceof RenderSnippetConfig}\n *   {@const { snippet, params } = result}\n *   {@render snippet(params)}\n * {/if}\n * ```\n */\nexport class RenderSnippetConfig<TProps> {\n  snippet: Snippet<[TProps]>;\n  params: TProps;\n  constructor(snippet: Snippet<[TProps]>, params: TProps) {\n    this.snippet = snippet;\n    this.params = params;\n  }\n}\n\n/**\n * A helper function to help create cells from Svelte components through ColumnDef's `cell` and `header` properties.\n *\n * This is only to be used with Svelte Components - use `renderSnippet` for Svelte Snippets.\n *\n * @param component A Svelte component\n * @param props The props to pass to `component`\n * @returns A `RenderComponentConfig` object that helps svelte-table know how to render the header/cell component.\n * @example\n * ```ts\n * // +page.svelte\n * const defaultColumns = [\n *   columnHelper.accessor('name', {\n *     header: header => renderComponent(SortHeader, { label: 'Name', header }),\n *   }),\n *   columnHelper.accessor('state', {\n *     header: header => renderComponent(SortHeader, { label: 'State', header }),\n *   }),\n * ]\n * ```\n * @see {@link https://tanstack.com/table/latest/docs/guide/column-defs}\n */\nexport function renderComponent<\n  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n  T extends Component<any>,\n  Props extends ComponentProps<T>\n>(component: T, props: Props = {} as Props) {\n  return new RenderComponentConfig(component, props);\n}\n\n/**\n * A helper function to help create cells from Svelte Snippets through ColumnDef's `cell` and `header` properties.\n *\n * The snippet must only take one parameter.\n *\n * This is only to be used with Snippets - use `renderComponent` for Svelte Components.\n *\n * @param snippet\n * @param params\n * @returns - A `RenderSnippetConfig` object that helps svelte-table know how to render the header/cell snippet.\n * @example\n * ```ts\n * // +page.svelte\n * const defaultColumns = [\n *   columnHelper.accessor('name', {\n *     cell: cell => renderSnippet(nameSnippet, { name: cell.row.name }),\n *   }),\n *   columnHelper.accessor('state', {\n *     cell: cell => renderSnippet(stateSnippet, { state: cell.row.state }),\n *   }),\n * ]\n * ```\n * @see {@link https://tanstack.com/table/latest/docs/guide/column-defs}\n */\nexport function renderSnippet<TProps>(snippet: Snippet<[TProps]>, params: TProps = {} as TProps) {\n  return new RenderSnippetConfig(snippet, params);\n}\n",
-			"type": "registry:file",
-			"target": "data-table/render-helpers.ts"
-		}
-	]
+  "name": "data-table",
+  "title": "Data Table",
+  "description": "Kura Data Table component source.",
+  "type": "ui",
+  "add": "when-added",
+  "files": [
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "import {\n  type RowData,\n  type TableOptions,\n  type TableOptionsResolved,\n  type TableState,\n  type Updater,\n  createTable\n} from '@tanstack/table-core';\n\n/**\n * Creates a reactive TanStack table object for Svelte.\n * @param options Table options to create the table with.\n * @returns A reactive table object.\n * @example\n * ```svelte\n * <script>\n *   const table = createSvelteTable({ ... })\n * </script>\n *\n * <table>\n *   <thead>\n *     {#each table.getHeaderGroups() as headerGroup}\n *       <tr>\n *         {#each headerGroup.headers as header}\n *           <th colspan={header.colSpan}>\n *         \t   <FlexRender content={header.column.columnDef.header} context={header.getContext()} />\n *         \t </th>\n *         {/each}\n *       </tr>\n *     {/each}\n *   </thead>\n * \t <!-- ... -->\n * </table>\n * ```\n */\nexport function createSvelteTable<TData extends RowData>(options: TableOptions<TData>) {\n  const resolvedOptions: TableOptionsResolved<TData> = mergeObjects(\n    {\n      state: {},\n      onStateChange() {},\n      renderFallbackValue: null,\n      mergeOptions: (\n        defaultOptions: TableOptions<TData>,\n        options: Partial<TableOptions<TData>>\n      ) => {\n        return mergeObjects(defaultOptions, options);\n      }\n    },\n    options\n  );\n\n  const table = createTable(resolvedOptions);\n  let state = $state<TableState>(table.initialState);\n\n  function updateOptions() {\n    table.setOptions(() => {\n      return mergeObjects(resolvedOptions, options, {\n        state: mergeObjects(state, options.state || {}),\n\n        onStateChange: (updater: Updater<TableState>) => {\n          if (updater instanceof Function) state = updater(state);\n          else state = mergeObjects(state, updater);\n\n          options.onStateChange?.(updater);\n        }\n      });\n    });\n  }\n\n  updateOptions();\n\n  $effect.pre(() => {\n    updateOptions();\n  });\n\n  return table;\n}\n\ntype MaybeThunk<T extends object> = T | (() => T | null | undefined);\ntype Intersection<T extends readonly unknown[]> = (T extends [infer H, ...infer R]\n  ? H & Intersection<R>\n  : unknown) & {};\n\n/**\n * Lazily merges several objects (or thunks) while preserving\n * getter semantics from every source.\n *\n * Proxy-based to avoid known WebKit recursion issue.\n */\n// eslint-disable-next-line @typescript-eslint/no-explicit-any\nexport function mergeObjects<Sources extends readonly MaybeThunk<any>[]>(\n  ...sources: Sources\n): Intersection<{ [K in keyof Sources]: Sources[K] }> {\n  const resolve = <T extends object>(src: MaybeThunk<T>): T | undefined =>\n    typeof src === 'function' ? (src() ?? undefined) : src;\n\n  const findSourceWithKey = (key: PropertyKey) => {\n    for (let i = sources.length - 1; i >= 0; i--) {\n      const obj = resolve(sources[i]);\n      if (obj && key in obj) return obj;\n    }\n    return undefined;\n  };\n\n  return new Proxy(Object.create(null), {\n    get(_, key) {\n      const src = findSourceWithKey(key);\n\n      return src?.[key as never];\n    },\n\n    has(_, key) {\n      return !!findSourceWithKey(key);\n    },\n\n    ownKeys(): (string | symbol)[] {\n      // eslint-disable-next-line svelte/prefer-svelte-reactivity\n      const all = new Set<string | symbol>();\n      for (const s of sources) {\n        const obj = resolve(s);\n        if (obj) {\n          for (const k of Reflect.ownKeys(obj) as (string | symbol)[]) {\n            all.add(k);\n          }\n        }\n      }\n      return [...all];\n    },\n\n    getOwnPropertyDescriptor(_, key) {\n      const src = findSourceWithKey(key);\n      if (!src) return undefined;\n      return {\n        configurable: true,\n        enumerable: true,\n        // eslint-disable-next-line @typescript-eslint/no-explicit-any\n        value: (src as any)[key],\n        writable: true\n      };\n    }\n  }) as Intersection<{ [K in keyof Sources]: Sources[K] }>;\n}\n",
+      "path": "data-table/data-table.svelte.ts",
+      "_imports_": [],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "<script\n  lang=\"ts\"\n  generics=\"TData, TValue, TContext extends HeaderContext<TData, TValue> | CellContext<TData, TValue>\"\n>\n  import type { CellContext, ColumnDefTemplate, HeaderContext } from '@tanstack/table-core';\n  import { RenderComponentConfig, RenderSnippetConfig } from './render-helpers.js';\n  import type { Attachment } from 'svelte/attachments';\n  type Props = {\n    /** The cell or header field of the current cell's column definition. */\n    content?: TContext extends HeaderContext<TData, TValue>\n      ? ColumnDefTemplate<HeaderContext<TData, TValue>>\n      : TContext extends CellContext<TData, TValue>\n        ? ColumnDefTemplate<CellContext<TData, TValue>>\n        : never;\n    /** The result of the `getContext()` function of the header or cell */\n    context: TContext;\n\n    /** Used to pass attachments that can't be gotten through context */\n    attach?: Attachment;\n  };\n\n  let { content, context, attach }: Props = $props();\n</script>\n\n{#if typeof content === 'string'}\n  {content}\n{:else if content instanceof Function}\n  <!-- It's unlikely that a CellContext will be passed to a Header -->\n  <!-- eslint-disable-next-line @typescript-eslint/no-explicit-any -->\n  {@const result = content(context as any)}\n  {#if result instanceof RenderComponentConfig}\n    {@const { component: Component, props } = result}\n    <Component {...props} {attach} />\n  {:else if result instanceof RenderSnippetConfig}\n    {@const { snippet, params } = result}\n    {@render snippet({ ...params, attach })}\n  {:else}\n    {result}\n  {/if}\n{/if}\n",
+      "path": "data-table/flex-render.svelte",
+      "_imports_": [
+        {
+          "import": "./render-helpers.js",
+          "item": "data-table",
+          "file": {
+            "type": "ui",
+            "path": "data-table/render-helpers.ts"
+          },
+          "meta": {}
+        }
+      ],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "export { default as FlexRender } from './flex-render.svelte';\nexport { renderComponent, renderSnippet } from './render-helpers.js';\nexport { createSvelteTable } from './data-table.svelte.js';\n",
+      "path": "data-table/index.ts",
+      "_imports_": [
+        {
+          "import": "./flex-render.svelte",
+          "item": "data-table",
+          "file": {
+            "type": "ui",
+            "path": "data-table/flex-render.svelte"
+          },
+          "meta": {}
+        },
+        {
+          "import": "./render-helpers.js",
+          "item": "data-table",
+          "file": {
+            "type": "ui",
+            "path": "data-table/render-helpers.ts"
+          },
+          "meta": {}
+        },
+        {
+          "import": "./data-table.svelte.js",
+          "item": "data-table",
+          "file": {
+            "type": "ui",
+            "path": "data-table/data-table.svelte.ts"
+          },
+          "meta": {}
+        }
+      ],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "import type { Component, ComponentProps, Snippet } from 'svelte';\n\n/**\n * A helper class to make it easy to identify Svelte components in\n * `columnDef.cell` and `columnDef.header` properties.\n *\n * > NOTE: This class should only be used internally by the adapter. If you're\n * reading this and you don't know what this is for, you probably don't need it.\n *\n * @example\n * ```svelte\n * {@const result = content(context as any)}\n * {#if result instanceof RenderComponentConfig}\n *   {@const { component: Component, props } = result}\n *   <Component {...props} />\n * {/if}\n * ```\n */\nexport class RenderComponentConfig<TComponent extends Component> {\n  component: TComponent;\n  props: ComponentProps<TComponent> | Record<string, never>;\n  constructor(\n    component: TComponent,\n    props: ComponentProps<TComponent> | Record<string, never> = {}\n  ) {\n    this.component = component;\n    this.props = props;\n  }\n}\n\n/**\n * A helper class to make it easy to identify Svelte Snippets in `columnDef.cell` and `columnDef.header` properties.\n *\n * > NOTE: This class should only be used internally by the adapter. If you're\n * reading this and you don't know what this is for, you probably don't need it.\n *\n * @example\n * ```svelte\n * {@const result = content(context as any)}\n * {#if result instanceof RenderSnippetConfig}\n *   {@const { snippet, params } = result}\n *   {@render snippet(params)}\n * {/if}\n * ```\n */\nexport class RenderSnippetConfig<TProps> {\n  snippet: Snippet<[TProps]>;\n  params: TProps;\n  constructor(snippet: Snippet<[TProps]>, params: TProps) {\n    this.snippet = snippet;\n    this.params = params;\n  }\n}\n\n/**\n * A helper function to help create cells from Svelte components through ColumnDef's `cell` and `header` properties.\n *\n * This is only to be used with Svelte Components - use `renderSnippet` for Svelte Snippets.\n *\n * @param component A Svelte component\n * @param props The props to pass to `component`\n * @returns A `RenderComponentConfig` object that helps svelte-table know how to render the header/cell component.\n * @example\n * ```ts\n * // +page.svelte\n * const defaultColumns = [\n *   columnHelper.accessor('name', {\n *     header: header => renderComponent(SortHeader, { label: 'Name', header }),\n *   }),\n *   columnHelper.accessor('state', {\n *     header: header => renderComponent(SortHeader, { label: 'State', header }),\n *   }),\n * ]\n * ```\n * @see {@link https://tanstack.com/table/latest/docs/guide/column-defs}\n */\nexport function renderComponent<\n  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n  T extends Component<any>,\n  Props extends ComponentProps<T>\n>(component: T, props: Props = {} as Props) {\n  return new RenderComponentConfig(component, props);\n}\n\n/**\n * A helper function to help create cells from Svelte Snippets through ColumnDef's `cell` and `header` properties.\n *\n * The snippet must only take one parameter.\n *\n * This is only to be used with Snippets - use `renderComponent` for Svelte Components.\n *\n * @param snippet\n * @param params\n * @returns - A `RenderSnippetConfig` object that helps svelte-table know how to render the header/cell snippet.\n * @example\n * ```ts\n * // +page.svelte\n * const defaultColumns = [\n *   columnHelper.accessor('name', {\n *     cell: cell => renderSnippet(nameSnippet, { name: cell.row.name }),\n *   }),\n *   columnHelper.accessor('state', {\n *     cell: cell => renderSnippet(stateSnippet, { state: cell.row.state }),\n *   }),\n * ]\n * ```\n * @see {@link https://tanstack.com/table/latest/docs/guide/column-defs}\n */\nexport function renderSnippet<TProps>(snippet: Snippet<[TProps]>, params: TProps = {} as TProps) {\n  return new RenderSnippetConfig(snippet, params);\n}\n",
+      "path": "data-table/render-helpers.ts",
+      "_imports_": [],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    }
+  ],
+  "registryDependencies": [],
+  "dependencies": [
+    {
+      "ecosystem": "js",
+      "name": "@tanstack/table-core",
+      "version": "^8.21.3"
+    }
+  ],
+  "devDependencies": []
 }

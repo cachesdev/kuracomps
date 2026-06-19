@@ -3,7 +3,7 @@ title: Context Menu
 description: Displays a menu to the user — such as a set of actions or functions — triggered by right click.
 component: true
 links:
-  source: /registry/styles/sera/context-menu.json
+  source: /r/context-menu.json
   doc: https://bits-ui.com/docs/components/context-menu
   api: https://bits-ui.com/docs/components/context-menu#api-reference
 ---

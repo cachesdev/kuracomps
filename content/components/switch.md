@@ -3,7 +3,7 @@ title: Switch
 description: A control that allows the user to toggle between checked and not checked.
 component: true
 links:
-  source: /registry/styles/sera/switch.json
+  source: /r/switch.json
   doc: https://bits-ui.com/docs/components/switch
   api: https://bits-ui.com/docs/components/switch#api-reference
 ---

@@ -3,7 +3,7 @@ title: Label
 description: Renders an accessible label associated with controls.
 component: true
 links:
-  source: /registry/styles/sera/label.json
+  source: /r/label.json
   doc: https://bits-ui.com/docs/components/label
   api: https://bits-ui.com/docs/components/label#api-reference
 ---

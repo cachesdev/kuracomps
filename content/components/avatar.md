@@ -3,7 +3,7 @@ title: Avatar
 description: An image element with a fallback for representing the user.
 component: true
 links:
-  source: /registry/styles/sera/avatar.json
+  source: /r/avatar.json
   doc: https://bits-ui.com/docs/components/avatar
   api: https://bits-ui.com/docs/components/avatar#api-reference
 ---
@@ -66,7 +66,7 @@ Copy and paste the following code into your project.
 
 ```svelte showLineNumbers
 <Avatar.Root>
-  <Avatar.Image src="https://github.com/shadcn.png" alt="@shadcn" />
-  <Avatar.Fallback>CN</Avatar.Fallback>
+  <Avatar.Image src="https://github.com/cachesdev.png" alt="@cachesdev" />
+  <Avatar.Fallback>CD</Avatar.Fallback>
 </Avatar.Root>
 ```

@@ -3,7 +3,7 @@ title: Drawer
 description: A drawer component for Svelte.
 component: true
 links:
-  source: /registry/styles/sera/drawer.json
+  source: /r/drawer.json
   doc: https://github.com/huntabyte/vaul-svelte
 ---
 

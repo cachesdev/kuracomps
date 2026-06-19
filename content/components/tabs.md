@@ -3,7 +3,7 @@ title: Tabs
 description: A set of layered sections of content—known as tab panels—that are displayed one at a time.
 component: true
 links:
-  source: /registry/styles/sera/tabs.json
+  source: /r/tabs.json
   doc: https://bits-ui.com/docs/components/tabs
   api: https://bits-ui.com/docs/components/tabs#api-reference
 ---

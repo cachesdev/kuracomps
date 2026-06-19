@@ -3,7 +3,7 @@ title: Input OTP
 description: Accessible one-time password component with copy paste functionality.
 component: true
 links:
-  source: /registry/styles/sera/input-otp.json
+  source: /r/input-otp.json
   doc: https://bits-ui.com/docs/components/pin-input
   api: https://bits-ui.com/docs/components/pin-input#api-reference
 ---

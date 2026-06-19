@@ -3,7 +3,7 @@ title: Native Select
 description: A styled native HTML select element with consistent design system integration.
 component: true
 links:
-  source: /registry/styles/sera/native-select.json
+  source: /r/native-select.json
 ---
 
 <script>

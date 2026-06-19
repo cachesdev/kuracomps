@@ -3,7 +3,7 @@ title: Slider
 description: An input where the user selects a value from within a given range.
 component: true
 links:
-  source: /registry/styles/sera/slider.json
+  source: /r/slider.json
   doc: https://bits-ui.com/docs/components/slider
   api: https://bits-ui.com/docs/components/slider#api-reference
 ---

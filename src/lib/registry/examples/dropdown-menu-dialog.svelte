@@ -57,7 +57,7 @@
     <Field.Group class="py-3">
       <Field.Field>
         <Label for="email">Email Address</Label>
-        <Input id="email" name="email" type="email" placeholder="shadcn@vercel.com" />
+        <Input id="email" name="email" type="email" placeholder="kura@example.com" />
       </Field.Field>
       <Field.Field>
         <Field.Label for="message">Message (Optional)</Field.Label>

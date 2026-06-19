@@ -3,7 +3,7 @@ title: Dialog
 description: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
 component: true
 links:
-  source: /registry/styles/sera/dialog.json
+  source: /r/dialog.json
   doc: https://bits-ui.com/docs/components/dialog
   api: https://bits-ui.com/docs/components/dialog#api-reference
 ---

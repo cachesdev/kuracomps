@@ -1,6 +1,6 @@
 # Kura Components
 
-Kura is a shadcn-svelte registry and documentation site for the component system.
+Kura is a jsrepo registry and documentation site for the component system.
 
 ## Development
 
@@ -11,31 +11,36 @@ pnpm dev
 
 ## Registry
 
-Regenerate the registry manifests from `src/lib/components/ui`:
+Regenerate the registry from `src/lib/components/ui`, `src/lib/hooks`, and `src/lib/utils.ts`:
 
 ```sh
 pnpm registry:build
 ```
 
-This writes standalone URL install files to `static/r`:
+This writes the jsrepo HTTP registry to `static/r`:
 
 ```sh
-pnpm dlx shadcn-svelte@latest add https://kura.gfdc.dev/r/button.json
+pnpm dlx jsrepo@latest init https://kura.gfdc.dev/r
+pnpm dlx jsrepo@latest add button
 ```
 
-Component files declare their registry dependencies, so `button` and other UI items pull `utils` automatically when needed.
+Consumers can configure paths in `jsrepo.config.ts`:
 
-It also writes shadcn-style registry files to `static/registry/styles/sera`, so a consumer project can set:
+```ts
+import { defineConfig } from 'jsrepo';
 
-```json
-{
-  "registry": "https://kura.gfdc.dev/registry",
-  "style": "sera"
-}
+export default defineConfig({
+  registries: ['https://kura.gfdc.dev/r'],
+  paths: {
+    ui: '$lib/components/ui',
+    hook: '$lib/hooks',
+    lib: '$lib'
+  }
+});
 ```
 
 Then install by name:
 
 ```sh
-pnpm dlx shadcn-svelte@latest add button
+pnpm dlx jsrepo@latest add button
 ```

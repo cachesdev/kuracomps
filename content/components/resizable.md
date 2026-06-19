@@ -3,7 +3,7 @@ title: Resizable
 description: Accessible resizable panel groups and layouts with keyboard support.
 component: true
 links:
-  source: /registry/styles/sera/resizable.json
+  source: /r/resizable.json
   doc: https://www.paneforge.com
   api: https://www.paneforge.com/docs/components/pane-group
 ---

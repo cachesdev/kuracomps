@@ -3,7 +3,7 @@ title: Range Calendar
 description: A calendar component that allows users to select a range of dates.
 component: true
 links:
-  source: /registry/styles/sera/range-calendar.json
+  source: /r/range-calendar.json
   doc: https://bits-ui.com/docs/components/range-calendar
   api: https://bits-ui.com/docs/components/range-calendar#api-reference
 ---

@@ -3,7 +3,7 @@ title: Command
 description: Fast, composable, unstyled command menu for Svelte.
 component: true
 links:
-  source: /registry/styles/sera/command.json
+  source: /r/command.json
   doc: https://bits-ui.com/docs/components/command
   api: https://bits-ui.com/docs/components/command#api-reference
 ---

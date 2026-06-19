@@ -1,26 +1,60 @@
 {
-	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
-	"name": "aspect-ratio",
-	"title": "Aspect Ratio",
-	"type": "registry:ui",
-	"description": "Kura Aspect Ratio component source.",
-	"devDependencies": [
-		"bits-ui@^2.18.1",
-		"@internationalized/date@^3.12.2"
-	],
-	"registryDependencies": [
-		"./utils.json"
-	],
-	"files": [
-		{
-			"content": "<script lang=\"ts\">\n  import { AspectRatio as AspectRatioPrimitive } from 'bits-ui';\n  import { cn } from '$UTILS$.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: AspectRatioPrimitive.RootProps = $props();\n</script>\n\n<AspectRatioPrimitive.Root\n  bind:ref\n  data-slot=\"aspect-ratio\"\n  class={cn('overflow-hidden border border-zinc-800 bg-background text-zinc-100', className)}\n  {...restProps}\n/>\n",
-			"type": "registry:file",
-			"target": "aspect-ratio/aspect-ratio.svelte"
-		},
-		{
-			"content": "import Root from './aspect-ratio.svelte';\n\nexport { Root, Root as AspectRatio };\n",
-			"type": "registry:file",
-			"target": "aspect-ratio/index.ts"
-		}
-	]
+  "name": "aspect-ratio",
+  "title": "Aspect Ratio",
+  "description": "Kura Aspect Ratio component source.",
+  "type": "ui",
+  "add": "when-added",
+  "files": [
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "<script lang=\"ts\">\n  import { AspectRatio as AspectRatioPrimitive } from 'bits-ui';\n  import { cn } from '$lib/utils.js';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: AspectRatioPrimitive.RootProps = $props();\n</script>\n\n<AspectRatioPrimitive.Root\n  bind:ref\n  data-slot=\"aspect-ratio\"\n  class={cn('overflow-hidden border border-zinc-800 bg-background text-zinc-100', className)}\n  {...restProps}\n/>\n",
+      "path": "aspect-ratio/aspect-ratio.svelte",
+      "_imports_": [
+        {
+          "import": "$lib/utils.js",
+          "item": "utils",
+          "file": {
+            "type": "lib",
+            "path": "utils.ts"
+          },
+          "meta": {}
+        }
+      ],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "import Root from './aspect-ratio.svelte';\n\nexport { Root, Root as AspectRatio };\n",
+      "path": "aspect-ratio/index.ts",
+      "_imports_": [
+        {
+          "import": "./aspect-ratio.svelte",
+          "item": "aspect-ratio",
+          "file": {
+            "type": "ui",
+            "path": "aspect-ratio/aspect-ratio.svelte"
+          },
+          "meta": {}
+        }
+      ],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    }
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "dependencies": [
+    {
+      "ecosystem": "js",
+      "name": "bits-ui",
+      "version": "^2.18.1"
+    }
+  ],
+  "devDependencies": []
 }

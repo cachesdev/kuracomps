@@ -15,13 +15,13 @@
 
 <div class="grid w-full max-w-sm gap-6">
   <InputGroup.Root>
-    <InputGroup.Input placeholder="https://x.com/shadcn" readonly />
+    <InputGroup.Input placeholder="https://kura.gfdc.dev" readonly />
     <InputGroup.Addon align="inline-end">
       <InputGroup.Button
         aria-label="Copy"
         title="Copy"
         size="icon-xs"
-        onclick={() => clipboard.copy('https://x.com/shadcn')}
+        onclick={() => clipboard.copy('https://kura.gfdc.dev')}
       >
         {#if clipboard.copied}
           <IconCheck />

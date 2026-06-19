@@ -10,12 +10,12 @@
   <link rel="icon" href={favicon} />
   <meta
     name="description"
-    content="Kura is a shadcn-svelte component warehouse for dense product screens."
+    content="Kura is a jsrepo component warehouse for dense product screens."
   />
   <meta property="og:title" content="Kura components" />
   <meta
     property="og:description"
-    content="A shadcn-svelte registry and documentation site tuned for dense product interfaces."
+    content="A jsrepo registry and documentation site tuned for dense product interfaces."
   />
 </svelte:head>
 <a

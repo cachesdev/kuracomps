@@ -3,7 +3,7 @@ title: Hover Card
 description: For sighted users to preview content available behind a link.
 component: true
 links:
-  source: /registry/styles/sera/hover-card.json
+  source: /r/hover-card.json
   doc: https://bits-ui.com/docs/components/link-preview
   api: https://bits-ui.com/docs/components/link-preview#api-reference
 ---

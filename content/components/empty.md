@@ -3,7 +3,7 @@ title: Empty
 description: Use the Empty component to display an empty state.
 component: true
 links:
-  source: /registry/styles/sera/empty.json
+  source: /r/empty.json
 ---
 
 <script>

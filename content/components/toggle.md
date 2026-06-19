@@ -3,7 +3,7 @@ title: Toggle
 description: A two-state button that can be either on or off.
 component: true
 links:
-  source: /registry/styles/sera/toggle.json
+  source: /r/toggle.json
   doc: https://bits-ui.com/docs/components/toggle
   api: https://bits-ui.com/docs/components/toggle#api-reference
 ---

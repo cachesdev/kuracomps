@@ -3,7 +3,7 @@ title: Alert Dialog
 description: A modal dialog that interrupts the user with important content and expects a response.
 component: true
 links:
-  source: /registry/styles/sera/alert-dialog.json
+  source: /r/alert-dialog.json
   doc: https://bits-ui.com/docs/components/alert-dialog
   api: https://bits-ui.com/docs/components/alert-dialog#api-reference
 ---

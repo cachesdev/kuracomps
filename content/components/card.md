@@ -3,7 +3,7 @@ title: Card
 description: Displays a card with header, content, and footer.
 component: true
 links:
-  source: /registry/styles/sera/card.json
+  source: /r/card.json
 ---
 
 <script>

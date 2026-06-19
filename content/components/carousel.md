@@ -3,7 +3,7 @@ title: Carousel
 description: A carousel with motion and swipe built using Embla.
 component: true
 links:
-  source: /registry/styles/sera/carousel.json
+  source: /r/carousel.json
   doc: https://www.embla-carousel.com/get-started/svelte
   api: https://www.embla-carousel.com/api
 ---

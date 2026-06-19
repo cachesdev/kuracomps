@@ -3,7 +3,7 @@ title: Sidebar
 description: A composable, themeable and customizable sidebar component.
 component: true
 links:
-  source: /registry/styles/sera/sidebar.json
+  source: /r/sidebar.json
 ---
 
 <script>
@@ -940,4 +940,4 @@ Here are some tips for styling the sidebar based on different states.
 </Sidebar.MenuItem>
 ```
 
-You can find more tips on using states for styling in this [Twitter thread](https://x.com/shadcn/status/1842329158879420864).
+Use `peer-data-*`, `group-data-*`, and `has-data-*` selectors when related sidebar parts need to respond to the same state.

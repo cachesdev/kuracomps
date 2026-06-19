@@ -38,13 +38,13 @@ export const load: PageLoad = async ({ params, fetch }) => {
           ...doc.metadata,
           links: {
             ...doc.metadata.links,
-            source: `/registry/styles/sera/${componentName}.json`
+            source: `/r/${componentName}.json`
           }
         }
       : doc.metadata;
 
   if (doc.metadata.path.startsWith('components/') && componentName) {
-    const response = await fetch(`/registry/styles/sera/${componentName}.json`);
+    const response = await fetch(`/r/${componentName}.json`);
 
     if (response.ok) {
       const viewerData: RegistryItem = await response.json();

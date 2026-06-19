@@ -46,9 +46,7 @@
       </nav>
 
       <div class="md:hidden">
-        <Button href="/registry/styles/sera/index.json" variant="outline" size="sm">
-          Registry
-        </Button>
+        <Button href="/r/registry.json" variant="outline" size="sm">Registry</Button>
       </div>
     </div>
   </header>

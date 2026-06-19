@@ -3,7 +3,7 @@ title: Form
 description: Accessible form components powered by Formsnap and Superforms.
 links:
   doc: https://formsnap.dev
-  source: /registry/styles/sera/form.json
+  source: /r/form.json
 ---
 
 <script>

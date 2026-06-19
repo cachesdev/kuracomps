@@ -3,47 +3,43 @@ title: Installation
 description: Configure a SvelteKit project to install components from Kura.
 ---
 
-Kura is served as a shadcn-svelte registry. You use the official CLI, but point it at Kura.
+Kura is served as a jsrepo registry from the same site as these docs.
 
-## Configure Components
+## Initialize The Registry
 
-In your project, set the registry and style:
+```bash
+pnpm dlx jsrepo@latest init https://kura.gfdc.dev/r
+```
 
-```json title="components.json"
-{
-  "$schema": "https://shadcn-svelte.com/schema.json",
-  "tailwind": {
-    "css": "src/routes/layout.css",
-    "baseColor": "neutral"
-  },
-  "aliases": {
-    "components": "$lib/components",
-    "utils": "$lib/utils",
-    "ui": "$lib/components/ui",
-    "hooks": "$lib/hooks",
-    "lib": "$lib"
-  },
-  "typescript": true,
-  "registry": "https://kura.gfdc.dev/registry",
-  "style": "sera",
-  "iconLibrary": "phosphor"
-}
+For SvelteKit projects, use `$lib` aliases in `jsrepo.config.ts` so copied imports stay readable:
+
+```ts title="jsrepo.config.ts"
+import { defineConfig } from 'jsrepo';
+
+export default defineConfig({
+  registries: ['https://kura.gfdc.dev/r'],
+  paths: {
+    ui: '$lib/components/ui',
+    hook: '$lib/hooks',
+    lib: '$lib'
+  }
+});
 ```
 
 ## Add Components
 
 ```bash
-pnpm dlx shadcn-svelte@latest add button
-pnpm dlx shadcn-svelte@latest add dialog
-pnpm dlx shadcn-svelte@latest add sidebar
+pnpm dlx jsrepo@latest add button
+pnpm dlx jsrepo@latest add dialog
+pnpm dlx jsrepo@latest add sidebar
 ```
 
-## Direct URL Mode
+## Direct Registry Mode
 
-For one-off installs, use the `/r` files directly:
+For one-off installs, pass the registry URL with the item name:
 
 ```bash
-pnpm dlx shadcn-svelte@latest add https://kura.gfdc.dev/r/button.json
+pnpm dlx jsrepo@latest add button --registry https://kura.gfdc.dev/r
 ```
 
-Kura publishes direct URL files under `/r` and style registry files under `/registry/styles/sera`.
+Kura publishes one jsrepo registry under `/r`; there is no style registry or framework-specific project config requirement.

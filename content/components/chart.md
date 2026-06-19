@@ -3,7 +3,7 @@ title: Chart
 description: Beautiful charts. Built using LayerChart. Copy and paste into your apps.
 component: true
 links:
-  source: /registry/styles/sera/chart.json
+  source: /r/chart.json
 ---
 
 <script>

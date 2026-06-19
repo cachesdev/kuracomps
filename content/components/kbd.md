@@ -3,7 +3,7 @@ title: Kbd
 description: Used to display textual user input from keyboard.
 component: true
 links:
-  source: /registry/styles/sera/kbd.json
+  source: /r/kbd.json
 ---
 
 <script>

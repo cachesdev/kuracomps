@@ -3,7 +3,7 @@ title: Textarea
 description: Displays a form textarea or a component that looks like a textarea.
 component: true
 links:
-  source: /registry/styles/sera/textarea.json
+  source: /r/textarea.json
 ---
 
 <script>

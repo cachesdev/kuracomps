@@ -3,7 +3,7 @@ title: Accordion
 description: A vertically stacked set of interactive headings that each reveal a section of content.
 component: true
 links:
-  source: /registry/styles/sera/accordion.json
+  source: /r/accordion.json
   doc: https://bits-ui.com/docs/components/accordion
   api: https://bits-ui.com/docs/components/accordion#api-reference
 ---

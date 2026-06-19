@@ -3,7 +3,7 @@ title: Input
 description: Displays a form input field or a component that looks like an input field.
 component: true
 links:
-  source: /registry/styles/sera/input.json
+  source: /r/input.json
 ---
 
 <script>

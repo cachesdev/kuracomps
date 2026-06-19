@@ -3,7 +3,7 @@ title: Dropdown Menu
 description: Displays a menu to the user — such as a set of actions or functions — triggered by a button.
 component: true
 links:
-  source: /registry/styles/sera/dropdown-menu.json
+  source: /r/dropdown-menu.json
   doc: https://bits-ui.com/docs/components/dropdown-menu
   api: https://bits-ui.com/docs/components/dropdown-menu#api-reference
 ---

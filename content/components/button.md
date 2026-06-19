@@ -3,7 +3,7 @@ title: Button
 description: Displays a button or a component that looks like a button.
 component: true
 links:
-  source: /registry/styles/sera/button.json
+  source: /r/button.json
   api: https://bits-ui.com/docs/components/button#api-reference
 ---
 

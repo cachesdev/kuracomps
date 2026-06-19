@@ -3,7 +3,7 @@ title: Spinner
 description: An indicator that can be used to show a loading state.
 component: true
 links:
-  source: /registry/styles/sera/spinner.json
+  source: /r/spinner.json
 ---
 
 <script>

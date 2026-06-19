@@ -3,7 +3,7 @@ title: Button Group
 description: A container that groups related buttons together with consistent styling.
 component: true
 links:
-  source: /registry/styles/sera/button-group.json
+  source: /r/button-group.json
 ---
 
 <script>

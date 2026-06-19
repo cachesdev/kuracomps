@@ -1,0 +1,4514 @@
+{
+  "name": "kura",
+  "description": "Kura component source for dense Svelte product interfaces.",
+  "homepage": "https://kura.gfdc.dev",
+  "repository": "https://github.com/cachesdev/kuracomps",
+  "tags": [
+    "svelte",
+    "components",
+    "ui"
+  ],
+  "version": "0.0.1",
+  "type": "distributed",
+  "defaultPaths": {
+    "ui": "src/lib/components/ui",
+    "hook": "src/lib/hooks",
+    "lib": "src/lib"
+  },
+  "items": [
+    {
+      "name": "utils",
+      "title": "Utils",
+      "description": "Kura utility helpers used by the component source.",
+      "type": "lib",
+      "add": "when-needed",
+      "registryDependencies": [],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "clsx",
+          "version": "^2.1.1"
+        },
+        {
+          "ecosystem": "js",
+          "name": "tailwind-merge",
+          "version": "^3.6.0"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "lib",
+          "role": "file",
+          "path": "utils.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "is-mobile",
+      "title": "Is Mobile",
+      "description": "Kura Is Mobile hook.",
+      "type": "hook",
+      "add": "when-added",
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "hook",
+          "role": "file",
+          "path": "is-mobile.svelte.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "use-clipboard",
+      "title": "Use Clipboard",
+      "description": "Kura Use Clipboard hook.",
+      "type": "hook",
+      "add": "when-added",
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "hook",
+          "role": "file",
+          "path": "use-clipboard.svelte.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "title": "Accordion",
+      "description": "Kura Accordion component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        },
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "accordion/accordion-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "accordion/accordion-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "accordion/accordion-trigger.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "accordion/accordion.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "accordion/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "title": "Alert",
+      "description": "Kura Alert component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "tailwind-variants",
+          "version": "^3.2.2"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "alert/alert-action.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "alert/alert-description.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "alert/alert-title.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "alert/alert.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "alert/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "title": "Alert Dialog",
+      "description": "Kura Alert Dialog component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "button",
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "alert-dialog/alert-dialog-action.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "alert-dialog/alert-dialog-cancel.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "alert-dialog/alert-dialog-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "alert-dialog/alert-dialog-description.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "alert-dialog/alert-dialog-footer.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "alert-dialog/alert-dialog-header.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "alert-dialog/alert-dialog-media.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "alert-dialog/alert-dialog-overlay.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "alert-dialog/alert-dialog-portal.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "alert-dialog/alert-dialog-title.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "alert-dialog/alert-dialog-trigger.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "alert-dialog/alert-dialog.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "alert-dialog/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "title": "Aspect Ratio",
+      "description": "Kura Aspect Ratio component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "aspect-ratio/aspect-ratio.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "aspect-ratio/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "title": "Avatar",
+      "description": "Kura Avatar component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "avatar/avatar-badge.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "avatar/avatar-fallback.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "avatar/avatar-group-count.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "avatar/avatar-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "avatar/avatar-image.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "avatar/avatar.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "avatar/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "title": "Badge",
+      "description": "Kura Badge component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "tailwind-variants",
+          "version": "^3.2.2"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "badge/badge.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "badge/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "title": "Breadcrumb",
+      "description": "Kura Breadcrumb component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "breadcrumb/breadcrumb-ellipsis.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "breadcrumb/breadcrumb-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "breadcrumb/breadcrumb-link.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "breadcrumb/breadcrumb-list.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "breadcrumb/breadcrumb-page.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "breadcrumb/breadcrumb-separator.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "breadcrumb/breadcrumb.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "breadcrumb/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "title": "Button",
+      "description": "Kura Button component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "tailwind-variants",
+          "version": "^3.2.2"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "button/button.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "button/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "title": "Button Group",
+      "description": "Kura Button Group component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils",
+        "separator"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "tailwind-variants",
+          "version": "^3.2.2"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "button-group/button-group-separator.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "button-group/button-group-text.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "button-group/button-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "button-group/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "title": "Calendar",
+      "description": "Kura Calendar component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils",
+        "button"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "@internationalized/date",
+          "version": "^3.12.2"
+        },
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        },
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "calendar/calendar-caption.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "calendar/calendar-cell.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "calendar/calendar-day.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "calendar/calendar-grid-body.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "calendar/calendar-grid-head.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "calendar/calendar-grid-row.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "calendar/calendar-grid.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "calendar/calendar-head-cell.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "calendar/calendar-header.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "calendar/calendar-heading.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "calendar/calendar-month-select.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "calendar/calendar-month.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "calendar/calendar-months.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "calendar/calendar-nav.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "calendar/calendar-next-button.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "calendar/calendar-prev-button.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "calendar/calendar-year-select.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "calendar/calendar.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "calendar/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "title": "Card",
+      "description": "Kura Card component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "card/card-action.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "card/card-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "card/card-description.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "card/card-footer.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "card/card-header.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "card/card-title.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "card/card.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "card/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "title": "Carousel",
+      "description": "Kura Carousel component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils",
+        "button"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "embla-carousel-svelte",
+          "version": "^8.6.0"
+        },
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        },
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "carousel/carousel-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "carousel/carousel-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "carousel/carousel-next.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "carousel/carousel-previous.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "carousel/carousel.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "carousel/context.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "carousel/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "title": "Chart",
+      "description": "Kura Chart component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "layerchart",
+          "version": "2.0.0-next.48"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "chart/chart-container.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "chart/chart-style.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "chart/chart-tooltip.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "chart/chart-utils.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "chart/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "title": "Checkbox",
+      "description": "Kura Checkbox component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        },
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "checkbox/checkbox.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "checkbox/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "title": "Collapsible",
+      "description": "Kura Collapsible component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "collapsible/collapsible-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "collapsible/collapsible-trigger.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "collapsible/collapsible.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "collapsible/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "title": "Command",
+      "description": "Kura Command component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "dialog",
+        "utils",
+        "input-group"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        },
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "command/command-dialog.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "command/command-empty.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "command/command-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "command/command-input.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "command/command-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "command/command-link-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "command/command-list.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "command/command-loading.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "command/command-separator.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "command/command-shortcut.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "command/command.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "command/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "title": "Context Menu",
+      "description": "Kura Context Menu component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        },
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "context-menu/context-menu-checkbox-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "context-menu/context-menu-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "context-menu/context-menu-group-heading.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "context-menu/context-menu-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "context-menu/context-menu-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "context-menu/context-menu-label.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "context-menu/context-menu-portal.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "context-menu/context-menu-radio-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "context-menu/context-menu-radio-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "context-menu/context-menu-separator.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "context-menu/context-menu-shortcut.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "context-menu/context-menu-sub-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "context-menu/context-menu-sub-trigger.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "context-menu/context-menu-sub.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "context-menu/context-menu-trigger.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "context-menu/context-menu.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "context-menu/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "data-table",
+      "title": "Data Table",
+      "description": "Kura Data Table component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "@tanstack/table-core",
+          "version": "^8.21.3"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "data-table/data-table.svelte.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "data-table/flex-render.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "data-table/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "data-table/render-helpers.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "title": "Dialog",
+      "description": "Kura Dialog component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils",
+        "button"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        },
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dialog/dialog-close.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dialog/dialog-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dialog/dialog-description.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dialog/dialog-footer.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dialog/dialog-header.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dialog/dialog-overlay.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dialog/dialog-portal.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dialog/dialog-title.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dialog/dialog-trigger.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dialog/dialog.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dialog/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "title": "Drawer",
+      "description": "Kura Drawer component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "vaul-svelte",
+          "version": "1.0.0-next.7"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "drawer/drawer-close.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "drawer/drawer-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "drawer/drawer-description.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "drawer/drawer-footer.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "drawer/drawer-header.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "drawer/drawer-nested.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "drawer/drawer-overlay.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "drawer/drawer-portal.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "drawer/drawer-title.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "drawer/drawer-trigger.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "drawer/drawer.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "drawer/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "title": "Dropdown Menu",
+      "description": "Kura Dropdown Menu component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        },
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dropdown-menu/dropdown-menu-checkbox-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dropdown-menu/dropdown-menu-checkbox-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dropdown-menu/dropdown-menu-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dropdown-menu/dropdown-menu-group-heading.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dropdown-menu/dropdown-menu-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dropdown-menu/dropdown-menu-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dropdown-menu/dropdown-menu-label.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dropdown-menu/dropdown-menu-portal.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dropdown-menu/dropdown-menu-radio-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dropdown-menu/dropdown-menu-radio-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dropdown-menu/dropdown-menu-separator.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dropdown-menu/dropdown-menu-shortcut.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dropdown-menu/dropdown-menu-sub-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dropdown-menu/dropdown-menu-sub-trigger.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dropdown-menu/dropdown-menu-sub.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dropdown-menu/dropdown-menu-trigger.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dropdown-menu/dropdown-menu.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "dropdown-menu/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "title": "Empty",
+      "description": "Kura Empty component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "tailwind-variants",
+          "version": "^3.2.2"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "empty/empty-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "empty/empty-description.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "empty/empty-header.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "empty/empty-media.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "empty/empty-title.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "empty/empty.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "empty/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "title": "Field",
+      "description": "Kura Field component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils",
+        "label",
+        "separator"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "tailwind-variants",
+          "version": "^3.2.2"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "field/field-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "field/field-description.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "field/field-error.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "field/field-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "field/field-label.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "field/field-legend.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "field/field-separator.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "field/field-set.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "field/field-title.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "field/field.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "field/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "title": "Form",
+      "description": "Kura Form component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "button",
+        "utils",
+        "label"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "formsnap",
+          "version": "^2.0.1"
+        },
+        {
+          "ecosystem": "js",
+          "name": "sveltekit-superforms",
+          "version": "^2.30.1"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "form/form-button.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "form/form-description.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "form/form-element-field.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "form/form-field-errors.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "form/form-field.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "form/form-fieldset.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "form/form-label.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "form/form-legend.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "form/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "title": "Hover Card",
+      "description": "Kura Hover Card component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "hover-card/hover-card-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "hover-card/hover-card-portal.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "hover-card/hover-card-trigger.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "hover-card/hover-card.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "hover-card/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "title": "Input",
+      "description": "Kura Input component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "input/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "input/input.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "title": "Input Group",
+      "description": "Kura Input Group component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils",
+        "button",
+        "input",
+        "textarea"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "tailwind-variants",
+          "version": "^3.2.2"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "input-group/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "input-group/input-group-addon.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "input-group/input-group-button.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "input-group/input-group-input.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "input-group/input-group-text.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "input-group/input-group-textarea.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "input-group/input-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "title": "Input Otp",
+      "description": "Kura Input Otp component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        },
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "input-otp/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "input-otp/input-otp-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "input-otp/input-otp-separator.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "input-otp/input-otp-slot.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "input-otp/input-otp.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "title": "Item",
+      "description": "Kura Item component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils",
+        "separator"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "tailwind-variants",
+          "version": "^3.2.2"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "item/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "item/item-actions.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "item/item-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "item/item-description.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "item/item-footer.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "item/item-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "item/item-header.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "item/item-media.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "item/item-separator.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "item/item-title.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "item/item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "title": "Kbd",
+      "description": "Kura Kbd component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "kbd/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "kbd/kbd-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "kbd/kbd.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "title": "Label",
+      "description": "Kura Label component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "label/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "label/label.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "title": "Menubar",
+      "description": "Kura Menubar component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        },
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "menubar/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "menubar/menubar-checkbox-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "menubar/menubar-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "menubar/menubar-group-heading.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "menubar/menubar-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "menubar/menubar-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "menubar/menubar-label.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "menubar/menubar-menu.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "menubar/menubar-portal.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "menubar/menubar-radio-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "menubar/menubar-radio-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "menubar/menubar-separator.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "menubar/menubar-shortcut.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "menubar/menubar-sub-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "menubar/menubar-sub-trigger.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "menubar/menubar-sub.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "menubar/menubar-trigger.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "menubar/menubar.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "native-select",
+      "title": "Native Select",
+      "description": "Kura Native Select component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "native-select/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "native-select/native-select-opt-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "native-select/native-select-option.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "native-select/native-select.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "title": "Navigation Menu",
+      "description": "Kura Navigation Menu component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        },
+        {
+          "ecosystem": "js",
+          "name": "tailwind-variants",
+          "version": "^3.2.2"
+        },
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "navigation-menu/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "navigation-menu/navigation-menu-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "navigation-menu/navigation-menu-indicator.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "navigation-menu/navigation-menu-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "navigation-menu/navigation-menu-link.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "navigation-menu/navigation-menu-list.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "navigation-menu/navigation-menu-trigger.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "navigation-menu/navigation-menu-viewport.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "navigation-menu/navigation-menu.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "title": "Pagination",
+      "description": "Kura Pagination component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils",
+        "button"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        },
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "pagination/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "pagination/pagination-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "pagination/pagination-ellipsis.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "pagination/pagination-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "pagination/pagination-link.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "pagination/pagination-next-button.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "pagination/pagination-next.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "pagination/pagination-prev-button.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "pagination/pagination-previous.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "pagination/pagination.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "title": "Popover",
+      "description": "Kura Popover component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "popover/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "popover/popover-close.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "popover/popover-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "popover/popover-description.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "popover/popover-header.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "popover/popover-portal.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "popover/popover-title.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "popover/popover-trigger.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "popover/popover.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "title": "Progress",
+      "description": "Kura Progress component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "progress/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "progress/progress.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "title": "Radio Group",
+      "description": "Kura Radio Group component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        },
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "radio-group/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "radio-group/radio-group-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "radio-group/radio-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "range-calendar",
+      "title": "Range Calendar",
+      "description": "Kura Range Calendar component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils",
+        "button"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "@internationalized/date",
+          "version": "^3.12.2"
+        },
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        },
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "range-calendar/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "range-calendar/range-calendar-caption.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "range-calendar/range-calendar-cell.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "range-calendar/range-calendar-day.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "range-calendar/range-calendar-grid-body.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "range-calendar/range-calendar-grid-head.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "range-calendar/range-calendar-grid-row.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "range-calendar/range-calendar-grid.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "range-calendar/range-calendar-head-cell.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "range-calendar/range-calendar-header.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "range-calendar/range-calendar-heading.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "range-calendar/range-calendar-month-select.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "range-calendar/range-calendar-month.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "range-calendar/range-calendar-months.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "range-calendar/range-calendar-nav.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "range-calendar/range-calendar-next-button.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "range-calendar/range-calendar-prev-button.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "range-calendar/range-calendar-year-select.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "range-calendar/range-calendar.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "title": "Resizable",
+      "description": "Kura Resizable component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "paneforge",
+          "version": "^1.0.2"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "resizable/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "resizable/resizable-handle.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "resizable/resizable-pane-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "title": "Scroll Area",
+      "description": "Kura Scroll Area component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "scroll-area/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "scroll-area/scroll-area-scrollbar.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "scroll-area/scroll-area.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "title": "Select",
+      "description": "Kura Select component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils",
+        "separator"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        },
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "select/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "select/select-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "select/select-group-heading.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "select/select-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "select/select-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "select/select-label.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "select/select-portal.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "select/select-scroll-down-button.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "select/select-scroll-up-button.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "select/select-separator.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "select/select-trigger.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "select/select.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "title": "Separator",
+      "description": "Kura Separator component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "separator/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "separator/separator.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "title": "Sheet",
+      "description": "Kura Sheet component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils",
+        "button"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        },
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sheet/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sheet/sheet-close.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sheet/sheet-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sheet/sheet-description.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sheet/sheet-footer.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sheet/sheet-header.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sheet/sheet-overlay.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sheet/sheet-portal.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sheet/sheet-title.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sheet/sheet-trigger.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sheet/sheet.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "title": "Sidebar",
+      "description": "Kura Sidebar component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "is-mobile",
+        "utils",
+        "input",
+        "tooltip",
+        "skeleton",
+        "separator",
+        "button",
+        "sheet"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "tailwind-variants",
+          "version": "^3.2.2"
+        },
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        },
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/constants.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/context.svelte.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-footer.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-group-action.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-group-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-group-label.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-header.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-input.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-inset.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-menu-action.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-menu-badge.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-menu-button.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-menu-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-menu-skeleton.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-menu-sub-button.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-menu-sub-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-menu-sub.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-menu.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-provider.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-rail.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-separator.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar-trigger.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sidebar/sidebar.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "title": "Skeleton",
+      "description": "Kura Skeleton component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "skeleton/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "skeleton/skeleton.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "title": "Slider",
+      "description": "Kura Slider component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "slider/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "slider/slider.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "title": "Sonner",
+      "description": "Kura Sonner component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "svelte-sonner",
+          "version": "^1.1.1"
+        },
+        {
+          "ecosystem": "js",
+          "name": "mode-watcher",
+          "version": "^1.1.0"
+        },
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sonner/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "sonner/sonner.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "title": "Spinner",
+      "description": "Kura Spinner component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "phosphor-svelte",
+          "version": "^3.1.0"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "spinner/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "spinner/spinner.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "title": "Switch",
+      "description": "Kura Switch component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "switch/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "switch/switch.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "title": "Table",
+      "description": "Kura Table component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "table/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "table/table-body.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "table/table-caption.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "table/table-cell.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "table/table-footer.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "table/table-head.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "table/table-header.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "table/table-row.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "table/table.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "title": "Tabs",
+      "description": "Kura Tabs component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        },
+        {
+          "ecosystem": "js",
+          "name": "tailwind-variants",
+          "version": "^3.2.2"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "tabs/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "tabs/tabs-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "tabs/tabs-list.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "tabs/tabs-trigger.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "tabs/tabs.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "title": "Textarea",
+      "description": "Kura Textarea component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "textarea/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "textarea/textarea.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "title": "Toggle",
+      "description": "Kura Toggle component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "tailwind-variants",
+          "version": "^3.2.2"
+        },
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "toggle/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "toggle/toggle.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "title": "Toggle Group",
+      "description": "Kura Toggle Group component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils",
+        "toggle"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        },
+        {
+          "ecosystem": "js",
+          "name": "tailwind-variants",
+          "version": "^3.2.2"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "toggle-group/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "toggle-group/toggle-group-item.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "toggle-group/toggle-group.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "title": "Tooltip",
+      "description": "Kura Tooltip component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "bits-ui",
+          "version": "^2.18.1"
+        }
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "tooltip/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "tooltip/tooltip-content.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "tooltip/tooltip-portal.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "tooltip/tooltip-provider.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "tooltip/tooltip-trigger.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "tooltip/tooltip.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    }
+  ]
+}

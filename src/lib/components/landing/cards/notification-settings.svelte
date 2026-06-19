@@ -54,7 +54,11 @@
     <FieldGroup>
       {#each notifications as n (n.id)}
         <Field orientation="horizontal">
-          <Checkbox id="notify-{n.id}" bind:checked={n.checked} />
+          <Checkbox
+            id="notify-{n.id}"
+            // Possibly a kit3 bug, using bind:checked here creates a hydration error on the frontend.
+            checked={n.checked}
+          />
           <FieldContent>
             <FieldLabel for="notify-{n.id}">{n.label}</FieldLabel>
             <FieldDescription>{n.description}</FieldDescription>

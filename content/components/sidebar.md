@@ -215,11 +215,13 @@ We'll use the `Sidebar.Menu` component in a `Sidebar.Group`.
 
 ```svelte showLineNumbers title="src/lib/components/app-sidebar.svelte"
 <script lang="ts">
-  import CalendarIcon from '@lucide/svelte/icons/calendar';
-  import HouseIcon from '@lucide/svelte/icons/house';
-  import InboxIcon from '@lucide/svelte/icons/inbox';
-  import SearchIcon from '@lucide/svelte/icons/search';
-  import SettingsIcon from '@lucide/svelte/icons/settings';
+  import {
+    CalendarIcon,
+    GearIcon,
+    HouseIcon,
+    MagnifyingGlassIcon,
+    TrayIcon
+  } from 'phosphor-svelte';
   import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 
   // Menu items.
@@ -232,7 +234,7 @@ We'll use the `Sidebar.Menu` component in a `Sidebar.Group`.
     {
       title: 'Inbox',
       url: '#',
-      icon: InboxIcon
+      icon: TrayIcon
     },
     {
       title: 'Calendar',
@@ -242,12 +244,12 @@ We'll use the `Sidebar.Menu` component in a `Sidebar.Group`.
     {
       title: 'Search',
       url: '#',
-      icon: SearchIcon
+      icon: MagnifyingGlassIcon
     },
     {
       title: 'Settings',
       url: '#',
-      icon: SettingsIcon
+      icon: GearIcon
     }
   ];
 </script>

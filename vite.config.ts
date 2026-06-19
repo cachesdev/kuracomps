@@ -7,6 +7,7 @@ import { defineConfig, searchForWorkspaceRoot } from 'vite';
 import MagicString from 'magic-string';
 import { mdsx } from 'mdsx';
 import { mdsxConfig } from './mdsx.config.js';
+import { sveltePhosphorOptimize } from 'phosphor-svelte/vite';
 import type { PreprocessorGroup } from 'svelte/compiler';
 
 const root = process.cwd();
@@ -52,7 +53,8 @@ export default defineConfig({
         }
       },
       experimental: { remoteFunctions: true, handleRenderingErrors: true }
-    })
+    }),
+    sveltePhosphorOptimize()
   ]
 });
 

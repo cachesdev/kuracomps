@@ -86,7 +86,7 @@ Use a custom component in the `<slot>` of `<Breadcrumb.Separator />` to create a
 
 ```svelte showLineNumbers {2,11-13}
 <script lang="ts">
-  import SlashIcon from '@lucide/svelte/icons/slash';
+  import { CaretRightIcon } from 'phosphor-svelte';
   import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
 </script>
 
@@ -96,7 +96,7 @@ Use a custom component in the `<slot>` of `<Breadcrumb.Separator />` to create a
       <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
     </Breadcrumb.Item>
     <Breadcrumb.Separator>
-      <SlashIcon />
+      <CaretRightIcon />
     </Breadcrumb.Separator>
     <Breadcrumb.Item>
       <Breadcrumb.Link href="/docs/components">Components</Breadcrumb.Link>
@@ -119,8 +119,7 @@ You can compose `<Breadcrumb.Item />` with a `<DropdownMenu />` to create a drop
 
 ```svelte showLineNumbers {2-5,11-22}
 <script lang="ts">
-  import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
-  import SlashIcon from '@lucide/svelte/icons/slash';
+  import { CaretDownIcon, CaretRightIcon } from 'phosphor-svelte';
   import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 </script>
@@ -131,7 +130,7 @@ You can compose `<Breadcrumb.Item />` with a `<DropdownMenu />` to create a drop
   <DropdownMenu.Root>
     <DropdownMenu.Trigger class="flex items-center gap-1">
       Components
-      <ChevronDownIcon class="size-4" />
+      <CaretDownIcon class="size-4" />
     </DropdownMenu.Trigger>
     <DropdownMenu.Content align="start">
       <DropdownMenu.Item>Documentation</DropdownMenu.Item>

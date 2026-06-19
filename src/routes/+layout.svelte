@@ -8,15 +8,9 @@
 
 <svelte:head>
   <link rel="icon" href={favicon} />
-  <meta
-    name="description"
-    content="Kura is a jsrepo component warehouse for dense product screens."
-  />
+  <meta name="description" content="Kura is my component warehouse, for you." />
   <meta property="og:title" content="Kura components" />
-  <meta
-    property="og:description"
-    content="A jsrepo registry and documentation site tuned for dense product interfaces."
-  />
+  <meta property="og:description" content="Kura is my component warehouse, for you." />
 </svelte:head>
 <a
   href="#main-content"

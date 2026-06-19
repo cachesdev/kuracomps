@@ -1,5 +1,5 @@
 <script lang="ts">
-  import BookmarkIcon from '@lucide/svelte/icons/bookmark';
+  import { BookmarkSimpleIcon } from 'phosphor-svelte';
   import { Toggle } from '$lib/components/ui/toggle/index.js';
 </script>
 
@@ -9,6 +9,6 @@
   variant="outline"
   class="data-[state=on]:bg-transparent data-[state=on]:*:[svg]:fill-blue-500 data-[state=on]:*:[svg]:stroke-blue-500"
 >
-  <BookmarkIcon />
+  <BookmarkSimpleIcon />
   Bookmark
 </Toggle>

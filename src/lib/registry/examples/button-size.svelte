@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ArrowUpRightIcon from '@lucide/svelte/icons/arrow-up-right';
+  import { ArrowUpRightIcon } from 'phosphor-svelte';
   import { Button } from '$lib/components/ui/button/index.js';
 </script>
 

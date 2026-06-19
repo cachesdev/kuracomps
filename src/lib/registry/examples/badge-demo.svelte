@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Badge } from '$lib/components/ui/badge/index.js';
-  import BadgeCheckIcon from '@lucide/svelte/icons/badge-check';
+  import { SealCheckIcon } from 'phosphor-svelte';
 </script>
 
 <div class="flex flex-col items-center gap-2">
@@ -12,7 +12,7 @@
   </div>
   <div class="flex w-full flex-wrap gap-2">
     <Badge variant="secondary" class="bg-blue-500 text-white dark:bg-blue-600">
-      <BadgeCheckIcon />
+      <SealCheckIcon />
       Verified
     </Badge>
     <Badge class="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums">8</Badge>

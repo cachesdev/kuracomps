@@ -1,7 +1,6 @@
 <script lang="ts">
   import * as Item from '$lib/components/ui/item/index.js';
-  import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
-  import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
+  import { ArrowSquareOutIcon, CaretRightIcon } from 'phosphor-svelte';
 </script>
 
 <div class="flex w-full max-w-md flex-col gap-4">
@@ -13,7 +12,7 @@
           <Item.Description>Learn how to get started with our components.</Item.Description>
         </Item.Content>
         <Item.Actions>
-          <ChevronRightIcon class="size-4" />
+          <CaretRightIcon class="size-4" />
         </Item.Actions>
       </a>
     {/snippet}
@@ -26,7 +25,7 @@
           <Item.Description>Opens in a new tab with security attributes.</Item.Description>
         </Item.Content>
         <Item.Actions>
-          <ExternalLinkIcon class="size-4" />
+          <ArrowSquareOutIcon class="size-4" />
         </Item.Actions>
       </a>
     {/snippet}

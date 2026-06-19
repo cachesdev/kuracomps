@@ -3,9 +3,7 @@
   import { cn } from '$lib/utils.js';
   import { navigationMenuTriggerStyle } from '$lib/components/ui/navigation-menu/navigation-menu-trigger.svelte';
   import type { HTMLAttributes } from 'svelte/elements';
-  import CircleHelpIcon from '@lucide/svelte/icons/circle-help';
-  import CircleIcon from '@lucide/svelte/icons/circle';
-  import CircleCheckIcon from '@lucide/svelte/icons/circle-check';
+  import { CheckCircleIcon, CircleIcon, QuestionIcon } from 'phosphor-svelte';
 
   import { IsMobile } from '$lib/hooks/is-mobile.svelte.js';
 
@@ -177,7 +175,7 @@
         <ul class="grid w-[200px] gap-4 p-2">
           <li>
             <NavigationMenu.Link href="##" class="flex-row items-center gap-2">
-              <CircleHelpIcon />
+              <QuestionIcon />
               Backlog
             </NavigationMenu.Link>
 
@@ -187,7 +185,7 @@
             </NavigationMenu.Link>
 
             <NavigationMenu.Link href="##" class="flex-row items-center gap-2">
-              <CircleCheckIcon />
+              <CheckCircleIcon />
               Done
             </NavigationMenu.Link>
           </li>

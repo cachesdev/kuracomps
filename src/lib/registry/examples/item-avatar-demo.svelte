@@ -2,7 +2,7 @@
   import * as Item from '$lib/components/ui/item/index.js';
   import * as Avatar from '$lib/components/ui/avatar/index.js';
   import { Button } from '$lib/components/ui/button/index.js';
-  import Plus from '@lucide/svelte/icons/plus';
+  import { PlusIcon } from 'phosphor-svelte';
 </script>
 
 <div class="flex w-full max-w-lg flex-col gap-6">
@@ -19,7 +19,7 @@
     </Item.Content>
     <Item.Actions>
       <Button size="icon" variant="outline" class="rounded-full" aria-label="Invite">
-        <Plus />
+        <PlusIcon />
       </Button>
     </Item.Actions>
   </Item.Root>

@@ -9,7 +9,7 @@ links:
 
 <script>
   import Callout from "$lib/components/callout.svelte";
-  import InfoIcon from "@lucide/svelte/icons/info";
+  import { InfoIcon } from "phosphor-svelte";
 	import ComponentPreview from "$lib/components/component-preview.svelte";
 	import ComponentSource from "$lib/components/component-source.svelte";
 	import PMAddComp from "$lib/components/pm-add-comp.svelte";

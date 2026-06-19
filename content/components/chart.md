@@ -8,7 +8,7 @@ links:
 
 <script>
 	import * as Alert from "$lib/components/ui/alert/index.js";
-	import TriangleAlertIcon from "@lucide/svelte/icons/triangle-alert";
+	import { WarningIcon } from "phosphor-svelte";
 	import ComponentPreview from "$lib/components/component-preview.svelte";
 	import ComponentSource from "$lib/components/component-source.svelte";
 	import Callout from "$lib/components/callout.svelte";
@@ -363,7 +363,7 @@ This allows you to share config and color tokens between charts. It can also wor
 
 ```svelte
 <script lang="ts">
-  import MonitorIcon from '@lucide/svelte/icons/monitor';
+  import { MonitorIcon } from 'phosphor-svelte';
   import * as Chart from '$lib/components/ui/chart/index.js';
 
   const chartConfig = {

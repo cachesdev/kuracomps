@@ -2,7 +2,7 @@
   import * as Empty from '$lib/components/ui/empty/index.js';
   import { Button } from '$lib/components/ui/button/index.js';
   import * as Avatar from '$lib/components/ui/avatar/index.js';
-  import PlusIcon from '@lucide/svelte/icons/plus';
+  import { PlusIcon } from 'phosphor-svelte';
 </script>
 
 <Empty.Root class="flex-none border">

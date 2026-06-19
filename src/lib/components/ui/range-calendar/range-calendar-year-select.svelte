@@ -1,7 +1,7 @@
 <script lang="ts">
   import { RangeCalendar as RangeCalendarPrimitive } from 'bits-ui';
   import { cn, type WithoutChildrenOrChild } from '$lib/utils.js';
-  import CaretDownIcon from 'phosphor-svelte/lib/CaretDown';
+  import { CaretDownIcon } from 'phosphor-svelte';
 
   let {
     ref = $bindable(null),

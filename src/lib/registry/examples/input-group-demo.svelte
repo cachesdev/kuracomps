@@ -7,15 +7,14 @@
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
   import * as Tooltip from '$lib/components/ui/tooltip/index.js';
   import { Separator } from '$lib/components/ui/separator/index.js';
-  import SearchIcon from '@lucide/svelte/icons/search';
-  import ArrowUpIcon from '@lucide/svelte/icons/arrow-up';
+  import { ArrowUpIcon, MagnifyingGlassIcon } from 'phosphor-svelte';
 </script>
 
 <div class="grid w-full max-w-sm gap-6">
   <InputGroup.Root>
     <InputGroup.Input placeholder="Search..." />
     <InputGroup.Addon>
-      <SearchIcon />
+      <MagnifyingGlassIcon />
     </InputGroup.Addon>
     <InputGroup.Addon align="inline-end">12 results</InputGroup.Addon>
   </InputGroup.Root>

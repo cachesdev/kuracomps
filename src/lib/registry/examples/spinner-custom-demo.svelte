@@ -1,14 +1,14 @@
 <script lang="ts">
   import { cn } from '$lib/utils.js';
-  import LoaderIcon from '@lucide/svelte/icons/loader';
+  import { SpinnerGapIcon } from 'phosphor-svelte';
   import type { ComponentProps } from 'svelte';
 
-  type Props = ComponentProps<typeof LoaderIcon>;
+  type Props = ComponentProps<typeof SpinnerGapIcon>;
 
   let { class: className, ...restProps }: Props = $props();
 </script>
 
-<LoaderIcon
+<SpinnerGapIcon
   role="status"
   aria-label="Loading"
   class={cn('size-4 animate-spin', className)}

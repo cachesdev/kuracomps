@@ -1,13 +1,15 @@
 <script lang="ts">
-  import Archive from '@lucide/svelte/icons/archive';
-  import ArrowLeft from '@lucide/svelte/icons/arrow-left';
-  import CalendarPlus from '@lucide/svelte/icons/calendar-plus';
-  import Clock from '@lucide/svelte/icons/clock';
-  import ListFilter from '@lucide/svelte/icons/list-filter';
-  import MailCheck from '@lucide/svelte/icons/mail-check';
-  import MoreHorizontal from '@lucide/svelte/icons/more-horizontal';
-  import Tag from '@lucide/svelte/icons/tag';
-  import Trash2 from '@lucide/svelte/icons/trash-2';
+  import {
+    ArchiveIcon,
+    ArrowLeftIcon,
+    CalendarPlusIcon,
+    ClockIcon,
+    DotsThreeIcon,
+    EnvelopeSimpleIcon,
+    FunnelSimpleIcon,
+    TagIcon,
+    TrashIcon
+  } from 'phosphor-svelte';
   import { Button } from '$lib/components/ui/button/index.js';
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js';
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
@@ -18,7 +20,7 @@
 <ButtonGroup.Root>
   <ButtonGroup.Root class="hidden sm:flex">
     <Button variant="outline" size="icon-sm" aria-label="Go Back">
-      <ArrowLeft />
+      <ArrowLeftIcon />
     </Button>
   </ButtonGroup.Root>
   <ButtonGroup.Root>
@@ -31,38 +33,38 @@
       <DropdownMenu.Trigger>
         {#snippet child({ props })}
           <Button {...props} variant="outline" size="icon-sm" aria-label="More Options">
-            <MoreHorizontal />
+            <DotsThreeIcon />
           </Button>
         {/snippet}
       </DropdownMenu.Trigger>
       <DropdownMenu.Content align="end" class="w-52">
         <DropdownMenu.Group>
           <DropdownMenu.Item>
-            <MailCheck />
+            <EnvelopeSimpleIcon />
             Mark as Read
           </DropdownMenu.Item>
           <DropdownMenu.Item>
-            <Archive />
+            <ArchiveIcon />
             Archive
           </DropdownMenu.Item>
         </DropdownMenu.Group>
         <DropdownMenu.Separator />
         <DropdownMenu.Group>
           <DropdownMenu.Item>
-            <Clock />
+            <ClockIcon />
             Snooze
           </DropdownMenu.Item>
           <DropdownMenu.Item>
-            <CalendarPlus />
+            <CalendarPlusIcon />
             Add to Calendar
           </DropdownMenu.Item>
           <DropdownMenu.Item>
-            <ListFilter />
+            <FunnelSimpleIcon />
             Add to List
           </DropdownMenu.Item>
           <DropdownMenu.Sub>
             <DropdownMenu.SubTrigger>
-              <Tag />
+              <TagIcon />
               Label As...
             </DropdownMenu.SubTrigger>
             <DropdownMenu.SubContent>
@@ -77,7 +79,7 @@
         <DropdownMenu.Separator />
         <DropdownMenu.Group>
           <DropdownMenu.Item class="text-destructive focus:text-destructive">
-            <Trash2 />
+            <TrashIcon />
             Trash
           </DropdownMenu.Item>
         </DropdownMenu.Group>

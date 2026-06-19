@@ -9,7 +9,7 @@
     EmptyMedia,
     EmptyTitle
   } from '$lib/components/ui/empty/index.js';
-  import PlusIcon from 'phosphor-svelte/lib/Plus';
+  import { PlusIcon } from 'phosphor-svelte';
 </script>
 
 <Card>

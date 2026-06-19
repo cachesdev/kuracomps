@@ -2,7 +2,7 @@
   import * as Empty from '$lib/components/ui/empty/index.js';
   import * as InputGroup from '$lib/components/ui/input-group/index.js';
   import * as Kbd from '$lib/components/ui/kbd/index.js';
-  import SearchIcon from '@lucide/svelte/icons/search';
+  import { MagnifyingGlassIcon } from 'phosphor-svelte';
 </script>
 
 <Empty.Root>
@@ -16,7 +16,7 @@
     <InputGroup.Root class="sm:w-3/4">
       <InputGroup.Input placeholder="Try searching for pages..." />
       <InputGroup.Addon>
-        <SearchIcon />
+        <MagnifyingGlassIcon />
       </InputGroup.Addon>
       <InputGroup.Addon align="inline-end">
         <Kbd.Root>/</Kbd.Root>

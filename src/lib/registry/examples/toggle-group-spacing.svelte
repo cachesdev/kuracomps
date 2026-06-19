@@ -1,8 +1,6 @@
 <script lang="ts">
   import * as ToggleGroup from '$lib/components/ui/toggle-group/index.js';
-  import BookmarkIcon from '@lucide/svelte/icons/bookmark';
-  import HeartIcon from '@lucide/svelte/icons/heart';
-  import StarIcon from '@lucide/svelte/icons/star';
+  import { BookmarkSimpleIcon, HeartIcon, StarIcon } from 'phosphor-svelte';
 </script>
 
 <ToggleGroup.Root type="multiple" variant="outline" spacing={2} size="sm">
@@ -27,7 +25,7 @@
     aria-label="Toggle bookmark"
     class="data-[state=on]:bg-transparent data-[state=on]:*:[svg]:fill-blue-500 data-[state=on]:*:[svg]:stroke-blue-500"
   >
-    <BookmarkIcon />
+    <BookmarkSimpleIcon />
     Bookmark
   </ToggleGroup.Item>
 </ToggleGroup.Root>

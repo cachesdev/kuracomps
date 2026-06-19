@@ -4,7 +4,7 @@
   import { UseClipboard } from '$lib/hooks/use-clipboard.svelte.js';
   import { cn } from '$lib/utils.js';
   import CopyIcon from '@tabler/icons-svelte/icons/copy';
-  import CheckIcon from '@lucide/svelte/icons/check';
+  import { CheckIcon } from 'phosphor-svelte';
   import type { ComponentProps } from 'svelte';
 
   let {

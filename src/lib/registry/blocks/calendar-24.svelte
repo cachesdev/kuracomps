@@ -4,7 +4,7 @@
   import { Button } from '$lib/components/ui/button/index.js';
   import { Label } from '$lib/components/ui/label/index.js';
   import { Input } from '$lib/components/ui/input/index.js';
-  import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
+  import { CaretDownIcon } from 'phosphor-svelte';
   import { getLocalTimeZone } from '@internationalized/date';
   import type { CalendarDate } from '@internationalized/date';
 
@@ -22,7 +22,7 @@
         {#snippet child({ props })}
           <Button {...props} variant="outline" class="w-32 justify-between font-normal">
             {value ? value.toDate(getLocalTimeZone()).toLocaleDateString() : 'Select date'}
-            <ChevronDownIcon />
+            <CaretDownIcon />
           </Button>
         {/snippet}
       </Popover.Trigger>

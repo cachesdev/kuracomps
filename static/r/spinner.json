@@ -28,7 +28,7 @@
     {
       "type": "ui",
       "role": "file",
-      "content": "<script lang=\"ts\">\n  import { cn } from '$lib/utils.js';\n  import SpinnerIcon from 'phosphor-svelte/lib/Spinner';\n  import type { SVGAttributes } from 'svelte/elements';\n\n  let {\n    class: className,\n    role = 'status',\n    // we add name, color, and stroke for compatibility with different icon libraries props\n    name,\n    color,\n    stroke,\n    'aria-label': ariaLabel = 'Loading',\n    ...restProps\n  }: SVGAttributes<SVGSVGElement> = $props();\n</script>\n\n<SpinnerIcon\n  {role}\n  name={name === null ? undefined : name}\n  color={color === null ? undefined : color}\n  stroke={stroke === null ? undefined : stroke}\n  aria-label={ariaLabel}\n  class={cn('size-4 animate-spin text-[#d0e891]', className)}\n  {...restProps}\n/>\n",
+      "content": "<script lang=\"ts\">\n  import { cn } from '$lib/utils.js';\n  import { SpinnerIcon } from 'phosphor-svelte';\n  import type { SVGAttributes } from 'svelte/elements';\n\n  let {\n    class: className,\n    role = 'status',\n    // we add name, color, and stroke for compatibility with different icon libraries props\n    name,\n    color,\n    stroke,\n    'aria-label': ariaLabel = 'Loading',\n    ...restProps\n  }: SVGAttributes<SVGSVGElement> = $props();\n</script>\n\n<SpinnerIcon\n  {role}\n  name={name === null ? undefined : name}\n  color={color === null ? undefined : color}\n  stroke={stroke === null ? undefined : stroke}\n  aria-label={ariaLabel}\n  class={cn('size-4 animate-spin text-[#d0e891]', className)}\n  {...restProps}\n/>\n",
       "path": "spinner/spinner.svelte",
       "_imports_": [
         {

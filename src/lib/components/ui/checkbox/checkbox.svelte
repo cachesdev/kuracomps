@@ -1,8 +1,7 @@
 <script lang="ts">
   import { Checkbox as CheckboxPrimitive } from 'bits-ui';
   import { cn, type WithoutChildrenOrChild } from '$lib/utils.js';
-  import CheckIcon from 'phosphor-svelte/lib/Check';
-  import MinusIcon from 'phosphor-svelte/lib/Minus';
+  import { CheckIcon, MinusIcon } from 'phosphor-svelte';
 
   let {
     ref = $bindable(null),

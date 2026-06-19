@@ -35,11 +35,11 @@ links:
 
 <Step>
 
-Install `@lucide/svelte`:
+Install `phosphor-svelte`:
 
 </Step>
 
-<PMInstall command="@lucide/svelte -D" />
+<PMInstall command="phosphor-svelte" />
 
 <Step>
 

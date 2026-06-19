@@ -1,12 +1,14 @@
 <script lang="ts">
-  import AlertTriangle from '@lucide/svelte/icons/alert-triangle';
-  import ChevronDown from '@lucide/svelte/icons/chevron-down';
   import CopyIcon from '@tabler/icons-svelte/icons/copy';
   import CheckIcon from '@tabler/icons-svelte/icons/check';
-  import Share from '@lucide/svelte/icons/share';
-  import Trash from '@lucide/svelte/icons/trash';
-  import UserRoundX from '@lucide/svelte/icons/user-round-x';
-  import VolumeOff from '@lucide/svelte/icons/volume-off';
+  import {
+    CaretDownIcon,
+    ShareIcon,
+    SpeakerSlashIcon,
+    TrashIcon,
+    UserMinusIcon,
+    WarningIcon
+  } from 'phosphor-svelte';
   import { Button } from '$lib/components/ui/button/index.js';
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js';
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
@@ -18,14 +20,14 @@
     <DropdownMenu.Trigger>
       {#snippet child({ props })}
         <Button {...props} variant="outline" class="!ps-2">
-          <ChevronDown />
+          <CaretDownIcon />
         </Button>
       {/snippet}
     </DropdownMenu.Trigger>
     <DropdownMenu.Content align="end" class="[--radius:1rem]">
       <DropdownMenu.Group>
         <DropdownMenu.Item>
-          <VolumeOff />
+          <SpeakerSlashIcon />
           Mute Conversation
         </DropdownMenu.Item>
         <DropdownMenu.Item>
@@ -33,15 +35,15 @@
           Mark as Read
         </DropdownMenu.Item>
         <DropdownMenu.Item>
-          <AlertTriangle />
+          <WarningIcon />
           Report Conversation
         </DropdownMenu.Item>
         <DropdownMenu.Item>
-          <UserRoundX />
+          <UserMinusIcon />
           Block User
         </DropdownMenu.Item>
         <DropdownMenu.Item>
-          <Share />
+          <ShareIcon />
           Share Conversation
         </DropdownMenu.Item>
         <DropdownMenu.Item>
@@ -52,7 +54,7 @@
       <DropdownMenu.Separator />
       <DropdownMenu.Group>
         <DropdownMenu.Item variant="destructive">
-          <Trash />
+          <TrashIcon />
           Delete Conversation
         </DropdownMenu.Item>
       </DropdownMenu.Group>

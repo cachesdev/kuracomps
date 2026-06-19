@@ -1,5 +1,5 @@
 <script lang="ts">
-  import MoreHorizontal from '@lucide/svelte/icons/more-horizontal';
+  import { DotsThreeIcon } from 'phosphor-svelte';
 
   import { Button, buttonVariants } from '$lib/components/ui/button/index.js';
   import * as Dialog from '$lib/components/ui/dialog/index.js';
@@ -15,7 +15,7 @@
 
 <DropdownMenu.Root>
   <DropdownMenu.Trigger class={buttonVariants({ variant: 'outline', size: 'icon-sm' })}>
-    <MoreHorizontal />
+    <DotsThreeIcon />
   </DropdownMenu.Trigger>
   <DropdownMenu.Content class="w-40" align="end">
     <DropdownMenu.Label>File Actions</DropdownMenu.Label>

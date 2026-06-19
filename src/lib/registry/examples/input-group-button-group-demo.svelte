@@ -2,7 +2,7 @@
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js';
   import * as InputGroup from '$lib/components/ui/input-group/index.js';
   import * as Label from '$lib/components/ui/label/index.js';
-  import Link2Icon from '@lucide/svelte/icons/link-2';
+  import { LinkIcon } from 'phosphor-svelte';
 </script>
 
 <div class="grid w-full max-w-sm gap-6">
@@ -13,7 +13,7 @@
     <InputGroup.Root>
       <InputGroup.Input id="url" />
       <InputGroup.Addon align="inline-end">
-        <Link2Icon />
+        <LinkIcon />
       </InputGroup.Addon>
     </InputGroup.Root>
     <ButtonGroup.Text>.com</ButtonGroup.Text>

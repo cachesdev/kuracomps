@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Menubar as MenubarPrimitive } from 'bits-ui';
   import { cn, type WithoutChild } from '$lib/utils.js';
-  import CaretRightIcon from 'phosphor-svelte/lib/CaretRight';
+  import { CaretRightIcon } from 'phosphor-svelte';
 
   let {
     ref = $bindable(null),

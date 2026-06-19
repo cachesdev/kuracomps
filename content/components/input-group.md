@@ -35,11 +35,11 @@ links:
 
 <Step>
 
-Install `@lucide/svelte`:
+Install `phosphor-svelte`:
 
 </Step>
 
-<PMInstall command="@lucide/svelte -D" />
+<PMInstall command="phosphor-svelte" />
 
 <Step>
 
@@ -59,7 +59,7 @@ Copy and paste the following code into your project.
 ```svelte showLineNumbers
 <script lang="ts">
   import * as InputGroup from '$lib/components/ui/input-group/index.js';
-  import SearchIcon from '@lucide/svelte/icons/search';
+  import { MagnifyingGlassIcon } from 'phosphor-svelte';
 </script>
 ```
 
@@ -67,7 +67,7 @@ Copy and paste the following code into your project.
 <InputGroup.Root>
   <InputGroup.Input placeholder="Search..." />
   <InputGroup.Addon>
-    <SearchIcon />
+    <MagnifyingGlassIcon />
   </InputGroup.Addon>
   <InputGroup.Addon align="inline-end">
     <InputGroup.Button>Search</InputGroup.Button>

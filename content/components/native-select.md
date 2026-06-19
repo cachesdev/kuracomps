@@ -16,7 +16,7 @@ links:
     import Step from "$lib/components/step.svelte";
     import Steps from "$lib/components/steps.svelte";
     import Callout from "$lib/components/callout.svelte";
-    import InfoIcon from "@lucide/svelte/icons/info";
+    import { InfoIcon } from "phosphor-svelte";
 </script>
 
 <Callout variant="info" icon={InfoIcon} class="!translate-y-[3px]" >

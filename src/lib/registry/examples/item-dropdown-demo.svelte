@@ -3,7 +3,7 @@
   import * as Avatar from '$lib/components/ui/avatar/index.js';
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
   import { Button } from '$lib/components/ui/button/index.js';
-  import ChevronDown from '@lucide/svelte/icons/chevron-down';
+  import { CaretDownIcon } from 'phosphor-svelte';
 
   const people = [
     {
@@ -29,7 +29,7 @@
     <DropdownMenu.Trigger>
       {#snippet child({ props })}
         <Button {...props} variant="outline" size="sm" class="w-fit">
-          Select <ChevronDown />
+          Select <CaretDownIcon />
         </Button>
       {/snippet}
     </DropdownMenu.Trigger>

@@ -1,13 +1,11 @@
 <script lang="ts">
   import * as Alert from '$lib/components/ui/alert/index.js';
-  import CheckCircle2Icon from '@lucide/svelte/icons/check-circle-2';
-  import AlertCircleIcon from '@lucide/svelte/icons/alert-circle';
-  import PopcornIcon from '@lucide/svelte/icons/popcorn';
+  import { CheckCircleIcon, PopcornIcon, WarningCircleIcon } from 'phosphor-svelte';
 </script>
 
 <div class="grid w-full max-w-xl items-start gap-4">
   <Alert.Root>
-    <CheckCircle2Icon />
+    <CheckCircleIcon />
     <Alert.Title>Success! Your changes have been saved</Alert.Title>
     <Alert.Description>This is an alert with icon, title and description.</Alert.Description>
   </Alert.Root>
@@ -16,7 +14,7 @@
     <Alert.Title>This Alert has a title and an icon. No description.</Alert.Title>
   </Alert.Root>
   <Alert.Root variant="destructive">
-    <AlertCircleIcon />
+    <WarningCircleIcon />
     <Alert.Title>Unable to process your payment.</Alert.Title>
     <Alert.Description>
       <p>Please verify your billing information and try again.</p>

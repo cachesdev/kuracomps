@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Pagination as PaginationPrimitive } from 'bits-ui';
-  import CaretRightIcon from 'phosphor-svelte/lib/CaretRight';
+  import { CaretRightIcon } from 'phosphor-svelte';
   import { cn } from '$lib/utils.js';
   import { buttonVariants } from '../button/index.js';
 

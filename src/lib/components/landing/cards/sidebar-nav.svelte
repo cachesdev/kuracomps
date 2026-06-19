@@ -1,25 +1,27 @@
 <script lang="ts">
   import { SidebarMenuButton, SidebarMenuItem } from '$lib/components/ui/sidebar/index.js';
-  import ArrowsLeftRightIcon from 'phosphor-svelte/lib/ArrowsLeftRight';
-  import BankIcon from 'phosphor-svelte/lib/Bank';
-  import BellIcon from 'phosphor-svelte/lib/Bell';
-  import BookOpenIcon from 'phosphor-svelte/lib/BookOpen';
-  import CalendarIcon from 'phosphor-svelte/lib/Calendar';
-  import ChartBarIcon from 'phosphor-svelte/lib/ChartBar';
-  import ChartLineIcon from 'phosphor-svelte/lib/ChartLine';
-  import ChartPieIcon from 'phosphor-svelte/lib/ChartPie';
-  import ChatCircleIcon from 'phosphor-svelte/lib/ChatCircle';
-  import CreditCardIcon from 'phosphor-svelte/lib/CreditCard';
-  import FileTextIcon from 'phosphor-svelte/lib/FileText';
-  import GlobeIcon from 'phosphor-svelte/lib/Globe';
-  import PaletteIcon from 'phosphor-svelte/lib/Palette';
-  import PulseIcon from 'phosphor-svelte/lib/Pulse';
-  import QuestionIcon from 'phosphor-svelte/lib/Question';
-  import ShieldIcon from 'phosphor-svelte/lib/Shield';
-  import TargetIcon from 'phosphor-svelte/lib/Target';
-  import TrendUpIcon from 'phosphor-svelte/lib/TrendUp';
-  import UserIcon from 'phosphor-svelte/lib/User';
-  import WalletIcon from 'phosphor-svelte/lib/Wallet';
+  import {
+    ArrowsLeftRightIcon,
+    BankIcon,
+    BellIcon,
+    BookOpenIcon,
+    CalendarIcon,
+    ChartBarIcon,
+    ChartLineIcon,
+    ChartPieIcon,
+    ChatCircleIcon,
+    CreditCardIcon,
+    FileTextIcon,
+    GlobeIcon,
+    PaletteIcon,
+    PulseIcon,
+    QuestionIcon,
+    ShieldIcon,
+    TargetIcon,
+    TrendUpIcon,
+    UserIcon,
+    WalletIcon
+  } from 'phosphor-svelte';
   import type { Component } from 'svelte';
   import SidebarSection from './sidebar-section.svelte';
 

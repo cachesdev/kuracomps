@@ -2,7 +2,7 @@
   import * as InputGroup from '$lib/components/ui/input-group/index.js';
   import * as Label from '$lib/components/ui/label/index.js';
   import * as Tooltip from '$lib/components/ui/tooltip/index.js';
-  import InfoIcon from '@lucide/svelte/icons/info';
+  import { InfoIcon } from 'phosphor-svelte';
 </script>
 
 <div class="grid w-full max-w-sm gap-4">

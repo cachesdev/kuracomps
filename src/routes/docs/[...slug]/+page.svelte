@@ -3,9 +3,7 @@
   import { Badge } from '$lib/components/ui/badge/index.js';
   import { Button } from '$lib/components/ui/button/index.js';
   import { findNeighbors } from '$lib/navigation.js';
-  import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
-  import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
-  import ArrowUpRightIcon from '@lucide/svelte/icons/arrow-up-right';
+  import { ArrowLeftIcon, ArrowRightIcon, ArrowUpRightIcon } from 'phosphor-svelte';
 
   let { data } = $props();
 

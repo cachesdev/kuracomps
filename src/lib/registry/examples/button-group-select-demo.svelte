@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ArrowRight from '@lucide/svelte/icons/arrow-right';
+  import { ArrowRightIcon } from 'phosphor-svelte';
   import { Button } from '$lib/components/ui/button/index.js';
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js';
   import { Input } from '$lib/components/ui/input/index.js';
@@ -42,7 +42,7 @@
   </ButtonGroup.Root>
   <ButtonGroup.Root>
     <Button aria-label="Send" size="icon" variant="outline">
-      <ArrowRight />
+      <ArrowRightIcon />
     </Button>
   </ButtonGroup.Root>
 </ButtonGroup.Root>

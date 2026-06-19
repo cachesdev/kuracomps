@@ -24,7 +24,7 @@
     SelectTrigger
   } from '$lib/components/ui/select/index.js';
   import { Textarea } from '$lib/components/ui/textarea/index.js';
-  import XIcon from 'phosphor-svelte/lib/X';
+  import { XIcon } from 'phosphor-svelte';
 
   const currencies = [
     { label: 'USD - United States Dollar', value: 'usd' },

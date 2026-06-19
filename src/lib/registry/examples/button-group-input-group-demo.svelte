@@ -1,6 +1,5 @@
 <script lang="ts">
-  import AudioLines from '@lucide/svelte/icons/audio-lines';
-  import Plus from '@lucide/svelte/icons/plus';
+  import { PlusIcon, WaveformIcon } from 'phosphor-svelte';
   import { Button } from '$lib/components/ui/button/index.js';
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js';
   import * as InputGroup from '$lib/components/ui/input-group/index.js';
@@ -12,7 +11,7 @@
 <ButtonGroup.Root class="[--radius:9999rem]">
   <ButtonGroup.Root>
     <Button variant="outline" size="icon">
-      <Plus />
+      <PlusIcon />
     </Button>
   </ButtonGroup.Root>
   <ButtonGroup.Root class="flex-1">
@@ -33,7 +32,7 @@
                 class="data-[active=true]:bg-orange-100 data-[active=true]:text-orange-700 dark:data-[active=true]:bg-orange-800 dark:data-[active=true]:text-orange-100"
                 aria-pressed={voiceEnabled}
               >
-                <AudioLines />
+                <WaveformIcon />
               </InputGroup.Button>
             {/snippet}
           </Tooltip.Trigger>

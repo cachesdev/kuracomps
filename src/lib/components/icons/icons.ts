@@ -2,7 +2,7 @@ import Css from './css.svelte';
 import Json from './json.svelte';
 import Svelte from './svelte.svelte';
 import Ts from './ts.svelte';
-import FileIcon from '@lucide/svelte/icons/file';
+import { FileIcon } from 'phosphor-svelte';
 
 export function getIconForLanguageExtension(language: string) {
   switch (language) {

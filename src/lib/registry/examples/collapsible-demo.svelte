@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
+  import { CaretUpDownIcon } from 'phosphor-svelte';
   import * as Collapsible from '$lib/components/ui/collapsible/index.js';
   import { buttonVariants } from '$lib/components/ui/button/index.js';
 </script>
@@ -8,7 +8,7 @@
   <div class="flex items-center justify-between space-x-4 px-4">
     <h4 class="text-sm font-semibold">@huntabyte starred 3 repositories</h4>
     <Collapsible.Trigger class={buttonVariants({ variant: 'ghost', size: 'sm', class: 'w-9 p-0' })}>
-      <ChevronsUpDownIcon />
+      <CaretUpDownIcon />
       <span class="sr-only">Toggle</span>
     </Collapsible.Trigger>
   </div>

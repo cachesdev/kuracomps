@@ -1,5 +1,5 @@
 <script lang="ts">
-  import SlashIcon from '@lucide/svelte/icons/slash';
+  import { CaretRightIcon } from 'phosphor-svelte';
   import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
 </script>
 
@@ -9,13 +9,13 @@
       <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
     </Breadcrumb.Item>
     <Breadcrumb.Separator>
-      <SlashIcon />
+      <CaretRightIcon />
     </Breadcrumb.Separator>
     <Breadcrumb.Item>
       <Breadcrumb.Link href="/docs/components">Components</Breadcrumb.Link>
     </Breadcrumb.Item>
     <Breadcrumb.Separator>
-      <SlashIcon />
+      <CaretRightIcon />
     </Breadcrumb.Separator>
     <Breadcrumb.Item>
       <Breadcrumb.Page>Breadcrumb</Breadcrumb.Page>

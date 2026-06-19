@@ -1,6 +1,5 @@
 <script lang="ts">
-  import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
-  import SlashIcon from '@lucide/svelte/icons/slash';
+  import { CaretDownIcon, CaretRightIcon } from 'phosphor-svelte';
   import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 </script>
@@ -11,13 +10,13 @@
       <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
     </Breadcrumb.Item>
     <Breadcrumb.Separator>
-      <SlashIcon />
+      <CaretRightIcon />
     </Breadcrumb.Separator>
     <Breadcrumb.Item>
       <DropdownMenu.Root>
         <DropdownMenu.Trigger class="flex items-center gap-1">
           Components
-          <ChevronDownIcon class="size-4" />
+          <CaretDownIcon class="size-4" />
         </DropdownMenu.Trigger>
         <DropdownMenu.Content align="start">
           <DropdownMenu.Item>Documentation</DropdownMenu.Item>
@@ -27,7 +26,7 @@
       </DropdownMenu.Root>
     </Breadcrumb.Item>
     <Breadcrumb.Separator>
-      <SlashIcon />
+      <CaretRightIcon />
     </Breadcrumb.Separator>
     <Breadcrumb.Item>
       <Breadcrumb.Page>Breadcrumb</Breadcrumb.Page>

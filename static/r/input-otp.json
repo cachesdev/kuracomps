@@ -75,7 +75,7 @@
     {
       "type": "ui",
       "role": "file",
-      "content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import type { WithElementRef } from '$lib/utils.js';\n  import { cn } from '$lib/utils.js';\n  import MinusIcon from 'phosphor-svelte/lib/Minus';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n  bind:this={ref}\n  data-slot=\"input-otp-separator\"\n  role=\"separator\"\n  class={cn(\"text-zinc-600 [&_svg:not([class*='size-'])]:size-3.5 flex items-center\", className)}\n  {...restProps}\n>\n  {#if children}\n    {@render children?.()}\n  {:else}\n    <MinusIcon />\n  {/if}\n</div>\n",
+      "content": "<script lang=\"ts\">\n  import type { HTMLAttributes } from 'svelte/elements';\n  import type { WithElementRef } from '$lib/utils.js';\n  import { cn } from '$lib/utils.js';\n  import { MinusIcon } from 'phosphor-svelte';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    children,\n    ...restProps\n  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n  bind:this={ref}\n  data-slot=\"input-otp-separator\"\n  role=\"separator\"\n  class={cn(\"text-zinc-600 [&_svg:not([class*='size-'])]:size-3.5 flex items-center\", className)}\n  {...restProps}\n>\n  {#if children}\n    {@render children?.()}\n  {:else}\n    <MinusIcon />\n  {/if}\n</div>\n",
       "path": "input-otp/input-otp-separator.svelte",
       "_imports_": [
         {

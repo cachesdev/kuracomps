@@ -1,8 +1,8 @@
 <script lang="ts">
-  import ItalicIcon from '@lucide/svelte/icons/italic';
+  import { TextItalicIcon } from 'phosphor-svelte';
   import { Toggle } from '$lib/components/ui/toggle/index.js';
 </script>
 
 <Toggle size="sm" aria-label="Toggle italic">
-  <ItalicIcon class="size-4" />
+  <TextItalicIcon class="size-4" />
 </Toggle>

@@ -2,8 +2,7 @@
   import { Menubar as MenubarPrimitive } from 'bits-ui';
   import { cn, type WithoutChildrenOrChild } from '$lib/utils.js';
   import type { Snippet } from 'svelte';
-  import MinusIcon from 'phosphor-svelte/lib/Minus';
-  import CheckIcon from 'phosphor-svelte/lib/Check';
+  import { CheckIcon, MinusIcon } from 'phosphor-svelte';
 
   let {
     ref = $bindable(null),

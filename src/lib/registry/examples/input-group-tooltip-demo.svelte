@@ -1,8 +1,7 @@
 <script lang="ts">
   import * as InputGroup from '$lib/components/ui/input-group/index.js';
   import * as Tooltip from '$lib/components/ui/tooltip/index.js';
-  import HelpCircleIcon from '@lucide/svelte/icons/help-circle';
-  import InfoIcon from '@lucide/svelte/icons/info';
+  import { InfoIcon, QuestionIcon } from 'phosphor-svelte';
 </script>
 
 <div class="grid w-full max-w-sm gap-4">
@@ -30,7 +29,7 @@
         <Tooltip.Trigger>
           {#snippet child({ props })}
             <InputGroup.Button {...props} variant="ghost" aria-label="Help" size="icon-xs">
-              <HelpCircleIcon />
+              <QuestionIcon />
             </InputGroup.Button>
           {/snippet}
         </Tooltip.Trigger>
@@ -47,7 +46,7 @@
         {#snippet child({ props })}
           <InputGroup.Addon>
             <InputGroup.Button {...props} variant="ghost" aria-label="Help" size="icon-xs">
-              <HelpCircleIcon />
+              <QuestionIcon />
             </InputGroup.Button>
           </InputGroup.Addon>
         {/snippet}

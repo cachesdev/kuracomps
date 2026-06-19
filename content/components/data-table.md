@@ -318,7 +318,7 @@ We'll start by defining the actions menu in our `data-table-actions.svelte` comp
 
 ```svelte showLineNumbers title="routes/payments/data-table-actions.svelte"
 <script lang="ts">
-  import EllipsisIcon from '@lucide/svelte/icons/ellipsis';
+  import { DotsThreeIcon } from 'phosphor-svelte';
   import { Button } from '$lib/components/ui/button/index.js';
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 
@@ -330,7 +330,7 @@ We'll start by defining the actions menu in our `data-table-actions.svelte` comp
     {#snippet child({ props })}
       <Button {...props} variant="ghost" size="icon" class="relative size-8 p-0">
         <span class="sr-only">Open menu</span>
-        <EllipsisIcon />
+        <DotsThreeIcon />
       </Button>
     {/snippet}
   </DropdownMenu.Trigger>
@@ -502,7 +502,7 @@ We'll start by creating a component to render a sortable email header button.
 ```svelte showLineNumbers title="routes/payments/data-table-email-button.svelte"
 <script lang="ts">
   import type { ComponentProps } from 'svelte';
-  import ArrowUpDownIcon from '@lucide/svelte/icons/arrow-up-down';
+  import { ArrowsDownUpIcon } from 'phosphor-svelte';
   import { Button } from '$lib/components/ui/button/index.js';
 
   let { variant = 'ghost', ...restProps }: ComponentProps<typeof Button> = $props();
@@ -510,7 +510,7 @@ We'll start by creating a component to render a sortable email header button.
 
 <Button {variant} {...restProps}>
   Email
-  <ArrowUpDownIcon class="ms-2" />
+  <ArrowsDownUpIcon class="ms-2" />
 </Button>
 ```
 

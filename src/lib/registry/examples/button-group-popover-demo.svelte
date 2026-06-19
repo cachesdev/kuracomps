@@ -1,6 +1,5 @@
 <script lang="ts">
-  import Bot from '@lucide/svelte/icons/bot';
-  import ChevronDown from '@lucide/svelte/icons/chevron-down';
+  import { CaretDownIcon, RobotIcon } from 'phosphor-svelte';
   import { Button } from '$lib/components/ui/button/index.js';
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js';
   import * as Popover from '$lib/components/ui/popover/index.js';
@@ -10,14 +9,14 @@
 
 <ButtonGroup.Root>
   <Button variant="outline" size="sm">
-    <Bot />
+    <RobotIcon />
     Copilot
   </Button>
   <Popover.Root>
     <Popover.Trigger>
       {#snippet child({ props })}
         <Button {...props} variant="outline" size="icon-sm" aria-label="Open Popover">
-          <ChevronDown />
+          <CaretDownIcon />
         </Button>
       {/snippet}
     </Popover.Trigger>

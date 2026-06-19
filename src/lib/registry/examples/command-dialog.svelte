@@ -1,10 +1,12 @@
 <script lang="ts">
-  import CalculatorIcon from '@lucide/svelte/icons/calculator';
-  import CalendarIcon from '@lucide/svelte/icons/calendar';
-  import CreditCardIcon from '@lucide/svelte/icons/credit-card';
-  import SettingsIcon from '@lucide/svelte/icons/settings';
-  import SmileIcon from '@lucide/svelte/icons/smile';
-  import UserIcon from '@lucide/svelte/icons/user';
+  import {
+    CalculatorIcon,
+    CalendarIcon,
+    CreditCardIcon,
+    GearIcon,
+    SmileyIcon,
+    UserIcon
+  } from 'phosphor-svelte';
   import * as Command from '$lib/components/ui/command/index.js';
 
   let open = $state(false);
@@ -37,7 +39,7 @@
         <span>Calendar</span>
       </Command.Item>
       <Command.Item>
-        <SmileIcon class="me-2 size-4" />
+        <SmileyIcon class="me-2 size-4" />
         <span>Search Emoji</span>
       </Command.Item>
       <Command.Item>
@@ -58,7 +60,7 @@
         <Command.Shortcut>⌘B</Command.Shortcut>
       </Command.Item>
       <Command.Item>
-        <SettingsIcon class="me-2 size-4" />
+        <GearIcon class="me-2 size-4" />
         <span>Settings</span>
         <Command.Shortcut>⌘S</Command.Shortcut>
       </Command.Item>

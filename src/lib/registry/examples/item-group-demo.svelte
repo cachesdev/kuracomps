@@ -2,7 +2,7 @@
   import * as Item from '$lib/components/ui/item/index.js';
   import * as Avatar from '$lib/components/ui/avatar/index.js';
   import { Button } from '$lib/components/ui/button/index.js';
-  import Plus from '@lucide/svelte/icons/plus';
+  import { PlusIcon } from 'phosphor-svelte';
 
   const people = [
     {
@@ -39,7 +39,7 @@
         </Item.Content>
         <Item.Actions>
           <Button variant="ghost" size="icon" class="rounded-full">
-            <Plus />
+            <PlusIcon />
           </Button>
         </Item.Actions>
       </Item.Root>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Plus from '@lucide/svelte/icons/plus';
+  import { PlusIcon } from 'phosphor-svelte';
   import { Button } from '$lib/components/ui/button/index.js';
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js';
 </script>
@@ -10,7 +10,7 @@
     <Button variant="outline" size="sm">Button</Button>
     <Button variant="outline" size="sm">Group</Button>
     <Button variant="outline" size="icon-sm">
-      <Plus />
+      <PlusIcon />
     </Button>
   </ButtonGroup.Root>
   <ButtonGroup.Root>
@@ -18,7 +18,7 @@
     <Button variant="outline">Button</Button>
     <Button variant="outline">Group</Button>
     <Button variant="outline" size="icon">
-      <Plus />
+      <PlusIcon />
     </Button>
   </ButtonGroup.Root>
   <ButtonGroup.Root>
@@ -26,7 +26,7 @@
     <Button variant="outline" size="lg">Button</Button>
     <Button variant="outline" size="lg">Group</Button>
     <Button variant="outline" size="icon-lg">
-      <Plus />
+      <PlusIcon />
     </Button>
   </ButtonGroup.Root>
 </div>

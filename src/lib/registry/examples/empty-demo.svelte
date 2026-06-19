@@ -2,7 +2,7 @@
   import * as Empty from '$lib/components/ui/empty/index.js';
   import { Button } from '$lib/components/ui/button/index.js';
   import FolderCodeIcon from '@tabler/icons-svelte/icons/folder-code';
-  import ArrowUpRightIcon from '@lucide/svelte/icons/arrow-up-right';
+  import { ArrowUpRightIcon } from 'phosphor-svelte';
 </script>
 
 <Empty.Root>

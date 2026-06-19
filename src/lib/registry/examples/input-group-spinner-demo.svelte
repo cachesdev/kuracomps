@@ -1,7 +1,7 @@
 <script lang="ts">
   import * as InputGroup from '$lib/components/ui/input-group/index.js';
   import { Spinner } from '$lib/components/ui/spinner/index.js';
-  import LoaderIcon from '@lucide/svelte/icons/loader';
+  import { SpinnerGapIcon } from 'phosphor-svelte';
 </script>
 
 <div class="grid w-full max-w-sm gap-4">
@@ -27,7 +27,7 @@
   <InputGroup.Root data-disabled>
     <InputGroup.Input placeholder="Refreshing data..." disabled />
     <InputGroup.Addon>
-      <LoaderIcon class="animate-spin" />
+      <SpinnerGapIcon class="animate-spin" />
     </InputGroup.Addon>
     <InputGroup.Addon align="inline-end">
       <InputGroup.Text class="text-muted-foreground">Please wait...</InputGroup.Text>

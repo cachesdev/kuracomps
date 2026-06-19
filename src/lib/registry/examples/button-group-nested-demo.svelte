@@ -1,6 +1,5 @@
 <script lang="ts">
-  import ArrowLeft from '@lucide/svelte/icons/arrow-left';
-  import ArrowRight from '@lucide/svelte/icons/arrow-right';
+  import { ArrowLeftIcon, ArrowRightIcon } from 'phosphor-svelte';
   import { Button } from '$lib/components/ui/button/index.js';
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js';
 </script>
@@ -15,10 +14,10 @@
   </ButtonGroup.Root>
   <ButtonGroup.Root>
     <Button variant="outline" size="icon-sm" aria-label="Previous">
-      <ArrowLeft />
+      <ArrowLeftIcon />
     </Button>
     <Button variant="outline" size="icon-sm" aria-label="Next">
-      <ArrowRight />
+      <ArrowRightIcon />
     </Button>
   </ButtonGroup.Root>
 </ButtonGroup.Root>

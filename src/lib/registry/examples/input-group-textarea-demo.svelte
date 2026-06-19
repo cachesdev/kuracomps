@@ -1,8 +1,5 @@
 <script lang="ts">
-  import IconBrandJavascript from '@tabler/icons-svelte/icons/brand-javascript';
-  import IconCopy from '@tabler/icons-svelte/icons/copy';
-  import IconCornerDownLeft from '@tabler/icons-svelte/icons/corner-down-left';
-  import IconRefresh from '@tabler/icons-svelte/icons/refresh';
+  import { ArrowBendDownLeftIcon, ArrowClockwiseIcon, CopyIcon, FileJsIcon } from 'phosphor-svelte';
 
   import * as InputGroup from '$lib/components/ui/input-group/index.js';
 </script>
@@ -11,21 +8,21 @@
   <InputGroup.Root>
     <InputGroup.Addon align="block-start" class="border-b">
       <InputGroup.Text class="font-mono font-medium">
-        <IconBrandJavascript />
+        <FileJsIcon />
         script.js
       </InputGroup.Text>
       <InputGroup.Button class="ms-auto" size="icon-xs">
-        <IconRefresh />
+        <ArrowClockwiseIcon />
       </InputGroup.Button>
       <InputGroup.Button variant="ghost" size="icon-xs">
-        <IconCopy />
+        <CopyIcon />
       </InputGroup.Button>
     </InputGroup.Addon>
     <InputGroup.Textarea placeholder="console.log('Hello, world!');" class="min-h-[200px]" />
     <InputGroup.Addon align="block-end" class="border-t">
       <InputGroup.Text>Line 1, Column 1</InputGroup.Text>
       <InputGroup.Button size="sm" class="ms-auto" variant="default">
-        Run <IconCornerDownLeft />
+        Run <ArrowBendDownLeftIcon />
       </InputGroup.Button>
     </InputGroup.Addon>
   </InputGroup.Root>

@@ -1,7 +1,7 @@
 <script lang="ts">
   import * as Empty from '$lib/components/ui/empty/index.js';
   import { Button } from '$lib/components/ui/button/index.js';
-  import CloudIcon from '@tabler/icons-svelte/icons/cloud';
+  import { CloudIcon } from 'phosphor-svelte';
 </script>
 
 <Empty.Root class="border border-dashed">

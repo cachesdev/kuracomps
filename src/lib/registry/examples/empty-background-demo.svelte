@@ -1,8 +1,7 @@
 <script lang="ts">
   import * as Empty from '$lib/components/ui/empty/index.js';
   import { Button } from '$lib/components/ui/button/index.js';
-  import BellIcon from '@tabler/icons-svelte/icons/bell';
-  import { ArrowsCounterClockwiseIcon } from 'phosphor-svelte';
+  import { ArrowsCounterClockwiseIcon, BellIcon } from 'phosphor-svelte';
 </script>
 
 <Empty.Root class="from-muted/50 to-background h-full bg-gradient-to-b from-30%">

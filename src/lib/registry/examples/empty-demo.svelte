@@ -1,14 +1,13 @@
 <script lang="ts">
   import * as Empty from '$lib/components/ui/empty/index.js';
   import { Button } from '$lib/components/ui/button/index.js';
-  import FolderCodeIcon from '@tabler/icons-svelte/icons/folder-code';
-  import { ArrowUpRightIcon } from 'phosphor-svelte';
+  import { ArrowUpRightIcon, FolderOpenIcon } from 'phosphor-svelte';
 </script>
 
 <Empty.Root>
   <Empty.Header>
     <Empty.Media variant="icon">
-      <FolderCodeIcon />
+      <FolderOpenIcon />
     </Empty.Media>
     <Empty.Title>No Projects Yet</Empty.Title>
     <Empty.Description>

@@ -51,7 +51,7 @@ Copy and paste the following code into your project.
 ```svelte
 <script lang="ts">
   import * as Empty from '$lib/components/ui/empty/index.js';
-  import FolderCodeIcon from '@tabler/icons-svelte/icons/folder-code';
+  import { FolderOpenIcon } from 'phosphor-svelte';
 </script>
 ```
 
@@ -59,7 +59,7 @@ Copy and paste the following code into your project.
 <Empty.Root>
   <Empty.Header>
     <Empty.Media variant="icon">
-      <FolderCodeIcon />
+      <FolderOpenIcon />
     </Empty.Media>
     <Empty.Title>No data</Empty.Title>
     <Empty.Description>No data found</Empty.Description>

@@ -1,8 +1,8 @@
 <script lang="ts">
-  import CopyIcon from '@tabler/icons-svelte/icons/copy';
-  import CheckIcon from '@tabler/icons-svelte/icons/check';
   import {
     CaretDownIcon,
+    CheckIcon,
+    CopyIcon,
     ShareIcon,
     SpeakerSlashIcon,
     TrashIcon,

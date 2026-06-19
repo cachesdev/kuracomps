@@ -1,8 +1,5 @@
 <script lang="ts">
-  import IconCheck from '@tabler/icons-svelte/icons/check';
-  import IconCopy from '@tabler/icons-svelte/icons/copy';
-  import IconInfoCircle from '@tabler/icons-svelte/icons/info-circle';
-  import IconStar from '@tabler/icons-svelte/icons/star';
+  import { CheckIcon, CopyIcon, InfoIcon, StarIcon } from 'phosphor-svelte';
 
   import * as InputGroup from '$lib/components/ui/input-group/index.js';
   import * as Popover from '$lib/components/ui/popover/index.js';
@@ -24,9 +21,9 @@
         onclick={() => clipboard.copy('https://kura.gfdc.dev')}
       >
         {#if clipboard.copied}
-          <IconCheck />
+          <CheckIcon />
         {:else}
-          <IconCopy />
+          <CopyIcon />
         {/if}
       </InputGroup.Button>
     </InputGroup.Addon>
@@ -37,7 +34,7 @@
         {#snippet child({ props })}
           <InputGroup.Addon>
             <InputGroup.Button {...props} variant="secondary" size="icon-xs">
-              <IconInfoCircle />
+              <InfoIcon />
             </InputGroup.Button>
           </InputGroup.Addon>
         {/snippet}
@@ -53,7 +50,7 @@
     <InputGroup.Input />
     <InputGroup.Addon align="inline-end">
       <InputGroup.Button onclick={() => (isFavorite = !isFavorite)} size="icon-xs">
-        <IconStar class={isFavorite ? 'fill-blue-600 stroke-blue-600' : ''} />
+        <StarIcon class={isFavorite ? 'fill-blue-600 stroke-blue-600' : ''} />
       </InputGroup.Button>
     </InputGroup.Addon>
   </InputGroup.Root>

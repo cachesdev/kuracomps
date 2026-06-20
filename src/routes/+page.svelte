@@ -53,7 +53,21 @@
       </nav>
 
       <div class="mx-auto flex max-w-5xl flex-col items-center gap-7 text-center">
-        <LandingPill />
+        <LandingPill
+          phrases={[
+            '100% shai-hulud free',
+            'Find hot components in your area! click here!',
+            'Kura means warehouse according to chat gippity.',
+            'Yes I copied this from shadcn.',
+            'bet you thought I vibecoded this.',
+            'well, half of it.',
+            'okay, maybe 90% of it.',
+            'Huntabyte please release mdsx',
+            'Kura knows where you live. we are shipping you components.',
+            'Farm to table components directly from your local unemployed programmer'
+          ]}
+          holdDelay={5000}
+        />
         <div class="grid gap-5">
           <h1
             class="text-balance text-5xl leading-[0.95] font-semibold text-foreground sm:text-6xl lg:text-7xl"
@@ -64,8 +78,8 @@
           <p
             class="mx-auto max-w-3xl text-balance text-base leading-8 text-muted-foreground sm:text-lg"
           >
-            A jsrepo registry for dense, production-minded Sera components that you can install,
-            inspect, and make your own. Open source. Open code.
+            Buttons? Inputs? Modals? You want it? It's yours, my friend, as long as you have enough
+            pnpm install.
           </p>
         </div>
         <div class="flex flex-wrap justify-center gap-3">
@@ -74,7 +88,7 @@
             <ArrowRightIcon data-icon="inline-end" />
           </Button>
           <Button href={resolve('/docs/installation')} variant="outline" size="lg">
-            Install Registry
+            Install Kura
           </Button>
         </div>
       </div>

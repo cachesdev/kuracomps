@@ -19,7 +19,7 @@
     <div
       class="container flex min-h-[calc(100dvh-var(--header-height))] items-center justify-center py-16"
     >
-      <div class="mx-auto flex max-w-5xl flex-col items-center gap-7 text-center">
+      <div class="mx-auto flex w-full max-w-5xl min-w-0 flex-col items-center gap-7 text-center">
         <LandingPill
           phrases={[
             '100% shai-hulud free',

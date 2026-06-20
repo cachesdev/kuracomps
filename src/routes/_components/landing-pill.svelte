@@ -169,12 +169,15 @@
     href={resolvedHref}
     aria-label={ariaLabel}
     class={cn(
-      'focus-ring group inline-flex h-7.5 max-w-full items-center gap-2 overflow-hidden border border-border bg-muted/85 px-3 py-0 font-mono text-xs font-semibold tracking-widest text-muted-foreground uppercase shadow-[inset_0_1px_0_rgb(255_255_255/0.035)] transition-[border-color,background-color,box-shadow,color,transform] duration-200 hover:border-primary/50 hover:bg-primary-wash hover:text-foreground active:translate-y-px motion-reduce:transition-none',
+      'focus-ring group inline-flex h-7.5 min-w-0 max-w-[calc(100vw-2rem)] items-center gap-2 overflow-hidden border border-border bg-muted/85 px-3 py-0 font-mono text-xs font-semibold tracking-widest text-muted-foreground uppercase shadow-[inset_0_1px_0_rgb(255_255_255/0.035)] transition-[border-color,background-color,box-shadow,color,transform] duration-200 hover:border-primary/50 hover:bg-primary-wash hover:text-foreground active:translate-y-px sm:max-w-full motion-reduce:transition-none',
       className
     )}
   >
-    <span class="inline-flex h-4 min-w-0 items-center" aria-hidden="true">
-      <span class="min-w-0 truncate leading-4">{visibleText}</span>
+    <span class="inline-flex h-4 min-w-0 flex-1 items-center overflow-hidden" aria-hidden="true">
+      <span
+        class="min-w-0 truncate leading-4 max-sm:[mask-image:linear-gradient(to_right,black_0,black_calc(100%_-_1rem),transparent)]"
+        >{visibleText}</span
+      >
       <span
         class="landing-pill-cursor ml-1.5 h-3 w-px shrink-0 bg-primary shadow-[0_0_10px_rgb(185_215_101/0.35)]"
       ></span>

@@ -38,8 +38,8 @@
       </div>
     {/if}
 
-    <a href={resolve('/')} class="focus-ring text-sm font-semibold tracking-tight text-foreground">
-      kura
+    <a href={resolve('/')} class="focus-ring text-sm font-semibold tracking-tight text-primary">
+      Kura
     </a>
 
     <nav class="ml-auto hidden items-center gap-1 md:flex" aria-label="Primary">

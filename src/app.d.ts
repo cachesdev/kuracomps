@@ -2,8 +2,11 @@
 // for information about these interfaces
 import type { createHighlighterCore } from 'shiki/core';
 
+type ShikiHighlighter = Awaited<ReturnType<typeof createHighlighterCore>>;
+
 declare global {
-  var __shikiHighlighter: Awaited<ReturnType<typeof createHighlighterCore>> | undefined;
+  var __shikiHighlighter: ShikiHighlighter | undefined;
+  var __shikiHighlighterPromise: Promise<ShikiHighlighter> | undefined;
 
   namespace App {
     // interface Error {}

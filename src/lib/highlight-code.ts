@@ -5,8 +5,8 @@ const jsEngine = createJavaScriptRegexEngine();
 const highlightCache = new Map<string, string>();
 
 async function getHighlighter() {
-  if (!globalThis.__shikiHighlighter) {
-    globalThis.__shikiHighlighter = await createHighlighterCore({
+  if (!globalThis.__shikiHighlighterPromise) {
+    globalThis.__shikiHighlighterPromise = createHighlighterCore({
       themes: [
         import('@shikijs/themes/github-dark'),
         import('@shikijs/themes/github-light-default')
@@ -20,10 +20,19 @@ async function getHighlighter() {
         import('@shikijs/langs/diff')
       ],
       engine: jsEngine
-    });
+    }).then(
+      (highlighter) => {
+        globalThis.__shikiHighlighter = highlighter;
+        return highlighter;
+      },
+      (error) => {
+        globalThis.__shikiHighlighterPromise = undefined;
+        throw error;
+      }
+    );
   }
 
-  return globalThis.__shikiHighlighter;
+  return globalThis.__shikiHighlighterPromise;
 }
 
 export async function highlightCode(code: string, language = 'svelte') {

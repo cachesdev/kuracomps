@@ -40,8 +40,8 @@ const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const jsEngine = createJavaScriptRegexEngine();
 
 export async function createHighlighter() {
-  if (!globalThis.__shikiHighlighter) {
-    globalThis.__shikiHighlighter = await createHighlighterCore({
+  if (!globalThis.__shikiHighlighterPromise) {
+    globalThis.__shikiHighlighterPromise = createHighlighterCore({
       themes: [
         import('@shikijs/themes/github-dark'),
         import('@shikijs/themes/github-light-default')
@@ -55,10 +55,19 @@ export async function createHighlighter() {
         import('@shikijs/langs/diff')
       ],
       engine: jsEngine
-    });
+    }).then(
+      (highlighter) => {
+        globalThis.__shikiHighlighter = highlighter;
+        return highlighter;
+      },
+      (error) => {
+        globalThis.__shikiHighlighterPromise = undefined;
+        throw error;
+      }
+    );
   }
 
-  return globalThis.__shikiHighlighter;
+  return globalThis.__shikiHighlighterPromise;
 }
 
 /**

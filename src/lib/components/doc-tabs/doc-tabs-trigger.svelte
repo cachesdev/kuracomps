@@ -8,7 +8,7 @@
 
 <Tabs.Trigger
   class={cn(
-    'text-muted-foreground data-[state=active]:text-foreground data-[state=active]:border-primary dark:data-[state=active]:border-primary hover:text-primary rounded-none border-0 border-b-2 border-transparent bg-transparent px-0 pb-3 text-base data-[state=active]:bg-transparent data-[state=active]:shadow-none dark:data-[state=active]:bg-transparent',
+    'h-8 flex-none rounded-none border-0 border-b border-transparent bg-transparent px-0 pt-0 pb-1 text-xs font-semibold text-muted-foreground hover:text-primary data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none dark:data-[state=active]:border-primary dark:data-[state=active]:bg-transparent',
 
     className
   )}

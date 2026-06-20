@@ -2,6 +2,7 @@
   import './layout.css';
   import favicon from '$lib/assets/favicon.svg';
   import * as Tooltip from '$lib/components/ui/tooltip/index.js';
+  import { Toaster } from '$lib/components/ui/sonner/index.js';
 
   let { children } = $props();
 </script>
@@ -20,5 +21,6 @@
 </a>
 <Tooltip.Provider>
   {@render children()}
+  <Toaster />
 </Tooltip.Provider>
 <div class="noise-overlay" aria-hidden="true"></div>

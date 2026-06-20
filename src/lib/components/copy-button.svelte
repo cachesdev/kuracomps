@@ -9,10 +9,12 @@
   let {
     text,
     variant = 'ghost',
+    placement = 'absolute',
     class: className,
     ...restProps
   }: ComponentProps<typeof Button> & {
     text: string;
+    placement?: 'absolute' | 'inline';
   } = $props();
 
   const clipboard = new UseClipboard();
@@ -25,7 +27,9 @@
   <Tooltip.Trigger
     {...rp}
     class={cn(
-      'bg-code absolute end-2 top-3 z-10 size-7 hover:opacity-100 focus-visible:opacity-100',
+      placement === 'absolute'
+        ? 'absolute end-2 top-1 z-10 size-7 bg-code hover:opacity-100 focus-visible:opacity-100'
+        : 'static size-7 bg-transparent hover:opacity-100 focus-visible:opacity-100',
       className
     )}
     onclick={() => clipboard.copy(text)}

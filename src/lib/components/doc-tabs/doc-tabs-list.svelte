@@ -7,7 +7,10 @@
 </script>
 
 <Tabs.List
-  class={cn('justify-start gap-4 rounded-none bg-transparent px-2 md:px-0', className)}
+  class={cn(
+    'h-auto justify-start gap-4 rounded-none border-0 bg-transparent p-0 text-xs group-data-horizontal/tabs:h-auto',
+    className
+  )}
   data-llm-ignore
   {...restProps}
 />

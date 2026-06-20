@@ -58,7 +58,7 @@
     </div>
     <div
       data-slot="code"
-      class="overflow-hidden **:data-rehype-pretty-code-figure:m-0! **:data-rehype-pretty-code-figure:rounded-t-none **:data-rehype-pretty-code-figure:border-t [&_pre]:max-h-[400px]"
+      class="overflow-hidden **:data-rehype-pretty-code-figure:m-0! **:data-rehype-pretty-code-figure:rounded-t-none **:data-rehype-pretty-code-figure:border-x-0 **:data-rehype-pretty-code-figure:border-t **:data-rehype-pretty-code-figure:border-b-0 [&_pre]:max-h-[400px]"
     >
       {@render children?.()}
     </div>

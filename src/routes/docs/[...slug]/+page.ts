@@ -1,15 +1,6 @@
 import { getDoc } from '$lib/docs.js';
 import type { EntryGenerator, PageLoad } from './$types.js';
 
-type RegistryItem = {
-  name: string;
-  files?: {
-    target?: string;
-    path?: string;
-    content?: string;
-  }[];
-};
-
 export const prerender = true;
 
 function contentSlug(path: string) {
@@ -28,7 +19,7 @@ export const entries: EntryGenerator = () => {
   }));
 };
 
-export const load: PageLoad = async ({ params, fetch }) => {
+export const load: PageLoad = async ({ params, data }) => {
   const slug = params.slug ?? '';
   const doc = await getDoc(slug);
   const componentName = doc.metadata.slug;
@@ -43,14 +34,5 @@ export const load: PageLoad = async ({ params, fetch }) => {
         }
       : doc.metadata;
 
-  if (doc.metadata.path.startsWith('components/') && componentName) {
-    const response = await fetch(`/r/${componentName}.json`);
-
-    if (response.ok) {
-      const viewerData: RegistryItem = await response.json();
-      return { ...doc, metadata, viewerData };
-    }
-  }
-
-  return { ...doc, metadata, viewerData: null };
+  return { ...doc, metadata, viewerData: data.viewerData };
 };

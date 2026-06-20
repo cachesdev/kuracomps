@@ -14,7 +14,7 @@
 
 <div data-slot="command-input-wrapper" class="border-b border-border bg-popover p-1">
   <InputGroup.Root
-    class="border-transparent bg-muted px-3 shadow-[inset_0_0_0_1px_rgba(161,161,170,0.12)]"
+    class="border-transparent bg-muted shadow-[inset_0_0_0_1px_rgba(161,161,170,0.12)]"
   >
     <CommandPrimitive.Input
       {value}
@@ -29,7 +29,7 @@
         <InputGroup.Input {...props} bind:value bind:ref />
       {/snippet}
     </CommandPrimitive.Input>
-    <InputGroup.Addon>
+    <InputGroup.Addon class="px-2">
       <MagnifyingGlassIcon class="size-3.5 shrink-0 text-link opacity-80" />
     </InputGroup.Addon>
   </InputGroup.Root>

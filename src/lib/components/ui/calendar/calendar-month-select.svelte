@@ -14,7 +14,7 @@
 
 <span
   class={cn(
-    'relative flex border border-border bg-muted text-foreground has-focus:border-ring has-focus:ring-1 has-focus:ring-ring/50',
+    'relative flex h-(--cell-size) border border-border bg-muted text-foreground has-focus:border-ring has-focus:ring-1 has-focus:ring-ring/50',
     className
   )}
 >
@@ -37,7 +37,7 @@
         {/each}
       </select>
       <span
-        class="flex h-(--cell-size) items-center gap-1 ps-2 pe-1 text-sm font-medium text-foreground select-none [&>svg]:size-3.5 [&>svg]:text-muted-foreground"
+        class="flex h-full items-center gap-1 ps-2 pe-1 text-sm font-medium text-foreground select-none [&>svg]:size-3.5 [&>svg]:text-muted-foreground"
         aria-hidden="true"
       >
         {monthItems.find((item) => item.value === value)?.label || selectedMonthItem.label}

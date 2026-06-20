@@ -60,13 +60,13 @@
         <a
           {href}
           class={cn(
-            'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none',
+            'block space-y-1 border border-transparent p-2 leading-none no-underline transition-colors outline-none select-none hover:border-primary/50 hover:bg-muted hover:text-foreground focus:border-primary/50 focus:bg-muted focus:text-foreground',
             className
           )}
           {...restProps}
         >
-          <div class="text-sm leading-none font-medium">{title}</div>
-          <p class="text-muted-foreground line-clamp-2 text-sm leading-snug">
+          <div class="text-xs leading-none font-medium text-foreground">{title}</div>
+          <p class="line-clamp-2 text-xs leading-snug text-muted-foreground">
             {content}
           </p>
         </a>
@@ -80,21 +80,13 @@
     <NavigationMenu.Item>
       <NavigationMenu.Trigger>Home</NavigationMenu.Trigger>
       <NavigationMenu.Content>
-        <ul class="grid gap-2 p-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-          <li class="row-span-3">
-            <NavigationMenu.Link
-              class="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-4 no-underline outline-hidden select-none focus:shadow-md md:p-6"
-            >
-              {#snippet child({ props })}
-                <a {...props} href="/">
-                  <div class="mt-4 mb-2 text-lg font-medium">Kura</div>
-                  <p class="text-muted-foreground text-sm leading-tight">
-                    Beautifully designed components built with Tailwind CSS.
-                  </p>
-                </a>
-              {/snippet}
-            </NavigationMenu.Link>
-          </li>
+        <ul class="grid gap-1.5 p-1 md:w-[420px] md:grid-cols-2">
+          {@render ListItem({
+            href: '/',
+            title: 'Kura',
+            content: 'Beautifully designed components built with Tailwind CSS.',
+            class: 'border-primary/30 bg-primary-wash hover:bg-muted'
+          })}
           {@render ListItem({
             href: '/docs',
             title: 'Introduction',
@@ -116,7 +108,9 @@
     <NavigationMenu.Item>
       <NavigationMenu.Trigger>Components</NavigationMenu.Trigger>
       <NavigationMenu.Content>
-        <ul class="grid w-[300px] gap-2 p-2 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+        <ul
+          class="grid w-[280px] gap-1.5 p-1 sm:w-[380px] md:w-[480px] md:grid-cols-2 lg:w-[560px]"
+        >
           {#each components as component, i (i)}
             {@render ListItem({
               href: component.href,
@@ -138,17 +132,17 @@
     <NavigationMenu.Item class="hidden md:block">
       <NavigationMenu.Trigger>List</NavigationMenu.Trigger>
       <NavigationMenu.Content>
-        <ul class="grid w-[300px] gap-4 p-2">
+        <ul class="grid w-[280px] gap-1.5 p-1">
           <li>
-            <NavigationMenu.Link href="##">
+            <NavigationMenu.Link href="##" class="flex-col items-start gap-1">
               <div class="font-medium">Components</div>
               <div class="text-muted-foreground">Browse all components in the library.</div>
             </NavigationMenu.Link>
-            <NavigationMenu.Link href="##">
+            <NavigationMenu.Link href="##" class="flex-col items-start gap-1">
               <div class="font-medium">Documentation</div>
               <div class="text-muted-foreground">Learn how to use the library.</div>
             </NavigationMenu.Link>
-            <NavigationMenu.Link href="##">
+            <NavigationMenu.Link href="##" class="flex-col items-start gap-1">
               <div class="font-medium">Blog</div>
               <div class="text-muted-foreground">Read our latest blog posts.</div>
             </NavigationMenu.Link>
@@ -159,7 +153,7 @@
     <NavigationMenu.Item class="hidden md:block">
       <NavigationMenu.Trigger>Simple</NavigationMenu.Trigger>
       <NavigationMenu.Content>
-        <ul class="grid w-[200px] gap-4 p-2">
+        <ul class="grid w-[180px] gap-1 p-1">
           <li>
             <NavigationMenu.Link href="##">Components</NavigationMenu.Link>
             <NavigationMenu.Link href="##">Documentation</NavigationMenu.Link>
@@ -172,7 +166,7 @@
       <NavigationMenu.Trigger>With Icon</NavigationMenu.Trigger>
 
       <NavigationMenu.Content>
-        <ul class="grid w-[200px] gap-4 p-2">
+        <ul class="grid w-[180px] gap-1 p-1">
           <li>
             <NavigationMenu.Link href="##" class="flex-row items-center gap-2">
               <QuestionIcon />

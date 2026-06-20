@@ -25,7 +25,7 @@
   class={cn(
     'cn-carousel-next absolute rounded-none border-border bg-background text-muted-foreground touch-manipulation hover:border-link hover:bg-primary hover:text-primary-foreground',
     emblaCtx.orientation === 'horizontal'
-      ? '-end-12 top-1/2 -translate-y-1/2'
+      ? '-end-12 top-1/2 -translate-y-1/2 active:not-aria-[haspopup]:translate-y-[calc(-50%+1px)]'
       : 'start-1/2 -bottom-12 -translate-x-1/2 rotate-90',
     className
   )}

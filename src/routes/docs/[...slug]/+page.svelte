@@ -5,6 +5,7 @@
   import { findNeighbors } from '$lib/navigation.js';
   import { ArrowLeftIcon, ArrowRightIcon, ArrowUpRightIcon } from 'phosphor-svelte';
   import Toc from '$lib/components/docs/toc.svelte';
+  import MobileToc from '$lib/components/docs/mobile-toc.svelte';
 
   let { data } = $props();
 
@@ -81,6 +82,8 @@
         </div>
       {/if}
     </header>
+
+    <MobileToc items={doc.toc} />
 
     <div class="docs-content w-full min-w-0 pb-12">
       <Markdown viewerData={data.viewerData} links={doc.links} />

@@ -127,10 +127,13 @@ font-medium`, `text-muted-foreground` → `text-foreground` on active. The heade
   collapse into a compact switcher.
 - **Docs page:** three panes (sidebar `18rem` | content | TOC `14rem`) on a single
   balanced `gap-8` gutter. Content is capped at `max-w-2xl` in every breakpoint so it
-  never stretches past a readable measure; the TOC appears at `xl` and the sidebar at
-  `lg`. The table of contents (`$lib/components/docs/toc.svelte`) flattens the velite
-  TOC tree, indents by depth, and highlights the active heading via a citron indicator
-  bar that slides to the active link — no manual DOM measurement (runed `ElementRect`).
+  never stretches past a readable measure; the desktop TOC appears at `xl` and the
+  sidebar at `lg`. Below `xl`, an inline collapsible `<details>` "On this page"
+  (`$lib/components/docs/mobile-toc.svelte`) sits between the doc header and the
+  markdown so mobile readers can still jump sections. The desktop table of contents
+  (`$lib/components/docs/toc.svelte`) flattens the velite TOC tree, indents by depth,
+  and highlights the active heading via a citron indicator bar that slides to the
+  active link — no manual DOM measurement (runed `ElementRect`).
 
 ## 6. Motion & Interaction
 

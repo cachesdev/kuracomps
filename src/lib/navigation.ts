@@ -44,9 +44,10 @@ export const sidebarNavItems: SidebarNavItem[] = [
 ];
 
 export const mainNavItems: NavItem[] = [
+  { title: 'Home', href: '/' },
   { title: 'Docs', href: '/docs' },
   { title: 'Components', href: '/docs/components' },
-  { title: 'Registry', href: '/r/registry.json' }
+  { title: 'Install', href: '/docs/installation' }
 ];
 
 export function getFullNavItems(): SidebarNavItem[] {

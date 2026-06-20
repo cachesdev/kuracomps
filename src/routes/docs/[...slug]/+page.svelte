@@ -4,6 +4,7 @@
   import { Button } from '$lib/components/ui/button/index.js';
   import { findNeighbors } from '$lib/navigation.js';
   import { ArrowLeftIcon, ArrowRightIcon, ArrowUpRightIcon } from 'phosphor-svelte';
+  import Toc from '$lib/components/docs/toc.svelte';
 
   let { data } = $props();
 
@@ -19,9 +20,9 @@
 
 <article
   id="main-content"
-  class="grid min-h-[calc(100dvh-var(--header-height))] grid-cols-1 gap-10 py-8 xl:grid-cols-[minmax(0,44rem)_14rem]"
+  class="grid min-h-[calc(100dvh-var(--header-height))] grid-cols-1 gap-8 py-8 xl:grid-cols-[minmax(0,42rem)_14rem]"
 >
-  <div class="min-w-0">
+  <div class="min-w-0 mx-auto w-full max-w-2xl xl:mx-0">
     <header class="mb-8 grid gap-4 border-b border-border pb-8">
       <div class="flex flex-wrap items-start justify-between gap-4">
         <div class="grid max-w-3xl gap-3">
@@ -105,18 +106,6 @@
     class="sticky top-[calc(var(--header-height)+2rem)] hidden max-h-[calc(100dvh-var(--header-height)-4rem)] overflow-y-auto py-1 xl:block"
     data-llm-ignore
   >
-    {#if doc.toc.length}
-      <nav class="grid gap-2 border-l border-border pl-4" aria-label="On this page">
-        <h2 class="eyebrow">On this page</h2>
-        {#each doc.toc as item (item.url)}
-          <a
-            href={item.url}
-            class="focus-ring py-1 text-sm leading-5 text-muted-foreground transition-colors hover:text-foreground"
-          >
-            {item.title}
-          </a>
-        {/each}
-      </nav>
-    {/if}
+    <Toc items={doc.toc} />
   </aside>
 </article>

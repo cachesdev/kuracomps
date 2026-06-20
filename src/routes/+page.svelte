@@ -4,6 +4,7 @@
   import { Button } from '$lib/components/ui/button/index.js';
   import { ArrowRightIcon } from 'phosphor-svelte';
   import LandingPill from './_components/landing-pill.svelte';
+  import Header from '$lib/components/header.svelte';
 </script>
 
 <svelte:head>
@@ -11,47 +12,13 @@
   <meta name="description" content="Kura is my component warehouse, for you." />
 </svelte:head>
 
+<Header />
+
 <main id="main-content" class="min-h-dvh bg-background text-foreground">
   <section class="bg-grid">
-    <div class="container grid min-h-168 content-start gap-16 py-5 md:min-h-136">
-      <nav class="flex items-center justify-between gap-4" aria-label="Primary">
-        <a
-          href={resolve('/')}
-          class="focus-ring font-mono text-sm font-semibold tracking-widest uppercase"
-        >
-          kura
-        </a>
-        <div
-          class="hidden items-center gap-6 font-mono text-xs font-semibold tracking-widest uppercase md:flex"
-        >
-          <a
-            class="focus-ring text-muted-foreground transition-colors hover:text-foreground"
-            href={resolve('/')}
-          >
-            Home
-          </a>
-          <a
-            class="focus-ring text-muted-foreground transition-colors hover:text-foreground"
-            href={resolve('/docs')}
-          >
-            Docs
-          </a>
-          <a
-            class="focus-ring text-muted-foreground transition-colors hover:text-foreground"
-            href={resolve('/docs/components')}
-          >
-            Components
-          </a>
-          <a
-            class="focus-ring text-muted-foreground transition-colors hover:text-foreground"
-            href={resolve('/docs/installation')}
-          >
-            Install
-          </a>
-        </div>
-        <Button href={resolve('/docs/components')} size="sm">Browse</Button>
-      </nav>
-
+    <div
+      class="container flex min-h-[calc(100dvh-var(--header-height))] items-center justify-center py-16"
+    >
       <div class="mx-auto flex max-w-5xl flex-col items-center gap-7 text-center">
         <LandingPill
           phrases={[

@@ -18,8 +18,9 @@ decorative dashboard.
 > kuracomps-specific deviations: pill buttons via `<PillButton>`, citron soft accent
 > bar on alerts, Signal Citron wash for table selection, `.hairline-frame` inset
 > light on surfaces, and `bg-black/10` lighter overlays. Typography is Lyra-derived
-> (sans, normal-case, `text-xs font-medium` for component labels); mono uppercase
-> survives only as decorative `.eyebrow` labels.
+> (sans, normal-case, `text-sm font-medium` for nav and `text-xs font-medium` for
+> section labels); mono is reserved for code and data only — no uppercase tracking
+> labels in the UI chrome.
 
 ## 2. Color Palette & Roles
 
@@ -51,13 +52,20 @@ or pure black.
   width near `65ch`.
 - **Mono:** system monospace stack. Use for code, keyboard shortcuts, technical
   metadata, and real metric numbers. Component labels (buttons, badges, card titles,
-  menu items, tab triggers) use the sans body font, not mono.
-- **Eyebrows:** the `.eyebrow` utility class applies mono, uppercase, `text-xs`,
-  `font-semibold`, `tracking-widest`, `text-muted-foreground`. Use for decorative
-  section eyebrows, dashboard metric labels, and signal-map captions — not for
-  component affordance labels. An eyebrow must name the section or metric, not the UI
+  menu items, tab triggers, nav links, and the logo wordmark) use the sans body font,
+  not mono.
+- **Section labels:** sidebar section titles and the on-this-page heading use sans,
+  normal-case `text-xs font-medium text-muted-foreground` — no uppercase, no mono, no
+  wide tracking. The old `.eyebrow` mono-uppercase treatment has been dropped from the
+  UI chrome; do not reintroduce it. Section labels must name the section, not the UI
   affordance. Do not use decorative slash labels like "// system" or vague headers
   like "audit-ready".
+- **Header:** the site header is a single shared component (`$lib/components/header.svelte`)
+  used on both the landing page (non-sticky) and docs (sticky). Logo is a lowercase
+  "kura" wordmark in Geist semibold, normal-case. Nav links are sans `text-sm
+font-medium`, `text-muted-foreground` → `text-foreground` on active. The header
+  carries a theme toggle and a GitHub link on the right; docs additionally render a
+  mobile navigation drawer (existing `sheet`, `side="left"`) via a snippet slot.
 - **Banned:** Inter, generic serif fonts, oversized all-caps paragraphs, and
   proportional metric numbers.
 
@@ -117,6 +125,12 @@ or pure black.
 - Full-height screens use `min-height: 100dvh`, never `height: 100vh`.
 - Mobile puts content before navigation. Navigation can follow as a component map or
   collapse into a compact switcher.
+- **Docs page:** three panes (sidebar `18rem` | content | TOC `14rem`) on a single
+  balanced `gap-8` gutter. Content is capped at `max-w-2xl` in every breakpoint so it
+  never stretches past a readable measure; the TOC appears at `xl` and the sidebar at
+  `lg`. The table of contents (`$lib/components/docs/toc.svelte`) flattens the velite
+  TOC tree, indents by depth, and highlights the active heading via a citron indicator
+  bar that slides to the active link — no manual DOM measurement (runed `ElementRect`).
 
 ## 6. Motion & Interaction
 

@@ -1,10 +1,12 @@
 <script lang="ts">
   import { page } from '$app/state';
+  import { afterNavigate } from '$app/navigation';
   import { sidebarNavItems } from '$lib/navigation.js';
-  import Header from '$lib/components/header.svelte';
-  import MobileNav from '$lib/components/docs/mobile-nav.svelte';
+  import * as Sheet from '$lib/components/ui/sheet/index.js';
+  import { buttonVariants } from '$lib/components/ui/button/index.js';
+  import { ListIcon } from 'phosphor-svelte';
 
-  let { children } = $props();
+  let open = $state(false);
 
   const pathname = $derived(page.url.pathname as string);
 
@@ -12,22 +14,25 @@
     if (href === '/docs') return pathname === '/docs';
     return pathname === href || pathname.startsWith(`${href}/`);
   }
+
+  afterNavigate(() => {
+    open = false;
+  });
 </script>
 
-<div class="min-h-[100dvh] bg-background text-foreground">
-  <Header sticky>
-    {#snippet mobileNav()}
-      <MobileNav />
-    {/snippet}
-  </Header>
-
-  <div
-    class="container grid min-h-[calc(100dvh-var(--header-height))] gap-8 lg:grid-cols-[18rem_minmax(0,1fr)]"
+<Sheet.Root bind:open>
+  <Sheet.Trigger
+    class={buttonVariants({ variant: 'ghost', size: 'icon-sm' })}
+    aria-label="Open navigation"
   >
-    <aside
-      class="no-scrollbar sticky top-(--header-height) hidden h-[calc(100dvh-var(--header-height))] overflow-y-auto border-r border-border py-8 lg:block"
-      data-llm-ignore
-    >
+    <ListIcon class="size-4" />
+  </Sheet.Trigger>
+  <Sheet.Content side="left" class="w-72 p-0">
+    <Sheet.Header class="px-4 pt-4">
+      <Sheet.Title class="text-sm font-semibold tracking-tight">Navigation</Sheet.Title>
+      <Sheet.Description class="sr-only">Documentation sections</Sheet.Description>
+    </Sheet.Header>
+    <div class="no-scrollbar flex-1 overflow-y-auto p-4">
       <nav class="grid gap-8" aria-label="Documentation">
         {#each sidebarNavItems as section (section.title)}
           <section class="grid gap-3">
@@ -53,8 +58,6 @@
           </section>
         {/each}
       </nav>
-    </aside>
-
-    <main class="min-w-0">{@render children()}</main>
-  </div>
-</div>
+    </div>
+  </Sheet.Content>
+</Sheet.Root>

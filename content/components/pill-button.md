@@ -1,5 +1,5 @@
 ---
-title: PillButton
+title: Pill Button
 description: Displays a pill-shaped button.
 component: true
 links:
@@ -7,14 +7,14 @@ links:
 ---
 
 <script>
-	import ComponentPreview from "$lib/components/component-preview.svelte";
-	import ComponentSource from "$lib/components/component-source.svelte";
-	import PMAddComp from "$lib/components/pm-add-comp.svelte";
-	import Steps from "$lib/components/steps.svelte";
-	import Step from "$lib/components/step.svelte";
-	import InstallTabs from "$lib/components/install-tabs.svelte";
+ import ComponentPreview from "$lib/components/component-preview.svelte";
+ import ComponentSource from "$lib/components/component-source.svelte";
+ import PMAddComp from "$lib/components/pm-add-comp.svelte";
+ import Steps from "$lib/components/steps.svelte";
+ import Step from "$lib/components/step.svelte";
+ import InstallTabs from "$lib/components/install-tabs.svelte";
 
-	let { viewerData } = $props();
+ let { viewerData } = $props();
 </script>
 
 <ComponentPreview name="pill-button-demo">
@@ -40,7 +40,7 @@ Copy and paste the following code into your project.
 
 </Step>
 {#if viewerData}
-	<ComponentSource item={viewerData} data-llm-ignore/>
+ <ComponentSource item={viewerData} data-llm-ignore/>
 {/if}
 
 </Steps>
@@ -112,9 +112,7 @@ Copy and paste the following code into your project.
 <div class="hairline-frame grid max-w-sm gap-4 border border-border bg-card p-4">
   <div class="grid gap-1">
     <h3 class="text-base font-semibold">Create project?</h3>
-    <p class="text-sm/6 text-muted-foreground">
-      Start with the default component set.
-    </p>
+    <p class="text-sm/6 text-muted-foreground">Start with the default component set.</p>
   </div>
   <div class="flex flex-wrap justify-end gap-2">
     <PillButton variant="outline">Review settings</PillButton>

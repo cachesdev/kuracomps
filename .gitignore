@@ -8,7 +8,7 @@ node_modules
 /.svelte-kit
 /.velite
 /build
-./tests-results
+/test-results
 
 # OS
 .DS_Store

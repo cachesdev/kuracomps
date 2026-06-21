@@ -107,7 +107,7 @@
         <pre class="no-scrollbar min-w-0 overflow-x-auto px-4 py-3 outline-none"><code
             class="font-mono text-sm leading-none"
             data-language="bash"
-            >{#each commandParts(getCommandText(pm)) as part}<span
+            >{#each commandParts(getCommandText(pm)) as part, index (`${index}-${part.kind}-${part.value}`)}<span
                 class={commandPartClass(part.kind)}>{part.value}</span
               >{/each}</code
           ></pre>

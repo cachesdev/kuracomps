@@ -19,6 +19,8 @@
   <meta name="description" content={doc.description} />
 </svelte:head>
 
+<MobileToc items={doc.toc} title={doc.title} />
+
 <article
   id="main-content"
   class="grid min-h-[calc(100dvh-var(--header-height))] grid-cols-1 gap-8 py-8 xl:grid-cols-[minmax(0,42rem)_14rem]"
@@ -82,8 +84,6 @@
         </div>
       {/if}
     </header>
-
-    <MobileToc items={doc.toc} />
 
     <div class="docs-content w-full min-w-0 pb-12">
       <Markdown viewerData={data.viewerData} links={doc.links} />

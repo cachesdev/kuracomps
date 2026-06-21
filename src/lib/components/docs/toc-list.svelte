@@ -65,6 +65,7 @@
     navClass?: ClassValue;
     linkClass?: ClassValue;
     headerOffset?: number;
+    enabled?: boolean;
     onactivechange?: (details: TocActiveChange) => void;
     onclickitem?: () => void;
   };
@@ -76,6 +77,7 @@
     navClass,
     linkClass,
     headerOffset = 120,
+    enabled = true,
     onactivechange,
     onclickitem
   }: Props = $props();
@@ -355,6 +357,8 @@
   }
 
   $effect(() => {
+    if (!enabled) return;
+
     const headings = flat
       .map((item) => ({ item, el: document.getElementById(headingId(item.url)) }))
       .filter((h): h is { item: FlatTocEntry; el: HTMLElement } => h.el !== null);
@@ -393,6 +397,8 @@
   });
 
   $effect(() => {
+    if (!enabled) return;
+
     const link = activeUrl ? linkEls[activeUrl] : null;
     if (!link) return;
 
@@ -400,6 +406,8 @@
   });
 
   $effect(() => {
+    if (!enabled) return;
+
     const container = containerEl;
     const itemCount = flat.length;
 
@@ -413,6 +421,8 @@
   });
 
   $effect(() => {
+    if (!enabled) return;
+
     onactivechange?.({
       item: activeItem,
       index: activeIndex,
@@ -467,6 +477,7 @@
           bind:this={linkEls[item.url]}
           href={item.url}
           data-active={itemIsActive(item)}
+          aria-current={item.url === activeUrl ? 'location' : undefined}
           onclick={onclickitem}
           class={cn(
             'focus-ring relative py-1.5 text-sm leading-5 text-muted-foreground transition-colors hover:text-foreground data-active:text-primary',

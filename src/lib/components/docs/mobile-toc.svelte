@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { MediaQuery } from 'svelte/reactivity';
   import { on } from 'svelte/events';
   import { CaretDownIcon } from 'phosphor-svelte';
   import * as Collapsible from '$lib/components/ui/collapsible/index.js';
@@ -7,17 +8,21 @@
   let { items, title = 'On this page' }: { items: TocEntry[]; title?: string } = $props();
 
   const flat = $derived(flattenToc(items));
+  const mobileViewport = new MediaQuery('max-width: 79.999rem', false);
   const radius = 7;
   const circumference = 2 * Math.PI * radius;
 
   let open = $state(false);
   let rootEl = $state<HTMLDivElement | null>(null);
+  let triggerEl = $state<HTMLButtonElement | null>(null);
   let activeTitle = $state<string | null>(null);
   let progress = $state(0);
 
   const triggerLabel = $derived(open ? title : (activeTitle ?? title));
+  const triggerAriaLabel = $derived(
+    open ? `Close table of contents: ${title}` : `Open table of contents: ${triggerLabel}`
+  );
   const progressOffset = $derived(circumference - circumference * clamp(progress, 0, 1));
-  const progressValue = $derived(Math.round(clamp(progress, 0, 1) * 100));
 
   function clamp(value: number, min: number, max: number): number {
     if (value < min) return min;
@@ -30,8 +35,12 @@
     progress = details.progress;
   }
 
-  function close() {
+  function close(options?: { restoreFocus?: boolean }) {
     open = false;
+
+    if (options?.restoreFocus) {
+      requestAnimationFrame(() => triggerEl?.focus());
+    }
   }
 
   $effect(() => {
@@ -44,7 +53,7 @@
     });
 
     const cleanupKeydown = on(document, 'keydown', (event) => {
-      if (event.key === 'Escape') open = false;
+      if (event.key === 'Escape' && open) close({ restoreFocus: true });
     });
 
     return () => {
@@ -65,16 +74,14 @@
     data-llm-ignore
   >
     <Collapsible.Trigger
+      bind:ref={triggerEl}
       class="h-10 border-b-0 px-4 py-0 text-sm text-muted-foreground hover:bg-muted/60 hover:text-foreground"
-      aria-label="Toggle table of contents"
+      aria-label={triggerAriaLabel}
     >
       <span class="flex min-w-0 items-center gap-2.5">
         <svg
-          role="progressbar"
-          aria-label="Reading progress"
-          aria-valuenow={progressValue}
-          aria-valuemin="0"
-          aria-valuemax="100"
+          aria-hidden="true"
+          focusable="false"
           viewBox="0 0 18 18"
           class={['size-4 shrink-0', open ? 'text-primary' : 'text-muted-foreground']}
         >
@@ -121,6 +128,7 @@
         <TocList
           {items}
           headerOffset={112}
+          enabled={mobileViewport.current}
           onactivechange={handleActiveChange}
           onclickitem={close}
           navClass="gap-0.5"

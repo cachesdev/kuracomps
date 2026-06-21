@@ -3,7 +3,6 @@
   import LandingShowcase from '$lib/components/landing/showcase.svelte';
   import { Button } from '$lib/components/ui/button/index.js';
   import { ArrowRightIcon } from 'phosphor-svelte';
-  import LandingPill from './_components/landing-pill.svelte';
   import Header from '$lib/components/header.svelte';
 </script>
 
@@ -20,7 +19,7 @@
       class="container flex min-h-[calc(100dvh-var(--header-height))] items-center justify-center py-16"
     >
       <div class="mx-auto flex w-full max-w-5xl min-w-0 flex-col items-center gap-7 text-center">
-        <LandingPill
+        <!-- <LandingPill
           phrases={[
             '100% shai-hulud free',
             'Find hot components in your area! click here!',
@@ -34,7 +33,7 @@
             'Farm to table components directly from your local unemployed programmer'
           ]}
           holdDelay={5000}
-        />
+        /> -->
         <div class="grid gap-5">
           <h1
             class="text-balance text-5xl leading-[0.95] font-semibold text-foreground sm:text-6xl lg:text-7xl"
@@ -45,8 +44,7 @@
           <p
             class="mx-auto max-w-3xl text-balance text-base leading-8 text-muted-foreground sm:text-lg"
           >
-            Buttons? Inputs? Modals? You want it? It's yours, my friend, as long as you have enough
-            pnpm install.
+            Simple, boring components for applications that get real use.
           </p>
         </div>
         <div class="flex flex-wrap justify-center gap-3">

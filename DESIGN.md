@@ -1,11 +1,10 @@
-# Design System: Portfolio Component System
+# Design System: Kura Component System
 
 ## 1. Visual Theme & Atmosphere
 
-A dark, framed-grid interface for component-heavy product work. The atmosphere is
+A dark, framed-grid interface for dense application development. The atmosphere is
 precise, dense, and restrained — off-black panels, thin structural lines, plain
-component-focused copy, and one muted signal accent. Think black-box lab bench, not
-decorative dashboard.
+component-focused copy, and one signal accent. The design is terse first, decorative second.
 
 - **Density:** Operational, 8/10. Information is compact, sections stay tight, and
   components use the minimum padding that reads as intentional. Air comes from layout
@@ -14,13 +13,12 @@ decorative dashboard.
   wide empty cells, and offset visual blocks.
 - **Motion:** Fluid CSS, 5/10. Motion is deliberate, short, and tied to state.
 
-> **Style lineage:** Adapted from the Lyra style (shadcn-svelte registry) with
+> **Style lineage:** Adapted from the shadcn-svelte Lyra style with
 > kuracomps-specific deviations: pill buttons via `<PillButton>`, citron soft accent
 > bar on alerts, Signal Citron wash for table selection, `.hairline-frame` inset
 > light on surfaces, and `bg-black/10` lighter overlays. Typography is Lyra-derived
 > (sans, normal-case, `text-sm font-medium` for nav and `text-xs font-medium` for
-> section labels); mono is reserved for code and data only — no uppercase tracking
-> labels in the UI chrome.
+> section labels); mono is reserved for code and data only.
 
 ## 2. Color Palette & Roles
 
@@ -41,8 +39,7 @@ decorative dashboard.
 - **Warning Ochre** (`#D1AA24`) - warning, drift, and attention states.
 - **Destructive Red** (`#F85149`) - destructive actions and inline validation errors.
 
-Maximum one accent color is allowed. Do not reintroduce electric blue, purple glow,
-or pure black.
+Maximum one accent color is allowed.
 
 ## 3. Typography Rules
 
@@ -52,12 +49,9 @@ or pure black.
   width near `65ch`.
 - **Mono:** system monospace stack. Use for code, keyboard shortcuts, technical
   metadata, and real metric numbers. Component labels (buttons, badges, card titles,
-  menu items, tab triggers, nav links, and the logo wordmark) use the sans body font,
-  not mono.
+  menu items, tab triggers, nav links, and the logo wordmark) use the sans body font.
 - **Section labels:** sidebar section titles and the on-this-page heading use sans,
-  normal-case `text-xs font-medium text-muted-foreground` — no uppercase, no mono, no
-  wide tracking. The old `.eyebrow` mono-uppercase treatment has been dropped from the
-  UI chrome; do not reintroduce it. Section labels must name the section, not the UI
+  normal-case `text-xs font-medium text-muted-foreground`. Section labels must name the section, not the UI
   affordance. Do not use decorative slash labels like "// system" or vague headers
   like "audit-ready".
 - **Header:** the site header is a single shared component (`$lib/components/header.svelte`)
@@ -111,17 +105,7 @@ font-medium`, `text-muted-foreground` → `text-foreground` on active. The heade
 - Use CSS Grid for all page-level layout. Avoid flex percentage math.
 - Max content width is `80rem` to `88rem`, centered.
 - Major sections are framed by full-width horizontal rules and internal grid lines.
-- Hero sections are asymmetric. Centered hero composition is banned for this project.
-- Use blocky signal-map visuals and live component previews instead of decorative
-  gradients. Bar stacks should read as luminous mass snapped to the grid, not a tidy
-  chart. Blocks may span multiple grid cells, but each block is either flush left,
-  flush right, or fills the full grid span. Never use arbitrary centered offsets.
-  Rows may have empty cells before the first lit block, but never insert an empty grid
-  cell between lit blocks on the same row. Each block keeps a slight inset from the
-  grid line. Add subtle grain and edge falloff inside the blocks so they feel
-  atmospheric rather than flat.
-- Avoid 3 equal card feature rows. Use asymmetric grids, dense ledgers, or live preview
-  panels.
+- Hero sections are asymmetric.
 - Full-height screens use `min-height: 100dvh`, never `height: 100vh`.
 - Mobile puts content before navigation. Navigation can follow as a component map or
   collapse into a compact switcher.
@@ -133,7 +117,7 @@ font-medium`, `text-muted-foreground` → `text-foreground` on active. The heade
   markdown so mobile readers can still jump sections. The desktop table of contents
   (`$lib/components/docs/toc.svelte`) flattens the velite TOC tree, indents by depth,
   and highlights the active heading via a citron indicator bar that slides to the
-  active link — no manual DOM measurement (runed `ElementRect`).
+  active link.
 
 ## 6. Motion & Interaction
 
@@ -162,18 +146,14 @@ font-medium`, `text-muted-foreground` → `text-foreground` on active. The heade
 - No emojis.
 - No Inter.
 - No pure black (`#000000`).
-- No electric blue or purple neon accents.
-- No gradient text on large headers.
 - No custom cursor.
-- No centered high-variance hero.
 - No overlapping text and images.
 - No 3-column equal-card feature rows.
 - No generic names like "John Doe", "Acme", or "Nexus".
 - No fake-perfect data such as `99.99%` or generic `50%`.
 - No invented process stats, fake drift scores, or random inventory badges.
 - No "not this, but that" marketing headings.
-- No vague decorative tags such as "audit-ready", "signal", "coverage", or "registry
-  pulse".
+- No vague decorative tags such as "audit-ready", "signal", "coverage", or "registry pulse".
 - No AI copywriting clichés: "Elevate", "Seamless", "Unleash", "Next-Gen",
   "Game-changer", "Delve", or "Tapestry".
 - No filler instructions like "Scroll to explore" or bouncing arrows.

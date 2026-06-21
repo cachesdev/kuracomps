@@ -29,7 +29,7 @@ export const load: PageLoad = async ({ params, data }) => {
           ...doc.metadata,
           links: {
             ...doc.metadata.links,
-            source: `/r/${componentName}.json`
+            source: doc.metadata.links?.source ?? `/r/${componentName}.json`
           }
         }
       : doc.metadata;

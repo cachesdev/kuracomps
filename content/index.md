@@ -1,9 +1,13 @@
 ---
 title: Kura
-description: A jsrepo registry for the Kura component warehouse.
+description: Simple, boring components for applications that get real use.
 ---
 
-Kura is a component registry for Svelte teams that want the Kura component system installed as source through jsrepo.
+Kura is a shadcn-svelte fork that host the components used by [cachesdev](https://github.com/cachesdev/) in multiple websites and applications.
+
+Kura works similar to shadcn, using a registry and providing components you can directly modify, but we don't use their registry system. That means Kura is not fully compatible with shadcn projects, though you can still copy over the files and styles directly without hitting our registry.
+
+install Kura via our jsrepo registry.
 
 ## Install From The Registry
 
@@ -28,8 +32,8 @@ You can also pass the registry URL directly:
 pnpm dlx jsrepo@latest add button --registry https://kura.gfdc.dev/r
 ```
 
-The registry files declare their own dependencies, so components pull shared helpers like `utils` automatically.
+The registry files declare their own dependencies, so components pull shared helpers and libraries automatically.
 
 ## Component Docs
 
-Browse the component reference in [Components](/docs/components). These docs are scoped to the components that Kura ships.
+Browse the component reference in [Components](/docs/components).

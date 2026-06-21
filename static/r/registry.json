@@ -602,6 +602,14 @@
           "registryDependencies": [],
           "dependencies": [],
           "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "button/pill-button.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
         }
       ]
     },

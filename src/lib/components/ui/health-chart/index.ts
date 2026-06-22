@@ -1,3 +1,7 @@
-import HealthChart, { type DataPoint } from './health-chart.svelte';
+import HealthChart, {
+  type DataPoint,
+  type HealthChartRange,
+  type HealthChartStatus
+} from './health-chart.svelte';
 
-export { HealthChart, type DataPoint };
+export { HealthChart, type DataPoint, type HealthChartRange, type HealthChartStatus };

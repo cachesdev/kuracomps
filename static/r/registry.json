@@ -2092,8 +2092,17 @@
       "description": "Kura Health Chart component source.",
       "type": "ui",
       "add": "when-added",
-      "registryDependencies": [],
-      "dependencies": [],
+      "registryDependencies": [
+        "tooltip",
+        "utils"
+      ],
+      "dependencies": [
+        {
+          "ecosystem": "js",
+          "name": "luxon",
+          "version": "^3.7.2"
+        }
+      ],
       "devDependencies": [],
       "files": [
         {

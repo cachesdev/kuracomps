@@ -2087,6 +2087,34 @@
       ]
     },
     {
+      "name": "health-chart",
+      "title": "Health Chart",
+      "description": "Kura Health Chart component source.",
+      "type": "ui",
+      "add": "when-added",
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "files": [
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "health-chart/health-chart.svelte",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        },
+        {
+          "type": "ui",
+          "role": "file",
+          "path": "health-chart/index.ts",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
       "name": "hover-card",
       "title": "Hover Card",
       "description": "Kura Hover Card component source.",

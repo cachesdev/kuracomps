@@ -1,0 +1,42 @@
+{
+  "name": "health-chart",
+  "title": "Health Chart",
+  "description": "Kura Health Chart component source.",
+  "type": "ui",
+  "add": "when-added",
+  "files": [
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "hello world!\n",
+      "path": "health-chart/health-chart.svelte",
+      "_imports_": [],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    {
+      "type": "ui",
+      "role": "file",
+      "content": "import HealthChart from './health-chart.svelte';\n\nexport { HealthChart };\n",
+      "path": "health-chart/index.ts",
+      "_imports_": [
+        {
+          "import": "./health-chart.svelte",
+          "item": "health-chart",
+          "file": {
+            "type": "ui",
+            "path": "health-chart/health-chart.svelte"
+          },
+          "meta": {}
+        }
+      ],
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": []
+    }
+  ],
+  "registryDependencies": [],
+  "dependencies": [],
+  "devDependencies": []
+}

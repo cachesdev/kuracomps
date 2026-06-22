@@ -73,7 +73,7 @@
               <DotsThreeIcon />
               <span class="sr-only">Account options</span>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" portalProps={{ disabled: true }}>
+            <DropdownMenuContent align="start">
               <DropdownMenuGroup>
                 <DropdownMenuItem>Profile</DropdownMenuItem>
                 <DropdownMenuItem>Statements</DropdownMenuItem>

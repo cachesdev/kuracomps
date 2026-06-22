@@ -104,7 +104,7 @@
           >
             <ArrowUpIcon />
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" side="top" class="w-40" portalProps={{ disabled: true }}>
+          <DropdownMenuContent align="end" side="top" class="w-40">
             <DropdownMenuGroup>
               <DropdownMenuLabel>Quick Actions</DropdownMenuLabel>
               <DropdownMenuItem>Mute Conversation</DropdownMenuItem>

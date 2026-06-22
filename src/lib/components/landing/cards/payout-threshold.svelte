@@ -32,6 +32,9 @@
     { label: 'GBP - British Pound', value: 'gbp' },
     { label: 'JPY - Japanese Yen', value: 'jpy' }
   ];
+
+  let currency = $state('usd');
+  const selectedCurrency = $derived(currencies.find((item) => item.value === currency));
 </script>
 
 <Card>
@@ -49,11 +52,11 @@
     <FieldGroup>
       <Field>
         <FieldLabel for="preferred-currency">Preferred Currency</FieldLabel>
-        <Select type="single" value="usd">
+        <Select type="single" bind:value={currency}>
           <SelectTrigger id="preferred-currency" class="w-full">
-            USD - United States Dollar
+            {selectedCurrency?.label}
           </SelectTrigger>
-          <SelectContent class="w-(--bits-select-anchor-width)" portalProps={{ disabled: true }}>
+          <SelectContent class="w-(--bits-select-anchor-width)">
             <SelectGroup>
               {#each currencies as item (item.value)}
                 <SelectItem value={item.value}>{item.label}</SelectItem>

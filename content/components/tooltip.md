@@ -98,13 +98,3 @@ You can nest providers to create groups with different settings. Tooltips use th
   <!-- Tooltips here will open instantly -->
 </Tooltip.Provider>
 ```
-
----
-
-## Changelog
-
-### 2025-12 Update tooltip colors
-
-We've updated the tooltip colors to use the foreground color for the background and the background color for the foreground.
-
-Replace `bg-primary text-primary-foreground` with `bg-foreground text-background` for `<Tooltip.Content />`.

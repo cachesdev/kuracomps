@@ -73,7 +73,7 @@
           <SelectTrigger id="from-account" class="w-full">
             {selectedFromAccount?.label}
           </SelectTrigger>
-          <SelectContent class="w-(--bits-select-anchor-width)" portalProps={{ disabled: true }}>
+          <SelectContent class="w-(--bits-select-anchor-width)">
             <SelectGroup>
               {#each fromAccounts as item (item.value)}
                 <SelectItem value={item.value}>{item.label}</SelectItem>
@@ -88,7 +88,7 @@
           <SelectTrigger id="to-account" class="w-full">
             {selectedToAccount?.label}
           </SelectTrigger>
-          <SelectContent class="w-(--bits-select-anchor-width)" portalProps={{ disabled: true }}>
+          <SelectContent class="w-(--bits-select-anchor-width)">
             <SelectGroup>
               {#each toAccounts as item (item.value)}
                 <SelectItem value={item.value}>{item.label}</SelectItem>

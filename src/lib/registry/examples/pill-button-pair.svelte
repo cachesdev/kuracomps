@@ -3,7 +3,9 @@
   import { ArrowRightIcon } from 'phosphor-svelte';
 </script>
 
-<div class="hairline-frame grid max-w-sm gap-4 border border-border bg-card p-4 text-card-foreground">
+<div
+  class="hairline-frame grid max-w-sm gap-4 border border-border bg-card p-4 text-card-foreground"
+>
   <div class="grid gap-1">
     <h3 class="text-base font-semibold">Create project?</h3>
     <p class="text-sm/6 text-muted-foreground">Start with the default component set.</p>

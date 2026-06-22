@@ -221,6 +221,7 @@
     }
   ],
   "registryDependencies": [
+    "styles",
     "utils"
   ],
   "dependencies": [

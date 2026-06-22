@@ -326,6 +326,7 @@
     }
   ],
   "registryDependencies": [
+    "styles",
     "utils",
     "label",
     "separator"

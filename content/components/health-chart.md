@@ -37,11 +37,19 @@ Each bar covers a fixed time slot within the selected `range`. A datapoint's tim
 
 <Step>
 
-Install `bits-ui` and `luxon`:
+Install runtime dependencies:
 
 </Step>
 
-<PMInstall command="bits-ui luxon -D" />
+<PMInstall command="bits-ui luxon clsx tailwind-merge" />
+
+<Step>
+
+Install the Luxon types and Kura style dependencies:
+
+</Step>
+
+<PMInstall command="@types/luxon tw-animate-css @fontsource-variable/geist -D" />
 
 <Step>
 
@@ -126,12 +134,12 @@ Use `emptyStatus="green"` when your data records incidents only, an empty slot m
 
 ## Props
 
-| Prop          | Type                                       | Default     | Description                                  |
-| ------------- | ------------------------------------------ | ----------- | -------------------------------------------- |
-| `data`        | `DataPoint[]`                              | `[]`        | Datapoints plotted within the visible range. |
-| `range`       | `'60m' \| '24h' \| '30d' \| '60d'`           | `'60d'`     | The visible time range.                      |
-| `emptyStatus` | `'green' \| 'orange' \| 'red' \| 'gray'`   | `'gray'`    | Status color for slots without a datapoint.  |
-| `emptyText`   | `string`                                   | `'No data'` | Tooltip text for slots without a datapoint.  |
-| `class`       | `ClassValue`                               | -           | Classes merged onto the chart root.          |
+| Prop          | Type                                     | Default     | Description                                  |
+| ------------- | ---------------------------------------- | ----------- | -------------------------------------------- |
+| `data`        | `DataPoint[]`                            | `[]`        | Datapoints plotted within the visible range. |
+| `range`       | `'60m' \| '24h' \| '30d' \| '60d'`       | `'60d'`     | The visible time range.                      |
+| `emptyStatus` | `'green' \| 'orange' \| 'red' \| 'gray'` | `'gray'`    | Status color for slots without a datapoint.  |
+| `emptyText`   | `string`                                 | `'No data'` | Tooltip text for slots without a datapoint.  |
+| `class`       | `ClassValue`                             | -           | Classes merged onto the chart root.          |
 
 The component also accepts native `div` attributes.

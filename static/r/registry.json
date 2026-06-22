@@ -48,6 +48,37 @@
       ]
     },
     {
+      "name": "styles",
+      "title": "Kura Styles",
+      "description": "Global Kura theme tokens, variants, animation utilities, and shared CSS utilities.",
+      "type": "lib",
+      "add": "when-needed",
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": [
+        {
+          "ecosystem": "js",
+          "name": "tw-animate-css",
+          "version": "^1.4.0"
+        },
+        {
+          "ecosystem": "js",
+          "name": "@fontsource-variable/geist",
+          "version": "^5.2.9"
+        }
+      ],
+      "files": [
+        {
+          "type": "lib",
+          "role": "file",
+          "path": "styles/kura.css",
+          "registryDependencies": [],
+          "dependencies": [],
+          "devDependencies": []
+        }
+      ]
+    },
+    {
       "name": "is-mobile",
       "title": "Is Mobile",
       "description": "Kura Is Mobile hook.",
@@ -94,6 +125,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -159,6 +191,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -219,6 +252,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "button",
         "utils"
       ],
@@ -344,6 +378,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -380,6 +415,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -456,6 +492,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -492,6 +529,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -576,6 +614,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -620,6 +659,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils",
         "separator"
       ],
@@ -673,6 +713,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils",
         "button"
       ],
@@ -856,6 +897,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [],
@@ -934,6 +976,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils",
         "button"
       ],
@@ -1021,6 +1064,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -1081,6 +1125,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -1122,6 +1167,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -1174,6 +1220,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "dialog",
         "utils",
         "input-group"
@@ -1297,6 +1344,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -1457,7 +1505,9 @@
       "description": "Kura Data Table component source.",
       "type": "ui",
       "add": "when-added",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "styles"
+      ],
       "dependencies": [
         {
           "ecosystem": "js",
@@ -1508,6 +1558,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils",
         "button"
       ],
@@ -1622,6 +1673,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -1738,6 +1790,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -1907,6 +1960,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -1983,6 +2037,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils",
         "label",
         "separator"
@@ -2093,6 +2148,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "tooltip",
         "utils"
       ],
@@ -2103,7 +2159,13 @@
           "version": "^3.7.2"
         }
       ],
-      "devDependencies": [],
+      "devDependencies": [
+        {
+          "ecosystem": "js",
+          "name": "@types/luxon",
+          "version": "^3.7.2"
+        }
+      ],
       "files": [
         {
           "type": "ui",
@@ -2130,6 +2192,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -2190,6 +2253,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [],
@@ -2220,6 +2284,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils",
         "button",
         "input",
@@ -2299,6 +2364,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -2364,6 +2430,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils",
         "separator"
       ],
@@ -2473,6 +2540,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [],
@@ -2511,6 +2579,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -2547,6 +2616,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -2716,6 +2786,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -2768,6 +2839,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -2870,6 +2942,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils",
         "button"
       ],
@@ -2976,6 +3049,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -3068,6 +3142,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -3104,6 +3179,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -3153,6 +3229,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils",
         "button"
       ],
@@ -3336,6 +3413,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -3380,6 +3458,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -3424,6 +3503,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils",
         "separator"
       ],
@@ -3546,6 +3626,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -3582,6 +3663,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils",
         "button"
       ],
@@ -3696,6 +3778,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "is-mobile",
         "utils",
         "input",
@@ -3941,6 +4024,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [],
@@ -3971,6 +4055,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -4006,7 +4091,9 @@
       "description": "Kura Sonner component source.",
       "type": "ui",
       "add": "when-added",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "styles"
+      ],
       "dependencies": [
         {
           "ecosystem": "js",
@@ -4051,6 +4138,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -4087,6 +4175,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -4123,6 +4212,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [],
@@ -4209,6 +4299,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -4274,6 +4365,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [],
@@ -4304,6 +4396,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [
@@ -4345,6 +4438,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils",
         "toggle"
       ],
@@ -4395,6 +4489,7 @@
       "type": "ui",
       "add": "when-added",
       "registryDependencies": [
+        "styles",
         "utils"
       ],
       "dependencies": [

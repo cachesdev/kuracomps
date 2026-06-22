@@ -24,6 +24,13 @@ pnpm dlx jsrepo@latest add button
 pnpm dlx jsrepo@latest add command
 ```
 
+Import the shared stylesheet once from your Tailwind CSS entry:
+
+```css
+@import 'tailwindcss';
+@import '../lib/styles/kura.css';
+```
+
 ## Registry URL Installs
 
 You can also pass the registry URL directly:
@@ -32,7 +39,7 @@ You can also pass the registry URL directly:
 pnpm dlx jsrepo@latest add button --registry https://kura.gfdc.dev/r
 ```
 
-The registry files declare their own dependencies, so components pull shared helpers and libraries automatically.
+The registry files declare their own dependencies, so components pull shared helpers, styles, and libraries automatically.
 
 ## Component Docs
 

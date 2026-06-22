@@ -85,6 +85,7 @@
     }
   ],
   "registryDependencies": [
+    "styles",
     "utils"
   ],
   "dependencies": [

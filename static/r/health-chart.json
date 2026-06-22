@@ -56,6 +56,7 @@
     }
   ],
   "registryDependencies": [
+    "styles",
     "tooltip",
     "utils"
   ],
@@ -66,5 +67,11 @@
       "version": "^3.7.2"
     }
   ],
-  "devDependencies": []
+  "devDependencies": [
+    {
+      "ecosystem": "js",
+      "name": "@types/luxon",
+      "version": "^3.7.2"
+    }
+  ]
 }

@@ -36,7 +36,9 @@
       "devDependencies": []
     }
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "styles"
+  ],
   "dependencies": [
     {
       "ecosystem": "js",

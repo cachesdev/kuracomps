@@ -192,6 +192,7 @@
     }
   ],
   "registryDependencies": [
+    "styles",
     "utils"
   ],
   "dependencies": [

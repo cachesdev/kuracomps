@@ -105,6 +105,7 @@
     }
   ],
   "registryDependencies": [
+    "styles",
     "utils"
   ],
   "dependencies": [

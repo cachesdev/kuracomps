@@ -123,6 +123,7 @@
     }
   ],
   "registryDependencies": [
+    "styles",
     "utils"
   ],
   "dependencies": [

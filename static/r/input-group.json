@@ -219,6 +219,7 @@
     }
   ],
   "registryDependencies": [
+    "styles",
     "utils",
     "button",
     "input",

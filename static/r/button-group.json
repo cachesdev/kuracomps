@@ -114,6 +114,7 @@
     }
   ],
   "registryDependencies": [
+    "styles",
     "utils",
     "separator"
   ],

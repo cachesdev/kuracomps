@@ -7,6 +7,24 @@ const uiRoot = 'src/lib/components/ui';
 const hooksRoot = 'src/lib/hooks';
 const packageJson = JSON.parse(readFileSync('package.json', 'utf8')) as { version: string };
 
+type JsDependency = {
+  ecosystem: 'js';
+  name: string;
+  version?: string;
+};
+
+type UiOverride = {
+  registryDependencies?: string[];
+  dependencies?: JsDependency[];
+  devDependencies?: JsDependency[];
+};
+
+const uiOverrides: Record<string, UiOverride> = {
+  'health-chart': {
+    devDependencies: [{ ecosystem: 'js', name: '@types/luxon', version: '^3.7.2' }]
+  }
+};
+
 function titleCase(name: string) {
   return name
     .split('-')
@@ -52,6 +70,15 @@ export default defineConfig({
         add: 'when-needed',
         files: [{ path: 'src/lib/utils.ts' }]
       },
+      {
+        name: 'styles',
+        type: 'lib',
+        title: 'Kura Styles',
+        description:
+          'Global Kura theme tokens, variants, animation utilities, and shared CSS utilities.',
+        add: 'when-needed',
+        files: [{ path: 'src/lib/styles' }]
+      },
       ...getHookNames(hooksRoot).map((name) => ({
         name,
         type: 'hook' as const,
@@ -59,13 +86,20 @@ export default defineConfig({
         description: `Kura ${titleCase(name)} hook.`,
         files: [{ path: `${hooksRoot}/${name}.svelte.ts` }]
       })),
-      ...getDirectoryNames(uiRoot).map((name) => ({
-        name,
-        type: 'ui' as const,
-        title: titleCase(name),
-        description: `Kura ${titleCase(name)} component source.`,
-        files: [{ path: `${uiRoot}/${name}` }]
-      }))
+      ...getDirectoryNames(uiRoot).map((name) => {
+        const override = uiOverrides[name] ?? {};
+
+        return {
+          name,
+          type: 'ui' as const,
+          title: titleCase(name),
+          description: `Kura ${titleCase(name)} component source.`,
+          registryDependencies: ['styles', ...(override.registryDependencies ?? [])],
+          dependencies: override.dependencies,
+          devDependencies: override.devDependencies,
+          files: [{ path: `${uiRoot}/${name}` }]
+        };
+      })
     ]
   }
 });

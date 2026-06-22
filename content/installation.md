@@ -34,6 +34,13 @@ pnpm dlx jsrepo@latest add dialog
 pnpm dlx jsrepo@latest add sidebar
 ```
 
+UI components pull the shared Kura stylesheet into `src/lib/styles/kura.css`. Import it once from your Tailwind CSS entry, for example `src/routes/layout.css`:
+
+```css title="src/routes/layout.css"
+@import 'tailwindcss';
+@import '../lib/styles/kura.css';
+```
+
 ## Direct Registry Mode
 
 For one-off installs, pass the registry URL with the item name:
@@ -42,4 +49,4 @@ For one-off installs, pass the registry URL with the item name:
 pnpm dlx jsrepo@latest add button --registry https://kura.gfdc.dev/r
 ```
 
-Kura publishes one jsrepo registry under `/r`; there is no style registry or framework-specific project config requirement.
+Kura publishes one jsrepo registry under `/r`.

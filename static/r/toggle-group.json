@@ -103,6 +103,7 @@
     }
   ],
   "registryDependencies": [
+    "styles",
     "utils",
     "toggle"
   ],

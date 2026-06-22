@@ -324,6 +324,7 @@
     }
   ],
   "registryDependencies": [
+    "styles",
     "utils",
     "button"
   ],

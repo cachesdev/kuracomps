@@ -364,6 +364,7 @@
     }
   ],
   "registryDependencies": [
+    "styles",
     "dialog",
     "utils",
     "input-group"

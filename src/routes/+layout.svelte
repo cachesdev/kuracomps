@@ -9,6 +9,7 @@
 </script>
 
 <svelte:head>
+  <title>Kura components</title>
   <link rel="icon" href={favicon} />
   <meta name="description" content="Kura is my component warehouse, for you." />
   <meta property="og:title" content="Kura components" />

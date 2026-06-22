@@ -6,11 +6,6 @@
   import Header from '$lib/components/header.svelte';
 </script>
 
-<svelte:head>
-  <title>Kura components</title>
-  <meta name="description" content="Kura is my component warehouse, for you." />
-</svelte:head>
-
 <Header />
 
 <main id="main-content" class="min-h-dvh bg-background text-foreground">

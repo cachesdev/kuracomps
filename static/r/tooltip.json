@@ -103,7 +103,7 @@
     {
       "type": "ui",
       "role": "file",
-      "content": "<script lang=\"ts\">\n  import { Tooltip as TooltipPrimitive } from 'bits-ui';\n\n  let { delayDuration = 0, ...restProps }: TooltipPrimitive.ProviderProps = $props();\n</script>\n\n<TooltipPrimitive.Provider {delayDuration} {...restProps} />\n",
+      "content": "<script lang=\"ts\">\n  import { Tooltip as TooltipPrimitive } from 'bits-ui';\n\n  let {\n    delayDuration = 0,\n    disableCloseOnTriggerClick = true,\n    ...restProps\n  }: TooltipPrimitive.ProviderProps = $props();\n</script>\n\n<TooltipPrimitive.Provider {delayDuration} {disableCloseOnTriggerClick} {...restProps} />\n",
       "path": "tooltip/tooltip-provider.svelte",
       "_imports_": [],
       "registryDependencies": [],

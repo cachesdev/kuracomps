@@ -2,11 +2,13 @@
   import { tv, type VariantProps } from 'tailwind-variants';
 
   export const buttonGroupVariants = tv({
-    base: "has-[>[data-variant=outline]]:[&>input]:border-border has-[>[data-variant=outline]]:[&>input:focus-visible]:border-ring has-[>[data-variant=outline]]:*:data-[slot=input-group]:border-border has-[>[data-variant=outline]]:[&>[data-slot=input-group]:has(:focus-visible)]:border-ring has-[>[data-variant=outline]]:*:data-[slot=select-trigger]:border-border has-[>[data-variant=outline]]:[&>[data-slot=select-trigger]:focus-visible]:border-ring has-[>[data-slot=button-group]]:gap-2 *:data-[slot=input]:px-2.5 has-[>[data-variant=outline]]:*:data-[slot=input-group]:px-2.5 has-[>[data-variant=outline]]:*:[[role=combobox]]:px-2.5 has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-none flex w-fit items-stretch [&>*]:focus-visible:relative [&>*]:focus-visible:z-10 [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1",
+    base: "has-[>[data-variant=outline]]:[&>input]:border-border has-[>[data-variant=outline]]:[&>input:focus-visible]:border-ring has-[>[data-variant=outline]]:*:data-[slot=input-group]:border-border has-[>[data-variant=outline]]:[&>[data-slot=input-group]:has(:focus-visible)]:border-ring has-[>[data-variant=outline]]:*:data-[slot=select-trigger]:border-border has-[>[data-variant=outline]]:[&>[data-slot=select-trigger]:focus-visible]:border-ring has-[>[data-slot=button-group]]:gap-2 *:data-[slot=input]:px-2.5 has-[>[data-variant=outline]]:*:data-[slot=input-group]:px-2.5 has-[>[data-variant=outline]]:*:[[role=combobox]]:px-2.5 has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-none rounded-control flex w-fit items-stretch [&>*]:rounded-none [&>*]:focus-visible:relative [&>*]:focus-visible:z-10 [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1",
     variants: {
       orientation: {
-        horizontal: '[&>[data-slot]~[data-slot]]:border-l-0',
-        vertical: 'flex-col [&>[data-slot]~[data-slot]]:border-t-0'
+        horizontal:
+          '[&>:first-child]:rounded-s-control [&>:last-child]:rounded-e-control [&>[data-slot]~[data-slot]]:border-l-0',
+        vertical:
+          'flex-col [&>:first-child]:rounded-t-control [&>:last-child]:rounded-b-control [&>[data-slot]~[data-slot]]:border-t-0'
       }
     },
     defaultVariants: {

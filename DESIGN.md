@@ -65,18 +65,38 @@ font-medium`, `text-muted-foreground` → `text-foreground` on active. The heade
 
 ## 4. Component Stylings
 
-- **Buttons:** Sharp corners (`rounded-none`) across all variants. Primary uses Signal
-  Citron fill with dark text. Outline stays dark with a thin border. Active feedback
-  uses a 1px downward translate. Focus rings are `ring-1 ring-ring/50` (light, not
-  heavy). No neon outer glow. Pills are an opt-in affordance via `<PillButton>`,
-  restricted to `default` and `outline` action variants, used for destination CTAs
-  (onboarding, hero, modal confirm, empty-state). Do not use pills in toolbars, button
-  groups, tables, or inline in text.
+- **Buttons:** Subtle control radius via the `rounded-control` token (2px) across all
+  variants; the UI still reads square and terse. Primary uses Signal Citron fill with
+  dark text. Outline stays dark with a thin border. Active feedback uses a 1px
+  downward translate. Focus rings are `ring-1 ring-ring/50` (light, not heavy). No
+  neon outer glow. Pills are an opt-in affordance via `<PillButton>`, restricted to
+  `default` and `outline` action variants, used for destination CTAs (onboarding,
+  hero, modal confirm, empty-state). Do not use pills in toolbars, button groups,
+  tables, or inline in text.
+- **Roundness tokens:** Three CSS variables in `src/lib/styles/kura.css` drive every
+  radius in the system; the multiplied `--radius-*` shadcn scale stays at `0` and is
+  only referenced by legacy demo content.
+  - `--radius-control` (2px / `rounded-control`) — buttons, toggles, badges, kbd,
+    inputs, textarea, native select, select trigger, checkbox, slider thumb, OTP
+    slots, input-group, toggle-group items. Joined groups (button-group,
+    input-group, input-otp, toggle-group `spacing=0`) round only the outer
+    first/last corners; inner children stay flush so adjacent borders collapse
+    without inner curves.
+  - `--radius-item` (2px / `rounded-item`) — hover/focus fill of menu and list
+    items: dropdown-menu, context-menu, command, select, and navigation-menu link
+    items.
+  - `--radius-overlay` (4px / `rounded-overlay`) — floating framed surfaces:
+    dialog, alert-dialog, popover, hover-card, tooltip, command root,
+    dropdown-menu and context-menu content, select content, navigation-menu
+    content, sheet, and drawer (rounded on the inner-facing edge only).
+  - `--radius-bar` (4px / `rounded-t-bar rounded-b-bar`) — health chart bars;
+    set to `0` to revert bars to fully square edges.
 - **Cards and panels:** Use cards only for real hierarchy. Default surface is Panel
   Charcoal with the `.hairline-frame` utility (1px `ring-foreground/10` ring + inset
   top-edge light). No drop shadow on cards. Prefer grid cells, top rules, and dividers
   over floating card stacks. All framed surfaces (cards, dialogs, popovers, menus,
-  sheets, tooltips) share the same `.hairline-frame` treatment.
+  sheets, tooltips) share the same `.hairline-frame` treatment and overlay radius
+  (`rounded-overlay`).
 - **Badges:** Compact `h-5` labels with `text-xs font-medium` (sans, normal-case).
   Default badge uses a restrained citron tint (`bg-primary/15 border-primary/45`), not
   a solid citron fill. Avoid marketing-style pills for large groups.

@@ -16,7 +16,7 @@
   aria-label="Go to previous page"
   class={cn(
     buttonVariants({ variant: 'ghost', size: 'default' }),
-    'rounded-none border border-border bg-background pl-2!  text-xs font-medium  text-muted-foreground  hover:border-link hover:bg-primary hover:text-primary-foreground',
+    'rounded-control border border-border bg-background pl-2! text-xs font-medium text-muted-foreground hover:border-link hover:bg-primary hover:text-primary-foreground',
     className
   )}
   {...restProps}

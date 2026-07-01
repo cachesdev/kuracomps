@@ -29,7 +29,7 @@
   data-size={size}
   class={cn(
     buttonVariants({ size, variant: isActive ? 'outline' : 'ghost' }),
-    'cn-pagination-link rounded-none border-border  text-xs font-medium text-muted-foreground data-active:border-link data-active:bg-primary data-active:text-primary-foreground hover:bg-muted hover:text-foreground',
+    'cn-pagination-link rounded-control border-border text-xs font-medium text-muted-foreground data-active:border-link data-active:bg-primary data-active:text-primary-foreground hover:bg-muted hover:text-foreground',
     className
   )}
   {...restProps}

@@ -159,7 +159,7 @@
           data-empty={bucket.point ? undefined : true}
           tabindex={bucket.point ? 0 : -1}
           class={cn(
-            'h-full min-w-px flex-1 cursor-default border border-transparent p-0 opacity-90 transition-[background-color,opacity,transform] duration-200 hover:opacity-100 focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 data-[state=open]:opacity-100',
+            'h-full min-w-px flex-1 cursor-default rounded-t-bar rounded-b-bar border border-transparent p-0 opacity-90 transition-[background-color,opacity,transform] duration-200 hover:opacity-100 focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 data-[state=open]:opacity-100',
             statusClasses[status]
           )}
         />

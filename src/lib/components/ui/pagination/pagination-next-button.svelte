@@ -22,7 +22,7 @@
   aria-label="Go to next page"
   class={cn(
     buttonVariants({ variant: 'ghost' }),
-    'rounded-none border border-border bg-background pr-2!  text-xs font-medium  text-muted-foreground  hover:border-link hover:bg-primary hover:text-primary-foreground',
+    'rounded-control border border-border bg-background pr-2! text-xs font-medium text-muted-foreground hover:border-link hover:bg-primary hover:text-primary-foreground',
     className
   )}
   {...restProps}

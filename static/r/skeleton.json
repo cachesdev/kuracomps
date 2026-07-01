@@ -28,7 +28,7 @@
     {
       "type": "ui",
       "role": "file",
-      "content": "<script lang=\"ts\">\n  import { cn, type WithElementRef, type WithoutChildren } from '$lib/utils.js';\n  import type { HTMLAttributes } from 'svelte/elements';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: WithoutChildren<WithElementRef<HTMLAttributes<HTMLDivElement>>> = $props();\n</script>\n\n<div\n  bind:this={ref}\n  data-slot=\"skeleton\"\n  class={cn('border border-border bg-muted animate-pulse', className)}\n  {...restProps}\n></div>\n",
+      "content": "<script lang=\"ts\">\n  import { cn, type WithElementRef, type WithoutChildren } from '$lib/utils.js';\n  import type { HTMLAttributes } from 'svelte/elements';\n\n  let {\n    ref = $bindable(null),\n    class: className,\n    ...restProps\n  }: WithoutChildren<WithElementRef<HTMLAttributes<HTMLDivElement>>> = $props();\n</script>\n\n<div\n  bind:this={ref}\n  data-slot=\"skeleton\"\n  class={cn('rounded-control border border-border bg-muted animate-pulse', className)}\n  {...restProps}\n></div>\n",
       "path": "skeleton/skeleton.svelte",
       "_imports_": [
         {

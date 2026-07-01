@@ -1,6 +1,6 @@
 <script lang="ts">
   import { cn } from '$lib/utils.js';
-  import { SpinnerGapIcon } from 'phosphor-svelte';
+  import SpinnerGapIcon from 'phosphor-svelte/lib/SpinnerGapIcon';
   import type { ComponentProps } from 'svelte';
 
   type Props = ComponentProps<typeof SpinnerGapIcon>;

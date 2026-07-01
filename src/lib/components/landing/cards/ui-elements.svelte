@@ -34,7 +34,9 @@
   import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
   import { Switch } from '$lib/components/ui/switch/index.js';
   import { Textarea } from '$lib/components/ui/textarea/index.js';
-  import { ArrowRightIcon, ArrowUpIcon, MagnifyingGlassIcon } from 'phosphor-svelte';
+  import ArrowRightIcon from 'phosphor-svelte/lib/ArrowRightIcon';
+  import ArrowUpIcon from 'phosphor-svelte/lib/ArrowUpIcon';
+  import MagnifyingGlassIcon from 'phosphor-svelte/lib/MagnifyingGlassIcon';
 </script>
 
 <Card class="w-full">

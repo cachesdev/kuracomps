@@ -1,7 +1,8 @@
 <script lang="ts">
   import * as Empty from '$lib/components/ui/empty/index.js';
   import { Button } from '$lib/components/ui/button/index.js';
-  import { ArrowUpRightIcon, FolderOpenIcon } from 'phosphor-svelte';
+  import ArrowUpRightIcon from 'phosphor-svelte/lib/ArrowUpRightIcon';
+  import FolderOpenIcon from 'phosphor-svelte/lib/FolderOpenIcon';
 </script>
 
 <Empty.Root>

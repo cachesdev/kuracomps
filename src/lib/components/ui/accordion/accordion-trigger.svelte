@@ -1,7 +1,8 @@
 <script lang="ts">
   import { Accordion as AccordionPrimitive } from 'bits-ui';
   import { cn, type WithoutChild } from '$lib/utils.js';
-  import { CaretDownIcon, CaretUpIcon } from 'phosphor-svelte';
+  import CaretDownIcon from 'phosphor-svelte/lib/CaretDownIcon';
+  import CaretUpIcon from 'phosphor-svelte/lib/CaretUpIcon';
 
   let {
     ref = $bindable(null),

@@ -3,7 +3,8 @@
   import * as Tooltip from '$lib/components/ui/tooltip/index.js';
   import { UseClipboard } from '$lib/hooks/use-clipboard.svelte.js';
   import { cn } from '$lib/utils.js';
-  import { CheckIcon, CopyIcon } from 'phosphor-svelte';
+  import CheckIcon from 'phosphor-svelte/lib/CheckIcon';
+  import CopyIcon from 'phosphor-svelte/lib/CopyIcon';
   import type { ComponentProps } from 'svelte';
 
   let {

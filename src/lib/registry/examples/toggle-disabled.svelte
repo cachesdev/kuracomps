@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { TextUnderlineIcon } from 'phosphor-svelte';
+  import TextUnderlineIcon from 'phosphor-svelte/lib/TextUnderlineIcon';
   import { Toggle } from '$lib/components/ui/toggle/index.js';
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { CaretUpDownIcon } from 'phosphor-svelte';
+  import CaretUpDownIcon from 'phosphor-svelte/lib/CaretUpDownIcon';
   import * as Collapsible from '$lib/components/ui/collapsible/index.js';
   import { buttonVariants } from '$lib/components/ui/button/index.js';
 </script>

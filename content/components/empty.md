@@ -51,7 +51,7 @@ Copy and paste the following code into your project.
 ```svelte
 <script lang="ts">
   import * as Empty from '$lib/components/ui/empty/index.js';
-  import { FolderOpenIcon } from 'phosphor-svelte';
+  import FolderOpenIcon from 'phosphor-svelte/lib/FolderOpenIcon';
 </script>
 ```
 

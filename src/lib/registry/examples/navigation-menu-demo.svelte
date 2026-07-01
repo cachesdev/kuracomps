@@ -3,7 +3,9 @@
   import { cn } from '$lib/utils.js';
   import { navigationMenuTriggerStyle } from '$lib/components/ui/navigation-menu/navigation-menu-trigger.svelte';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { CheckCircleIcon, CircleIcon, QuestionIcon } from 'phosphor-svelte';
+  import CheckCircleIcon from 'phosphor-svelte/lib/CheckCircleIcon';
+  import CircleIcon from 'phosphor-svelte/lib/CircleIcon';
+  import QuestionIcon from 'phosphor-svelte/lib/QuestionIcon';
 
   import { IsMobile } from '$lib/hooks/is-mobile.svelte.js';
 

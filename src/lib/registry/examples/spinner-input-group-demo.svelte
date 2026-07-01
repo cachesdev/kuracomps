@@ -1,7 +1,7 @@
 <script lang="ts">
   import * as InputGroup from '$lib/components/ui/input-group/index.js';
   import { Spinner } from '$lib/components/ui/spinner/index.js';
-  import { ArrowUpIcon } from 'phosphor-svelte';
+  import ArrowUpIcon from 'phosphor-svelte/lib/ArrowUpIcon';
 </script>
 
 <div class="flex w-full max-w-md flex-col gap-4">

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { MagnifyingGlassIcon } from 'phosphor-svelte';
+  import MagnifyingGlassIcon from 'phosphor-svelte/lib/MagnifyingGlassIcon';
   import { Button } from '$lib/components/ui/button/index.js';
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js';
   import { Input } from '$lib/components/ui/input/index.js';

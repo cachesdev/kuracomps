@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { GitBranchIcon } from 'phosphor-svelte';
+  import GitBranchIcon from 'phosphor-svelte/lib/GitBranchIcon';
   import { Button } from '$lib/components/ui/button/index.js';
 </script>
 

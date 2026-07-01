@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { CaretDownIcon, CaretRightIcon } from 'phosphor-svelte';
+  import CaretDownIcon from 'phosphor-svelte/lib/CaretDownIcon';
+  import CaretRightIcon from 'phosphor-svelte/lib/CaretRightIcon';
   import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 </script>

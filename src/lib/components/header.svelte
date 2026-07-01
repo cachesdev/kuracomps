@@ -3,7 +3,7 @@
   import { page } from '$app/state';
   import { mainNavItems } from '$lib/navigation.js';
   import { Button } from '$lib/components/ui/button/index.js';
-  import { GithubLogoIcon } from 'phosphor-svelte';
+  import GithubLogoIcon from 'phosphor-svelte/lib/GithubLogoIcon';
   import ModeToggle from '$lib/components/mode-toggle.svelte';
   import type { Snippet } from 'svelte';
 

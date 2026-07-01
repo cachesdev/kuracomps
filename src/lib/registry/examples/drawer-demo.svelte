@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { MinusIcon, PlusIcon } from 'phosphor-svelte';
+  import MinusIcon from 'phosphor-svelte/lib/MinusIcon';
+  import PlusIcon from 'phosphor-svelte/lib/PlusIcon';
   import * as Drawer from '$lib/components/ui/drawer/index.js';
   import { Button, buttonVariants } from '$lib/components/ui/button/index.js';
   import { BarChart } from 'layerchart';

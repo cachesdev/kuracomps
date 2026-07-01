@@ -1,12 +1,10 @@
 <script lang="ts">
-  import {
-    CalculatorIcon,
-    CalendarIcon,
-    CreditCardIcon,
-    GearIcon,
-    SmileyIcon,
-    UserIcon
-  } from 'phosphor-svelte';
+  import CalculatorIcon from 'phosphor-svelte/lib/CalculatorIcon';
+  import CalendarIcon from 'phosphor-svelte/lib/CalendarIcon';
+  import CreditCardIcon from 'phosphor-svelte/lib/CreditCardIcon';
+  import GearIcon from 'phosphor-svelte/lib/GearIcon';
+  import SmileyIcon from 'phosphor-svelte/lib/SmileyIcon';
+  import UserIcon from 'phosphor-svelte/lib/UserIcon';
   import * as Command from '$lib/components/ui/command/index.js';
 
   let open = $state(false);

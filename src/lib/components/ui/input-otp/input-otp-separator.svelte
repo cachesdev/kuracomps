@@ -2,7 +2,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import type { WithElementRef } from '$lib/utils.js';
   import { cn } from '$lib/utils.js';
-  import { MinusIcon } from 'phosphor-svelte';
+  import MinusIcon from 'phosphor-svelte/lib/MinusIcon';
 
   let {
     ref = $bindable(null),

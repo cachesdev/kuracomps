@@ -2,7 +2,8 @@
   import CopyButton from '$lib/components/copy-button.svelte';
   import { Button } from '$lib/components/ui/button/index.js';
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
-  import { CaretDownIcon, FileCodeIcon } from 'phosphor-svelte';
+  import CaretDownIcon from 'phosphor-svelte/lib/CaretDownIcon';
+  import FileCodeIcon from 'phosphor-svelte/lib/FileCodeIcon';
 
   type RegistryFile = {
     target?: string;

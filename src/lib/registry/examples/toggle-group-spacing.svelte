@@ -1,6 +1,8 @@
 <script lang="ts">
   import * as ToggleGroup from '$lib/components/ui/toggle-group/index.js';
-  import { BookmarkSimpleIcon, HeartIcon, StarIcon } from 'phosphor-svelte';
+  import BookmarkSimpleIcon from 'phosphor-svelte/lib/BookmarkSimpleIcon';
+  import HeartIcon from 'phosphor-svelte/lib/HeartIcon';
+  import StarIcon from 'phosphor-svelte/lib/StarIcon';
 </script>
 
 <ToggleGroup.Root type="multiple" variant="outline" spacing={2} size="sm">

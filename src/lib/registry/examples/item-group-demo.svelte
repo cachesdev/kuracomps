@@ -2,7 +2,7 @@
   import * as Item from '$lib/components/ui/item/index.js';
   import * as Avatar from '$lib/components/ui/avatar/index.js';
   import { Button } from '$lib/components/ui/button/index.js';
-  import { PlusIcon } from 'phosphor-svelte';
+  import PlusIcon from 'phosphor-svelte/lib/PlusIcon';
 
   const people = [
     {

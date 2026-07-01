@@ -1,6 +1,6 @@
 <script lang="ts">
   import { PillButton } from '$lib/components/ui/button/index.js';
-  import { ArrowRightIcon } from 'phosphor-svelte';
+  import ArrowRightIcon from 'phosphor-svelte/lib/ArrowRightIcon';
 </script>
 
 <div class="hairline-frame w-full max-w-xl border border-border bg-card p-5 text-card-foreground">

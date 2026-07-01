@@ -1,7 +1,7 @@
 <script lang="ts">
   import * as Item from '$lib/components/ui/item/index.js';
   import { Button } from '$lib/components/ui/button/index.js';
-  import { ShieldWarningIcon } from 'phosphor-svelte';
+  import ShieldWarningIcon from 'phosphor-svelte/lib/ShieldWarningIcon';
 </script>
 
 <div class="flex w-full max-w-lg flex-col gap-6">

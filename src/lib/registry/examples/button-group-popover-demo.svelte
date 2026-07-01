@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { CaretDownIcon, RobotIcon } from 'phosphor-svelte';
+  import CaretDownIcon from 'phosphor-svelte/lib/CaretDownIcon';
+  import RobotIcon from 'phosphor-svelte/lib/RobotIcon';
   import { Button } from '$lib/components/ui/button/index.js';
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js';
   import * as Popover from '$lib/components/ui/popover/index.js';

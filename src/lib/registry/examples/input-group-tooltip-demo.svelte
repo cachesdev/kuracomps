@@ -1,7 +1,8 @@
 <script lang="ts">
   import * as InputGroup from '$lib/components/ui/input-group/index.js';
   import * as Tooltip from '$lib/components/ui/tooltip/index.js';
-  import { InfoIcon, QuestionIcon } from 'phosphor-svelte';
+  import InfoIcon from 'phosphor-svelte/lib/InfoIcon';
+  import QuestionIcon from 'phosphor-svelte/lib/QuestionIcon';
 </script>
 
 <div class="grid w-full max-w-sm gap-4">

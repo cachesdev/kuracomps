@@ -17,7 +17,9 @@
     ItemMedia,
     ItemTitle
   } from '$lib/components/ui/item/index.js';
-  import { ArrowRightIcon, LockKeyIcon, WarningCircleIcon } from 'phosphor-svelte';
+  import ArrowRightIcon from 'phosphor-svelte/lib/ArrowRightIcon';
+  import LockKeyIcon from 'phosphor-svelte/lib/LockKeyIcon';
+  import WarningCircleIcon from 'phosphor-svelte/lib/WarningCircleIcon';
 </script>
 
 <Card>

@@ -3,7 +3,7 @@
   import * as Avatar from '$lib/components/ui/avatar/index.js';
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
   import { Button } from '$lib/components/ui/button/index.js';
-  import { CaretDownIcon } from 'phosphor-svelte';
+  import CaretDownIcon from 'phosphor-svelte/lib/CaretDownIcon';
 
   const people = [
     {

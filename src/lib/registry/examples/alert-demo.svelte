@@ -1,6 +1,8 @@
 <script lang="ts">
   import * as Alert from '$lib/components/ui/alert/index.js';
-  import { CheckCircleIcon, PopcornIcon, WarningCircleIcon } from 'phosphor-svelte';
+  import CheckCircleIcon from 'phosphor-svelte/lib/CheckCircleIcon';
+  import PopcornIcon from 'phosphor-svelte/lib/PopcornIcon';
+  import WarningCircleIcon from 'phosphor-svelte/lib/WarningCircleIcon';
 </script>
 
 <div class="grid w-full max-w-xl items-start gap-4">

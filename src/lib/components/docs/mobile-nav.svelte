@@ -4,7 +4,7 @@
   import { sidebarNavItems } from '$lib/navigation.js';
   import * as Sheet from '$lib/components/ui/sheet/index.js';
   import { buttonVariants } from '$lib/components/ui/button/index.js';
-  import { ListIcon } from 'phosphor-svelte';
+  import ListIcon from 'phosphor-svelte/lib/ListIcon';
 
   let open = $state(false);
 

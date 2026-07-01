@@ -1,5 +1,8 @@
 <script lang="ts">
-  import { ArrowBendDownLeftIcon, ArrowClockwiseIcon, CopyIcon, FileJsIcon } from 'phosphor-svelte';
+  import ArrowBendDownLeftIcon from 'phosphor-svelte/lib/ArrowBendDownLeftIcon';
+  import ArrowClockwiseIcon from 'phosphor-svelte/lib/ArrowClockwiseIcon';
+  import CopyIcon from 'phosphor-svelte/lib/CopyIcon';
+  import FileJsIcon from 'phosphor-svelte/lib/FileJsIcon';
 
   import * as InputGroup from '$lib/components/ui/input-group/index.js';
 </script>

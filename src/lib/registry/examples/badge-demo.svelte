@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Badge } from '$lib/components/ui/badge/index.js';
-  import { SealCheckIcon } from 'phosphor-svelte';
+  import SealCheckIcon from 'phosphor-svelte/lib/SealCheckIcon';
 </script>
 
 <div class="flex flex-col items-center gap-2">

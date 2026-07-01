@@ -1,7 +1,8 @@
 <script lang="ts">
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
   import * as InputGroup from '$lib/components/ui/input-group/index.js';
-  import { CaretDownIcon, DotsThreeIcon } from 'phosphor-svelte';
+  import CaretDownIcon from 'phosphor-svelte/lib/CaretDownIcon';
+  import DotsThreeIcon from 'phosphor-svelte/lib/DotsThreeIcon';
 </script>
 
 <div class="grid w-full max-w-sm gap-4">

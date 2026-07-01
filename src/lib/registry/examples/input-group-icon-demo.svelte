@@ -1,13 +1,11 @@
 <script lang="ts">
   import * as InputGroup from '$lib/components/ui/input-group/index.js';
-  import {
-    CheckIcon,
-    CreditCardIcon,
-    EnvelopeSimpleIcon,
-    InfoIcon,
-    MagnifyingGlassIcon,
-    StarIcon
-  } from 'phosphor-svelte';
+  import CheckIcon from 'phosphor-svelte/lib/CheckIcon';
+  import CreditCardIcon from 'phosphor-svelte/lib/CreditCardIcon';
+  import EnvelopeSimpleIcon from 'phosphor-svelte/lib/EnvelopeSimpleIcon';
+  import InfoIcon from 'phosphor-svelte/lib/InfoIcon';
+  import MagnifyingGlassIcon from 'phosphor-svelte/lib/MagnifyingGlassIcon';
+  import StarIcon from 'phosphor-svelte/lib/StarIcon';
 </script>
 
 <div class="grid w-full max-w-sm gap-6">

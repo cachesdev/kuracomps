@@ -3,7 +3,11 @@
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
   import * as Tooltip from '$lib/components/ui/tooltip/index.js';
   import { Separator } from '$lib/components/ui/separator/index.js';
-  import { ArrowUpIcon, CheckIcon, InfoIcon, MagnifyingGlassIcon, PlusIcon } from 'phosphor-svelte';
+  import ArrowUpIcon from 'phosphor-svelte/lib/ArrowUpIcon';
+  import CheckIcon from 'phosphor-svelte/lib/CheckIcon';
+  import InfoIcon from 'phosphor-svelte/lib/InfoIcon';
+  import MagnifyingGlassIcon from 'phosphor-svelte/lib/MagnifyingGlassIcon';
+  import PlusIcon from 'phosphor-svelte/lib/PlusIcon';
 </script>
 
 <div class="grid w-full max-w-sm gap-6">

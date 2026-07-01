@@ -24,13 +24,11 @@
     ItemMedia,
     ItemTitle
   } from '$lib/components/ui/item/index.js';
-  import {
-    ArrowRightIcon,
-    ArrowsClockwiseIcon,
-    CalendarIcon,
-    DotsThreeIcon,
-    GearIcon
-  } from 'phosphor-svelte';
+  import ArrowRightIcon from 'phosphor-svelte/lib/ArrowRightIcon';
+  import ArrowsClockwiseIcon from 'phosphor-svelte/lib/ArrowsClockwiseIcon';
+  import CalendarIcon from 'phosphor-svelte/lib/CalendarIcon';
+  import DotsThreeIcon from 'phosphor-svelte/lib/DotsThreeIcon';
+  import GearIcon from 'phosphor-svelte/lib/GearIcon';
   import type { Component } from 'svelte';
 
   const payments: Array<{

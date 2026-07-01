@@ -3,7 +3,7 @@
   import * as Popover from '$lib/components/ui/popover/index.js';
   import { Button } from '$lib/components/ui/button/index.js';
   import { Label } from '$lib/components/ui/label/index.js';
-  import { CaretDownIcon } from 'phosphor-svelte';
+  import CaretDownIcon from 'phosphor-svelte/lib/CaretDownIcon';
   import { getLocalTimeZone, today, type CalendarDate } from '@internationalized/date';
 
   const id = $props.id();

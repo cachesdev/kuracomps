@@ -1,6 +1,7 @@
 <script lang="ts">
   import * as Item from '$lib/components/ui/item/index.js';
-  import { ArrowSquareOutIcon, CaretRightIcon } from 'phosphor-svelte';
+  import ArrowSquareOutIcon from 'phosphor-svelte/lib/ArrowSquareOutIcon';
+  import CaretRightIcon from 'phosphor-svelte/lib/CaretRightIcon';
 </script>
 
 <div class="flex w-full max-w-md flex-col gap-4">

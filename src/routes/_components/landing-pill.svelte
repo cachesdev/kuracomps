@@ -1,7 +1,7 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
   import { cn } from '$lib/utils.js';
-  import { ArrowRightIcon } from 'phosphor-svelte';
+  import ArrowRightIcon from 'phosphor-svelte/lib/ArrowRightIcon';
   import { prefersReducedMotion } from 'svelte/motion';
   import type { PathnameWithSearchOrHash } from '$app/types';
   import type { HTMLAnchorAttributes } from 'svelte/elements';

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { CalendarDotsIcon } from 'phosphor-svelte';
+  import CalendarDotsIcon from 'phosphor-svelte/lib/CalendarDotsIcon';
   import * as Avatar from '$lib/components/ui/avatar/index.js';
   import * as HoverCard from '$lib/components/ui/hover-card/index.js';
 </script>

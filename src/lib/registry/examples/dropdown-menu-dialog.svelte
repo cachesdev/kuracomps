@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { DotsThreeIcon } from 'phosphor-svelte';
+  import DotsThreeIcon from 'phosphor-svelte/lib/DotsThreeIcon';
 
   import { Button, buttonVariants } from '$lib/components/ui/button/index.js';
   import * as Dialog from '$lib/components/ui/dialog/index.js';

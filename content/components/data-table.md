@@ -318,7 +318,7 @@ We'll start by defining the actions menu in our `data-table-actions.svelte` comp
 
 ```svelte showLineNumbers title="routes/payments/data-table-actions.svelte"
 <script lang="ts">
-  import { DotsThreeIcon } from 'phosphor-svelte';
+  import DotsThreeIcon from 'phosphor-svelte/lib/DotsThreeIcon';
   import { Button } from '$lib/components/ui/button/index.js';
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 
@@ -502,7 +502,7 @@ We'll start by creating a component to render a sortable email header button.
 ```svelte showLineNumbers title="routes/payments/data-table-email-button.svelte"
 <script lang="ts">
   import type { ComponentProps } from 'svelte';
-  import { ArrowsDownUpIcon } from 'phosphor-svelte';
+  import ArrowsDownUpIcon from 'phosphor-svelte/lib/ArrowsDownUpIcon';
   import { Button } from '$lib/components/ui/button/index.js';
 
   let { variant = 'ghost', ...restProps }: ComponentProps<typeof Button> = $props();

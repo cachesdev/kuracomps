@@ -1,5 +1,7 @@
 <script lang="ts">
-  import { TextBIcon, TextItalicIcon, TextUnderlineIcon } from 'phosphor-svelte';
+  import TextBIcon from 'phosphor-svelte/lib/TextBIcon';
+  import TextItalicIcon from 'phosphor-svelte/lib/TextItalicIcon';
+  import TextUnderlineIcon from 'phosphor-svelte/lib/TextUnderlineIcon';
   import * as ToggleGroup from '$lib/components/ui/toggle-group/index.js';
 </script>
 

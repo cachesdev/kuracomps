@@ -2,7 +2,7 @@
   import CopyButton from '$lib/components/copy-button.svelte';
   import * as Tabs from '$lib/components/ui/tabs/index.js';
   import { cn } from '$lib/utils.js';
-  import { TerminalIcon } from 'phosphor-svelte';
+  import TerminalIcon from 'phosphor-svelte/lib/TerminalIcon';
 
   let {
     type,

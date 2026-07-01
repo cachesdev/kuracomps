@@ -1,6 +1,6 @@
 <script lang="ts">
   import { cn } from '$lib/utils.js';
-  import { SpinnerIcon } from 'phosphor-svelte';
+  import SpinnerIcon from 'phosphor-svelte/lib/SpinnerIcon';
   import type { SVGAttributes } from 'svelte/elements';
 
   let {

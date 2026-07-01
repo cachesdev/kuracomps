@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { PlusIcon } from 'phosphor-svelte';
+  import PlusIcon from 'phosphor-svelte/lib/PlusIcon';
   import { Button } from '$lib/components/ui/button/index.js';
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js';
 </script>

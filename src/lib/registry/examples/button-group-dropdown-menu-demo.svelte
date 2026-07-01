@@ -1,14 +1,12 @@
 <script lang="ts">
-  import {
-    CaretDownIcon,
-    CheckIcon,
-    CopyIcon,
-    ShareIcon,
-    SpeakerSlashIcon,
-    TrashIcon,
-    UserMinusIcon,
-    WarningIcon
-  } from 'phosphor-svelte';
+  import CaretDownIcon from 'phosphor-svelte/lib/CaretDownIcon';
+  import CheckIcon from 'phosphor-svelte/lib/CheckIcon';
+  import CopyIcon from 'phosphor-svelte/lib/CopyIcon';
+  import ShareIcon from 'phosphor-svelte/lib/ShareIcon';
+  import SpeakerSlashIcon from 'phosphor-svelte/lib/SpeakerSlashIcon';
+  import TrashIcon from 'phosphor-svelte/lib/TrashIcon';
+  import UserMinusIcon from 'phosphor-svelte/lib/UserMinusIcon';
+  import WarningIcon from 'phosphor-svelte/lib/WarningIcon';
   import { Button } from '$lib/components/ui/button/index.js';
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js';
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';

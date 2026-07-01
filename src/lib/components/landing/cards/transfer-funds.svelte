@@ -25,7 +25,7 @@
     SelectTrigger
   } from '$lib/components/ui/select/index.js';
   import { Separator } from '$lib/components/ui/separator/index.js';
-  import { XIcon } from 'phosphor-svelte';
+  import XIcon from 'phosphor-svelte/lib/XIcon';
 
   const fromAccounts = [
     { label: 'Main Checking (8402) - $12,450.00', value: 'checking' },

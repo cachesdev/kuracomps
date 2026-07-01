@@ -3,7 +3,9 @@
   import { Badge } from '$lib/components/ui/badge/index.js';
   import { Button } from '$lib/components/ui/button/index.js';
   import { findNeighbors } from '$lib/navigation.js';
-  import { ArrowLeftIcon, ArrowRightIcon, ArrowUpRightIcon } from 'phosphor-svelte';
+  import ArrowLeftIcon from 'phosphor-svelte/lib/ArrowLeftIcon';
+  import ArrowRightIcon from 'phosphor-svelte/lib/ArrowRightIcon';
+  import ArrowUpRightIcon from 'phosphor-svelte/lib/ArrowUpRightIcon';
   import Toc from '$lib/components/docs/toc.svelte';
   import MobileToc from '$lib/components/docs/mobile-toc.svelte';
 

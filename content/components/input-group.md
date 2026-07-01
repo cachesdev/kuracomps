@@ -59,7 +59,7 @@ Copy and paste the following code into your project.
 ```svelte showLineNumbers
 <script lang="ts">
   import * as InputGroup from '$lib/components/ui/input-group/index.js';
-  import { MagnifyingGlassIcon } from 'phosphor-svelte';
+  import MagnifyingGlassIcon from 'phosphor-svelte/lib/MagnifyingGlassIcon';
 </script>
 ```
 

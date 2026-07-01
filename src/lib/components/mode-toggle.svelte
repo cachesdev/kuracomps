@@ -1,6 +1,7 @@
 <script lang="ts">
   import { toggleMode } from 'mode-watcher';
-  import { MoonIcon, SunIcon } from 'phosphor-svelte';
+  import MoonIcon from 'phosphor-svelte/lib/MoonIcon';
+  import SunIcon from 'phosphor-svelte/lib/SunIcon';
   import { Button } from '$lib/components/ui/button/index.js';
   import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 </script>

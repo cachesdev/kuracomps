@@ -215,13 +215,11 @@ We'll use the `Sidebar.Menu` component in a `Sidebar.Group`.
 
 ```svelte showLineNumbers title="src/lib/components/app-sidebar.svelte"
 <script lang="ts">
-  import {
-    CalendarIcon,
-    GearIcon,
-    HouseIcon,
-    MagnifyingGlassIcon,
-    TrayIcon
-  } from 'phosphor-svelte';
+  import CalendarIcon from 'phosphor-svelte/lib/CalendarIcon';
+  import GearIcon from 'phosphor-svelte/lib/GearIcon';
+  import HouseIcon from 'phosphor-svelte/lib/HouseIcon';
+  import MagnifyingGlassIcon from 'phosphor-svelte/lib/MagnifyingGlassIcon';
+  import TrayIcon from 'phosphor-svelte/lib/TrayIcon';
   import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 
   // Menu items.

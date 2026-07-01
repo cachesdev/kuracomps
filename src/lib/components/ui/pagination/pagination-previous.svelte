@@ -2,7 +2,7 @@
   import { Pagination as PaginationPrimitive } from 'bits-ui';
   import { cn } from '$lib/utils.js';
   import { buttonVariants } from '$lib/components/ui/button/index.js';
-  import { CaretLeftIcon } from 'phosphor-svelte';
+  import CaretLeftIcon from 'phosphor-svelte/lib/CaretLeftIcon';
 
   let {
     ref = $bindable(null),

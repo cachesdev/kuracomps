@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ArrowUpRightIcon } from 'phosphor-svelte';
+  import ArrowUpRightIcon from 'phosphor-svelte/lib/ArrowUpRightIcon';
   import { Button } from '$lib/components/ui/button/index.js';
 </script>
 

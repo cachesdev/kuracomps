@@ -2,7 +2,7 @@
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js';
   import * as InputGroup from '$lib/components/ui/input-group/index.js';
   import * as Label from '$lib/components/ui/label/index.js';
-  import { LinkIcon } from 'phosphor-svelte';
+  import LinkIcon from 'phosphor-svelte/lib/LinkIcon';
 </script>
 
 <div class="grid w-full max-w-sm gap-6">

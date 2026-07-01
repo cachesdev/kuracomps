@@ -4,7 +4,7 @@
   import { Button } from '$lib/components/ui/button/index.js';
   import { Label } from '$lib/components/ui/label/index.js';
   import { Input } from '$lib/components/ui/input/index.js';
-  import { CaretDownIcon } from 'phosphor-svelte';
+  import CaretDownIcon from 'phosphor-svelte/lib/CaretDownIcon';
   import { getLocalTimeZone } from '@internationalized/date';
   import type { CalendarDate } from '@internationalized/date';
 

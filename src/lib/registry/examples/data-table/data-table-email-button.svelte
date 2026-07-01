@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { ComponentProps } from 'svelte';
-  import { ArrowsDownUpIcon } from 'phosphor-svelte';
+  import ArrowsDownUpIcon from 'phosphor-svelte/lib/ArrowsDownUpIcon';
   import { Button } from '$lib/components/ui/button/index.js';
 
   let { variant = 'ghost', ...restProps }: ComponentProps<typeof Button> = $props();

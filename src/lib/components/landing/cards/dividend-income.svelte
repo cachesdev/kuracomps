@@ -15,7 +15,7 @@
     ItemGroup,
     ItemTitle
   } from '$lib/components/ui/item/index.js';
-  import { XIcon } from 'phosphor-svelte';
+  import XIcon from 'phosphor-svelte/lib/XIcon';
 
   const holdings = [
     {

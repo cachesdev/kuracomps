@@ -4,7 +4,7 @@
   import { Button } from '$lib/components/ui/button/index.js';
   import { Calendar } from '$lib/components/ui/calendar/index.js';
   import { Input } from '$lib/components/ui/input/index.js';
-  import { CalendarIcon } from 'phosphor-svelte';
+  import CalendarIcon from 'phosphor-svelte/lib/CalendarIcon';
   import { parseDate } from 'chrono-node';
   import { CalendarDate, getLocalTimeZone, type DateValue } from '@internationalized/date';
   import { untrack } from 'svelte';

@@ -9,7 +9,7 @@
 
 <script lang="ts">
   import { NavigationMenu as NavigationMenuPrimitive } from 'bits-ui';
-  import { CaretDownIcon } from 'phosphor-svelte';
+  import CaretDownIcon from 'phosphor-svelte/lib/CaretDownIcon';
   let {
     ref = $bindable(null),
     class: className,

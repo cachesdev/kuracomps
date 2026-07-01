@@ -86,7 +86,7 @@ Use a custom component in the `<slot>` of `<Breadcrumb.Separator />` to create a
 
 ```svelte showLineNumbers {2,11-13}
 <script lang="ts">
-  import { CaretRightIcon } from 'phosphor-svelte';
+  import CaretRightIcon from 'phosphor-svelte/lib/CaretRightIcon';
   import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
 </script>
 
@@ -119,7 +119,8 @@ You can compose `<Breadcrumb.Item />` with a `<DropdownMenu />` to create a drop
 
 ```svelte showLineNumbers {2-5,11-22}
 <script lang="ts">
-  import { CaretDownIcon, CaretRightIcon } from 'phosphor-svelte';
+  import CaretDownIcon from 'phosphor-svelte/lib/CaretDownIcon';
+  import CaretRightIcon from 'phosphor-svelte/lib/CaretRightIcon';
   import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 </script>

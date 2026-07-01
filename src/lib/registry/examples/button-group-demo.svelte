@@ -1,15 +1,13 @@
 <script lang="ts">
-  import {
-    ArchiveIcon,
-    ArrowLeftIcon,
-    CalendarPlusIcon,
-    ClockIcon,
-    DotsThreeIcon,
-    EnvelopeSimpleIcon,
-    FunnelSimpleIcon,
-    TagIcon,
-    TrashIcon
-  } from 'phosphor-svelte';
+  import ArchiveIcon from 'phosphor-svelte/lib/ArchiveIcon';
+  import ArrowLeftIcon from 'phosphor-svelte/lib/ArrowLeftIcon';
+  import CalendarPlusIcon from 'phosphor-svelte/lib/CalendarPlusIcon';
+  import ClockIcon from 'phosphor-svelte/lib/ClockIcon';
+  import DotsThreeIcon from 'phosphor-svelte/lib/DotsThreeIcon';
+  import EnvelopeSimpleIcon from 'phosphor-svelte/lib/EnvelopeSimpleIcon';
+  import FunnelSimpleIcon from 'phosphor-svelte/lib/FunnelSimpleIcon';
+  import TagIcon from 'phosphor-svelte/lib/TagIcon';
+  import TrashIcon from 'phosphor-svelte/lib/TrashIcon';
   import { Button } from '$lib/components/ui/button/index.js';
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js';
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';

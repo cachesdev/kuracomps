@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { TextItalicIcon } from 'phosphor-svelte';
+  import TextItalicIcon from 'phosphor-svelte/lib/TextItalicIcon';
   import { Toggle } from '$lib/components/ui/toggle/index.js';
 </script>
 

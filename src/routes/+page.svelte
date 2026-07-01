@@ -2,7 +2,7 @@
   import { resolve } from '$app/paths';
   import LandingShowcase from '$lib/components/landing/showcase.svelte';
   import { Button } from '$lib/components/ui/button/index.js';
-  import { ArrowRightIcon } from 'phosphor-svelte';
+  import ArrowRightIcon from 'phosphor-svelte/lib/ArrowRightIcon';
   import Header from '$lib/components/header.svelte';
 </script>
 

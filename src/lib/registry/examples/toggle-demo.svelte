@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { BookmarkSimpleIcon } from 'phosphor-svelte';
+  import BookmarkSimpleIcon from 'phosphor-svelte/lib/BookmarkSimpleIcon';
   import { Toggle } from '$lib/components/ui/toggle/index.js';
 </script>
 

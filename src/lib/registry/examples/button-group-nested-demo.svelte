@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { ArrowLeftIcon, ArrowRightIcon } from 'phosphor-svelte';
+  import ArrowLeftIcon from 'phosphor-svelte/lib/ArrowLeftIcon';
+  import ArrowRightIcon from 'phosphor-svelte/lib/ArrowRightIcon';
   import { Button } from '$lib/components/ui/button/index.js';
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js';
 </script>

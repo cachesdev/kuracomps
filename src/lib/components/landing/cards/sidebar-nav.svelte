@@ -1,27 +1,25 @@
 <script lang="ts">
   import { SidebarMenuButton, SidebarMenuItem } from '$lib/components/ui/sidebar/index.js';
-  import {
-    ArrowsLeftRightIcon,
-    BankIcon,
-    BellIcon,
-    BookOpenIcon,
-    CalendarIcon,
-    ChartBarIcon,
-    ChartLineIcon,
-    ChartPieIcon,
-    ChatCircleIcon,
-    CreditCardIcon,
-    FileTextIcon,
-    GlobeIcon,
-    PaletteIcon,
-    PulseIcon,
-    QuestionIcon,
-    ShieldIcon,
-    TargetIcon,
-    TrendUpIcon,
-    UserIcon,
-    WalletIcon
-  } from 'phosphor-svelte';
+  import ArrowsLeftRightIcon from 'phosphor-svelte/lib/ArrowsLeftRightIcon';
+  import BankIcon from 'phosphor-svelte/lib/BankIcon';
+  import BellIcon from 'phosphor-svelte/lib/BellIcon';
+  import BookOpenIcon from 'phosphor-svelte/lib/BookOpenIcon';
+  import CalendarIcon from 'phosphor-svelte/lib/CalendarIcon';
+  import ChartBarIcon from 'phosphor-svelte/lib/ChartBarIcon';
+  import ChartLineIcon from 'phosphor-svelte/lib/ChartLineIcon';
+  import ChartPieIcon from 'phosphor-svelte/lib/ChartPieIcon';
+  import ChatCircleIcon from 'phosphor-svelte/lib/ChatCircleIcon';
+  import CreditCardIcon from 'phosphor-svelte/lib/CreditCardIcon';
+  import FileTextIcon from 'phosphor-svelte/lib/FileTextIcon';
+  import GlobeIcon from 'phosphor-svelte/lib/GlobeIcon';
+  import PaletteIcon from 'phosphor-svelte/lib/PaletteIcon';
+  import PulseIcon from 'phosphor-svelte/lib/PulseIcon';
+  import QuestionIcon from 'phosphor-svelte/lib/QuestionIcon';
+  import ShieldIcon from 'phosphor-svelte/lib/ShieldIcon';
+  import TargetIcon from 'phosphor-svelte/lib/TargetIcon';
+  import TrendUpIcon from 'phosphor-svelte/lib/TrendUpIcon';
+  import UserIcon from 'phosphor-svelte/lib/UserIcon';
+  import WalletIcon from 'phosphor-svelte/lib/WalletIcon';
   import type { Component } from 'svelte';
   import SidebarSection from './sidebar-section.svelte';
 

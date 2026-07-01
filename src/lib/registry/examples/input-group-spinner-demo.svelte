@@ -1,7 +1,7 @@
 <script lang="ts">
   import * as InputGroup from '$lib/components/ui/input-group/index.js';
   import { Spinner } from '$lib/components/ui/spinner/index.js';
-  import { SpinnerGapIcon } from 'phosphor-svelte';
+  import SpinnerGapIcon from 'phosphor-svelte/lib/SpinnerGapIcon';
 </script>
 
 <div class="grid w-full max-w-sm gap-4">

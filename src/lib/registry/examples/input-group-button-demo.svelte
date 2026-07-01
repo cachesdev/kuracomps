@@ -1,5 +1,8 @@
 <script lang="ts">
-  import { CheckIcon, CopyIcon, InfoIcon, StarIcon } from 'phosphor-svelte';
+  import CheckIcon from 'phosphor-svelte/lib/CheckIcon';
+  import CopyIcon from 'phosphor-svelte/lib/CopyIcon';
+  import InfoIcon from 'phosphor-svelte/lib/InfoIcon';
+  import StarIcon from 'phosphor-svelte/lib/StarIcon';
 
   import * as InputGroup from '$lib/components/ui/input-group/index.js';
   import * as Popover from '$lib/components/ui/popover/index.js';

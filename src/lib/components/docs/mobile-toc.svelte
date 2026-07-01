@@ -1,7 +1,7 @@
 <script lang="ts">
   import { MediaQuery } from 'svelte/reactivity';
   import { on } from 'svelte/events';
-  import { CaretDownIcon } from 'phosphor-svelte';
+  import CaretDownIcon from 'phosphor-svelte/lib/CaretDownIcon';
   import * as Collapsible from '$lib/components/ui/collapsible/index.js';
   import TocList, { flattenToc, type TocActiveChange, type TocEntry } from './toc-list.svelte';
 

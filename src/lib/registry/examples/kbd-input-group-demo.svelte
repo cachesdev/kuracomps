@@ -1,7 +1,7 @@
 <script lang="ts">
   import * as Kbd from '$lib/components/ui/kbd/index.js';
   import * as InputGroup from '$lib/components/ui/input-group/index.js';
-  import { MagnifyingGlassIcon } from 'phosphor-svelte';
+  import MagnifyingGlassIcon from 'phosphor-svelte/lib/MagnifyingGlassIcon';
 </script>
 
 <div class="flex w-full max-w-xs flex-col gap-6">

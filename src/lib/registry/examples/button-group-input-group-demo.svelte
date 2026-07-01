@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { PlusIcon, WaveformIcon } from 'phosphor-svelte';
+  import PlusIcon from 'phosphor-svelte/lib/PlusIcon';
+  import WaveformIcon from 'phosphor-svelte/lib/WaveformIcon';
   import { Button } from '$lib/components/ui/button/index.js';
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js';
   import * as InputGroup from '$lib/components/ui/input-group/index.js';

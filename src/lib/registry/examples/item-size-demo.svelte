@@ -1,7 +1,8 @@
 <script lang="ts">
   import * as Item from '$lib/components/ui/item/index.js';
   import { Button } from '$lib/components/ui/button/index.js';
-  import { CaretRightIcon, SealCheckIcon } from 'phosphor-svelte';
+  import CaretRightIcon from 'phosphor-svelte/lib/CaretRightIcon';
+  import SealCheckIcon from 'phosphor-svelte/lib/SealCheckIcon';
 </script>
 
 <div class="flex w-full max-w-md flex-col gap-6">

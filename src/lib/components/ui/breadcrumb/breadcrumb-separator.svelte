@@ -1,7 +1,7 @@
 <script lang="ts">
   import { cn, type WithElementRef } from '$lib/utils.js';
   import type { HTMLLiAttributes } from 'svelte/elements';
-  import { CaretRightIcon } from 'phosphor-svelte';
+  import CaretRightIcon from 'phosphor-svelte/lib/CaretRightIcon';
 
   let {
     ref = $bindable(null),
